@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="description" content="PSY4179-N">
+<title>Advanced Psychological Research Methods - 8&nbsp; Mediation analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./factorAnalysis.html" rel="next">
+<link href="./moderation.html" rel="prev">
+<link href="./images/logos/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<link rel="stylesheet" href="include/booktem.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/glossary.css">
+<link rel="stylesheet" href="include/style.css">
+<link rel="stylesheet" href="aprm23/include/webex.css">
+</head>
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">
+<span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mediation analysis</span>
+</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Advanced Psychological Research Methods</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+<li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Advanced-Psychological-Research-Methods.pdf">
+            <i class="bi bi-bi-file-pdf pe-1"></i>
+          Download PDF
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Advanced-Psychological-Research-Methods.epub">
+            <i class="bi bi-bi-journal pe-1"></i>
+          Download ePub
+          </a>
+        </li>
+    </ul>
+<a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
+<li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
+            <i class="bi bi-bi-facebook pe-1"></i>
+          Facebook
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
+            <i class="bi bi-bi-linkedin pe-1"></i>
+          LinkedIn
+          </a>
+        </li>
+    </ul>
+<a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome to the module</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introductiontoR.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and R Studio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workingWithData.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Working with data in R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./descriptives.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exploratory and descriptive analysis with R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./graphing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Graphing and data visualisation with R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Correlation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./multipleRegression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Multiple Regression</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./moderation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Moderation analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mediation.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mediation analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./factorAnalysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Factor Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="toc-section-number">8.1</span>  Overview</a></li>
+  <li><a href="#what-is-mediation" id="toc-what-is-mediation" class="nav-link" data-scroll-target="#what-is-mediation"><span class="toc-section-number">8.2</span>  What is mediation?</a></li>
+  <li><a href="#what-is-moderation" id="toc-what-is-moderation" class="nav-link" data-scroll-target="#what-is-moderation"><span class="toc-section-number">8.3</span>  What is moderation?</a></li>
+  <li><a href="#why-different-models" id="toc-why-different-models" class="nav-link" data-scroll-target="#why-different-models"><span class="toc-section-number">8.4</span>  Why different models?</a></li>
+  <li>
+<a href="#mediation-analysis" id="toc-mediation-analysis" class="nav-link" data-scroll-target="#mediation-analysis"><span class="toc-section-number">8.5</span>  Mediation analysis</a>
+  <ul class="collapse">
+<li><a href="#what-is-a-mediation-design" id="toc-what-is-a-mediation-design" class="nav-link" data-scroll-target="#what-is-a-mediation-design"><span class="toc-section-number">8.5.1</span>  What is a mediation design?</a></li>
+  <li><a href="#what-is-mediation-analysis" id="toc-what-is-mediation-analysis" class="nav-link" data-scroll-target="#what-is-mediation-analysis"><span class="toc-section-number">8.5.2</span>  What is mediation analysis?</a></li>
+  <li><a href="#what-packages-do-we-need" id="toc-what-packages-do-we-need" class="nav-link" data-scroll-target="#what-packages-do-we-need"><span class="toc-section-number">8.5.3</span>  What packages do we need?</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#mediation-analysis-the-baron-and-kenny-approach" id="toc-mediation-analysis-the-baron-and-kenny-approach" class="nav-link" data-scroll-target="#mediation-analysis-the-baron-and-kenny-approach"><span class="toc-section-number">8.6</span>  Mediation analysis (the Baron and Kenny Approach)</a>
+  <ul class="collapse">
+<li><a href="#conducting-mediation-analysis-the-baron-and-kenny-approach" id="toc-conducting-mediation-analysis-the-baron-and-kenny-approach" class="nav-link" data-scroll-target="#conducting-mediation-analysis-the-baron-and-kenny-approach"><span class="toc-section-number">8.6.1</span>  Conducting mediation analysis (the Baron and Kenny Approach)</a></li>
+  <li><a href="#step-1-total-effect" id="toc-step-1-total-effect" class="nav-link" data-scroll-target="#step-1-total-effect"><span class="toc-section-number">8.6.2</span>  Step 1: Total Effect</a></li>
+  <li><a href="#step-2-path-a-x-on-m" id="toc-step-2-path-a-x-on-m" class="nav-link" data-scroll-target="#step-2-path-a-x-on-m"><span class="toc-section-number">8.6.3</span>  Step 2: Path A (X on M)</a></li>
+  <li><a href="#step-3-path-b-m-on-y-controlling-for-x" id="toc-step-3-path-b-m-on-y-controlling-for-x" class="nav-link" data-scroll-target="#step-3-path-b-m-on-y-controlling-for-x"><span class="toc-section-number">8.6.4</span>  Step 3: Path B (M on Y, controlling for X)</a></li>
+  <li><a href="#step-4-reversed-path-c-y-on-x-controlling-for-m" id="toc-step-4-reversed-path-c-y-on-x-controlling-for-m" class="nav-link" data-scroll-target="#step-4-reversed-path-c-y-on-x-controlling-for-m"><span class="toc-section-number">8.6.5</span>  Step 4: Reversed Path C (Y on X, controlling for M)</a></li>
+  <li><a href="#viewing-output" id="toc-viewing-output" class="nav-link" data-scroll-target="#viewing-output"><span class="toc-section-number">8.6.6</span>  Viewing output</a></li>
+  <li><a href="#interpreting-baron-and-kenny-approach" id="toc-interpreting-baron-and-kenny-approach" class="nav-link" data-scroll-target="#interpreting-baron-and-kenny-approach"><span class="toc-section-number">8.6.7</span>  Interpreting Baron and Kenny approach</a></li>
+  <li><a href="#running-the-sobel-test" id="toc-running-the-sobel-test" class="nav-link" data-scroll-target="#running-the-sobel-test"><span class="toc-section-number">8.6.8</span>  Running the Sobel test</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#mediation-analysis-the-mediation-package" id="toc-mediation-analysis-the-mediation-package" class="nav-link" data-scroll-target="#mediation-analysis-the-mediation-package"><span class="toc-section-number">8.7</span>  Mediation analysis (the Mediation package)</a>
+  <ul class="collapse">
+<li><a href="#preacher-hayes-2004-mediation-approach" id="toc-preacher-hayes-2004-mediation-approach" class="nav-link" data-scroll-target="#preacher-hayes-2004-mediation-approach"><span class="toc-section-number">8.7.1</span>  Preacher &amp; Hayes (2004) mediation approach</a></li>
+  <li><a href="#what-is-bootstrapping" id="toc-what-is-bootstrapping" class="nav-link" data-scroll-target="#what-is-bootstrapping"><span class="toc-section-number">8.7.2</span>  What is bootstrapping?</a></li>
+  <li><a href="#mediation-example" id="toc-mediation-example" class="nav-link" data-scroll-target="#mediation-example"><span class="toc-section-number">8.7.3</span>  Mediation example</a></li>
+  <li><a href="#step-1-run-the-models" id="toc-step-1-run-the-models" class="nav-link" data-scroll-target="#step-1-run-the-models"><span class="toc-section-number">8.7.4</span>  Step 1: Run the models</a></li>
+  <li><a href="#step-2-check-assumptions" id="toc-step-2-check-assumptions" class="nav-link" data-scroll-target="#step-2-check-assumptions"><span class="toc-section-number">8.7.5</span>  Step 2: Check assumptions</a></li>
+  <li><a href="#step-3.1-run-the-mediation-analysis-on-the-models" id="toc-step-3.1-run-the-mediation-analysis-on-the-models" class="nav-link" data-scroll-target="#step-3.1-run-the-mediation-analysis-on-the-models"><span class="toc-section-number">8.7.6</span>  Step 3.1: Run the mediation analysis on the models</a></li>
+  <li><a href="#step-3.2-plot-the-mediation-analysis-of-the-models" id="toc-step-3.2-plot-the-mediation-analysis-of-the-models" class="nav-link" data-scroll-target="#step-3.2-plot-the-mediation-analysis-of-the-models"><span class="toc-section-number">8.7.7</span>  Step 3.2: Plot the mediation analysis of the models</a></li>
+  <li><a href="#step-4-bootstrap-the-mediation-model" id="toc-step-4-bootstrap-the-mediation-model" class="nav-link" data-scroll-target="#step-4-bootstrap-the-mediation-model"><span class="toc-section-number">8.7.8</span>  Step 4: Bootstrap the mediation model</a></li>
+  </ul>
+</li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">8.8</span>  References</a></li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title d-none d-lg-block">
+<span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mediation analysis</span>
+</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header><iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=dd3163e4-ab0e-449d-b252-adaa008f4394&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="100%" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
+<section id="overview" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="overview">
+<span class="header-section-number">8.1</span> Overview</h2>
+<ul>
+<li>What are mediation and moderation?</li>
+<li>Mediation analysis example</li>
+<li>Packages needed</li>
+<li>Baron and Kenny approach in R</li>
+<li>Mediation package approach in R</li>
+</ul></section><section id="what-is-mediation" class="level2" data-number="8.2"><h2 data-number="8.2" class="anchored" data-anchor-id="what-is-mediation">
+<span class="header-section-number">8.2</span> What is mediation?</h2>
+<p>Where the relationship between a predictor (X) and an outcome (Y) is mediated by another variable (M).</p>
+<div class="cell" data-layout-align="center">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/mediation_model1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">A mediated relationship</figcaption><p></p>
+</figure>
+</div>
+<p>In the above model, we theorise that socio-economic status predicts education level, which predicts future prospects.</p>
+</section><section id="what-is-moderation" class="level2" data-number="8.3"><h2 data-number="8.3" class="anchored" data-anchor-id="what-is-moderation">
+<span class="header-section-number">8.3</span> What is moderation?</h2>
+<p>There is a direct relationship between X and Y but it is affected by a moderator (M)</p>
+<div class="cell" data-layout-align="center">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/moderation_model2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">A moderated relationship</figcaption><p></p>
+</figure>
+</div>
+<p>In the above model, we theorise that socio-economic status predicts future prospects but the strength of the relationship is changed by education level</p>
+</section><section id="why-different-models" class="level2" data-number="8.4"><h2 data-number="8.4" class="anchored" data-anchor-id="why-different-models">
+<span class="header-section-number">8.4</span> Why different models?</h2>
+<div class="cell" data-layout-align="center">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/mediation_model1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">A mediated relationship</figcaption><p></p>
+</figure>
+</div>
+<p>This might be more appropriate if higher education costs money</p>
+<div class="cell" data-layout-align="center">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/moderation_model2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">A moderated relationship</figcaption><p></p>
+</figure>
+</div>
+<p>This might be more appropriate if access to higher education is free</p>
+</section><section id="mediation-analysis" class="level2" data-number="8.5"><h2 data-number="8.5" class="anchored" data-anchor-id="mediation-analysis">
+<span class="header-section-number">8.5</span> Mediation analysis</h2>
+<section id="what-is-a-mediation-design" class="level3" data-number="8.5.1"><h3 data-number="8.5.1" class="anchored" data-anchor-id="what-is-a-mediation-design">
+<span class="header-section-number">8.5.1</span> What is a mediation design?</h3>
+<p>Whether a mediation analysis is appropriate is determined as much by the design as by statistical criteria.</p>
+<div class="cell" data-layout-align="center">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/mediation_model1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">A mediated relationship</figcaption><p></p>
+</figure>
+</div>
+<p>We must consider whether it makes sense to predict this relationship between variables</p>
+</section><section id="what-is-mediation-analysis" class="level3" data-number="8.5.2"><h3 data-number="8.5.2" class="anchored" data-anchor-id="what-is-mediation-analysis">
+<span class="header-section-number">8.5.2</span> What is mediation analysis?</h3>
+<ul>
+<li>Based on regression</li>
+</ul>
+<p>A summary of the logic of mediation:</p>
+<ul>
+<li>The direct relationship between X and Y should be significant</li>
+<li>The relationship between X and M should be significant</li>
+<li>The relationship between M and Y (controlling for X) should be significant</li>
+<li>When controlling for M, the strength of the relationship between X and Y decreases and is <strong>not</strong> significant</li>
+</ul>
+<div class="cell" data-layout-align="center">
+
+</div>
+<p><img src="images/mediation_direct.png" class="img-fluid"><img src="images/mediation_model1.png" class="img-fluid"></p>
+<ul>
+<li>The direct relationship between X and Y should be significant</li>
+<li><span style="color: blue;"> The relationship between X and M should be significant </span></li>
+<li><span style="color: green;"> The relationship between M and Y (controlling for X) should be significant </span></li>
+<li><span style="color: red;"> When controlling for M, the strength of the relationship between X and Y decreases and is <strong>not</strong> significant </span></li>
+</ul>
+<blockquote class="blockquote">
+<p>Baron &amp; Kenny (1986) originally used a 4-step regression model to test each of these relationships.</p>
+</blockquote>
+</section><section id="what-packages-do-we-need" class="level3" data-number="8.5.3"><h3 data-number="8.5.3" class="anchored" data-anchor-id="what-packages-do-we-need">
+<span class="header-section-number">8.5.3</span> What packages do we need?</h3>
+<pre><code><a href="https://imai.princeton.edu/projects/mechanisms.html">library(mediation) #Mediation package
+
+library(multilevel) #Sobel Test
+
+library(bda) #Another Sobel Test option
+
+library(gvlma) #Testing Model Assumptions 
+
+library(stargazer) #Handy regression tables</a></code></pre>
+</section></section><section id="mediation-analysis-the-baron-and-kenny-approach" class="level2" data-number="8.6"><h2 data-number="8.6" class="anchored" data-anchor-id="mediation-analysis-the-baron-and-kenny-approach">
+<span class="header-section-number">8.6</span> Mediation analysis (the Baron and Kenny Approach)</h2>
+<section id="conducting-mediation-analysis-the-baron-and-kenny-approach" class="level3" data-number="8.6.1"><h3 data-number="8.6.1" class="anchored" data-anchor-id="conducting-mediation-analysis-the-baron-and-kenny-approach">
+<span class="header-section-number">8.6.1</span> Conducting mediation analysis (the Baron and Kenny Approach)</h3>
+<ul>
+<li>Baron &amp; Kenny (1986) originally used a 4-step regression model to test each of these relationships.</li>
+<li>The sobel test is then used to test the significance of mediation</li>
+</ul>
+<div class="cell" data-layout-align="center">
+
+</div>
+</section><section id="step-1-total-effect" class="level3" data-number="8.6.2"><h3 data-number="8.6.2" class="anchored" data-anchor-id="step-1-total-effect">
+<span class="header-section-number">8.6.2</span> Step 1: Total Effect</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#1. Total Effect</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data=</span>Meddata)</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Y ~ X, data = Meddata)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-10.917  -3.738  -0.259   2.910  12.540 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)  
+(Intercept) 19.88368   14.26371   1.394   0.1665  
+X            0.16899    0.08116   2.082   0.0399 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 5.16 on 98 degrees of freedom
+Multiple R-squared:  0.04237,   Adjusted R-squared:  0.0326 
+F-statistic: 4.336 on 1 and 98 DF,  p-value: 0.03993</code></pre>
+</div>
+</div>
+</section><section id="step-2-path-a-x-on-m" class="level3" data-number="8.6.3"><h3 data-number="8.6.3" class="anchored" data-anchor-id="step-2-path-a-x-on-m">
+<span class="header-section-number">8.6.3</span> Step 2: Path A (X on M)</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">#2. Path A (X on M)</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>fita <span class="ot">&lt;-</span> <span class="fu">lm</span>(M <span class="sc">~</span> X, <span class="at">data=</span>Meddata)</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">summary</span>(fita)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = M ~ X, data = Meddata)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-9.5367 -3.4175 -0.4375  2.9032 16.4520 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  6.04494   13.41692   0.451    0.653    
+X            0.66252    0.07634   8.678 8.87e-14 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 4.854 on 98 degrees of freedom
+Multiple R-squared:  0.4346,    Adjusted R-squared:  0.4288 
+F-statistic: 75.31 on 1 and 98 DF,  p-value: 8.872e-14</code></pre>
+</div>
+</div>
+</section><section id="step-3-path-b-m-on-y-controlling-for-x" class="level3" data-number="8.6.4"><h3 data-number="8.6.4" class="anchored" data-anchor-id="step-3-path-b-m-on-y-controlling-for-x">
+<span class="header-section-number">8.6.4</span> Step 3: Path B (M on Y, controlling for X)</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#3. Path B (M on Y, controlling for X)</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>fitb <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> M <span class="sc">+</span> X, <span class="at">data=</span>Meddata)</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">summary</span>(fitb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Y ~ M + X, data = Meddata)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-9.3651 -3.3037 -0.6222  3.1068 10.3991 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 17.32177   13.16216   1.316    0.191    
+M            0.42381    0.09899   4.281 4.37e-05 ***
+X           -0.11179    0.09949  -1.124    0.264    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 4.756 on 97 degrees of freedom
+Multiple R-squared:  0.1946,    Adjusted R-squared:  0.1779 
+F-statistic: 11.72 on 2 and 97 DF,  p-value: 2.771e-05</code></pre>
+</div>
+</div>
+</section><section id="step-4-reversed-path-c-y-on-x-controlling-for-m" class="level3" data-number="8.6.5"><h3 data-number="8.6.5" class="anchored" data-anchor-id="step-4-reversed-path-c-y-on-x-controlling-for-m">
+<span class="header-section-number">8.6.5</span> Step 4: Reversed Path C (Y on X, controlling for M)</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">#4. Reversed Path C (Y on X, controlling for M)</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>fitc <span class="ot">&lt;-</span> <span class="fu">lm</span>(X <span class="sc">~</span> Y <span class="sc">+</span> M, <span class="at">data=</span>Meddata)</span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="fu">summary</span>(fitc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = X ~ Y + M, data = Meddata)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-14.438  -2.573  -0.030   3.010  11.779 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 96.11234    9.27663  10.361  &lt; 2e-16 ***
+Y           -0.11493    0.10229  -1.124    0.264    
+M            0.69619    0.08356   8.332 5.27e-13 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 4.823 on 97 degrees of freedom
+Multiple R-squared:  0.4418,    Adjusted R-squared:  0.4303 
+F-statistic: 38.39 on 2 and 97 DF,  p-value: 5.233e-13</code></pre>
+</div>
+</div>
+</section><section id="viewing-output" class="level3" data-number="8.6.6"><h3 data-number="8.6.6" class="anchored" data-anchor-id="viewing-output">
+<span class="header-section-number">8.6.6</span> Viewing output</h3>
+<pre><code>Summary Table
+stargazer(fit, fita, fitb, fitc, type = "text", title = "Baron and Kenny Method")</code></pre>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="img/baronandkenny.png" style="width:100.0%;height:200.0%" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="interpreting-baron-and-kenny-approach" class="level3" data-number="8.6.7"><h3 data-number="8.6.7" class="anchored" data-anchor-id="interpreting-baron-and-kenny-approach">
+<span class="header-section-number">8.6.7</span> Interpreting Baron and Kenny approach</h3>
+<p>A reminder of the logic of mediation:</p>
+<ul>
+<li>The direct relationship between X and Y should be significant</li>
+<li>The relationship between X and M should be significant</li>
+<li>The relationship between M and Y (controlling for X) should be significant</li>
+<li>When controlling for M, the strength of the relationship between X and Y decreases and is <strong>not</strong> significant</li>
+</ul></section><section id="running-the-sobel-test" class="level3" data-number="8.6.8"><h3 data-number="8.6.8" class="anchored" data-anchor-id="running-the-sobel-test">
+<span class="header-section-number">8.6.8</span> Running the Sobel test</h3>
+<ul>
+<li>The Sobel test checks the singificance of indirect effects</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co">#Sobel Test</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">library</span>(multilevel)</span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="fu">sobel</span>(Meddata<span class="sc">$</span>X, Meddata<span class="sc">$</span>M, Meddata<span class="sc">$</span>Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$`Mod1: Y~X`
+              Estimate Std. Error  t value   Pr(&gt;|t|)
+(Intercept) 19.8836805 14.2637142 1.394004 0.16646905
+pred         0.1689931  0.0811601 2.082220 0.03992761
+
+$`Mod2: Y~X+M`
+              Estimate  Std. Error   t value     Pr(&gt;|t|)
+(Intercept) 17.3217682 13.16215851  1.316028 1.912663e-01
+pred        -0.1117904  0.09949262 -1.123605 2.639537e-01
+med          0.4238113  0.09899469  4.281152 4.371472e-05
+
+$`Mod3: M~X`
+             Estimate  Std. Error   t value     Pr(&gt;|t|)
+(Intercept) 6.0449365 13.41692114 0.4505457 6.533122e-01
+pred        0.6625203  0.07634187 8.6783345 8.871741e-14
+
+$Indirect.Effect
+[1] 0.2807836
+
+$SE
+[1] 0.07313234
+
+$z.value
+[1] 3.83939
+
+$N
+[1] 100</code></pre>
+</div>
+</div>
+<p>However, the above code only gives us to information we need to test the significance of the indirect effect, not the significance itself. Thereore, we can use the following, to get the actual significance of the indirect effect:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">library</span>(bda)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'bda' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: boot</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>bda v15 (Bin Wang, 2021)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">mediation.test</span>(Meddata<span class="sc">$</span>M, Meddata<span class="sc">$</span>X, Meddata<span class="sc">$</span>Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="table table-sm table-striped">
+<thead><tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Sobel</th>
+<th style="text-align: right;">Aroian</th>
+<th style="text-align: right;">Goodman</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">z.value</td>
+<td style="text-align: right;">3.8393902</td>
+<td style="text-align: right;">3.819053</td>
+<td style="text-align: right;">3.8600563</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">p.value</td>
+<td style="text-align: right;">0.0001233</td>
+<td style="text-align: right;">0.000134</td>
+<td style="text-align: right;">0.0001134</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section></section><section id="mediation-analysis-the-mediation-package" class="level2" data-number="8.7"><h2 data-number="8.7" class="anchored" data-anchor-id="mediation-analysis-the-mediation-package">
+<span class="header-section-number">8.7</span> Mediation analysis (the Mediation package)</h2>
+<section id="preacher-hayes-2004-mediation-approach" class="level3" data-number="8.7.1"><h3 data-number="8.7.1" class="anchored" data-anchor-id="preacher-hayes-2004-mediation-approach">
+<span class="header-section-number">8.7.1</span> Preacher &amp; Hayes (2004) mediation approach</h3>
+<ul>
+<li>Mediation package in R uses the Preacher &amp; Hayes (2004) bootstrapping approach</li>
+<li>They argue that few people test the significance of the indirect effect</li>
+</ul>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>“Baron and Kenny simply state that perfect mediation has occurred if c’ becomes nonsignificant after controlling for M, so researchers have focused on that requirement.” (Preacher &amp; Hayes, 2004, p.&nbsp;719)</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>Sobel test has low power (requires larger sample sizes)</li>
+<li>Sobel test assumes normality (often violated)</li>
+</ul></section><section id="what-is-bootstrapping" class="level3" data-number="8.7.2"><h3 data-number="8.7.2" class="anchored" data-anchor-id="what-is-bootstrapping">
+<span class="header-section-number">8.7.2</span> What is bootstrapping?</h3>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>“Bootstrapping is a nonparametric approach to effect-size estimation and hypothesis testing that makes no assumptions about the shape of the distributions of the variables or the sampling distribution of the statistic” (Preacer &amp; Hayes, 2004, p.&nbsp;722)</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><p>Bootstrapping takes a large number of samples from our data and runs the analysis on each of these samples</p></li>
+<li><p>The sampling is done randomly with replacement, and each sample in the bootstrap is the same size as our dataset</p></li>
+<li><p>Using this method, we can create estimates with that fall within a narrower confidence interval (since we have now run the analysis on 100’s of samples)</p></li>
+<li><p>Bootstrapping overcomes concerns about the distribution of our original dataset</p></li>
+</ul></section><section id="mediation-example" class="level3" data-number="8.7.3"><h3 data-number="8.7.3" class="anchored" data-anchor-id="mediation-example">
+<span class="header-section-number">8.7.3</span> Mediation example</h3>
+<p>Is the relationship between <em>No of hours awake</em> and <em>wakefulness</em> mediated by <em>caffiene consumption</em>?</p>
+<blockquote class="blockquote">
+<p>This example is from Demos &amp; Salas (2019). <em>A Language, not a Letter: Learning Statistics in R</em> (Chapter 14)</p>
+</blockquote>
+<div class="cell" data-layout-align="center">
+
+</div>
+<p><img src="images/mediation_model2.png" class="img-fluid"></p>
+</section><section id="step-1-run-the-models" class="level3" data-number="8.7.4"><h3 data-number="8.7.4" class="anchored" data-anchor-id="step-1-run-the-models">
+<span class="header-section-number">8.7.4</span> Step 1: Run the models</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">#Mediate package</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">library</span>(mediation)</span>
+<span id="cb18-3"><a href="#cb18-3"></a></span>
+<span id="cb18-4"><a href="#cb18-4"></a>fitM <span class="ot">&lt;-</span> <span class="fu">lm</span>(M <span class="sc">~</span> X,     <span class="at">data=</span>Meddata) <span class="co">#IV on M; Hours since waking predicting coffee consumption</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a>fitY <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X <span class="sc">+</span> M, <span class="at">data=</span>Meddata) <span class="co">#IV and M on DV; Hours since dawn and coffee predicting wakefulness</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="step-2-check-assumptions" class="level3" data-number="8.7.5"><h3 data-number="8.7.5" class="anchored" data-anchor-id="step-2-check-assumptions">
+<span class="header-section-number">8.7.5</span> Step 2: Check assumptions</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">gvlma</span>(fitM) </span>
+<span id="cb19-2"><a href="#cb19-2"></a></span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="co"># We can see that the data is positively skewed. We might need to transform the data (we will discuss this another time).</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a></span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="fu">gvlma</span>(fitY)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = M ~ X, data = Meddata)
+
+Coefficients:
+(Intercept)            X  
+     6.0449       0.6625  
+
+
+ASSESSMENT OF THE LINEAR MODEL ASSUMPTIONS
+USING THE GLOBAL TEST ON 4 DEGREES-OF-FREEDOM:
+Level of Significance =  0.05 
+
+Call:
+ gvlma(x = fitM) 
+
+                   Value p-value                   Decision
+Global Stat        8.833 0.06542    Assumptions acceptable.
+Skewness           6.314 0.01198 Assumptions NOT satisfied!
+Kurtosis           1.219 0.26949    Assumptions acceptable.
+Link Function      1.076 0.29959    Assumptions acceptable.
+Heteroscedasticity 0.223 0.63674    Assumptions acceptable.
+
+Call:
+lm(formula = Y ~ X + M, data = Meddata)
+
+Coefficients:
+(Intercept)            X            M  
+    17.3218      -0.1118       0.4238  
+
+
+ASSESSMENT OF THE LINEAR MODEL ASSUMPTIONS
+USING THE GLOBAL TEST ON 4 DEGREES-OF-FREEDOM:
+Level of Significance =  0.05 
+
+Call:
+ gvlma(x = fitY) 
+
+                     Value p-value                Decision
+Global Stat        3.41844  0.4904 Assumptions acceptable.
+Skewness           1.85648  0.1730 Assumptions acceptable.
+Kurtosis           0.77788  0.3778 Assumptions acceptable.
+Link Function      0.71512  0.3977 Assumptions acceptable.
+Heteroscedasticity 0.06896  0.7929 Assumptions acceptable.</code></pre>
+</div>
+</div>
+</section><section id="step-3.1-run-the-mediation-analysis-on-the-models" class="level3" data-number="8.7.6"><h3 data-number="8.7.6" class="anchored" data-anchor-id="step-3.1-run-the-mediation-analysis-on-the-models">
+<span class="header-section-number">8.7.6</span> Step 3.1: Run the mediation analysis on the models</h3>
+<p>The mediate function gives us:</p>
+<ul>
+<li>Average Causal Mediation Effects (ACME)</li>
+<li>Average Direct Effects (ADE)</li>
+<li>combined indirect and direct effects (Total Effect)</li>
+<li>the ratio of these estimates (Prop. Mediated).</li>
+</ul>
+<p>The ACME here is the indirect effect of M (total effect - direct effect) and thus this value tells us if our mediation effect is significant.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>fitMed <span class="ot">&lt;-</span> <span class="fu">mediate</span>(fitM, fitY, <span class="at">treat=</span><span class="st">"X"</span>, <span class="at">mediator=</span><span class="st">"M"</span>)</span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="fu">summary</span>(fitMed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Causal Mediation Analysis 
+
+Quasi-Bayesian Confidence Intervals
+
+               Estimate 95% CI Lower 95% CI Upper p-value    
+ACME             0.2808       0.1437         0.42  &lt;2e-16 ***
+ADE             -0.1133      -0.3116         0.09   0.258    
+Total Effect     0.1674       0.0208         0.34   0.028 *  
+Prop. Mediated   1.6428       0.5631         8.44   0.028 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Sample Size Used: 100 
+
+
+Simulations: 1000 </code></pre>
+</div>
+</div>
+</section><section id="step-3.2-plot-the-mediation-analysis-of-the-models" class="level3" data-number="8.7.7"><h3 data-number="8.7.7" class="anchored" data-anchor-id="step-3.2-plot-the-mediation-analysis-of-the-models">
+<span class="header-section-number">8.7.7</span> Step 3.2: Plot the mediation analysis of the models</h3>
+<p>The plot below reiterates what was on the previous slide:</p>
+<ul>
+<li>The confidence intervals of Total Effect and ACME are significant</li>
+<li>The confidence interval of ADE is not significant</li>
+</ul>
+<p><strong>Translation:</strong></p>
+<ul>
+<li>Total effect is signficant: there is a relationship between X and Y (direct and indirect)</li>
+<li>ADE is not significant: the relationship between X and Y is not direct</li>
+<li>ACME is significant: the relationship between X and Y is mediated by M</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">plot</span>(fitMed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="mediation_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="step-4-bootstrap-the-mediation-model" class="level3" data-number="8.7.8"><h3 data-number="8.7.8" class="anchored" data-anchor-id="step-4-bootstrap-the-mediation-model">
+<span class="header-section-number">8.7.8</span> Step 4: Bootstrap the mediation model</h3>
+<p>The plot below changes our interpretation slightly:</p>
+<ul>
+<li>The confidence interval ACME is significant</li>
+<li>The confidence interval of Total Effect and ADE are not significant</li>
+</ul>
+<p><strong>Translation:</strong></p>
+<ul>
+<li><p>Total effect is not signficant: the relationship between X and Y is not significant when we combine direct and indirect effects</p></li>
+<li><p>ADE is not significant: the relationship between X and Y is not direct</p></li>
+<li><p>ACME is significant: the relationship between X and Y is mediated by M</p></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>fitMedBoot <span class="ot">&lt;-</span> <span class="fu">mediate</span>(fitM, fitY, <span class="at">boot=</span><span class="cn">TRUE</span>, <span class="at">sims=</span><span class="dv">999</span>, <span class="at">treat=</span><span class="st">"X"</span>, <span class="at">mediator=</span><span class="st">"M"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Running nonparametric bootstrap</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">summary</span>(fitMedBoot)</span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">plot</span>(fitMedBoot) <span class="do">##</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="mediation_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Causal Mediation Analysis 
+
+Nonparametric Bootstrap Confidence Intervals with the Percentile Method
+
+               Estimate 95% CI Lower 95% CI Upper p-value    
+ACME             0.2808       0.1409         0.42  &lt;2e-16 ***
+ADE             -0.1118      -0.3080         0.12    0.31    
+Total Effect     0.1690      -0.0123         0.34    0.07 .  
+Prop. Mediated   1.6615      -3.7235        11.33    0.07 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Sample Size Used: 100 
+
+
+Simulations: 999 </code></pre>
+</div>
+</div>
+</section></section><section id="references" class="level2" data-number="8.8"><h2 data-number="8.8" class="anchored" data-anchor-id="references">
+<span class="header-section-number">8.8</span> References</h2>
+<p>Demos &amp; Salas (2019). <em>A Language, not a Letter: Learning Statistics in R</em> (Chapter 14). https://ademos.people.uic.edu/ Accessed Jan 2020.</p>
+<p>Preacher, K. J., &amp; Hayes, A. F. (2004). SPSS and SAS procedures for estimating indirect effects in simple mediation models. Behavior research methods, instruments, &amp; computers, 36(4), 717-731.</p>
+
+
+</section></main><!-- /main --><script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+// open rdrr links externally ----
+
+var exlinks = document.querySelectorAll("a[href^='https://rdrr.io']");
+var exlink_func = function(){
+  window.open(this.href);
+  return false;
+};
+for (var i = 0; i < exlinks.length; i++) {
+    exlinks[i].addEventListener('click', exlink_func, false);
+}
+
+// visible second sidebar in mobile ----
+
+function move_sidebar() {
+  var toc = document.getElementById("TOC");
+  var small_sidebar = document.querySelector("#quarto-sidebar .sidebar-menu-container");
+  var right_sidebar = document.getElementById("quarto-margin-sidebar");
+
+  if (window.innerWidth < 768) {
+    small_sidebar.append(toc);
+  } else {
+    right_sidebar.append(toc);
+  }
+}
+move_sidebar();
+window.onresize = move_sidebar;
+</script><script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="./moderation.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Moderation analysis</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./factorAnalysis.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Factor Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+      <div class="nav-footer-center">CC-BY (2023) Christopher Wilson. With grateful thanks to the <a href="https://debruine.github.io/booktem/">psyTeachR</a> team and packages</div>
+  </div>
+</footer>
+
+
+</body></html>

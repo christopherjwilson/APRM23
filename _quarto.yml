@@ -1,0 +1,88 @@
+lang: en
+project:
+  type: book
+  output-dir: docs
+  resources: resources
+execute:
+  freeze: auto
+book:
+  title: Advanced Psychological Research Methods
+  subtitle: ''
+  author: Christopher Wilson
+  doi: ''
+  license: CC-BY
+  description: PSY4179-N
+  cover-image: ""
+  image: images/logos/logo.png
+  favicon: images/logos/logo.png
+  cookie-consent: false
+  google-analytics: ''
+  page-navigation: true
+  search: true
+  downloads:
+  - pdf
+  - epub
+  sharing:
+  - twitter
+  - facebook
+  - linkedin
+  sidebar:
+    title: ''
+    logo: ''
+    search: true
+    contents: ''
+    style: floating
+    background: light
+    foreground: dark
+    border: true
+    alignment: left
+    collapse-level: 3
+    pinned: true
+    header: ''
+    footer: ''
+  margin-header: ''
+  page-footer: CC-BY (2023) Christopher Wilson. With grateful thanks to the [psyTeachR](https://debruine.github.io/booktem/) team and packages
+  chapters:
+  - index.qmd
+  - introductiontoR.qmd
+  - workingWithData.rmd
+  - descriptives.rmd
+  - graphing.rmd
+  - correlation.rmd
+  - multipleRegression.rmd
+  - moderation.rmd
+  - mediation.rmd
+  - factorAnalysis.rmd
+  appendices:
+  - references.qmd
+bibliography: include/references.bib
+csl: include/apa.csl
+format:
+  html:
+    theme:
+      light:
+      - flatly
+      - include/light.scss
+      dark:
+      - darkly
+      - include/dark.scss
+    css:
+    - https://use.fontawesome.com/releases/v5.13.0/css/all.css
+    - include/booktem.css
+    - include/webex.css
+    - include/glossary.css
+    - include/style.css
+    - aprm23/include/webex.css
+    df-print: kable
+    code-link: true
+    code-fold: false
+    code-line-numbers: true
+    code-overflow: wrap
+    code-copy: hover
+    highlight-style: a11y
+    mainfont: ''
+    monofont: ''
+    include-after-body:
+    - include/webex.js
+    - include/script.js
+    - aprm23/include/webex.js
