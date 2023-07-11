@@ -1,6 +1,6 @@
 # Welcome to the module {.unnumbered}
 
-This site accompanies PSY4179-N and is specifically focused on the quantitative research design, stats, R sessions delivered by Christopher Wilson.
+This site accompanies PSY4179-N and is specifically focused on the quantitative research design/stats/R sessions delivered by Christopher Wilson.
 
 Information about the learning outcomes, assessments and other teaching sessions on the module can be found on the module Blackboard site.
 
