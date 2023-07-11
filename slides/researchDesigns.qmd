@@ -1,0 +1,99 @@
+---
+author: "Christopher Wilson"
+editor: visual
+format: revealjs
+bibliography: ../include/references.bib
+width: 1200
+---
+
+# Research Designs in Clinical Psychology {.unnumbered}
+
+## Overview
+
+# Experimental and quasi-experimental designs
+
+## Experimental study of psychopathology
+
+> the experimental study of pathological behavior (i.e., using the experimental method to study pre-existing pathological behavior), or the study of experimental pathological behavior (i.e., the pathological behavior being studied is induced experimentally rather than developed naturally)
+
+[@theoxfo2013]
+
+## Definitions of psychopathology research
+
+![](images/psychopathologyResearch.png)
+
+[@theoxfo2013]
+
+## Type 1: Experimental psychopathology research
+
+-   Looking to understand how manipulating certain variables links with adaptive or maladaptive behaviour
+
+-   Often non-clinical samples offer a "clean bio-behavioural history" for theory testing
+
+-   Can establish a normative context for comparison with clinical populations
+
+-   Not looking to develop a complete account of how psychopathology develops
+
+## Example: Type 1 Experimental psychopathology research {.scrollable .smaller}
+
+@peters2011 employed a Type I research paradigm to test the hypothesis that attributional style may be one causative factor of depression vulnerability.
+
+-   Undergraduate students, without a history of depression, were randomly assigned to one of two experimental conditions: resilience condition or vulnerability condition
+
+-   The resiliency condition involved exposing participants to 60 descriptions that promoted a selfworthy, stable attribution of a positive event and 60 descriptions that promoted an unstable attribution unrelated to self-worth for a negative event.
+
+-   The vulnerability condition involved exposing participants to 60 descriptions that promoted a self-deﬁcient, stable attribution of a negative event and 60 descriptions that promoted an unstable attribution unrelated to self-worth for a positive event.
+
+-   Following exposure to the assigned descriptions, all participants subsequently completed a stressor task (i.e., Cognitive Ability Test).
+
+-   Peters and colleagues measured the change in mood state from before to after manipulation.
+
+-   Results indicated that individuals in the resilience condition reported less depressed mood (compared to the vulnerability condition) in response to the academic stressor
+
+## Type 1 Experimental psychopathology research
+
+-   Able to identify putative causal variables that are directly manipulable (i.e., How or why might psychopathology develop?).
+
+-   May serve as the "building blocks" of future intervention eﬀorts.
+
+-   Rarely followed through to the point of application.
+
+## Type 2 Quasi-experimental psychopathology research
+
+-   As with Type 1: direct manipulation of independent variables and evaluation of their eﬀects on biobehavioral processes.
+
+-   Sample with established psychopathology risk dimension or display subclinical (i.e., they do not reach a diagnostic threshold) features of psychopathology.
+
+-   Cannot infer what causes psychopathology, as it has been selected into the sample.
+
+::: notes
+any resulting changes in behavior may be due to the interaction of the independent variable and a host of unknown variables and processes in persons so diagnosed. The result leaves the experimenter hypothesizing about why the changed independent variable functioned diﬀerentially in one patient sample compared to another. The Oxford Handbook of Research Strategies for Clinical Psychology, edited by Jonathan S. Comer, and Philip C. Kendall, Oxford University Press, Incorporated, 2013.
+:::
+
+## Example type 2 Quasi experimental psychopathology research {.scrollable .smaller}
+
+@felmingham2010 recorded functional magnetic resonance imaging data in both male and female participants with a diagnosis of PTSD.
+
+-   Trauma-exposed controls, and non-- trauma-exposed controls while they viewed masked facial expressions of fear.
+
+-    By examining neural activation to threat, Felmingham and colleagues sought to elucidate one of the possible pathways through which women have a greater propensity than men to develop PTSD following trauma.
+
+-   Findings indicated that exposure to trauma was associated with enhanced brainstem activity to fear in women, regardless of the presence of PTSD; however, in men, brainstem activity was associated only with the development of PTSD.
+
+-   Moreover, men with PTSD (compared to women) displayed greater hippocampal activity to fear, possibly suggesting that men have an enhanced capacity for contextualizing fear-related stimuli
+
+## Type 2 quasi experimental psychopathology research
+
+-   Type II research can help identify independent variables that exacerbate, or modify the expression of, existing forms of abnormal behavior
+
+-   Cannot to answer causal questions about the development of psychopathology due to pre-existence in sample and interaction with so many other variables
+
+    -   Diagnosis is a summary of cumulative history but said history cannot be used to infer what caused diagnosis
+
+-   If the IV is a clinical intervention, then could examine variables that either prevent or ameliorate psychopathology
+
+## Type 3 Nonpatient psychopathology research
+
+## 
+
+## References

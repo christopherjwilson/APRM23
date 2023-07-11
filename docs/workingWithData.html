@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.2.335">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="description" content="PSY4179-N">
-<title>Advanced Psychological Research Methods - 2&nbsp; Working with data in R</title>
+<title>Advanced Psychological Research Methods - 3&nbsp; Working with data in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -132,7 +132,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title">
-<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Working with data in R</span>
+<span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Working with data in R</span>
 </h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
@@ -198,17 +198,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introductiontoR.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and R Studio</span></a>
+  <a href="./slides/researchDesigns.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Research Designs in Clinical Psychology</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./workingWithData.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Working with data in R</span></a>
+  <a href="./introductiontoR.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to R and R Studio</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./descriptives.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exploratory and descriptive analysis with R</span></a>
+  <a href="./workingWithData.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Working with data in R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./descriptives.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exploratory and descriptive analysis with R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./graphing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphing and data visualisation with R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Correlation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./multipleRegression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Multiple Regression</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./moderation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Moderation analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mediation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Mediation analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./factorAnalysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Factor Analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -232,34 +267,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#by-the-end-of-this-section-you-will-be-able-to" id="toc-by-the-end-of-this-section-you-will-be-able-to" class="nav-link active" data-scroll-target="#by-the-end-of-this-section-you-will-be-able-to"><span class="toc-section-number">2.1</span>  By the end of this section, you will be able to:</a></li>
-  <li><a href="#in-this-section-we-will-use-the-tidyverse-set-of-packages" id="toc-in-this-section-we-will-use-the-tidyverse-set-of-packages" class="nav-link" data-scroll-target="#in-this-section-we-will-use-the-tidyverse-set-of-packages"><span class="toc-section-number">2.2</span>  In this section, we will use the Tidyverse set of packages</a></li>
-  <li><a href="#import-data-into-r-from-excel-spss-and-csv-files" id="toc-import-data-into-r-from-excel-spss-and-csv-files" class="nav-link" data-scroll-target="#import-data-into-r-from-excel-spss-and-csv-files"><span class="toc-section-number">2.3</span>  Import data into R from excel, SPSS and csv files</a></li>
-  <li><a href="#restructuring-and-reorganising-data-in-r-long-versus-wide-data" id="toc-restructuring-and-reorganising-data-in-r-long-versus-wide-data" class="nav-link" data-scroll-target="#restructuring-and-reorganising-data-in-r-long-versus-wide-data"><span class="toc-section-number">2.4</span>  Restructuring and reorganising data in R (long versus wide data)</a></li>
-  <li><a href="#understanding-objects-in-r" id="toc-understanding-objects-in-r" class="nav-link" data-scroll-target="#understanding-objects-in-r"><span class="toc-section-number">2.5</span>  Understanding objects in R</a></li>
+<li><a href="#by-the-end-of-this-section-you-will-be-able-to" id="toc-by-the-end-of-this-section-you-will-be-able-to" class="nav-link active" data-scroll-target="#by-the-end-of-this-section-you-will-be-able-to"><span class="toc-section-number">3.1</span>  By the end of this section, you will be able to:</a></li>
+  <li><a href="#in-this-section-we-will-use-the-tidyverse-set-of-packages" id="toc-in-this-section-we-will-use-the-tidyverse-set-of-packages" class="nav-link" data-scroll-target="#in-this-section-we-will-use-the-tidyverse-set-of-packages"><span class="toc-section-number">3.2</span>  In this section, we will use the Tidyverse set of packages</a></li>
+  <li><a href="#import-data-into-r-from-excel-spss-and-csv-files" id="toc-import-data-into-r-from-excel-spss-and-csv-files" class="nav-link" data-scroll-target="#import-data-into-r-from-excel-spss-and-csv-files"><span class="toc-section-number">3.3</span>  Import data into R from excel, SPSS and csv files</a></li>
+  <li><a href="#restructuring-and-reorganising-data-in-r-long-versus-wide-data" id="toc-restructuring-and-reorganising-data-in-r-long-versus-wide-data" class="nav-link" data-scroll-target="#restructuring-and-reorganising-data-in-r-long-versus-wide-data"><span class="toc-section-number">3.4</span>  Restructuring and reorganising data in R (long versus wide data)</a></li>
+  <li><a href="#understanding-objects-in-r" id="toc-understanding-objects-in-r" class="nav-link" data-scroll-target="#understanding-objects-in-r"><span class="toc-section-number">3.5</span>  Understanding objects in R</a></li>
   <li>
-<a href="#identify-different-data-structures-and-variable-types" id="toc-identify-different-data-structures-and-variable-types" class="nav-link" data-scroll-target="#identify-different-data-structures-and-variable-types"><span class="toc-section-number">2.6</span>  Identify different data structures and variable types</a>
+<a href="#identify-different-data-structures-and-variable-types" id="toc-identify-different-data-structures-and-variable-types" class="nav-link" data-scroll-target="#identify-different-data-structures-and-variable-types"><span class="toc-section-number">3.6</span>  Identify different data structures and variable types</a>
   <ul class="collapse">
-<li><a href="#data-structures" id="toc-data-structures" class="nav-link" data-scroll-target="#data-structures"><span class="toc-section-number">2.6.1</span>  Data structures</a></li>
-  <li><a href="#variable-types" id="toc-variable-types" class="nav-link" data-scroll-target="#variable-types"><span class="toc-section-number">2.6.2</span>  Variable types</a></li>
-  <li><a href="#convert-variables-from-one-type-to-another" id="toc-convert-variables-from-one-type-to-another" class="nav-link" data-scroll-target="#convert-variables-from-one-type-to-another"><span class="toc-section-number">2.6.3</span>  Convert variables from one type to another</a></li>
+<li><a href="#data-structures" id="toc-data-structures" class="nav-link" data-scroll-target="#data-structures"><span class="toc-section-number">3.6.1</span>  Data structures</a></li>
+  <li><a href="#variable-types" id="toc-variable-types" class="nav-link" data-scroll-target="#variable-types"><span class="toc-section-number">3.6.2</span>  Variable types</a></li>
+  <li><a href="#convert-variables-from-one-type-to-another" id="toc-convert-variables-from-one-type-to-another" class="nav-link" data-scroll-target="#convert-variables-from-one-type-to-another"><span class="toc-section-number">3.6.3</span>  Convert variables from one type to another</a></li>
   </ul>
 </li>
   <li>
-<a href="#working-with-dataframes" id="toc-working-with-dataframes" class="nav-link" data-scroll-target="#working-with-dataframes"><span class="toc-section-number">2.7</span>  Working with dataframes</a>
+<a href="#working-with-dataframes" id="toc-working-with-dataframes" class="nav-link" data-scroll-target="#working-with-dataframes"><span class="toc-section-number">3.7</span>  Working with dataframes</a>
   <ul class="collapse">
-<li><a href="#view-dataframe" id="toc-view-dataframe" class="nav-link" data-scroll-target="#view-dataframe"><span class="toc-section-number">2.7.1</span>  View dataframe</a></li>
-  <li><a href="#refer-to-variables-columns-in-a-dataframe" id="toc-refer-to-variables-columns-in-a-dataframe" class="nav-link" data-scroll-target="#refer-to-variables-columns-in-a-dataframe"><span class="toc-section-number">2.7.2</span>  Refer to variables (columns) in a dataframe</a></li>
+<li><a href="#view-dataframe" id="toc-view-dataframe" class="nav-link" data-scroll-target="#view-dataframe"><span class="toc-section-number">3.7.1</span>  View dataframe</a></li>
+  <li><a href="#refer-to-variables-columns-in-a-dataframe" id="toc-refer-to-variables-columns-in-a-dataframe" class="nav-link" data-scroll-target="#refer-to-variables-columns-in-a-dataframe"><span class="toc-section-number">3.7.2</span>  Refer to variables (columns) in a dataframe</a></li>
   </ul>
 </li>
-  <li><a href="#order-filter-and-group-data" id="toc-order-filter-and-group-data" class="nav-link" data-scroll-target="#order-filter-and-group-data"><span class="toc-section-number">2.8</span>  Order, filter and group data</a></li>
-  <li><a href="#create-new-variables-from-data" id="toc-create-new-variables-from-data" class="nav-link" data-scroll-target="#create-new-variables-from-data"><span class="toc-section-number">2.9</span>  Create new variables from data</a></li>
+  <li><a href="#order-filter-and-group-data" id="toc-order-filter-and-group-data" class="nav-link" data-scroll-target="#order-filter-and-group-data"><span class="toc-section-number">3.8</span>  Order, filter and group data</a></li>
+  <li><a href="#create-new-variables-from-data" id="toc-create-new-variables-from-data" class="nav-link" data-scroll-target="#create-new-variables-from-data"><span class="toc-section-number">3.9</span>  Create new variables from data</a></li>
   </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title d-none d-lg-block">
-<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Working with data in R</span>
+<span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Working with data in R</span>
 </h1>
 </div>
 
@@ -275,8 +310,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header><iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=4d1a880f-b435-465a-95a3-adaa00908325&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="100%" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
 </iframe>
-<section id="by-the-end-of-this-section-you-will-be-able-to" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="by-the-end-of-this-section-you-will-be-able-to">
-<span class="header-section-number">2.1</span> By the end of this section, you will be able to:</h2>
+<section id="by-the-end-of-this-section-you-will-be-able-to" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="by-the-end-of-this-section-you-will-be-able-to">
+<span class="header-section-number">3.1</span> By the end of this section, you will be able to:</h2>
 <ul>
 <li>Import data into R from excel, SPSS and csv files</li>
 <li>Save data to objects</li>
@@ -285,8 +320,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Order, filter and group data</li>
 <li>Summarise data</li>
 <li>Create new variables from data</li>
-</ul></section><section id="in-this-section-we-will-use-the-tidyverse-set-of-packages" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="in-this-section-we-will-use-the-tidyverse-set-of-packages">
-<span class="header-section-number">2.2</span> In this section, we will use the Tidyverse set of packages</h2>
+</ul></section><section id="in-this-section-we-will-use-the-tidyverse-set-of-packages" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="in-this-section-we-will-use-the-tidyverse-set-of-packages">
+<span class="header-section-number">3.2</span> In this section, we will use the Tidyverse set of packages</h2>
 <ul>
 <li>A ‘toolkit’ of packages that are very useful for organsing and manipulating data</li>
 <li>We will use the haven package to import SPSS files</li>
@@ -298,8 +333,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(“tidyverse”)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>(See the previous section on installing packages)</p>
-</section><section id="import-data-into-r-from-excel-spss-and-csv-files" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="import-data-into-r-from-excel-spss-and-csv-files">
-<span class="header-section-number">2.3</span> Import data into R from excel, SPSS and csv files</h2>
+</section><section id="import-data-into-r-from-excel-spss-and-csv-files" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="import-data-into-r-from-excel-spss-and-csv-files">
+<span class="header-section-number">3.3</span> Import data into R from excel, SPSS and csv files</h2>
 <p>We can import data from a range of sources using the <strong>Import Dataset</strong> button in the <strong>Environment</strong> tab:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/importData.png" class="img-fluid figure-img"></p>
@@ -324,12 +359,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p></p><figcaption class="figure-caption">Imported data in the environment</figcaption><p></p>
 </figure>
 </div>
-</section><section id="restructuring-and-reorganising-data-in-r-long-versus-wide-data" class="level2" data-number="2.4"><h2 data-number="2.4" class="anchored" data-anchor-id="restructuring-and-reorganising-data-in-r-long-versus-wide-data">
-<span class="header-section-number">2.4</span> Restructuring and reorganising data in R (long versus wide data)</h2>
+</section><section id="restructuring-and-reorganising-data-in-r-long-versus-wide-data" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="restructuring-and-reorganising-data-in-r-long-versus-wide-data">
+<span class="header-section-number">3.4</span> Restructuring and reorganising data in R (long versus wide data)</h2>
 <iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=59c0876a-8047-401c-826a-aaec00cbb220&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" height="405" width="100%" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
 </iframe>
-</section><section id="understanding-objects-in-r" class="level2" data-number="2.5"><h2 data-number="2.5" class="anchored" data-anchor-id="understanding-objects-in-r">
-<span class="header-section-number">2.5</span> Understanding objects in R</h2>
+</section><section id="understanding-objects-in-r" class="level2" data-number="3.5"><h2 data-number="3.5" class="anchored" data-anchor-id="understanding-objects-in-r">
+<span class="header-section-number">3.5</span> Understanding objects in R</h2>
 <p>In R, an <strong>object</strong> is anything that is saved to memory. For example, we might do some analysis:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>    <span class="fu">mean</span>(happiness)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -360,10 +395,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote class="blockquote">
 <p>Its important to note that anything can be stored as an object in R and recalled later. This includes, dataframes, the results of statistical calculations, plots etc.</p>
 </blockquote>
-</section><section id="identify-different-data-structures-and-variable-types" class="level2" data-number="2.6"><h2 data-number="2.6" class="anchored" data-anchor-id="identify-different-data-structures-and-variable-types">
-<span class="header-section-number">2.6</span> Identify different data structures and variable types</h2>
-<section id="data-structures" class="level3" data-number="2.6.1"><h3 data-number="2.6.1" class="anchored" data-anchor-id="data-structures">
-<span class="header-section-number">2.6.1</span> Data structures</h3>
+</section><section id="identify-different-data-structures-and-variable-types" class="level2" data-number="3.6"><h2 data-number="3.6" class="anchored" data-anchor-id="identify-different-data-structures-and-variable-types">
+<span class="header-section-number">3.6</span> Identify different data structures and variable types</h2>
+<section id="data-structures" class="level3" data-number="3.6.1"><h3 data-number="3.6.1" class="anchored" data-anchor-id="data-structures">
+<span class="header-section-number">3.6.1</span> Data structures</h3>
 <p>There are many different types of data that R can work with. The most common type of data for most people tends to be a <strong>dataframe</strong>. A <strong>dataframe</strong> is what you might consider a “normal” 2-dimensional dataset, with rows of data and columns of variables:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/dataframe.png" class="img-fluid figure-img"></p>
@@ -396,8 +431,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote class="blockquote">
 <p>We will primarily work with dataframes (and sometimes vectors), as this is how the data in psychology research is usually structured.</p>
 </blockquote>
-</section><section id="variable-types" class="level3" data-number="2.6.2"><h3 data-number="2.6.2" class="anchored" data-anchor-id="variable-types">
-<span class="header-section-number">2.6.2</span> Variable types</h3>
+</section><section id="variable-types" class="level3" data-number="3.6.2"><h3 data-number="3.6.2" class="anchored" data-anchor-id="variable-types">
+<span class="header-section-number">3.6.2</span> Variable types</h3>
 <p>With numerical data, there are 4 key data types:</p>
 <ul>
 <li>Nominal (a category, group or factor)</li>
@@ -417,8 +452,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <strong>Interval and ratio</strong> variables are called <strong>numeric</strong> data and can sometimes be called integers (if they are only whole numbers) or doubles (if they all have decimal points)</li>
 </ul>
 <p>R can also use other data types such as text (<strong>character</strong>) data.</p>
-</section><section id="convert-variables-from-one-type-to-another" class="level3" data-number="2.6.3"><h3 data-number="2.6.3" class="anchored" data-anchor-id="convert-variables-from-one-type-to-another">
-<span class="header-section-number">2.6.3</span> Convert variables from one type to another</h3>
+</section><section id="convert-variables-from-one-type-to-another" class="level3" data-number="3.6.3"><h3 data-number="3.6.3" class="anchored" data-anchor-id="convert-variables-from-one-type-to-another">
+<span class="header-section-number">3.6.3</span> Convert variables from one type to another</h3>
 <p>When we first import data into R, it might not recognise the data types correctly. For example, in the below data, we can see the <strong>intervention</strong> variable :</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -489,12 +524,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>happinessSample<span class="sc">$</span>intervention <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(happinessSample<span class="sc">$</span>intervention)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section></section><section id="working-with-dataframes" class="level2" data-number="2.7"><h2 data-number="2.7" class="anchored" data-anchor-id="working-with-dataframes">
-<span class="header-section-number">2.7</span> Working with dataframes</h2>
+</section></section><section id="working-with-dataframes" class="level2" data-number="3.7"><h2 data-number="3.7" class="anchored" data-anchor-id="working-with-dataframes">
+<span class="header-section-number">3.7</span> Working with dataframes</h2>
 <p>Dataframes are the more standard data format that were are used to (think of how a dataset looks in SPSS or Excel).</p>
 <p>In a dataframe, variables are columns and each row usually reperesents one measurement or one participant.</p>
-<section id="view-dataframe" class="level3" data-number="2.7.1"><h3 data-number="2.7.1" class="anchored" data-anchor-id="view-dataframe">
-<span class="header-section-number">2.7.1</span> View dataframe</h3>
+<section id="view-dataframe" class="level3" data-number="3.7.1"><h3 data-number="3.7.1" class="anchored" data-anchor-id="view-dataframe">
+<span class="header-section-number">3.7.1</span> View dataframe</h3>
 <p>To view a dataframe, we can click on it in the environment window and it will display:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/environment.png" class="img-fluid figure-img"></p>
@@ -506,8 +541,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p></p><figcaption class="figure-caption">Viewing a dataframe</figcaption><p></p>
 </figure>
 </div>
-</section><section id="refer-to-variables-columns-in-a-dataframe" class="level3" data-number="2.7.2"><h3 data-number="2.7.2" class="anchored" data-anchor-id="refer-to-variables-columns-in-a-dataframe">
-<span class="header-section-number">2.7.2</span> Refer to variables (columns) in a dataframe</h3>
+</section><section id="refer-to-variables-columns-in-a-dataframe" class="level3" data-number="3.7.2"><h3 data-number="3.7.2" class="anchored" data-anchor-id="refer-to-variables-columns-in-a-dataframe">
+<span class="header-section-number">3.7.2</span> Refer to variables (columns) in a dataframe</h3>
 <p>Columns in a dataframe are accessed using the “$” sign. For example, to access the <em>happiness</em> column in the <em>happinessSample</em> dataframe, we would type:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>happinessSample<span class="sc">$</span>happiness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -518,8 +553,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>As we can see above, the result is then displayed.</p>
-</section></section><section id="order-filter-and-group-data" class="level2" data-number="2.8"><h2 data-number="2.8" class="anchored" data-anchor-id="order-filter-and-group-data">
-<span class="header-section-number">2.8</span> Order, filter and group data</h2>
+</section></section><section id="order-filter-and-group-data" class="level2" data-number="3.8"><h2 data-number="3.8" class="anchored" data-anchor-id="order-filter-and-group-data">
+<span class="header-section-number">3.8</span> Order, filter and group data</h2>
 <p>If you have the <strong>tidyverse</strong> package loaded, it is easy to organise and filter data.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">arrange</span>(happinessSample, happiness)</span>
@@ -862,8 +897,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-</section><section id="create-new-variables-from-data" class="level2" data-number="2.9"><h2 data-number="2.9" class="anchored" data-anchor-id="create-new-variables-from-data">
-<span class="header-section-number">2.9</span> Create new variables from data</h2>
+</section><section id="create-new-variables-from-data" class="level2" data-number="3.9"><h2 data-number="3.9" class="anchored" data-anchor-id="create-new-variables-from-data">
+<span class="header-section-number">3.9</span> Create new variables from data</h2>
 <p>To create new variables from data, we can use the <strong>mutate()</strong> function.</p>
 <p>For example, let’s say we wanted to calculate the difference between each person’s happiness score and the mean happiness score.</p>
 <p>We could do the following:</p>
@@ -1692,12 +1727,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./introductiontoR.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and R Studio</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to R and R Studio</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./descriptives.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exploratory and descriptive analysis with R</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exploratory and descriptive analysis with R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
