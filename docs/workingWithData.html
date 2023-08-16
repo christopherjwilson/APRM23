@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.2.335">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="description" content="PSY4179-N">
-<title>Advanced Psychological Research Methods - 3&nbsp; Working with data in R</title>
+<title>Research Methods 1 (DClin) R Sessions - 2&nbsp; Working with data in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -132,7 +132,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title">
-<span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Working with data in R</span>
+<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Working with data in R</span>
 </h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
@@ -142,18 +142,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Advanced Psychological Research Methods</a> 
+      <a href="./">Research Methods 1 (DClin) R Sessions</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./Advanced-Psychological-Research-Methods.pdf">
+          <a class="dropdown-item sidebar-tools-main-item" href="./Research-Methods-1--DClin--R-Sessions.pdf">
             <i class="bi bi-bi-file-pdf pe-1"></i>
           Download PDF
           </a>
         </li>
         <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./Advanced-Psychological-Research-Methods.epub">
+          <a class="dropdown-item sidebar-tools-main-item" href="./Research-Methods-1--DClin--R-Sessions.epub">
             <i class="bi bi-bi-journal pe-1"></i>
           Download ePub
           </a>
@@ -198,52 +198,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides/researchDesigns.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Research Designs in Clinical Psychology</span></a>
+  <a href="./introductiontoR.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and R Studio</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introductiontoR.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to R and R Studio</span></a>
+  <a href="./workingWithData.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Working with data in R</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./workingWithData.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Working with data in R</span></a>
+  <a href="./descriptives.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exploratory and descriptive analysis with R</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./descriptives.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exploratory and descriptive analysis with R</span></a>
+  <a href="./graphing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Graphing and data visualisation with R</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./graphing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Graphing and data visualisation with R</span></a>
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Correlation</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Correlation</span></a>
+  <a href="./multipleRegression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Multiple Regression</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./multipleRegression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Multiple Regression</span></a>
+  <a href="./moderation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Moderation analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./moderation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Moderation analysis</span></a>
+  <a href="./mediation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mediation analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mediation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Mediation analysis</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./factorAnalysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Factor Analysis</span></a>
+  <a href="./factorAnalysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Factor Analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -267,34 +262,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#by-the-end-of-this-section-you-will-be-able-to" id="toc-by-the-end-of-this-section-you-will-be-able-to" class="nav-link active" data-scroll-target="#by-the-end-of-this-section-you-will-be-able-to"><span class="toc-section-number">3.1</span>  By the end of this section, you will be able to:</a></li>
-  <li><a href="#in-this-section-we-will-use-the-tidyverse-set-of-packages" id="toc-in-this-section-we-will-use-the-tidyverse-set-of-packages" class="nav-link" data-scroll-target="#in-this-section-we-will-use-the-tidyverse-set-of-packages"><span class="toc-section-number">3.2</span>  In this section, we will use the Tidyverse set of packages</a></li>
-  <li><a href="#import-data-into-r-from-excel-spss-and-csv-files" id="toc-import-data-into-r-from-excel-spss-and-csv-files" class="nav-link" data-scroll-target="#import-data-into-r-from-excel-spss-and-csv-files"><span class="toc-section-number">3.3</span>  Import data into R from excel, SPSS and csv files</a></li>
-  <li><a href="#restructuring-and-reorganising-data-in-r-long-versus-wide-data" id="toc-restructuring-and-reorganising-data-in-r-long-versus-wide-data" class="nav-link" data-scroll-target="#restructuring-and-reorganising-data-in-r-long-versus-wide-data"><span class="toc-section-number">3.4</span>  Restructuring and reorganising data in R (long versus wide data)</a></li>
-  <li><a href="#understanding-objects-in-r" id="toc-understanding-objects-in-r" class="nav-link" data-scroll-target="#understanding-objects-in-r"><span class="toc-section-number">3.5</span>  Understanding objects in R</a></li>
+<li><a href="#by-the-end-of-this-section-you-will-be-able-to" id="toc-by-the-end-of-this-section-you-will-be-able-to" class="nav-link active" data-scroll-target="#by-the-end-of-this-section-you-will-be-able-to"><span class="toc-section-number">2.1</span>  By the end of this section, you will be able to:</a></li>
+  <li><a href="#in-this-section-we-will-use-the-tidyverse-set-of-packages" id="toc-in-this-section-we-will-use-the-tidyverse-set-of-packages" class="nav-link" data-scroll-target="#in-this-section-we-will-use-the-tidyverse-set-of-packages"><span class="toc-section-number">2.2</span>  In this section, we will use the <pkg>Tidyverse</pkg> set of packages</a></li>
+  <li><a href="#import-data-into-r-from-excel-spss-and-csv-files" id="toc-import-data-into-r-from-excel-spss-and-csv-files" class="nav-link" data-scroll-target="#import-data-into-r-from-excel-spss-and-csv-files"><span class="toc-section-number">2.3</span>  Import data into R from excel, SPSS and csv files</a></li>
+  <li><a href="#restructuring-and-reorganising-data-in-r-long-versus-wide-data" id="toc-restructuring-and-reorganising-data-in-r-long-versus-wide-data" class="nav-link" data-scroll-target="#restructuring-and-reorganising-data-in-r-long-versus-wide-data"><span class="toc-section-number">2.4</span>  Restructuring and reorganising data in R (long versus wide data)</a></li>
+  <li><a href="#understanding-objects-in-r" id="toc-understanding-objects-in-r" class="nav-link" data-scroll-target="#understanding-objects-in-r"><span class="toc-section-number">2.5</span>  Understanding objects in R</a></li>
   <li>
-<a href="#identify-different-data-structures-and-variable-types" id="toc-identify-different-data-structures-and-variable-types" class="nav-link" data-scroll-target="#identify-different-data-structures-and-variable-types"><span class="toc-section-number">3.6</span>  Identify different data structures and variable types</a>
+<a href="#identify-different-data-structures-and-variable-types" id="toc-identify-different-data-structures-and-variable-types" class="nav-link" data-scroll-target="#identify-different-data-structures-and-variable-types"><span class="toc-section-number">2.6</span>  Identify different </a><a class="glossary nav-link" data-scroll-target="undefined">data structures<span class="def"></span></a> and variable types
   <ul class="collapse">
-<li><a href="#data-structures" id="toc-data-structures" class="nav-link" data-scroll-target="#data-structures"><span class="toc-section-number">3.6.1</span>  Data structures</a></li>
-  <li><a href="#variable-types" id="toc-variable-types" class="nav-link" data-scroll-target="#variable-types"><span class="toc-section-number">3.6.2</span>  Variable types</a></li>
-  <li><a href="#convert-variables-from-one-type-to-another" id="toc-convert-variables-from-one-type-to-another" class="nav-link" data-scroll-target="#convert-variables-from-one-type-to-another"><span class="toc-section-number">3.6.3</span>  Convert variables from one type to another</a></li>
+<li>
+<a href="#data-structures-sometimes-referred-to-as-data-containers" id="toc-data-structures-sometimes-referred-to-as-data-containers" class="nav-link" data-scroll-target="#data-structures-sometimes-referred-to-as-data-containers"><span class="toc-section-number">2.6.1</span>  Data structures (sometimes referred to as “</a><a class="glossary nav-link" data-scroll-target="undefined">data containers<span class="def"></span></a>”)</li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types"><span class="toc-section-number">2.6.2</span>  Data types</a></li>
+  <li><a href="#convert-variables-from-one-data-type-to-another" id="toc-convert-variables-from-one-data-type-to-another" class="nav-link" data-scroll-target="#convert-variables-from-one-data-type-to-another"><span class="toc-section-number">2.6.3</span>  Convert variables from one data type to another</a></li>
   </ul>
 </li>
   <li>
-<a href="#working-with-dataframes" id="toc-working-with-dataframes" class="nav-link" data-scroll-target="#working-with-dataframes"><span class="toc-section-number">3.7</span>  Working with dataframes</a>
+<a href="#working-with-dataframes" id="toc-working-with-dataframes" class="nav-link" data-scroll-target="#working-with-dataframes"><span class="toc-section-number">2.7</span>  Working with dataframes</a>
   <ul class="collapse">
-<li><a href="#view-dataframe" id="toc-view-dataframe" class="nav-link" data-scroll-target="#view-dataframe"><span class="toc-section-number">3.7.1</span>  View dataframe</a></li>
-  <li><a href="#refer-to-variables-columns-in-a-dataframe" id="toc-refer-to-variables-columns-in-a-dataframe" class="nav-link" data-scroll-target="#refer-to-variables-columns-in-a-dataframe"><span class="toc-section-number">3.7.2</span>  Refer to variables (columns) in a dataframe</a></li>
+<li><a href="#view-dataframe" id="toc-view-dataframe" class="nav-link" data-scroll-target="#view-dataframe"><span class="toc-section-number">2.7.1</span>  View dataframe</a></li>
+  <li><a href="#refer-to-variables-columns-in-a-dataframe" id="toc-refer-to-variables-columns-in-a-dataframe" class="nav-link" data-scroll-target="#refer-to-variables-columns-in-a-dataframe"><span class="toc-section-number">2.7.2</span>  Refer to variables (columns) in a dataframe</a></li>
   </ul>
 </li>
-  <li><a href="#order-filter-and-group-data" id="toc-order-filter-and-group-data" class="nav-link" data-scroll-target="#order-filter-and-group-data"><span class="toc-section-number">3.8</span>  Order, filter and group data</a></li>
-  <li><a href="#create-new-variables-from-data" id="toc-create-new-variables-from-data" class="nav-link" data-scroll-target="#create-new-variables-from-data"><span class="toc-section-number">3.9</span>  Create new variables from data</a></li>
+  <li><a href="#order-filter-and-group-data" id="toc-order-filter-and-group-data" class="nav-link" data-scroll-target="#order-filter-and-group-data"><span class="toc-section-number">2.8</span>  Order, filter and group data</a></li>
+  <li><a href="#create-new-variables-objects-from-data" id="toc-create-new-variables-objects-from-data" class="nav-link" data-scroll-target="#create-new-variables-objects-from-data"><span class="toc-section-number">2.9</span>  Create new variables / objects from data</a></li>
   </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title d-none d-lg-block">
-<span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Working with data in R</span>
+<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Working with data in R</span>
 </h1>
 </div>
 
@@ -310,68 +306,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header><iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=4d1a880f-b435-465a-95a3-adaa00908325&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="100%" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
 </iframe>
-<section id="by-the-end-of-this-section-you-will-be-able-to" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="by-the-end-of-this-section-you-will-be-able-to">
-<span class="header-section-number">3.1</span> By the end of this section, you will be able to:</h2>
+<section id="by-the-end-of-this-section-you-will-be-able-to" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="by-the-end-of-this-section-you-will-be-able-to">
+<span class="header-section-number">2.1</span> By the end of this section, you will be able to:</h2>
 <ul>
 <li>Import data into R from excel, SPSS and csv files</li>
-<li>Save data to objects</li>
-<li>Identify different data structures and variable types</li>
-<li>Convert variables from one type to another</li>
+<li>Save data to <a class="glossary">object<span class="def">A word that identifies and stores the value of some data for later use.</span></a>
+</li>
+<li>Identify different data structures and <a class="glossary">data types<span class="def"></span></a>
+</li>
+<li>Convert <a class="glossary">data types<span class="def"></span></a> from one type to another</li>
 <li>Order, filter and group data</li>
 <li>Summarise data</li>
-<li>Create new variables from data</li>
-</ul></section><section id="in-this-section-we-will-use-the-tidyverse-set-of-packages" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="in-this-section-we-will-use-the-tidyverse-set-of-packages">
-<span class="header-section-number">3.2</span> In this section, we will use the Tidyverse set of packages</h2>
+<li>Create new <a class="glossary">variables<span class="def"></span></a> or <a class="glossary">objects<span class="def">A word that identifies and stores the value of some data for later use.</span></a> from data</li>
+</ul></section><section id="in-this-section-we-will-use-the-tidyverse-set-of-packages" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="in-this-section-we-will-use-the-tidyverse-set-of-packages">
+<span class="header-section-number">2.2</span> In this section, we will use the <pkg>Tidyverse</pkg> set of packages</h2>
 <ul>
 <li>A ‘toolkit’ of packages that are very useful for organsing and manipulating data</li>
-<li>We will use the haven package to import SPSS files</li>
-<li>We will use the dplyr to organise data</li>
-<li>Also includes the ggplot2 and tidyR packages which we will use later</li>
+<li>We will use the <pkg>haven</pkg> package to import SPSS files</li>
+<li>We will use the <pkg>dplyr</pkg> to organise data</li>
+<li>Also includes the <pkg>ggplot2</pkg> and <pkg>tidyR</pkg> packages which we will use later</li>
 </ul>
 <p>To install:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(“tidyverse”)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p><code>install.packages(“tidyverse”)</code></p>
 <p>(See the previous section on installing packages)</p>
-</section><section id="import-data-into-r-from-excel-spss-and-csv-files" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="import-data-into-r-from-excel-spss-and-csv-files">
-<span class="header-section-number">3.3</span> Import data into R from excel, SPSS and csv files</h2>
-<p>We can import data from a range of sources using the <strong>Import Dataset</strong> button in the <strong>Environment</strong> tab:</p>
+</section><section id="import-data-into-r-from-excel-spss-and-csv-files" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="import-data-into-r-from-excel-spss-and-csv-files">
+<span class="header-section-number">2.3</span> Import data into R from excel, SPSS and csv files</h2>
+<p>We can import data from a range of sources using the <if>Import Dataset<if> button in the <if>Environment<if> tab:</if></if></if></if></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/importData.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Importing data</figcaption><p></p>
 </figure>
 </div>
 <p>It is also possible to import data using code, for example:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a> <span class="co"># importing a .csv file</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>    </span>
-<span id="cb2-3"><a href="#cb2-3"></a>    <span class="fu">library</span>(readr)</span>
-<span id="cb2-4"><a href="#cb2-4"></a>    studentData <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Datasets/studentData.csv"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5"></a></span>
-<span id="cb2-6"><a href="#cb2-6"></a>    <span class="co">#importing an SPSS file</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>    </span>
-<span id="cb2-8"><a href="#cb2-8"></a>    <span class="fu">library</span>(haven)</span>
-<span id="cb2-9"><a href="#cb2-9"></a>    mySPSSData <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">"datasets/salesData.sav"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>` # importing a .csv file</p>
+<pre><code><a href="https://readr.tidyverse.org">library(readr)
+studentData &lt;- read_csv("Datasets/studentData.csv")
+
+
+#importing an SPSS file
+
+library(haven)
+mySPSSData &lt;- read_sav("datasets/salesData.sav")</a></code></pre>
+<p>`</p>
 <p>Once the data are imported, it will be visible in the environment:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/environment.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Imported data in the environment</figcaption><p></p>
 </figure>
 </div>
-</section><section id="restructuring-and-reorganising-data-in-r-long-versus-wide-data" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="restructuring-and-reorganising-data-in-r-long-versus-wide-data">
-<span class="header-section-number">3.4</span> Restructuring and reorganising data in R (long versus wide data)</h2>
+</section><section id="restructuring-and-reorganising-data-in-r-long-versus-wide-data" class="level2" data-number="2.4"><h2 data-number="2.4" class="anchored" data-anchor-id="restructuring-and-reorganising-data-in-r-long-versus-wide-data">
+<span class="header-section-number">2.4</span> Restructuring and reorganising data in R (long versus wide data)</h2>
 <iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=59c0876a-8047-401c-826a-aaec00cbb220&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;start=0&amp;interactivity=all" height="405" width="100%" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
 </iframe>
-</section><section id="understanding-objects-in-r" class="level2" data-number="3.5"><h2 data-number="3.5" class="anchored" data-anchor-id="understanding-objects-in-r">
-<span class="header-section-number">3.5</span> Understanding objects in R</h2>
-<p>In R, an <strong>object</strong> is anything that is saved to memory. For example, we might do some analysis:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>    <span class="fu">mean</span>(happiness)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+</section><section id="understanding-objects-in-r" class="level2" data-number="2.5"><h2 data-number="2.5" class="anchored" data-anchor-id="understanding-objects-in-r">
+<span class="header-section-number">2.5</span> Understanding objects in R</h2>
+<p>In R, an <a class="glossary">object<span class="def">A word that identifies and stores the value of some data for later use.</span></a> is anything that is saved to memory. For example, we might do some analysis:</p>
+<p><code>mean(happiness)</code></p>
 <p>However, in the example above, the result would appear in the console but not be saved anywhere. To store the result for reuse later, we save it to an object:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>happinessMean <span class="ot">&lt;-</span> <span class="fu">mean</span>(happiness)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>happinessMean <span class="ot">&lt;-</span> <span class="fu">mean</span>(happiness)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In the above code (reading left to right):</p>
 <ul>
@@ -387,32 +380,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>To recall an object from the environment, we can simply type its name. For example:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a> happinessMean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a> happinessMean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 10.42048</code></pre>
+<pre><code>[1] 9.387806</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
 <p>Its important to note that anything can be stored as an object in R and recalled later. This includes, dataframes, the results of statistical calculations, plots etc.</p>
 </blockquote>
-</section><section id="identify-different-data-structures-and-variable-types" class="level2" data-number="3.6"><h2 data-number="3.6" class="anchored" data-anchor-id="identify-different-data-structures-and-variable-types">
-<span class="header-section-number">3.6</span> Identify different data structures and variable types</h2>
-<section id="data-structures" class="level3" data-number="3.6.1"><h3 data-number="3.6.1" class="anchored" data-anchor-id="data-structures">
-<span class="header-section-number">3.6.1</span> Data structures</h3>
-<p>There are many different types of data that R can work with. The most common type of data for most people tends to be a <strong>dataframe</strong>. A <strong>dataframe</strong> is what you might consider a “normal” 2-dimensional dataset, with rows of data and columns of variables:</p>
+</section><section id="identify-different-data-structures-and-variable-types" class="level2" data-number="2.6"><h2 data-number="2.6" class="anchored" data-anchor-id="identify-different-data-structures-and-variable-types">
+<span class="header-section-number">2.6</span> Identify different <a class="glossary">data structures<span class="def"></span></a> and variable types</h2>
+<section id="data-structures-sometimes-referred-to-as-data-containers" class="level3" data-number="2.6.1"><h3 data-number="2.6.1" class="anchored" data-anchor-id="data-structures-sometimes-referred-to-as-data-containers">
+<span class="header-section-number">2.6.1</span> Data structures (sometimes referred to as “<a class="glossary">data containers<span class="def"></span></a>”)</h3>
+<p>There are many different types of data structures that R can work with. The most common type of data for most people tends to be a <a class="glossary">data frame<span class="def"></span></a>. A <a class="glossary">data frame<span class="def"></span></a> is what you might consider a “normal” 2-dimensional dataset, with rows of data and columns of variables:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/dataframe.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">A dataframe example</figcaption><p></p>
 </figure>
 </div>
 <p>R can also use other data types.</p>
-<p>A vector is a one-dimensional set of values:</p>
+<p>A <a class="glossary">vector<span class="def"></span></a> is a one-dimensional set of values:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># a vector example</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a>scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># a vector example</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>A matrix is a multi-dimensional set of values. The below example is a 3-dimensional matrix, there are 2 groups of 2 rows and 3 columns:</p>
+<p>A <a class="glossary">matrix<span class="def"></span></a> is a multi-dimensional set of values. The below example is a 3-dimensional matrix, there are 2 groups of 2 rows and 3 columns:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
 <pre><code>, , 1
@@ -431,14 +424,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote class="blockquote">
 <p>We will primarily work with dataframes (and sometimes vectors), as this is how the data in psychology research is usually structured.</p>
 </blockquote>
-</section><section id="variable-types" class="level3" data-number="3.6.2"><h3 data-number="3.6.2" class="anchored" data-anchor-id="variable-types">
-<span class="header-section-number">3.6.2</span> Variable types</h3>
-<p>With numerical data, there are 4 key data types:</p>
+</section><section id="data-types" class="level3" data-number="2.6.2"><h3 data-number="2.6.2" class="anchored" data-anchor-id="data-types">
+<span class="header-section-number">2.6.2</span> Data types</h3>
+<p>With numerical data, there are 4 key <a class="glossary">data types<span class="def"></span></a>:</p>
 <ul>
-<li>Nominal (a category, group or factor)</li>
-<li>Ordinal (a ranking)</li>
-<li>Interval (scale data that can include negative values)</li>
-<li>Ratio (scale data that cannot include negative values)</li>
+<li>
+<a class="glossary">factor (data type)<span class="def"></span></a> or nominal (a category, group or factor)</li>
+<li>
+<a class="glossary">ordinal<span class="def">Discrete variables that have an inherent order, such as level of education or dislike/like.</span></a> (a ranking)</li>
+<li>
+<a class="glossary">interval (data type)<span class="def"></span></a> (scale data that can include negative values)</li>
+<li>
+<a class="glossary">ratio (data type)<span class="def"></span></a> (scale data that cannot include negative values)</li>
 </ul>
 <p><img src="images/dataTypes.png" class="img-fluid" alt="Numerical data types"> R can use all of these variable types:</p>
 <ul>
@@ -451,9 +448,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>
 <strong>Interval and ratio</strong> variables are called <strong>numeric</strong> data and can sometimes be called integers (if they are only whole numbers) or doubles (if they all have decimal points)</li>
 </ul>
-<p>R can also use other data types such as text (<strong>character</strong>) data.</p>
-</section><section id="convert-variables-from-one-type-to-another" class="level3" data-number="3.6.3"><h3 data-number="3.6.3" class="anchored" data-anchor-id="convert-variables-from-one-type-to-another">
-<span class="header-section-number">3.6.3</span> Convert variables from one type to another</h3>
+<p>R can also use other data types such as text (<a class="glossary">character<span class="def">A data type representing strings of text.</span></a>) data.</p>
+</section><section id="convert-variables-from-one-data-type-to-another" class="level3" data-number="2.6.3"><h3 data-number="2.6.3" class="anchored" data-anchor-id="convert-variables-from-one-data-type-to-another">
+<span class="header-section-number">2.6.3</span> Convert variables from one data type to another</h3>
 <p>When we first import data into R, it might not recognise the data types correctly. For example, in the below data, we can see the <strong>intervention</strong> variable :</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -466,71 +463,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">19</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">7.674924</td>
+</tr>
+<tr class="even">
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">8.472506</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">7.689435</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">7.967406</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">20</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">8.812926</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">8.481030</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">9.117198</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">9.505235</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">9.660847</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">9.669608</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">9.764612</td>
-</tr>
-<tr class="even">
 <td style="text-align: right;">3</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">9.954183</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">1</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">10.090664</td>
+<td style="text-align: right;">8.567635</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">18</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">10.099453</td>
+<td style="text-align: right;">8.780855</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">8.785348</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8.900724</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">9.124649</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">9.327011</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<p>In the <strong>intervention</strong> variable, the numbers 1 and 2 refer to different intervention groups. Therefore, the variable is a <strong>factor</strong> variable. To ensure that R understands this, we can resave the intervention variable as a factor using the <em>as.factor()</em> function:</p>
+<p>In the <strong>intervention</strong> variable, the numbers 1 and 2 refer to different intervention groups. Therefore, the variable is a <a class="glossary">factor (data type)<span class="def"></span></a> variable. To ensure that R understands this, we can resave the intervention variable as a factor using the <code><a href="https://rdrr.io/r/base/factor.html">as.factor()</a></code> function:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>happinessSample<span class="sc">$</span>intervention <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(happinessSample<span class="sc">$</span>intervention)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>happinessSample<span class="sc">$</span>intervention <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(happinessSample<span class="sc">$</span>intervention)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section></section><section id="working-with-dataframes" class="level2" data-number="3.7"><h2 data-number="3.7" class="anchored" data-anchor-id="working-with-dataframes">
-<span class="header-section-number">3.7</span> Working with dataframes</h2>
-<p>Dataframes are the more standard data format that were are used to (think of how a dataset looks in SPSS or Excel).</p>
-<p>In a dataframe, variables are columns and each row usually reperesents one measurement or one participant.</p>
-<section id="view-dataframe" class="level3" data-number="3.7.1"><h3 data-number="3.7.1" class="anchored" data-anchor-id="view-dataframe">
-<span class="header-section-number">3.7.1</span> View dataframe</h3>
-<p>To view a dataframe, we can click on it in the environment window and it will display:</p>
+</section></section><section id="working-with-dataframes" class="level2" data-number="2.7"><h2 data-number="2.7" class="anchored" data-anchor-id="working-with-dataframes">
+<span class="header-section-number">2.7</span> Working with dataframes</h2>
+<p><a class="glossary">Dataframes<span class="def"></span></a> are the more standard data format that were are used to (think of how a dataset looks in SPSS or Excel).</p>
+<p>In a <a class="glossary">dataframe<span class="def"></span></a>, variables are columns and each row usually reperesents one measurement or one participant.</p>
+<section id="view-dataframe" class="level3" data-number="2.7.1"><h3 data-number="2.7.1" class="anchored" data-anchor-id="view-dataframe">
+<span class="header-section-number">2.7.1</span> View dataframe</h3>
+<p>To view a dataframe, we can click on it in the <inf>environment</inf> window and it will display:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/environment.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Clicking on datasets in hte environment will open them up for viewing</figcaption><p></p>
@@ -541,24 +538,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p></p><figcaption class="figure-caption">Viewing a dataframe</figcaption><p></p>
 </figure>
 </div>
-</section><section id="refer-to-variables-columns-in-a-dataframe" class="level3" data-number="3.7.2"><h3 data-number="3.7.2" class="anchored" data-anchor-id="refer-to-variables-columns-in-a-dataframe">
-<span class="header-section-number">3.7.2</span> Refer to variables (columns) in a dataframe</h3>
+</section><section id="refer-to-variables-columns-in-a-dataframe" class="level3" data-number="2.7.2"><h3 data-number="2.7.2" class="anchored" data-anchor-id="refer-to-variables-columns-in-a-dataframe">
+<span class="header-section-number">2.7.2</span> Refer to variables (columns) in a dataframe</h3>
 <p>Columns in a dataframe are accessed using the “$” sign. For example, to access the <em>happiness</em> column in the <em>happinessSample</em> dataframe, we would type:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>happinessSample<span class="sc">$</span>happiness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>happinessSample<span class="sc">$</span>happiness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 10.090664  9.660847  9.954183  9.505235 11.725063  9.669608 10.588609
- [8] 10.459963 12.244699 10.099453 10.420561  9.764612 12.700549 11.592937
-[15]  9.117198 11.415905 11.018959 11.095057  8.472506  8.812926</code></pre>
+<pre><code> [1]  7.689435 10.175970  8.567635  9.741002 10.045485  9.864483  7.674924
+ [8] 11.420523  8.900724  8.785348 11.623376  9.543564  9.327011  9.898270
+[15] 10.751120  7.967406  9.393307  8.780855  9.124649  8.481030</code></pre>
 </div>
 </div>
 <p>As we can see above, the result is then displayed.</p>
-</section></section><section id="order-filter-and-group-data" class="level2" data-number="3.8"><h2 data-number="3.8" class="anchored" data-anchor-id="order-filter-and-group-data">
-<span class="header-section-number">3.8</span> Order, filter and group data</h2>
-<p>If you have the <strong>tidyverse</strong> package loaded, it is easy to organise and filter data.</p>
+</section></section><section id="order-filter-and-group-data" class="level2" data-number="2.8"><h2 data-number="2.8" class="anchored" data-anchor-id="order-filter-and-group-data">
+<span class="header-section-number">2.8</span> Order, filter and group data</h2>
+<p>If you have the <pkg>tidyverse</pkg> package loaded, it is easy to organise and filter data.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">arrange</span>(happinessSample, happiness)</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">arrange</span>(happinessSample, <span class="fu">desc</span>(happiness)) <span class="co"># Arrange in descending order</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">arrange</span>(happinessSample, happiness)</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">arrange</span>(happinessSample, <span class="fu">desc</span>(happiness)) <span class="co"># Arrange in descending order</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped">
@@ -569,104 +566,104 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">19</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">7.674924</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">8.472506</td>
+<td style="text-align: right;">7.689435</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">7.967406</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">20</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">8.812926</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">8.481030</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">15</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.117198</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.505235</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.660847</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.669608</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">12</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.764612</td>
-</tr>
-<tr class="even">
 <td style="text-align: right;">3</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.954183</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">1</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">10.090664</td>
+<td style="text-align: right;">8.567635</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">10</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10.099453</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">11</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">10.420561</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">8</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10.459963</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10.588609</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">17</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">11.018959</td>
-</tr>
-<tr class="odd">
 <td style="text-align: right;">18</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">11.095057</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">16</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">11.415905</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">8.780855</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">14</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">11.592937</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">8.785348</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">5</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">11.725063</td>
-</tr>
-<tr class="odd">
 <td style="text-align: right;">9</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">12.244699</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">8.900724</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">9.124649</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">13</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">12.700549</td>
+<td style="text-align: right;">9.327011</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.393307</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.543565</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.741002</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.864482</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.898270</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.045485</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">10.175970</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">10.751120</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">11.420523</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">11.623376</td>
 </tr>
 </tbody>
 </table>
@@ -680,104 +677,104 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">12.700549</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">11.623376</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">9</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">12.244699</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">11.420523</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">10.751120</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">10.175970</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">11.725063</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.045485</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">14</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">11.592937</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">16</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">11.415905</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">18</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">11.095057</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">17</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">11.018959</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10.588609</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">8</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10.459963</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">11</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">10.420561</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">10</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10.099453</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">10.090664</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.954183</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">12</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.764612</td>
+<td style="text-align: right;">9.898270</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">6</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.669608</td>
+<td style="text-align: right;">9.864482</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.660847</td>
-</tr>
-<tr class="odd">
 <td style="text-align: right;">4</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.505235</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">15</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.117198</td>
+<td style="text-align: right;">9.741002</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">20</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">8.812926</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.543565</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.393307</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.327011</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">19</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">8.472506</td>
+<td style="text-align: right;">9.124649</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">8.900724</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">8.785348</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">8.780855</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">8.567635</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">8.481030</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">7.967406</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">7.689435</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">7.674924</td>
 </tr>
 </tbody>
 </table>
@@ -788,7 +785,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Show clients with a happiness score of less than 4</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">filter</span>(happinessSample, happiness <span class="sc">&lt;</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">filter</span>(happinessSample, happiness <span class="sc">&lt;</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table>
@@ -806,7 +803,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Show Intervention group 2 with happiness scores above 7</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">filter</span>(happinessSample, happiness <span class="sc">&gt;</span> <span class="dv">7</span> <span class="sc">&amp;</span> intervention <span class="sc">==</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">filter</span>(happinessSample, happiness <span class="sc">&gt;</span> <span class="dv">7</span> <span class="sc">&amp;</span> intervention <span class="sc">==</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped">
@@ -817,54 +814,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">10.090664</td>
+<td style="text-align: right;">8.567635</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.660847</td>
-</tr>
-<tr class="odd">
 <td style="text-align: right;">4</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.505235</td>
+<td style="text-align: right;">9.741002</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.045485</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">6</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.669608</td>
+<td style="text-align: right;">9.864482</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">9</td>
+<td style="text-align: right;">7</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">12.244699</td>
+<td style="text-align: right;">7.674924</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">11</td>
+<td style="text-align: right;">10</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">10.420561</td>
+<td style="text-align: right;">8.785348</td>
 </tr>
 <tr class="odd">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.543565</td>
+</tr>
+<tr class="even">
 <td style="text-align: right;">13</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">12.700549</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">15</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.117198</td>
+<td style="text-align: right;">9.327011</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">16</td>
+<td style="text-align: right;">14</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">11.415905</td>
+<td style="text-align: right;">9.898270</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">18</td>
+<td style="text-align: right;">16</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">11.095057</td>
+<td style="text-align: right;">7.967406</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.393307</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">8.481030</td>
 </tr>
 </tbody>
 </table>
@@ -875,7 +882,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Group by intervention and show the mean happiness score</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>happinessSample <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(intervention) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(happiness))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>happinessSample <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(intervention) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(happiness))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped">
@@ -886,24 +893,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">10.24892</td>
+<td style="text-align: right;">9.808332</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">10.59203</td>
+<td style="text-align: right;">9.107456</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-</section><section id="create-new-variables-from-data" class="level2" data-number="3.9"><h2 data-number="3.9" class="anchored" data-anchor-id="create-new-variables-from-data">
-<span class="header-section-number">3.9</span> Create new variables from data</h2>
+</section><section id="create-new-variables-objects-from-data" class="level2" data-number="2.9"><h2 data-number="2.9" class="anchored" data-anchor-id="create-new-variables-objects-from-data">
+<span class="header-section-number">2.9</span> Create new variables / objects from data</h2>
 <p>To create new variables from data, we can use the <strong>mutate()</strong> function.</p>
 <p>For example, let’s say we wanted to calculate the difference between each person’s happiness score and the mean happiness score.</p>
 <p>We could do the following:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>happinessSample <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">difference =</span> happiness <span class="sc">-</span> <span class="fu">mean</span>(happiness))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>happinessSample <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">difference =</span> happiness <span class="sc">-</span> <span class="fu">mean</span>(happiness))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped">
@@ -916,123 +923,123 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">10.090664</td>
-<td style="text-align: right;">-0.3298127</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">7.689435</td>
+<td style="text-align: right;">-1.6983706</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.660847</td>
-<td style="text-align: right;">-0.7596298</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">10.175970</td>
+<td style="text-align: right;">0.7881644</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">3</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.954183</td>
-<td style="text-align: right;">-0.4662934</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">8.567635</td>
+<td style="text-align: right;">-0.8201712</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.505235</td>
-<td style="text-align: right;">-0.9152415</td>
+<td style="text-align: right;">9.741002</td>
+<td style="text-align: right;">0.3531961</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">11.725063</td>
-<td style="text-align: right;">1.3045862</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.045485</td>
+<td style="text-align: right;">0.6576792</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">6</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.669608</td>
-<td style="text-align: right;">-0.7508684</td>
+<td style="text-align: right;">9.864482</td>
+<td style="text-align: right;">0.4766766</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">7</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10.588609</td>
-<td style="text-align: right;">0.1681318</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">7.674924</td>
+<td style="text-align: right;">-1.7128821</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">8</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">10.459963</td>
-<td style="text-align: right;">0.0394866</td>
+<td style="text-align: right;">11.420523</td>
+<td style="text-align: right;">2.0327166</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">9</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">12.244699</td>
-<td style="text-align: right;">1.8242222</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">8.900724</td>
+<td style="text-align: right;">-0.4870818</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">10</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10.099453</td>
-<td style="text-align: right;">-0.3210239</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">8.785348</td>
+<td style="text-align: right;">-0.6024579</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">11</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">10.420561</td>
-<td style="text-align: right;">0.0000843</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">11.623376</td>
+<td style="text-align: right;">2.2355699</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">12</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.764612</td>
-<td style="text-align: right;">-0.6558653</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.543565</td>
+<td style="text-align: right;">0.1557585</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">13</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">12.700549</td>
-<td style="text-align: right;">2.2800722</td>
+<td style="text-align: right;">9.327011</td>
+<td style="text-align: right;">-0.0607947</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">14</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">11.592937</td>
-<td style="text-align: right;">1.1724603</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.898270</td>
+<td style="text-align: right;">0.5104641</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">15</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.117198</td>
-<td style="text-align: right;">-1.3032785</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">10.751120</td>
+<td style="text-align: right;">1.3633144</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">16</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">11.415905</td>
-<td style="text-align: right;">0.9954285</td>
+<td style="text-align: right;">7.967406</td>
+<td style="text-align: right;">-1.4203995</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">17</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">11.018959</td>
-<td style="text-align: right;">0.5984825</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.393307</td>
+<td style="text-align: right;">0.0055014</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">18</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">11.095057</td>
-<td style="text-align: right;">0.6745805</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">8.780855</td>
+<td style="text-align: right;">-0.6069507</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">19</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">8.472506</td>
-<td style="text-align: right;">-1.9479712</td>
+<td style="text-align: right;">9.124649</td>
+<td style="text-align: right;">-0.2631568</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">20</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">8.812926</td>
-<td style="text-align: right;">-1.6075505</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">8.481030</td>
+<td style="text-align: right;">-0.9067758</td>
 </tr>
 </tbody>
 </table>
@@ -1727,12 +1734,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./introductiontoR.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to R and R Studio</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and R Studio</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./descriptives.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exploratory and descriptive analysis with R</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exploratory and descriptive analysis with R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

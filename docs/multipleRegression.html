@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.2.335">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>multipleregression</title>
+<meta name="description" content="PSY4179-N">
+<title>Research Methods 1 (DClin) R Sessions - 6&nbsp; Multiple Regression</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -85,36 +83,235 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-
-<script src="multipleRegression_files/libs/clipboard/clipboard.min.js"></script>
-<script src="multipleRegression_files/libs/quarto-html/quarto.js"></script>
-<script src="multipleRegression_files/libs/quarto-html/popper.min.js"></script>
-<script src="multipleRegression_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="multipleRegression_files/libs/quarto-html/anchor.min.js"></script>
-<link href="multipleRegression_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="multipleRegression_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="multipleRegression_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="multipleRegression_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="multipleRegression_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./moderation.html" rel="next">
+<link href="./correlation.html" rel="prev">
+<link href="./images/logos/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<link rel="stylesheet" href="include/booktem.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/glossary.css">
+<link rel="stylesheet" href="include/style.css">
+<link rel="stylesheet" href="aprm23/include/webex.css">
 </head>
+<body class="nav-sidebar floating">
 
-<body class="fullcontent">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">
+<span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Multiple Regression</span>
+</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Research Methods 1 (DClin) R Sessions</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+<li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Research-Methods-1--DClin--R-Sessions.pdf">
+            <i class="bi bi-bi-file-pdf pe-1"></i>
+          Download PDF
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Research-Methods-1--DClin--R-Sessions.epub">
+            <i class="bi bi-bi-journal pe-1"></i>
+          Download ePub
+          </a>
+        </li>
+    </ul>
+<a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
+<li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
+            <i class="bi bi-bi-facebook pe-1"></i>
+          Facebook
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
+            <i class="bi bi-bi-linkedin pe-1"></i>
+          LinkedIn
+          </a>
+        </li>
+    </ul>
+<a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome to the module</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introductiontoR.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and R Studio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workingWithData.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Working with data in R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./descriptives.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exploratory and descriptive analysis with R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./graphing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Graphing and data visualisation with R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Correlation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./multipleRegression.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Multiple Regression</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./moderation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Moderation analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mediation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mediation analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./factorAnalysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Factor Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#by-the-end-of-this-session-you-will-be-able-to" id="toc-by-the-end-of-this-session-you-will-be-able-to" class="nav-link active" data-scroll-target="#by-the-end-of-this-session-you-will-be-able-to"><span class="toc-section-number">6.1</span>  By the end of this session, you will be able to:</a></li>
+  <li><a href="#what-is-multiple-regression" id="toc-what-is-multiple-regression" class="nav-link" data-scroll-target="#what-is-multiple-regression"><span class="toc-section-number">6.2</span>  What is multiple regression?</a></li>
+  <li><a href="#what-are-the-assumptions-of-multiple-regression" id="toc-what-are-the-assumptions-of-multiple-regression" class="nav-link" data-scroll-target="#what-are-the-assumptions-of-multiple-regression"><span class="toc-section-number">6.3</span>  What are the assumptions of Multiple Regression?</a></li>
+  <li><a href="#what-is-multicollinearity" id="toc-what-is-multicollinearity" class="nav-link" data-scroll-target="#what-is-multicollinearity"><span class="toc-section-number">6.4</span>  What is multicollinearity?</a></li>
+  <li><a href="#testing-multicollinearity" id="toc-testing-multicollinearity" class="nav-link" data-scroll-target="#testing-multicollinearity"><span class="toc-section-number">6.5</span>  Testing multicollinearity</a></li>
+  <li><a href="#sample-size-for-multiple-regression" id="toc-sample-size-for-multiple-regression" class="nav-link" data-scroll-target="#sample-size-for-multiple-regression"><span class="toc-section-number">6.6</span>  Sample size for multiple regression</a></li>
+  <li>
+<a href="#approaches-to-multiple-regression-all-predictors-at-once" id="toc-approaches-to-multiple-regression-all-predictors-at-once" class="nav-link" data-scroll-target="#approaches-to-multiple-regression-all-predictors-at-once"><span class="toc-section-number">6.7</span>  Approaches to multiple regression: All predictors at once</a>
+  <ul class="collapse">
+<li><a href="#using-categorical-predictors-in-r" id="toc-using-categorical-predictors-in-r" class="nav-link" data-scroll-target="#using-categorical-predictors-in-r"><span class="toc-section-number">6.7.1</span>  Using categorical predictors in R</a></li>
+  <li><a href="#reviewing-the-output" id="toc-reviewing-the-output" class="nav-link" data-scroll-target="#reviewing-the-output"><span class="toc-section-number">6.7.2</span>  Reviewing the output</a></li>
+  <li><a href="#all-predictors-at-once-testing-interactions" id="toc-all-predictors-at-once-testing-interactions" class="nav-link" data-scroll-target="#all-predictors-at-once-testing-interactions"><span class="toc-section-number">6.7.3</span>  All predictors at once (testing interactions)</a></li>
+  <li><a href="#hierarchical-multiple-regression-theory-driven-blocks-of-variables" id="toc-hierarchical-multiple-regression-theory-driven-blocks-of-variables" class="nav-link" data-scroll-target="#hierarchical-multiple-regression-theory-driven-blocks-of-variables"><span class="toc-section-number">6.7.4</span>  Hierarchical multiple regression: Theory driven “blocks” of variables</a></li>
+  <li><a href="#stepwise-multiple-regression-computational-selection-of-predictors" id="toc-stepwise-multiple-regression-computational-selection-of-predictors" class="nav-link" data-scroll-target="#stepwise-multiple-regression-computational-selection-of-predictors"><span class="toc-section-number">6.7.5</span>  Stepwise multiple regression: computational selection of predictors</a></li>
+  <li><a href="#stepwise-multiple-regression-loading-the-mass-package-and-run-the-full-model" id="toc-stepwise-multiple-regression-loading-the-mass-package-and-run-the-full-model" class="nav-link" data-scroll-target="#stepwise-multiple-regression-loading-the-mass-package-and-run-the-full-model"><span class="toc-section-number">6.7.7</span>  Stepwise multiple regression: loading the MASS package and run the full model</a></li>
+  <li><a href="#stepwise-multiple-regression-use-stepaic-with-options" id="toc-stepwise-multiple-regression-use-stepaic-with-options" class="nav-link" data-scroll-target="#stepwise-multiple-regression-use-stepaic-with-options"><span class="toc-section-number">6.7.8</span>  Stepwise multiple regression: Use stepAIC( ) with options</a></li>
+  <li><a href="#stepwise-multiple-regression-display-the-best-model" id="toc-stepwise-multiple-regression-display-the-best-model" class="nav-link" data-scroll-target="#stepwise-multiple-regression-display-the-best-model"><span class="toc-section-number">6.7.9</span>  Stepwise multiple regression: Display the best model</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#catreg" id="toc-catreg" class="nav-link" data-scroll-target="#catreg"><span class="toc-section-number">6.8</span>  Using regression with categorical predictors (more information)</a>
+  <ul class="collapse">
+<li><a href="#anova-approach" id="toc-anova-approach" class="nav-link" data-scroll-target="#anova-approach"><span class="toc-section-number">6.8.1</span>  ANOVA Approach</a></li>
+  <li><a href="#regression-approach" id="toc-regression-approach" class="nav-link" data-scroll-target="#regression-approach"><span class="toc-section-number">6.8.2</span>  Regression approach</a></li>
+  <li><a href="#interpreting-regression-output" id="toc-interpreting-regression-output" class="nav-link" data-scroll-target="#interpreting-regression-output"><span class="toc-section-number">6.8.3</span>  Interpreting regression output</a></li>
+  </ul>
+</li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title d-none d-lg-block">
+<span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Multiple Regression</span>
+</h1>
+</div>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
-<main class="content" id="quarto-document-content">
 
 
+<div class="quarto-title-meta">
 
-<section id="multiple-regression" class="level1">
-<h1>Multiple Regression</h1>
-<iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=107176f8-2ebc-4f24-9bdc-adaa008f75a9&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="100%" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+    
+  
+    
+  </div>
+  
+
+</header><iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=107176f8-2ebc-4f24-9bdc-adaa008f75a9&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="100%" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
 </iframe>
-<section id="by-the-end-of-this-session-you-will-be-able-to" class="level2">
-<h2 class="anchored" data-anchor-id="by-the-end-of-this-session-you-will-be-able-to">By the end of this session, you will be able to:</h2>
+<section id="by-the-end-of-this-session-you-will-be-able-to" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="by-the-end-of-this-session-you-will-be-able-to">
+<span class="header-section-number">6.1</span> By the end of this session, you will be able to:</h2>
 <ul>
 <li>Compare multiple regression to simple regression</li>
 <li>Describe the assumptions of multiple regression</li>
@@ -122,29 +319,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use categorical predictors in regression in R</li>
 <li>Conduct different types of multiple regression</li>
 <li>Interpret the output of Multiple regression</li>
-</ul>
-</section>
-<section id="what-is-multiple-regression" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-multiple-regression">What is multiple regression?</h2>
+</ul></section><section id="what-is-multiple-regression" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="what-is-multiple-regression">
+<span class="header-section-number">6.2</span> What is multiple regression?</h2>
 <ul>
 <li>An extension of simple regression</li>
 <li>Same format as simple regression but adding each predictor:</li>
 </ul>
 <p><span class="math display">\[ Y = b_1X_1 + b_2X_2 + b_0 \]</span></p>
 <p>(The constant can be referred to in the equation as <strong>c</strong> or <strong>b0</strong> )</p>
-</section>
-<section id="what-are-the-assumptions-of-multiple-regression" class="level2">
-<h2 class="anchored" data-anchor-id="what-are-the-assumptions-of-multiple-regression">What are the assumptions of Multiple Regression?</h2>
+</section><section id="what-are-the-assumptions-of-multiple-regression" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="what-are-the-assumptions-of-multiple-regression">
+<span class="header-section-number">6.3</span> What are the assumptions of Multiple Regression?</h2>
 <ul>
 <li>They are primarily the same as simple regression</li>
 <li>The additional assumption of no <strong>multicollinearity</strong> (due to having multiple predictors)
 <ul>
 <li>i.e.&nbsp;predictors should not be highly correlated</li>
-</ul></li>
 </ul>
-</section>
-<section id="what-is-multicollinearity" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-multicollinearity">What is multicollinearity?</h2>
+</li>
+</ul></section><section id="what-is-multicollinearity" class="level2" data-number="6.4"><h2 data-number="6.4" class="anchored" data-anchor-id="what-is-multicollinearity">
+<span class="header-section-number">6.4</span> What is multicollinearity?</h2>
 <ul>
 <li>Multicollinearity = predictors correlated highly with each other.</li>
 <li>This is not good because:
@@ -152,19 +345,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>It makes it difficult to determine the role of individual predictors</li>
 <li>Increases the error of the model (higher standard errors)</li>
 <li>Difficult to identify significant predictors - wider confidence interval</li>
-</ul></li>
 </ul>
-</section>
-<section id="testing-multicollinearity" class="level2">
-<h2 class="anchored" data-anchor-id="testing-multicollinearity">Testing multicollinearity</h2>
+</li>
+</ul></section><section id="testing-multicollinearity" class="level2" data-number="6.5"><h2 data-number="6.5" class="anchored" data-anchor-id="testing-multicollinearity">
+<span class="header-section-number">6.5</span> Testing multicollinearity</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## use the mctest package</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(‘mctest’)o</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mctest)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(aggression_level <span class="sc">~</span> treatment_group <span class="sc">+</span> treatment_duration <span class="sc">+</span> trust_score, <span class="at">data=</span>regression_data)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mctest</span>(m1) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="do">## use the mctest package</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># install.packages(‘mctest’)o</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(mctest)</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(aggression_level <span class="sc">~</span> treatment_group <span class="sc">+</span> treatment_duration <span class="sc">+</span> trust_score, <span class="at">data=</span>regression_data)</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">mctest</span>(m1) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -187,37 +379,36 @@ Condition Number:         13.6549         0
 </div>
 </div>
 <ul>
-<li><p>The format of <em>mctest()</em> is:</p>
-<p>mctest(predictors, outcome)</p></li>
+<li>
+<p>The format of <em>mctest()</em> is:</p>
+<p>mctest(predictors, outcome)</p>
+</li>
 <li><p>In the above example we used the <em>cbind()</em> function to bind 3 columns of data together (the predictors)</p></li>
-</ul>
-</section>
-<section id="sample-size-for-multiple-regression" class="level2">
-<h2 class="anchored" data-anchor-id="sample-size-for-multiple-regression">Sample size for multiple regression</h2>
+</ul></section><section id="sample-size-for-multiple-regression" class="level2" data-number="6.6"><h2 data-number="6.6" class="anchored" data-anchor-id="sample-size-for-multiple-regression">
+<span class="header-section-number">6.6</span> Sample size for multiple regression</h2>
 <ul>
 <li>Is based on the number of predictors</li>
 <li>More predictors = more participants needed</li>
 <li><strong>Do a power analysis</strong></li>
 <li>Loose “rule of thumb” = 10-15 participants per predictor</li>
-</ul>
-</section>
-<section id="approaches-to-multiple-regression-all-predictors-at-once" class="level2">
-<h2 class="anchored" data-anchor-id="approaches-to-multiple-regression-all-predictors-at-once">Approaches to multiple regression: All predictors at once</h2>
+</ul></section><section id="approaches-to-multiple-regression-all-predictors-at-once" class="level2" data-number="6.7"><h2 data-number="6.7" class="anchored" data-anchor-id="approaches-to-multiple-regression-all-predictors-at-once">
+<span class="header-section-number">6.7</span> Approaches to multiple regression: All predictors at once</h2>
 <blockquote class="blockquote">
 <p>Research question: Do a client’s treatment duration and treatment group predict aggression level?</p>
 </blockquote>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Here we are including all of the predictors at the same time</li>
 <li>Note that we are using a plus sign + between each predictor
 <ul>
 <li>This means that no interactions will be tested</li>
-</ul></li>
 </ul>
-<section id="using-categorical-predictors-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="using-categorical-predictors-in-r">Using categorical predictors in R</h3>
+</li>
+</ul>
+<section id="using-categorical-predictors-in-r" class="level3" data-number="6.7.1"><h3 data-number="6.7.1" class="anchored" data-anchor-id="using-categorical-predictors-in-r">
+<span class="header-section-number">6.7.1</span> Using categorical predictors in R</h3>
 <ul>
 <li>Treatment group is a categorical (also called “nominal” or “factor”) variable</li>
 <li>No special “dummy coding” is required in R to use categorical predictors in regression</li>
@@ -226,14 +417,13 @@ Condition Number:         13.6549         0
 <li>If you want you can change the reference category or “force” it using the relevel function:</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>regression_data<span class="sc">$</span>treatment_group <span class="ot">&lt;-</span> <span class="fu">relevel</span>(regression_data<span class="sc">$</span>treatment_group, <span class="at">ref =</span> <span class="st">"therapy1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>regression_data<span class="sc">$</span>treatment_group <span class="ot">&lt;-</span> <span class="fu">relevel</span>(regression_data<span class="sc">$</span>treatment_group, <span class="at">ref =</span> <span class="st">"therapy1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>More information in categorical predictors in section @ref(catreg) </strong></p>
-</section>
-<section id="reviewing-the-output" class="level3">
-<h3 class="anchored" data-anchor-id="reviewing-the-output">Reviewing the output</h3>
+</section><section id="reviewing-the-output" class="level3" data-number="6.7.2"><h3 data-number="6.7.2" class="anchored" data-anchor-id="reviewing-the-output">
+<span class="header-section-number">6.7.2</span> Reviewing the output</h3>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">summary</span>(model1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -264,28 +454,28 @@ F-statistic: 52.67 on 2 and 97 DF,  p-value: 3.267e-16</code></pre>
 <ul>
 <li>Pr = Significance of the individual predictor</li>
 <li>Estimate = Change in the outcome level that occurs when the predictor increases by 1 unit of measurement</li>
-</ul></li>
 </ul>
-</section>
-<section id="all-predictors-at-once-testing-interactions" class="level3">
-<h3 class="anchored" data-anchor-id="all-predictors-at-once-testing-interactions">All predictors at once (testing interactions)</h3>
+</li>
+</ul></section><section id="all-predictors-at-once-testing-interactions" class="level3" data-number="6.7.3"><h3 data-number="6.7.3" class="anchored" data-anchor-id="all-predictors-at-once-testing-interactions">
+<span class="header-section-number">6.7.3</span> All predictors at once (testing interactions)</h3>
 <blockquote class="blockquote">
 <p>Research questions: - Do a client’s treatment duration and treatment group predict aggression level - Do the predictors interact?</p>
 </blockquote>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">*</span> treatment_group)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">*</span> treatment_group)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Here we are including all of the predictors at the same time</li>
 <li>Note that we are using an asterisk * between each predictor
 <ul>
 <li>This means that interactions will be tested</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <p>Reviewing the output</p>
-<p><code style="font-size: 1em; width=100%;"></code></p><code style="font-size: 1em; width=100%;">
+<p><code style="font-size: 1em; width=100%;"></code></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model2) <span class="sc">%&gt;%</span> coefficients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">summary</span>(model2) <span class="sc">%&gt;%</span> coefficients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                             Estimate Std. Error    t value
 (Intercept)                                12.3529190  1.1006127 11.2236751
@@ -299,17 +489,16 @@ treatment_grouptherapy2                    7.043260e-01
 treatment_duration:treatment_grouptherapy2 3.305175e-01</code></pre>
 </div>
 </div>
-</code><p><code style="font-size: 1em; width=100%;"></code></p>
+<p></p>
 <ul>
 <li>We get additional information in the coefficients table about the interaction between variables
 <ul>
 <li>e.g.&nbsp;does the interaction between level of trust and treatment duration predict the outcome (aggression level)?</li>
-</ul></li>
-<li>We can see from the output that none of the interactions are significant</li>
 </ul>
-</section>
-<section id="hierarchical-multiple-regression-theory-driven-blocks-of-variables" class="level3">
-<h3 class="anchored" data-anchor-id="hierarchical-multiple-regression-theory-driven-blocks-of-variables">Hierarchical multiple regression: Theory driven “blocks” of variables</h3>
+</li>
+<li>We can see from the output that none of the interactions are significant</li>
+</ul></section><section id="hierarchical-multiple-regression-theory-driven-blocks-of-variables" class="level3" data-number="6.7.4"><h3 data-number="6.7.4" class="anchored" data-anchor-id="hierarchical-multiple-regression-theory-driven-blocks-of-variables">
+<span class="header-section-number">6.7.4</span> Hierarchical multiple regression: Theory driven “blocks” of variables</h3>
 <ul>
 <li>It might be the case that we have previous research or theory to guide how we run the analysis</li>
 <li>For example, we might know that treatment duration and therapy group are likely to predict the outcome</li>
@@ -322,7 +511,8 @@ treatment_duration:treatment_grouptherapy2 3.305175e-01</code></pre>
 <li>Model 0: the constant (baseline)</li>
 <li>Model 1: treatment duration and therapy group</li>
 <li>Model 2: treatment duration and therapy group and trust score</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 </blockquote>
 <ul>
@@ -330,29 +520,57 @@ treatment_duration:treatment_grouptherapy2 3.305175e-01</code></pre>
 <ul>
 <li>Model 1 is better than Model 0 (the constant)</li>
 <li>Model 2 is better than Model 1</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <p><strong>Hierarchical multiple regression: Running and comparing 2 models</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## run regression using the same method as above</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>model0 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> <span class="dv">1</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group <span class="sc">+</span> trust_score)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="do">## use the aov() command to compare the models</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(model0,model1,model2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Analysis of Variance Table
-
-Model 1: aggression_level ~ 1
-Model 2: aggression_level ~ treatment_duration + treatment_group
-Model 3: aggression_level ~ treatment_duration + treatment_group + trust_score
-  Res.Df    RSS Df Sum of Sq       F    Pr(&gt;F)    
-1     99 455.27                                   
-2     97 218.26  2   237.013 52.2195 4.507e-16 ***
-3     96 217.86  1     0.399  0.1757     0.676    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="do">## run regression using the same method as above</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>model0 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> <span class="dv">1</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group)</span>
+<span id="cb10-4"><a href="#cb10-4"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group <span class="sc">+</span> trust_score)</span>
+<span id="cb10-5"><a href="#cb10-5"></a></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="do">## use the aov() command to compare the models</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="fu">anova</span>(model0,model1,model2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="table table-sm table-striped">
+<thead><tr class="header">
+<th style="text-align: right;">Res.Df</th>
+<th style="text-align: right;">RSS</th>
+<th style="text-align: right;">Df</th>
+<th style="text-align: right;">Sum of Sq</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">Pr(&gt;F)</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">99</td>
+<td style="text-align: right;">455.2727</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">97</td>
+<td style="text-align: right;">218.2601</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">237.0125863</td>
+<td style="text-align: right;">52.2194515</td>
+<td style="text-align: right;">0.000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">96</td>
+<td style="text-align: right;">217.8614</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.3986883</td>
+<td style="text-align: right;">0.1756808</td>
+<td style="text-align: right;">0.676048</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <ul>
@@ -360,29 +578,29 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <ul>
 <li>Model 1 (treatment duration and treatment group) is significant relative to the constant (Model 0)</li>
 <li>Model 2 (treatment duration, treatment group and trust score) shows no significant change compared to Model 1</li>
-</ul></li>
 </ul>
-</section>
-<section id="stepwise-multiple-regression-computational-selection-of-predictors" class="level3">
-<h3 class="anchored" data-anchor-id="stepwise-multiple-regression-computational-selection-of-predictors">Stepwise multiple regression: computational selection of predictors</h3>
+</li>
+</ul></section><section id="stepwise-multiple-regression-computational-selection-of-predictors" class="level3" data-number="6.7.5"><h3 data-number="6.7.5" class="anchored" data-anchor-id="stepwise-multiple-regression-computational-selection-of-predictors">
+<span class="header-section-number">6.7.5</span> Stepwise multiple regression: computational selection of predictors</h3>
 <ul>
 <li>Stepwise multiple regression is controversial because:
 <ul>
 <li>The computer selects which predictors to include based on Akaike information criterion (AIC)
 <ul>
 <li>This is a calculation of the quality of statistical models when they are compared to each other</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <blockquote class="blockquote">
-<h3 id="whats-the-problem" class="anchored">What’s the problem?</h3>
+<h3 id="whats-the-problem" data-number="6.7.6" class="anchored">
+<span class="header-section-number">6.7.6</span> What’s the problem?</h3>
 <ul>
 <li>This selection is not based on any underlying theory or understanding of the real-life relationship between the variables</li>
 </ul>
-</blockquote></li>
-</ul>
-</section>
-<section id="stepwise-multiple-regression-loading-the-mass-package-and-run-the-full-model" class="level3">
-<h3 class="anchored" data-anchor-id="stepwise-multiple-regression-loading-the-mass-package-and-run-the-full-model">Stepwise multiple regression: loading the MASS package and run the full model</h3>
+</blockquote>
+</li>
+</ul></section><section id="stepwise-multiple-regression-loading-the-mass-package-and-run-the-full-model" class="level3" data-number="6.7.7"><h3 data-number="6.7.7" class="anchored" data-anchor-id="stepwise-multiple-regression-loading-the-mass-package-and-run-the-full-model">
+<span class="header-section-number">6.7.7</span> Stepwise multiple regression: loading the MASS package and run the full model</h3>
 <ol type="1">
 <li><strong>install and load the MASS package</strong></li>
 <li><strong>run a regression model with all of the variables</strong></li>
@@ -390,7 +608,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <li>View the best model</li>
 </ol>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">library</span>(MASS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'MASS' was built under R version 4.2.3</code></pre>
 </div>
@@ -403,25 +621,30 @@ Attaching package: 'MASS'</code></pre>
 
     select</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the full model </span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>full.model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group <span class="sc">+</span> trust_score)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Run the full model </span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>full.model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> regression_data, aggression_level <span class="sc">~</span> treatment_duration <span class="sc">+</span> treatment_group <span class="sc">+</span> trust_score)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="stepwise-multiple-regression-use-stepaic-with-options" class="level3">
-<h3 class="anchored" data-anchor-id="stepwise-multiple-regression-use-stepaic-with-options">Stepwise multiple regression: Use stepAIC( ) with options</h3>
+</section><section id="stepwise-multiple-regression-use-stepaic-with-options" class="level3" data-number="6.7.8"><h3 data-number="6.7.8" class="anchored" data-anchor-id="stepwise-multiple-regression-use-stepaic-with-options">
+<span class="header-section-number">6.7.8</span> Stepwise multiple regression: Use stepAIC( ) with options</h3>
 <ul>
-<li><strong>Trace</strong> <em>(TRUE or FALSE)</em>: do we want to see the steps that were involved in selecting the best model ?</li>
-<li><strong>Direction</strong> <em>(“forward”, “backward” or “both”)</em>:
+<li>
+<strong>Trace</strong> <em>(TRUE or FALSE)</em>: do we want to see the steps that were involved in selecting the best model ?</li>
+<li>
+<strong>Direction</strong> <em>(“forward”, “backward” or “both”)</em>:
 <ul>
-<li>start with no variables and add them <em>(forward)</em></li>
-<li>start with all variables and subtract them <em>(backward)</em></li>
-<li>use both approaches <em>(both)</em></li>
-</ul></li>
+<li>start with no variables and add them <em>(forward)</em>
+</li>
+<li>start with all variables and subtract them <em>(backward)</em>
+</li>
+<li>use both approaches <em>(both)</em>
+</li>
 </ul>
-<p><code style="font-size: 1em; width=100%;"></code></p><code style="font-size: 1em; width=100%;">
+</li>
+</ul>
+<p><code style="font-size: 1em; width=100%;"></code></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run stepwise</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>step.model <span class="ot">&lt;-</span> <span class="fu">stepAIC</span>(full.model, <span class="at">direction =</span> <span class="st">"both"</span>, <span class="at">trace =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Run stepwise</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>step.model <span class="ot">&lt;-</span> <span class="fu">stepAIC</span>(full.model, <span class="at">direction =</span> <span class="st">"both"</span>, <span class="at">trace =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Start:  AIC=85.87
 aggression_level ~ treatment_duration + treatment_group + trust_score
@@ -442,10 +665,9 @@ aggression_level ~ treatment_duration + treatment_group
 - treatment_duration  1   193.515 411.78 145.531</code></pre>
 </div>
 </div>
-</code><p><code style="font-size: 1em; width=100%;"></code></p>
-</section>
-<section id="stepwise-multiple-regression-display-the-best-model" class="level3">
-<h3 class="anchored" data-anchor-id="stepwise-multiple-regression-display-the-best-model">Stepwise multiple regression: Display the best model</h3>
+<p></p>
+</section><section id="stepwise-multiple-regression-display-the-best-model" class="level3" data-number="6.7.9"><h3 data-number="6.7.9" class="anchored" data-anchor-id="stepwise-multiple-regression-display-the-best-model">
+<span class="header-section-number">6.7.9</span> Stepwise multiple regression: Display the best model</h3>
 <ol type="1">
 <li>install and load the MASS package</li>
 <li>run a regression model with all of the variables</li>
@@ -453,8 +675,8 @@ aggression_level ~ treatment_duration + treatment_group
 <li><strong>View best model</strong></li>
 </ol>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#view the stepwise output</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(step.model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">#view the stepwise output</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">summary</span>(step.model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -478,17 +700,15 @@ Multiple R-squared:  0.5206,    Adjusted R-squared:  0.5107
 F-statistic: 52.67 on 2 and 97 DF,  p-value: 3.267e-16</code></pre>
 </div>
 </div>
-</section>
-</section>
-<section id="catreg" class="level2">
-<h2 class="anchored" data-anchor-id="catreg">Using regression with categorical predictors (more information)</h2>
+</section></section><section id="catreg" class="level2" data-number="6.8"><h2 data-number="6.8" class="anchored" data-anchor-id="catreg">
+<span class="header-section-number">6.8</span> Using regression with categorical predictors (more information)</h2>
 <p><strong>In the below video, you can click the icon in the top right of the video to change the layout (and remove my face, if you want!)</strong></p>
 <iframe src="https://teesside.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=01cdd2e6-c7dd-4677-a5b9-ae1b00caa8b7&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=false&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
 </iframe>
 <p>People are often taught to use ANOVA to compare groups (i.e.&nbsp;if you have a categorical IV) and regression if you have continuous IVs. However, ANOVA and regression are the same thing, so it is possible to use regression to do analysis instead of ANOVA or ANCOVA.</p>
 <p>However, it might be difficult to understand how this is, so let’s look at an example. The dataset <strong>Baumann</strong> compares 3 different methods of teaching reading comprehension. For this example, we will just look at the variable post.test.1 as the DV.</p>
-<section id="anova-approach" class="level3">
-<h3 class="anchored" data-anchor-id="anova-approach">ANOVA Approach</h3>
+<section id="anova-approach" class="level3" data-number="6.8.1"><h3 data-number="6.8.1" class="anchored" data-anchor-id="anova-approach">
+<span class="header-section-number">6.8.1</span> ANOVA Approach</h3>
 <p>ANOVA asks the question in the following way:</p>
 <blockquote class="blockquote">
 <p>Is there a difference in reading comprehension scores between teaching groups?</p>
@@ -503,13 +723,11 @@ F-statistic: 52.67 on 2 and 97 DF,  p-value: 3.267e-16</code></pre>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">group</th>
 <th style="text-align: right;">mean</th>
 <th style="text-align: right;">sd</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Basal</td>
@@ -535,16 +753,14 @@ F-statistic: 52.67 on 2 and 97 DF,  p-value: 3.267e-16</code></pre>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">term</th>
 <th style="text-align: right;">df</th>
 <th style="text-align: right;">sumsq</th>
 <th style="text-align: right;">meansq</th>
 <th style="text-align: right;">statistic</th>
 <th style="text-align: right;">p.value</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">group</td>
@@ -567,9 +783,8 @@ F-statistic: 52.67 on 2 and 97 DF,  p-value: 3.267e-16</code></pre>
 </div>
 </div>
 <p>Notice that the ANOVA output tells us that the difference between groups is significant (p &lt; 0.05) but we cannot tell yet which of the 3 groups are significantly different from each other.</p>
-</section>
-<section id="regression-approach" class="level3">
-<h3 class="anchored" data-anchor-id="regression-approach">Regression approach</h3>
+</section><section id="regression-approach" class="level3" data-number="6.8.2"><h3 data-number="6.8.2" class="anchored" data-anchor-id="regression-approach">
+<span class="header-section-number">6.8.2</span> Regression approach</h3>
 <p>Regression asks the question the following way:</p>
 <blockquote class="blockquote">
 <p>Does teaching group predict reading comprehension score?</p>
@@ -584,30 +799,24 @@ F-statistic: 52.67 on 2 and 97 DF,  p-value: 3.267e-16</code></pre>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: right;">R2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
+</tr></thead>
+<tbody><tr class="odd">
 <td style="text-align: right;">0.1444271</td>
-</tr>
-</tbody>
+</tr></tbody>
 </table>
 </div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">term</th>
 <th style="text-align: right;">df</th>
 <th style="text-align: right;">sumsq</th>
 <th style="text-align: right;">meansq</th>
 <th style="text-align: right;">statistic</th>
 <th style="text-align: right;">p.value</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">group</td>
@@ -630,15 +839,13 @@ F-statistic: 52.67 on 2 and 97 DF,  p-value: 3.267e-16</code></pre>
 </div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">term</th>
 <th style="text-align: right;">estimate</th>
 <th style="text-align: right;">std.error</th>
 <th style="text-align: right;">statistic</th>
 <th style="text-align: right;">p.value</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
@@ -665,19 +872,451 @@ F-statistic: 52.67 on 2 and 97 DF,  p-value: 3.267e-16</code></pre>
 </table>
 </div>
 </div>
-</section>
-<section id="interpreting-regression-output" class="level3">
-<h3 class="anchored" data-anchor-id="interpreting-regression-output">Interpreting regression output</h3>
+</section><section id="interpreting-regression-output" class="level3" data-number="6.8.3"><h3 data-number="6.8.3" class="anchored" data-anchor-id="interpreting-regression-output">
+<span class="header-section-number">6.8.3</span> Interpreting regression output</h3>
 <p>If we look at the coefficient (estimate) for the intercept (see regression output above), we can see that the value is the same as the mean of the Basal group in the previous section (See table of mean and sd, above).</p>
 <p>Furthermore, if we look at the estimates of DRTA and Strat, we can see that the values are the difference between their mean score, and the score for of the intercept (BASAL) group. So we can see whether DTRA and STRAT groups are significantly different from the BASAL group.</p>
 <p>If we wanted to compare the groups differently (e.g.&nbsp;using Strat as the reference point), we can use the relevel function and run the regression analysis again (See <a href="#using-categorical-predictors-in-r">Using categorical predictors in R</a>)</p>
-</section>
-</section>
-</section>
 
-</main>
-<!-- /main column -->
-<script id="quarto-html-after-body" type="application/javascript">
+
+</section></section></main><!-- /main --><script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+// open rdrr links externally ----
+
+var exlinks = document.querySelectorAll("a[href^='https://rdrr.io']");
+var exlink_func = function(){
+  window.open(this.href);
+  return false;
+};
+for (var i = 0; i < exlinks.length; i++) {
+    exlinks[i].addEventListener('click', exlink_func, false);
+}
+
+// visible second sidebar in mobile ----
+
+function move_sidebar() {
+  var toc = document.getElementById("TOC");
+  var small_sidebar = document.querySelector("#quarto-sidebar .sidebar-menu-container");
+  var right_sidebar = document.getElementById("quarto-margin-sidebar");
+
+  if (window.innerWidth < 768) {
+    small_sidebar.append(toc);
+  } else {
+    right_sidebar.append(toc);
+  }
+}
+move_sidebar();
+window.onresize = move_sidebar;
+</script><script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -697,6 +1336,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -809,9 +1563,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="./correlation.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Correlation</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./moderation.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Moderation analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
-
+<footer class="footer"><div class="nav-footer">
+      <div class="nav-footer-center">CC-BY (2023) Christopher Wilson. With grateful thanks to the <a href="https://debruine.github.io/booktem/">psyTeachR</a> team and packages</div>
+  </div>
+</footer>
 
 
 </body></html>

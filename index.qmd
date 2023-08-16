@@ -6,9 +6,9 @@ Information about the learning outcomes, assessments and other teaching sessions
 
 >Note: The online version of this guide is accessed at https://christopherjwilson.github.io/APRM23/. To watch the embedded videos on this site, you will need to be logged into Teesside University’s Blackboard site and be a part of this course. Usually there will be a popup window as soon as you load this page. If not:
 
-> - Press Ctrl + T to open a new tab (keeping this one open) and go to https://bb.tees.ac.uk.
+> - Press <pc>Ctrl + T</pc>or <mac>Cmd + T</mac> to open a new tab (keeping this one open) and go to [https://bb.tees.ac.uk](https://bb.tees.ac.uk).
 > - Login to Blackboard. Keep the blackboard tab open and switch back to this page.
-> - Refresh this page (hit F5 on your keyboard).
+> - Refresh this page (hit <pc>F5</pc> on your keyboard).
 > - You should now be able to play all of the video content.
 
 ```{r, eval = FALSE, echo=FALSE}

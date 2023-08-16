@@ -80,7 +80,7 @@ The interface for R Studio looks daunting at first. However, there are 4 main se
 
 ## Working with a script
 
-Scripts can be opened from the **File** menu.
+Scripts can be opened from the <if>File > New File > R Script</if> menu.
 
 ![Creating a new script](images/file.png)
 
@@ -93,18 +93,18 @@ The purpose of scripts is to allow you to type your analysis code and save it fo
 
 ![Example of an R script](images/script.png)
 
-To run a script, you click the **Run** button. You can choose to:
+To run a script, you click the <if>Run</if> button. You can choose to:
 
 -	Run the whole script
 - Run the selected line of code
 
 ![The run button](images/run.png)
 
-When you run the script, you will normally see output in the **console.**
+When you run the script, you will normally see output in the <if>console</if>.
 
 ![Output appears in the console](images/console.png)
 
-If your script contains code for a plot (graph), it will appear in the **Plots** window in the bottom right.
+If your script contains code for a plot (graph), it will appear in the <if>Plots</if> window in the bottom right.
 
 ![Plots appear in the plot window](images/plotwindow.png)
 
@@ -116,24 +116,24 @@ If your script contains code for a plot (graph), it will appear in the **Plots**
 
 Packages add functionality to R and allow us to do new types of analysis.
 
-- They can be installed via the menu (Tools -> Install Packages)
+- They can be installed via the menu <if>Tools -> Install Packages</if>
 - The can also be installed using code: 
 
 
-          install.packages()
+`install.packages()`
 
-For example, TidyR is a package that contains functions for sorting and organising data. To install the package:
+For example, <pkg>tidyr</pkg> is a package that contains functions for sorting and organising data. To install the package:
 
 ![Installing a package in RStudio](images/installPackages.png)
 
 or use the code:
 
 
-      install.packages(“tidyr”)
+`install.packages(“tidyr”)`
 
 
   
-Once a package is has been installed, you need tp load it using the *library()* command.
+Once a package is has been installed, you need tp load it using the `library()` command.
 For example:
 
 ```{r eval=F}

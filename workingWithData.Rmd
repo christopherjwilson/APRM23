@@ -2,7 +2,7 @@
 
 ```{r, include = FALSE}
 source("R/packages_data.R")
-
+glossary_path("include/glossary.yml")
 ```
 
 
@@ -12,41 +12,38 @@ source("R/packages_data.R")
 
 ## By the end of this section, you will be able to:
 - Import data into R from excel, SPSS and csv files
-- Save data to objects
-- Identify different data structures and variable types
-- Convert variables from one type to another
+- Save data to `r glossary("object")`
+- Identify different data structures and `r glossary("data type", "data types")`
+- Convert `r glossary("data type", "data types")` from one type to another
 - Order, filter and group data
 - Summarise data
-- Create new variables from data
+- Create new `r glossary("variable (coding)", "variables")` or `r glossary("object", "objects")` from data
 
 
-## In this section, we will use the Tidyverse set of packages
+## In this section, we will use the <pkg>Tidyverse</pkg> set of packages
 
 -	A ‘toolkit’ of packages that are very useful for organsing and manipulating data
-- We will use the haven package to import SPSS files
-- We will use the dplyr to organise data
-- Also includes the ggplot2 and tidyR packages which we will use later
+- We will use the <pkg>haven</pkg> package to import SPSS files
+- We will use the <pkg>dplyr</pkg> to organise data
+- Also includes the <pkg>ggplot2</pkg> and <pkg>tidyR</pkg> packages which we will use later
 
 To install: 
 
-```{r eval=F}
-install.packages(“tidyverse”)
-```
 
-   
+`install.packages(“tidyverse”)`
 
 (See the previous section on installing packages)
 
 ## Import data into R from excel, SPSS and csv files
 
-We can import data from a range of sources using the **Import Dataset** button in the **Environment** tab:
+We can import data from a range of sources using the <if>Import Dataset<if> button in the <if>Environment<if> tab:
 
 ![Importing data](images/importData.png)
 
 It is also possible to import data using code, for example:
 
 
-```{r eval=F}
+`
  # importing a .csv file
     
     library(readr)
@@ -57,7 +54,7 @@ It is also possible to import data using code, for example:
     
     library(haven)
     mySPSSData <- read_sav("datasets/salesData.sav")
-```
+`
 
    
 
@@ -71,24 +68,16 @@ Once the data are imported, it will be visible in the environment:
 
 ## Understanding objects in R
 
-In R, an **object** is anything that is saved to memory. For example, we might do some analysis:
+In R, an `r glossary("object")` is anything that is saved to memory. For example, we might do some analysis:
 
-```{r eval=F}
+`mean(happiness)`
 
-    mean(happiness)
-```
-
-
-  
      
 However, in the example above, the result would appear in the console but not be saved anywhere. To store the result for reuse later, we save it to an object: 
 
 ```{r eval=T}
 happinessMean <- mean(happiness)
 ```
-
-
-    
 
 
 In the above code (reading left to right):
@@ -109,22 +98,19 @@ To recall an object from the environment, we can simply type its name. For examp
 ```
  
     
-
-
-
 > Its important to note that anything can be stored as an object in R and recalled later. This includes, dataframes, the results of statistical calculations, plots etc.
 
-## Identify different data structures and variable types
+## Identify different `r glossary("data container", "data structures")` and variable types
 
-### Data structures
+### Data structures (sometimes referred to as "`r glossary("data container", "data containers")`")
 
-There are many different types of data that R can work with. The most common type of data for most people tends to be a **dataframe**. A **dataframe** is what you might consider a "normal" 2-dimensional dataset, with rows of data and columns of variables:
+There are many different types of data structures that R can work with. The most common type of data for most people tends to be a `r glossary("data frame")`. A `r glossary("data frame")` is what you might consider a "normal" 2-dimensional dataset, with rows of data and columns of variables:
 
 ![A dataframe example](images/dataframe.png)
 
 R can also use other data types.
 
-A vector is a one-dimensional set of values:
+A `r glossary("vector")` is a one-dimensional set of values:
 
 ```{r}
 # a vector example
@@ -133,7 +119,7 @@ scores <- c(1,4,6,8,3,4,6,7)
 
 ```
 
-A matrix is a multi-dimensional set of values. The below example is a 3-dimensional matrix, there are 2 groups of 2 rows and 3 columns:
+A `r glossary("matrix")` is a multi-dimensional set of values. The below example is a 3-dimensional matrix, there are 2 groups of 2 rows and 3 columns:
 
 ```{r echo=F}
 #  a matrix example
@@ -145,14 +131,14 @@ myMatrix
 
 > We will primarily work with dataframes (and sometimes vectors), as this is how the data in psychology research is usually structured.
 
-### Variable types
+### Data types
 
-With numerical data, there are 4 key data types:
+With numerical data, there are 4 key `r glossary("data type", "data types")`:
 
-- Nominal (a category, group or factor)
-- Ordinal (a ranking)
-- Interval (scale data that can include negative values)
-- Ratio (scale data that cannot include negative values)
+- `r glossary("factor (data type)")` or nominal (a category, group or factor)
+- `r glossary("ordinal")` (a ranking)
+- `r glossary("interval (data type)")` (scale data that can include negative values)
+- `r glossary("ratio (data type)")` (scale data that cannot include negative values)
 
 ![Numerical data types](images/dataTypes.png)
 R can use all of these variable types:
@@ -162,9 +148,9 @@ R can use all of these variable types:
 - **Ordinal** variables are called **ordered factors**
 - **Interval and ratio** variables are called **numeric** data and can sometimes be called integers (if they are only whole numbers) or doubles (if they all have decimal points)
 
-R can also use other data types such as text (**character**) data.
+R can also use other data types such as text (`r glossary("character")`) data.
 
-### Convert variables from one type to another
+### Convert variables from one data type to another
 
 When we first import data into R, it might not recognise the data types correctly. For example, in the below data, we can see the **intervention** variable :
 
@@ -172,7 +158,7 @@ When we first import data into R, it might not recognise the data types correctl
 # happinessSample$intervention <- as.numeric(happinessSample$intervention)
 happinessSample %>% arrange(by = happiness) %>% head(10)
 ```
-In the **intervention** variable, the numbers 1 and 2 refer to different intervention groups. Therefore, the variable is a **factor** variable. To ensure that R understands this, we can resave the intervention variable as a factor using the *as.factor()* function:
+In the **intervention** variable, the numbers 1 and 2 refer to different intervention groups. Therefore, the variable is a `r glossary("factor (data type)")` variable. To ensure that R understands this, we can resave the intervention variable as a factor using the `as.factor()` function:
 
 ```{r}
 happinessSample$intervention <- as.factor(happinessSample$intervention)
@@ -181,13 +167,13 @@ happinessSample$intervention <- as.factor(happinessSample$intervention)
 
 ## Working with dataframes
 
-Dataframes are the more standard data format that were are used to (think of how a dataset looks in SPSS or Excel).
+`r glossary("dataframe", "Dataframes")` are the more standard data format that were are used to (think of how a dataset looks in SPSS or Excel).
 
-In a dataframe, variables are columns and each row usually reperesents one measurement or one participant.
+In a `r glossary("dataframe")`, variables are columns and each row usually reperesents one measurement or one participant.
 
 ### View dataframe
 
-To view a dataframe, we can click on it in the environment window and it will display:
+To view a dataframe, we can click on it in the <inf>environment</inf> window and it will display:
 
 ![Clicking on datasets in hte environment will open them up for viewing](images/environment.png)
 
@@ -206,7 +192,7 @@ As we can see above, the result is then displayed.
 
 ## Order, filter and group data
 
-If you have the **tidyverse** package loaded, it is easy to organise and filter data.
+If you have the <pkg>tidyverse</pkg> package loaded, it is easy to organise and filter data.
 
 
 ```{r arrange data}
@@ -236,7 +222,7 @@ happinessSample %>% group_by(intervention) %>% summarise(mean = mean(happiness))
 ```
 
 
-## Create new variables from data
+## Create new variables / objects from data
 
 To create new variables from data, we can use the **mutate()** function.
 
