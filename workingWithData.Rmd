@@ -2,7 +2,9 @@
 
 ```{r, include = FALSE}
 source("R/packages_data.R")
-glossary_path("include/glossary.yml")
+library(glossary)
+
+glossary_path("psyteachr")
 ```
 
 

@@ -8,7 +8,58 @@ width: 1200
 
 # Research Designs in Clinical Psychology {.unnumbered}
 
-## Overview
+## At the end of this session, you will be able to:
+
+- List some features of robust, impactful and ethical clinical research
+- Describe a range of research apporaches used in clinical psychology
+- Refer to examples of each of the research types in the clinical psychology literature
+
+# Designing robust research
+
+## Research questions that are built on evidence
+Build questions based on what we do know. Not based on assumptions about empty space.
+
+## Research questions that are built on theory
+If your questions are linked to existing theory, they should connect with other aspects of that theory.
+
+## Research questions that are clear in what they want to achieve
+Cause and effect can only be inferred from certain types of designs.
+
+## Research that uses appropriate and valid methods to answer the research question
+
+# Designing impactful research
+
+# Designing ethical research
+
+
+
+
+
+
+
+
+
+# Certain types of questions can be linked to certain types of analysis
+Descriptive research
+Can have value in certain applied settings if linked to theory and enhances our understanding of a phenomenon
+
+# Relationships and predictions
+
+# Experimental and quasi-experimental designs
+Experimental study of psychopathology
+
+# Regression approaches
+
+# Moderated relationships
+
+# Mediated relationships
+
+
+the experimental study of pathological behavior (i.e., using the experimental method to study pre-existing pathological behavior), or the study of experimental pathological behavior (i.e., the pathological behavior being studied is induced experimentally rather than developed naturally)
+
+(Comer and Kendall 2013)
+
+
 
 # Experimental and quasi-experimental designs
 
@@ -94,6 +145,6 @@ any resulting changes in behavior may be due to the interaction of the independe
 
 ## Type 3 Nonpatient psychopathology research
 
-## 
+## Type 4 
 
 ## References
