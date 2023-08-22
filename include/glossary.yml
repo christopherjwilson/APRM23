@@ -1,3 +1,21 @@
+dataframe: |
+  a 2-dimensional dataset, usually with rows of data and columns of variables
+
+data type (inrerval): |
+  Numerical data that are continuous, with measurable intervals that can reach below zero (0)
+
+data type (ratio): |
+  Numerical data that are continuous, with measurable intervals that cannot reach below zero (0)
+
+data type (factor): |
+  Numerical data that are expressed as categories or groups. They can not be measured as they do not have intervals.
+
+data type (nominal): |
+  Numerical data that are expressed as categories or groups. They can not be measured as they do not have intervals.
+
+data type (numerical): |
+  Specifyling the type of data that is recorded. Can be: Nominal (factors), Ordinal, Interval or Ratio
+
 absolute-path: |
   A file path that starts with / and is not appended to the working directory
 

@@ -143,44 +143,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Research Methods 1 (DClin) R Sessions</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-<li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./Research-Methods-1--DClin--R-Sessions.pdf">
-            <i class="bi bi-bi-file-pdf pe-1"></i>
-          Download PDF
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./Research-Methods-1--DClin--R-Sessions.epub">
-            <i class="bi bi-bi-journal pe-1"></i>
-          Download ePub
-          </a>
-        </li>
-    </ul>
-<a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
-<li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
-            <i class="bi bi-bi-twitter pe-1"></i>
-          Twitter
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
-            <i class="bi bi-bi-facebook pe-1"></i>
-          Facebook
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
-            <i class="bi bi-bi-linkedin pe-1"></i>
-          LinkedIn
-          </a>
-        </li>
-    </ul>
-<a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
@@ -268,11 +232,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#restructuring-and-reorganising-data-in-r-long-versus-wide-data" id="toc-restructuring-and-reorganising-data-in-r-long-versus-wide-data" class="nav-link" data-scroll-target="#restructuring-and-reorganising-data-in-r-long-versus-wide-data"><span class="toc-section-number">2.4</span>  Restructuring and reorganising data in R (long versus wide data)</a></li>
   <li><a href="#understanding-objects-in-r" id="toc-understanding-objects-in-r" class="nav-link" data-scroll-target="#understanding-objects-in-r"><span class="toc-section-number">2.5</span>  Understanding objects in R</a></li>
   <li>
-<a href="#identify-different-data-structures-and-variable-types" id="toc-identify-different-data-structures-and-variable-types" class="nav-link" data-scroll-target="#identify-different-data-structures-and-variable-types"><span class="toc-section-number">2.6</span>  Identify different </a><a class="glossary nav-link" data-scroll-target="undefined">data structures<span class="def"></span></a> and variable types
+<a href="#identify-different-data-structuresa-data-structure-that-aggregates-data-such-as-a-vector-list-matrix-or-data-frame-and-variable-types" id="toc-identify-different-data-structuresa-data-structure-that-aggregates-data-such-as-a-vector-list-matrix-or-data-frame-and-variable-types" class="nav-link" data-scroll-target="#identify-different-data-structuresa-data-structure-that-aggregates-data-such-as-a-vector-list-matrix-or-data-frame-and-variable-types"><span class="toc-section-number">2.6</span>  Identify different </a><a class="glossary nav-link" data-scroll-target="undefined">data structures<span class="def">A data structure that aggregates data, such as a vector, list, matrix, or data frame</span></a> and variable types
   <ul class="collapse">
 <li>
-<a href="#data-structures-sometimes-referred-to-as-data-containers" id="toc-data-structures-sometimes-referred-to-as-data-containers" class="nav-link" data-scroll-target="#data-structures-sometimes-referred-to-as-data-containers"><span class="toc-section-number">2.6.1</span>  Data structures (sometimes referred to as “</a><a class="glossary nav-link" data-scroll-target="undefined">data containers<span class="def"></span></a>”)</li>
-  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types"><span class="toc-section-number">2.6.2</span>  Data types</a></li>
+<a href="#data-structures-sometimes-referred-to-as-data-containersa-data-structure-that-aggregates-data-such-as-a-vector-list-matrix-or-data-frame" id="toc-data-structures-sometimes-referred-to-as-data-containersa-data-structure-that-aggregates-data-such-as-a-vector-list-matrix-or-data-frame" class="nav-link" data-scroll-target="#data-structures-sometimes-referred-to-as-data-containersa-data-structure-that-aggregates-data-such-as-a-vector-list-matrix-or-data-frame"><span class="toc-section-number">2.6.1</span>  Data structures (sometimes referred to as “</a><a class="glossary nav-link" data-scroll-target="undefined">data containers<span class="def">A data structure that aggregates data, such as a vector, list, matrix, or data frame</span></a>”)</li>
+  <li><a href="#types-of-numerical-data" id="toc-types-of-numerical-data" class="nav-link" data-scroll-target="#types-of-numerical-data"><span class="toc-section-number">2.6.2</span>  Types of numerical data</a></li>
   <li><a href="#convert-variables-from-one-data-type-to-another" id="toc-convert-variables-from-one-data-type-to-another" class="nav-link" data-scroll-target="#convert-variables-from-one-data-type-to-another"><span class="toc-section-number">2.6.3</span>  Convert variables from one data type to another</a></li>
   </ul>
 </li>
@@ -339,15 +303,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>It is also possible to import data using code, for example:</p>
 <p>` # importing a .csv file</p>
-<pre><code><a href="https://readr.tidyverse.org">library(readr)
-studentData &lt;- read_csv("Datasets/studentData.csv")
-
-
-#importing an SPSS file
-
-library(haven)
-mySPSSData &lt;- read_sav("datasets/salesData.sav")</a></code></pre>
-<p>`</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>   <span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>    studentData <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Datasets/studentData.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="co">#importing an SPSS file</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>    </span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="fu">library</span>(haven)</span>
+<span id="cb1-7"><a href="#cb1-7"></a>    mySPSSData <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">"datasets/salesData.sav"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Once the data are imported, it will be visible in the environment:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/environment.png" class="img-fluid figure-img"></p>
@@ -375,30 +339,30 @@ mySPSSData &lt;- read_sav("datasets/salesData.sav")</a></code></pre>
 <p>When this code is run, <em>happinessMean</em> will be stored in the environment window:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/saveobject.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Result of a calculation in the environment</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Storing the result of a calculation in the environment</figcaption><p></p>
 </figure>
 </div>
 <p>To recall an object from the environment, we can simply type its name. For example:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a> happinessMean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 10.04546</code></pre>
+<pre><code>[1] 10.29769</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
 <p>Its important to note that anything can be stored as an object in R and recalled later. This includes, dataframes, the results of statistical calculations, plots etc.</p>
 </blockquote>
-</section><section id="identify-different-data-structures-and-variable-types" class="level2" data-number="2.6"><h2 data-number="2.6" class="anchored" data-anchor-id="identify-different-data-structures-and-variable-types">
-<span class="header-section-number">2.6</span> Identify different <a class="glossary">data structures<span class="def"></span></a> and variable types</h2>
-<section id="data-structures-sometimes-referred-to-as-data-containers" class="level3" data-number="2.6.1"><h3 data-number="2.6.1" class="anchored" data-anchor-id="data-structures-sometimes-referred-to-as-data-containers">
-<span class="header-section-number">2.6.1</span> Data structures (sometimes referred to as “<a class="glossary">data containers<span class="def"></span></a>”)</h3>
+</section><section id="identify-different-data-structuresa-data-structure-that-aggregates-data-such-as-a-vector-list-matrix-or-data-frame-and-variable-types" class="level2" data-number="2.6"><h2 data-number="2.6" class="anchored" data-anchor-id="identify-different-data-structuresa-data-structure-that-aggregates-data-such-as-a-vector-list-matrix-or-data-frame-and-variable-types">
+<span class="header-section-number">2.6</span> Identify different <a class="glossary">data structures<span class="def">A data structure that aggregates data, such as a vector, list, matrix, or data frame</span></a> and variable types</h2>
+<section id="data-structures-sometimes-referred-to-as-data-containersa-data-structure-that-aggregates-data-such-as-a-vector-list-matrix-or-data-frame" class="level3" data-number="2.6.1"><h3 data-number="2.6.1" class="anchored" data-anchor-id="data-structures-sometimes-referred-to-as-data-containersa-data-structure-that-aggregates-data-such-as-a-vector-list-matrix-or-data-frame">
+<span class="header-section-number">2.6.1</span> Data structures (sometimes referred to as “<a class="glossary">data containers<span class="def">A data structure that aggregates data, such as a vector, list, matrix, or data frame</span></a>”)</h3>
 <p>There are many different types of data structures that R can work with. The most common type of data for most people tends to be a <a class="glossary">data frame<span class="def"></span></a>. A <a class="glossary">data frame<span class="def"></span></a> is what you might consider a “normal” 2-dimensional dataset, with rows of data and columns of variables:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/dataframe.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">A dataframe example</figcaption><p></p>
 </figure>
 </div>
-<p>R can also use other data types.</p>
+<p>R can also use other data structures.</p>
 <p>A <a class="glossary">vector<span class="def"></span></a> is a one-dimensional set of values:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># a vector example</span></span>
@@ -424,8 +388,8 @@ mySPSSData &lt;- read_sav("datasets/salesData.sav")</a></code></pre>
 <blockquote class="blockquote">
 <p>We will primarily work with dataframes (and sometimes vectors), as this is how the data in psychology research is usually structured.</p>
 </blockquote>
-</section><section id="data-types" class="level3" data-number="2.6.2"><h3 data-number="2.6.2" class="anchored" data-anchor-id="data-types">
-<span class="header-section-number">2.6.2</span> Data types</h3>
+</section><section id="types-of-numerical-data" class="level3" data-number="2.6.2"><h3 data-number="2.6.2" class="anchored" data-anchor-id="types-of-numerical-data">
+<span class="header-section-number">2.6.2</span> Types of numerical data</h3>
 <p>With numerical data, there are 4 key <a class="glossary">data types<span class="def"></span></a>:</p>
 <ul>
 <li>
@@ -448,7 +412,7 @@ mySPSSData &lt;- read_sav("datasets/salesData.sav")</a></code></pre>
 <li>
 <strong>Interval and ratio</strong> variables are called <strong>numeric</strong> data and can sometimes be called integers (if they are only whole numbers) or doubles (if they all have decimal points)</li>
 </ul>
-<p>R can also use other data types such as text (<a class="glossary">character<span class="def">A data type representing strings of text.</span></a>) data.</p>
+<p>R can also use other data types that are not numerical such as text (<a class="glossary">character<span class="def">A data type representing strings of text.</span></a>) data.</p>
 </section><section id="convert-variables-from-one-data-type-to-another" class="level3" data-number="2.6.3"><h3 data-number="2.6.3" class="anchored" data-anchor-id="convert-variables-from-one-data-type-to-another">
 <span class="header-section-number">2.6.3</span> Convert variables from one data type to another</h3>
 <p>When we first import data into R, it might not recognise the data types correctly. For example, in the below data, we can see the <strong>intervention</strong> variable :</p>
@@ -463,54 +427,54 @@ mySPSSData &lt;- read_sav("datasets/salesData.sav")</a></code></pre>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">8.884138</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">8.953619</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">9.155492</td>
+<td style="text-align: right;">6.245260</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">7</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">9.208114</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">8.745944</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">9.287217</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">8.906846</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">6</td>
+<td style="text-align: right;">13</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">9.309517</td>
+<td style="text-align: right;">9.199057</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">9.568321</td>
-</tr>
-<tr class="even">
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">9.819477</td>
+<td style="text-align: right;">9.301780</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">9.381039</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">16</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">9.849244</td>
+<td style="text-align: right;">9.446345</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">9.909773</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">10.017880</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">17</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">9.882446</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">10.075152</td>
 </tr>
 </tbody>
 </table>
@@ -523,8 +487,8 @@ mySPSSData &lt;- read_sav("datasets/salesData.sav")</a></code></pre>
 </div>
 </section></section><section id="working-with-dataframes" class="level2" data-number="2.7"><h2 data-number="2.7" class="anchored" data-anchor-id="working-with-dataframes">
 <span class="header-section-number">2.7</span> Working with dataframes</h2>
-<p><a class="glossary">Dataframes<span class="def"></span></a> are the more standard data format that were are used to (think of how a dataset looks in SPSS or Excel).</p>
-<p>In a <a class="glossary">dataframe<span class="def"></span></a>, variables are columns and each row usually reperesents one measurement or one participant.</p>
+<p><a class="glossary">Dataframes<span class="def">a 2-dimensional dataset, usually with rows of data and columns of variables</span></a> are the more standard data format that were are used to (think of how a dataset looks in SPSS or Excel).</p>
+<p>In a <a class="glossary">dataframe<span class="def">a 2-dimensional dataset, usually with rows of data and columns of variables</span></a>, variables are columns and each row usually reperesents one measurement or one participant.</p>
 <section id="view-dataframe" class="level3" data-number="2.7.1"><h3 data-number="2.7.1" class="anchored" data-anchor-id="view-dataframe">
 <span class="header-section-number">2.7.1</span> View dataframe</h3>
 <p>To view a dataframe, we can click on it in the <inf>environment</inf> window and it will display:</p>
@@ -544,9 +508,9 @@ mySPSSData &lt;- read_sav("datasets/salesData.sav")</a></code></pre>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>happinessSample<span class="sc">$</span>happiness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]  9.568322  8.953619  8.884138 12.249988  9.155492  9.309517  9.208114
- [8]  9.819477 10.016804 11.094374 10.302998 10.800649 10.141901 10.365840
-[15] 10.052093  9.849244  9.882446  9.287217 11.251772 10.715134</code></pre>
+<pre><code> [1] 11.580517 11.947034  9.909773  6.245260  9.381039 11.515421  8.745944
+ [8]  9.301780  8.906846 11.011479 10.726459 11.337853  9.199057 11.120169
+[15] 11.563120  9.446345 10.075152 10.017880 11.284192 12.638480</code></pre>
 </div>
 </div>
 <p>As we can see above, the result is then displayed.</p>
@@ -566,104 +530,104 @@ mySPSSData &lt;- read_sav("datasets/salesData.sav")</a></code></pre>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">8.884138</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">8.953619</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.155492</td>
+<td style="text-align: right;">6.245260</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">7</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.208114</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">18</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.287217</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.309517</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.568321</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">8</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.819477</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">16</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.849244</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">17</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.882446</td>
+<td style="text-align: right;">8.745944</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">9</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">10.016804</td>
+<td style="text-align: right;">8.906846</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">15</td>
+<td style="text-align: right;">13</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">10.052093</td>
+<td style="text-align: right;">9.199057</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10.141901</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.301780</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">11</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.381039</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">16</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">10.302998</td>
+<td style="text-align: right;">9.446345</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">9.909773</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.017880</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.075152</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.726459</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">11.011479</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">14</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">10.365840</td>
+<td style="text-align: right;">11.120169</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">20</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10.715134</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">11.284192</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">12</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">10.800649</td>
+<td style="text-align: right;">11.337853</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">10</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">11.094374</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">11.515421</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">19</td>
+<td style="text-align: right;">15</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">11.251772</td>
+<td style="text-align: right;">11.563120</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">12.249988</td>
+<td style="text-align: right;">11.580517</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">11.947034</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">12.638480</td>
 </tr>
 </tbody>
 </table>
@@ -677,104 +641,104 @@ mySPSSData &lt;- read_sav("datasets/salesData.sav")</a></code></pre>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">12.249988</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">19</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">11.251772</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">10</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">11.094374</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">12</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10.800649</td>
-</tr>
-<tr class="odd">
 <td style="text-align: right;">20</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">10.715134</td>
+<td style="text-align: right;">12.638480</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">14</td>
+<td style="text-align: right;">2</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">10.365840</td>
+<td style="text-align: right;">11.947034</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">11</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">10.302998</td>
+<td style="text-align: right;">11.580517</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10.141901</td>
-</tr>
-<tr class="odd">
 <td style="text-align: right;">15</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">10.052093</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">9</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">10.016804</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">17</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.882446</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">16</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.849244</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">8</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.819477</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.568321</td>
+<td style="text-align: right;">11.563120</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">6</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.309517</td>
+<td style="text-align: right;">11.515421</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">11.337853</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">11.284192</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">11.120169</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">11.011479</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.726459</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.075152</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">18</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.017880</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">9.287217</td>
+<td style="text-align: right;">9.909773</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">9.446345</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.381039</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.301780</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.199057</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">8.906846</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">7</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.208114</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">8.745944</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.155492</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">8.953619</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">8.884138</td>
+<td style="text-align: right;">6.245260</td>
 </tr>
 </tbody>
 </table>
@@ -814,44 +778,64 @@ mySPSSData &lt;- read_sav("datasets/salesData.sav")</a></code></pre>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.568321</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">8.884138</td>
-</tr>
-<tr class="odd">
 <td style="text-align: right;">5</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.155492</td>
+<td style="text-align: right;">9.381039</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">6</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.309517</td>
+<td style="text-align: right;">11.515421</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">8</td>
+<td style="text-align: right;">7</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.819477</td>
+<td style="text-align: right;">8.745944</td>
 </tr>
 <tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.301780</td>
+</tr>
+<tr class="odd">
 <td style="text-align: right;">9</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">10.016804</td>
+<td style="text-align: right;">8.906846</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">11.011479</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.726459</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.199057</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">15</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">10.052093</td>
+<td style="text-align: right;">11.563120</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.075152</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.017880</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">19</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">11.251772</td>
+<td style="text-align: right;">11.284192</td>
 </tr>
 </tbody>
 </table>
@@ -873,11 +857,11 @@ mySPSSData &lt;- read_sav("datasets/salesData.sav")</a></code></pre>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">10.237627</td>
+<td style="text-align: right;">11.140025</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.757202</td>
+<td style="text-align: right;">9.844125</td>
 </tr>
 </tbody>
 </table>
@@ -903,123 +887,123 @@ mySPSSData &lt;- read_sav("datasets/salesData.sav")</a></code></pre>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">9.568321</td>
-<td style="text-align: right;">-0.4771354</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">11.580517</td>
+<td style="text-align: right;">1.2828274</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">8.953619</td>
-<td style="text-align: right;">-1.0918382</td>
+<td style="text-align: right;">11.947034</td>
+<td style="text-align: right;">1.6493438</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">3</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">8.884138</td>
-<td style="text-align: right;">-1.1613193</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">9.909773</td>
+<td style="text-align: right;">-0.3879166</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">12.249988</td>
-<td style="text-align: right;">2.2045312</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">6.245260</td>
+<td style="text-align: right;">-4.0524304</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.155492</td>
-<td style="text-align: right;">-0.8899646</td>
+<td style="text-align: right;">9.381039</td>
+<td style="text-align: right;">-0.9166514</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">6</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.309517</td>
-<td style="text-align: right;">-0.7359397</td>
+<td style="text-align: right;">11.515421</td>
+<td style="text-align: right;">1.2177310</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">7</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.208114</td>
-<td style="text-align: right;">-0.8373426</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">8.745944</td>
+<td style="text-align: right;">-1.5517460</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">8</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">9.819477</td>
-<td style="text-align: right;">-0.2259801</td>
+<td style="text-align: right;">9.301780</td>
+<td style="text-align: right;">-0.9959098</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">9</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">10.016804</td>
-<td style="text-align: right;">-0.0286524</td>
+<td style="text-align: right;">8.906846</td>
+<td style="text-align: right;">-1.3908438</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">10</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">11.094374</td>
-<td style="text-align: right;">1.0489167</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">11.011479</td>
+<td style="text-align: right;">0.7137887</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">11</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10.302998</td>
-<td style="text-align: right;">0.2575412</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.726459</td>
+<td style="text-align: right;">0.4287693</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">12</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">10.800649</td>
-<td style="text-align: right;">0.7551924</td>
+<td style="text-align: right;">11.337853</td>
+<td style="text-align: right;">1.0401634</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">13</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">10.141901</td>
-<td style="text-align: right;">0.0964439</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">9.199057</td>
+<td style="text-align: right;">-1.0986329</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">14</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">10.365840</td>
-<td style="text-align: right;">0.3203833</td>
+<td style="text-align: right;">11.120169</td>
+<td style="text-align: right;">0.8224791</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">15</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">10.052093</td>
-<td style="text-align: right;">0.0066357</td>
+<td style="text-align: right;">11.563120</td>
+<td style="text-align: right;">1.2654296</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">16</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">9.849244</td>
-<td style="text-align: right;">-0.1962134</td>
+<td style="text-align: right;">9.446345</td>
+<td style="text-align: right;">-0.8513449</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">17</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.882446</td>
-<td style="text-align: right;">-0.1630112</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.075152</td>
+<td style="text-align: right;">-0.2225381</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">18</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">9.287217</td>
-<td style="text-align: right;">-0.7582398</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">10.017880</td>
+<td style="text-align: right;">-0.2798103</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">19</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: right;">11.251772</td>
-<td style="text-align: right;">1.2063154</td>
+<td style="text-align: right;">11.284192</td>
+<td style="text-align: right;">0.9865019</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">20</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">10.715134</td>
-<td style="text-align: right;">0.6696768</td>
+<td style="text-align: right;">12.638480</td>
+<td style="text-align: right;">2.3407900</td>
 </tr>
 </tbody>
 </table>

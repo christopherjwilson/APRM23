@@ -2,9 +2,7 @@
 
 ```{r, include = FALSE}
 source("R/packages_data.R")
-library(glossary)
 
-glossary_path("psyteachr")
 ```
 
 
@@ -15,8 +13,8 @@ glossary_path("psyteachr")
 ## By the end of this section, you will be able to:
 - Import data into R from excel, SPSS and csv files
 - Save data to `r glossary("object")`
-- Identify different data structures and `r glossary("data type", "data types")`
-- Convert `r glossary("data type", "data types")` from one type to another
+- Identify different data structures and `r glossary("data type (numerical)", "data types")`
+- Convert `r glossary("data type (numerical)", "data types")` from one type to another
 - Order, filter and group data
 - Summarise data
 - Create new `r glossary("variable (coding)", "variables")` or `r glossary("object", "objects")` from data
@@ -47,8 +45,8 @@ It is also possible to import data using code, for example:
 
 `
  # importing a .csv file
-    
-    library(readr)
+```{r eval=FALSE}
+   library(readr)
     studentData <- read_csv("Datasets/studentData.csv")
 
 
@@ -56,9 +54,9 @@ It is also possible to import data using code, for example:
     
     library(haven)
     mySPSSData <- read_sav("datasets/salesData.sav")
-`
+```
 
-   
+
 
 Once the data are imported, it will be visible in the environment: 
 
@@ -90,7 +88,7 @@ In the above code (reading left to right):
     
 When this code is run, *happinessMean* will be stored in the environment window:
 
-![Result of a calculation in the environment](images/saveobject.png)
+![Storing the result of a calculation in the environment](images/saveobject.png)
 
 To recall an object from the environment, we can simply type its name. For example:
 
@@ -102,15 +100,15 @@ To recall an object from the environment, we can simply type its name. For examp
     
 > Its important to note that anything can be stored as an object in R and recalled later. This includes, dataframes, the results of statistical calculations, plots etc.
 
-## Identify different `r glossary("data container", "data structures")` and variable types
+## Identify different `r glossary("container", "data structures")` and variable types
 
-### Data structures (sometimes referred to as "`r glossary("data container", "data containers")`")
+### Data structures (sometimes referred to as "`r glossary("container", "data containers")`")
 
 There are many different types of data structures that R can work with. The most common type of data for most people tends to be a `r glossary("data frame")`. A `r glossary("data frame")` is what you might consider a "normal" 2-dimensional dataset, with rows of data and columns of variables:
 
 ![A dataframe example](images/dataframe.png)
 
-R can also use other data types.
+R can also use other data structures.
 
 A `r glossary("vector")` is a one-dimensional set of values:
 
@@ -133,9 +131,9 @@ myMatrix
 
 > We will primarily work with dataframes (and sometimes vectors), as this is how the data in psychology research is usually structured.
 
-### Data types
+### Types of numerical data
 
-With numerical data, there are 4 key `r glossary("data type", "data types")`:
+With numerical data, there are 4 key `r glossary("data type (numerical)", "data types")`:
 
 - `r glossary("factor (data type)")` or nominal (a category, group or factor)
 - `r glossary("ordinal")` (a ranking)
@@ -150,7 +148,7 @@ R can use all of these variable types:
 - **Ordinal** variables are called **ordered factors**
 - **Interval and ratio** variables are called **numeric** data and can sometimes be called integers (if they are only whole numbers) or doubles (if they all have decimal points)
 
-R can also use other data types such as text (`r glossary("character")`) data.
+R can also use other data types that are not numerical such as text (`r glossary("character")`) data.
 
 ### Convert variables from one data type to another
 
