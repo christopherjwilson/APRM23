@@ -37,6 +37,7 @@
     border: 2px dotted grey;
     background-color: white;
     border-radius: 0.25em;
+    width: 100%;
 }
 
 .webex-incorrect,
