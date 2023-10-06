@@ -23,7 +23,6 @@ book:
     title: ''
     logo: ''
     search: true
-    contents: ''
     style: floating
     background: light
     foreground: dark

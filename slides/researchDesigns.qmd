@@ -2,19 +2,34 @@
 author: "Christopher Wilson"
 editor: visual
 format: revealjs
-bibliography: ../include/references.bib
+bibliography: references.bib
 width: 1200
+editor:
+  render-on-save: true
 ---
 
 # Research Designs in Clinical Psychology {.unnumbered}
 
 ## At the end of this session, you will be able to:
 
-- List some features of robust, impactful and ethical clinical research
 - Describe a range of research apporaches used in clinical psychology
-- Refer to examples of each of the research types in the clinical psychology literature
+- Critically discuss some of the limitations of clinical psychology research identified in the literature
+- Consider and apply some approaches that are suggested for the for development of more robust research practices
 
-# Designing robust research
+::: {.content-visible when-profile="speaker"}
+:::: {.notes}
+Clinical psychology research employs a variety of designs to investigate questions about psychological disorders, assessment, treatment, and professional issues (Kazdin 2021). Experimental designs like randomized controlled trials are considered the "gold standard" for determining treatment efficacy (Blampied 1998). These large-scale studies with hundreds of participants are increasingly common in clinical research (Blampied 1998). However, early phase studies often lack adequate power and instead use small "pilot" studies to estimate effect sizes for larger trials (Epstein 2021). 
+
+Single-case designs offer an alternative for early translational research. Reversal and multiple baseline designs can test intervention effects and determine sample sizes for randomized trials (Epstein 2021). These flexible, efficient designs suit the experimental nature of clinical psychology (Sanderson 1991).
+
+Clinical research also employs quasi-experimental designs, correlational analyses, case studies, and qualitative methods (Kazdin 2021; Kendall 1982; Roberts 2003). Assessment research uses psychometrics to develop and validate measures (Kendall 1982). Prevention research tests interventions to reduce disorder risk factors (Kendall 1982). Studies on professional issues like training and ethics are also common (Roberts 2003).
+
+Cultural diversity issues must be addressed when researching ethnic minority groups (Kendall 1982). Research with children, adolescents, older adults, couples, and families requires specialized methods (Kendall 1982; Roberts 2003). 
+
+In summary, clinical psychology employs diverse research designs, from small-scale studies to large randomized controlled trials, to investigate psychological disorders, assessment, treatment, prevention, professional training, ethics, and cultural diversity. Experimental and quasi-experimental methods are commonly used, as are correlational, case study, and qualitative designs (Kazdin 2021; Kendall 1982; Roberts 2003; Epstein 2021; Blampied 1998; Sanderson 1991).
+::::
+:::
+
 
 ## Research questions that are built on evidence
 Build questions based on what we do know. Not based on assumptions about empty space.
