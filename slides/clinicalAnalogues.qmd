@@ -1,3 +1,7 @@
+---
+bibliography: references.bib
+---
+
 # Clinical Analogue Studies
 
 ## What are clinical analogue studies?
@@ -27,7 +31,11 @@
 
 - Subclinical measurements can allow accurate modelling of relevant processes (e.g. Depression: @HillEtAl1987). 
 
-- Allows design of studies to better understand the relationship between treatment -> process and process -> outcome [@EhringEtAl2022]
+- Allows design of studies to better understand the relationship between:
+    - treatment -> process  
+    - process -> outcome 
+
+[@EhringEtAl2022]
 
 - Allows control and focus on specific variables to identify mechanisms of change [@EhringEtAl2022]
 

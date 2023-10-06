@@ -1,3 +1,6 @@
+---
+bibliography: references.bib
+---
 
 # What is basic clinical research?
 

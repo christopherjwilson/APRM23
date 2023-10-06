@@ -8,6 +8,7 @@ institute: Teesside University
 width: 1800
 height: 900
 logo: "logo.jpg"
+csl: apa.csl
 ---
 
 ## Overview

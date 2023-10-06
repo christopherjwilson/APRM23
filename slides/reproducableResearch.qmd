@@ -1,4 +1,10 @@
-# Reproducable and Open Research
+---
+bibliography: references.bib
+---
+
+# Reproducable and Open Research {background-image="https://images.unsplash.com/photo-1457369804613-52c61a468e7d" background-color="black"}
+
+
 
 ## What is reproducable and open research?
 
