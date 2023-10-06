@@ -2,9 +2,11 @@
 bibliography: references.bib
 ---
 
+# Linking basic research to clinical interventions {background-image="https://www.tees.ac.uk/Images/CommonImages/prospectus/PG/course_images/psychology.jpg" background-color="black"}
+
 # What is basic clinical research?
 
-"any type of psychological research investigating processes that are involved in the development and/or maintenance of psychopathology across any level of explanation (e.g., biological, cognitive, behavioral)" @EhringEtAl2022
+"any type of psychological research investigating processes that are involved in the development and/or maintenance of psychopathology across any level of explanation (e.g., biological, cognitive, behavioral)" [@EhringEtAl2022]
 
 ## Why does basic research matter?
 

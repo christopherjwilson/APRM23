@@ -2,7 +2,7 @@
 bibliography: references.bib
 ---
 
-# Clinical Analogue Studies
+# Clinical Analogue Studies {background-image="images/cog1.jpg" background-color="black"}
 
 ## What are clinical analogue studies?
 
