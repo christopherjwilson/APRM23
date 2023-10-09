@@ -47,6 +47,7 @@ book:
   - factorAnalysis.rmd
   appendices:
   - references.qmd
+
 bibliography: include/references.bib
 csl: include/apa.csl
 format:
@@ -77,4 +78,4 @@ format:
     include-after-body:
     - include/webex.js
     - include/script.js
-    - aprm23/include/webex.js
+    - include/webex.js

@@ -88,7 +88,7 @@
     "href": "workingWithData.html#import-data-into-r-from-excel-spss-and-csv-files",
     "title": "\n2  Working with data in R\n",
     "section": "\n2.3 Import data into R from excel, SPSS and csv files",
-    "text": "2.3 Import data into R from excel, SPSS and csv files\nWe can import data from a range of sources using the Import Dataset button in the Environment tab:\n\n\nImporting data\n\n\nIt is also possible to import data using code, for example:\n` # importing a .csv file\n\n   library(readr)\n    studentData <- read_csv(\"Datasets/studentData.csv\")\n\n    #importing an SPSS file\n    \n    library(haven)\n    mySPSSData <- read_sav(\"datasets/salesData.sav\")\n\nOnce the data are imported, it will be visible in the environment:\n\n\nImported data in the environment"
+    "text": "2.3 Import data into R from excel, SPSS and csv files\nWe can import data from a range of sources using the Import Dataset button in the Environment tab:\n\n\nImporting data\n\nIt is also possible to import data using code, for example:\n` # importing a .csv file\n\n   library(readr)\n    studentData &lt;- read_csv(\"Datasets/studentData.csv\")\n\n    #importing an SPSS file\n    \n    library(haven)\n    mySPSSData &lt;- read_sav(\"datasets/salesData.sav\")\n\nOnce the data are imported, it will be visible in the environment:\n\n\nImported data in the environment"
   },
   {
     "objectID": "workingWithData.html#restructuring-and-reorganising-data-in-r-long-versus-wide-data",
@@ -102,7 +102,7 @@
     "href": "workingWithData.html#understanding-objects-in-r",
     "title": "\n2  Working with data in R\n",
     "section": "\n2.5 Understanding objects in R",
-    "text": "2.5 Understanding objects in R\nIn R, an objectA word that identifies and stores the value of some data for later use. is anything that is saved to memory. For example, we might do some analysis:\nmean(happiness)\nHowever, in the example above, the result would appear in the console but not be saved anywhere. To store the result for reuse later, we save it to an object:\n\nhappinessMean <- mean(happiness)\n\nIn the above code (reading left to right):\n\nWe name the object “happinessMean”. This name can be anything we want.\nThe arrow means that the result of the code on the right will be saved to the object on the left.\nThe code on the right of the arrow calculates the mean of happiness data\n\nWhen this code is run, happinessMean will be stored in the environment window:\n\n\nStoring the result of a calculation in the environment\n\n\nTo recall an object from the environment, we can simply type its name. For example:\n\n happinessMean\n\n[1] 10.29769\n\n\n\nIts important to note that anything can be stored as an object in R and recalled later. This includes, dataframes, the results of statistical calculations, plots etc."
+    "text": "2.5 Understanding objects in R\nIn R, an objectA word that identifies and stores the value of some data for later use. is anything that is saved to memory. For example, we might do some analysis:\nmean(happiness)\nHowever, in the example above, the result would appear in the console but not be saved anywhere. To store the result for reuse later, we save it to an object:\n\nhappinessMean &lt;- mean(happiness)\n\nIn the above code (reading left to right):\n\nWe name the object “happinessMean”. This name can be anything we want.\nThe arrow means that the result of the code on the right will be saved to the object on the left.\nThe code on the right of the arrow calculates the mean of happiness data\n\nWhen this code is run, happinessMean will be stored in the environment window:\n\n\nStoring the result of a calculation in the environment\n\nTo recall an object from the environment, we can simply type its name. For example:\n\n happinessMean\n\n[1] 10.29769\n\n\n\nIts important to note that anything can be stored as an object in R and recalled later. This includes, dataframes, the results of statistical calculations, plots etc."
   },
   {
     "objectID": "workingWithData.html#identify-different-data-structures-and-variable-types",
@@ -116,35 +116,35 @@
     "href": "workingWithData.html#working-with-dataframes",
     "title": "\n2  Working with data in R\n",
     "section": "\n2.7 Working with dataframes",
-    "text": "2.7 Working with dataframes\nDataframesa 2-dimensional dataset, usually with rows of data and columns of variables are the more standard data format that were are used to (think of how a dataset looks in SPSS or Excel).\nIn a dataframea 2-dimensional dataset, usually with rows of data and columns of variables, variables are columns and each row usually reperesents one measurement or one participant.\n\n2.7.1 View dataframe\nTo view a dataframe, we can click on it in the environment window and it will display:\n\n\nClicking on datasets in hte environment will open them up for viewing\n\n\n\n\nViewing a dataframe\n\n\n\n2.7.2 Refer to variables (columns) in a dataframe\nColumns in a dataframe are accessed using the “$” sign. For example, to access the happiness column in the happinessSample dataframe, we would type:\n\nhappinessSample$happiness\n\n [1] 11.580517 11.947034  9.909773  6.245260  9.381039 11.515421  8.745944\n [8]  9.301780  8.906846 11.011479 10.726459 11.337853  9.199057 11.120169\n[15] 11.563120  9.446345 10.075152 10.017880 11.284192 12.638480\n\n\nAs we can see above, the result is then displayed."
+    "text": "2.7 Working with dataframes\nDataframesa 2-dimensional dataset, usually with rows of data and columns of variables are the more standard data format that were are used to (think of how a dataset looks in SPSS or Excel).\nIn a dataframea 2-dimensional dataset, usually with rows of data and columns of variables, variables are columns and each row usually reperesents one measurement or one participant.\n\n2.7.1 View dataframe\nTo view a dataframe, we can click on it in the environment window and it will display:\n\n\nClicking on datasets in hte environment will open them up for viewing\n\n\n\nViewing a dataframe\n\n\n2.7.2 Refer to variables (columns) in a dataframe\nColumns in a dataframe are accessed using the “$” sign. For example, to access the happiness column in the happinessSample dataframe, we would type:\n\nhappinessSample$happiness\n\n [1] 11.580517 11.947034  9.909773  6.245260  9.381039 11.515421  8.745944\n [8]  9.301780  8.906846 11.011479 10.726459 11.337853  9.199057 11.120169\n[15] 11.563120  9.446345 10.075152 10.017880 11.284192 12.638480\n\n\nAs we can see above, the result is then displayed."
   },
   {
     "objectID": "workingWithData.html#order-filter-and-group-data",
     "href": "workingWithData.html#order-filter-and-group-data",
     "title": "\n2  Working with data in R\n",
     "section": "\n2.8 Order, filter and group data",
-    "text": "2.8 Order, filter and group data\nIf you have the tidyverse package loaded, it is easy to organise and filter data.\n\narrange(happinessSample, happiness)\narrange(happinessSample, desc(happiness)) # Arrange in descending order\n\n\n\n\nparticipant\nintervention\nhappiness\n\n\n\n4\n2\n6.245260\n\n\n7\n2\n8.745944\n\n\n9\n2\n8.906846\n\n\n13\n2\n9.199057\n\n\n8\n2\n9.301780\n\n\n5\n2\n9.381039\n\n\n16\n1\n9.446345\n\n\n3\n1\n9.909773\n\n\n18\n2\n10.017880\n\n\n17\n2\n10.075152\n\n\n11\n2\n10.726459\n\n\n10\n2\n11.011479\n\n\n14\n1\n11.120169\n\n\n19\n2\n11.284192\n\n\n12\n1\n11.337853\n\n\n6\n2\n11.515421\n\n\n15\n2\n11.563120\n\n\n1\n1\n11.580517\n\n\n2\n1\n11.947034\n\n\n20\n1\n12.638480\n\n\n\n\n\n\n\nparticipant\nintervention\nhappiness\n\n\n\n20\n1\n12.638480\n\n\n2\n1\n11.947034\n\n\n1\n1\n11.580517\n\n\n15\n2\n11.563120\n\n\n6\n2\n11.515421\n\n\n12\n1\n11.337853\n\n\n19\n2\n11.284192\n\n\n14\n1\n11.120169\n\n\n10\n2\n11.011479\n\n\n11\n2\n10.726459\n\n\n17\n2\n10.075152\n\n\n18\n2\n10.017880\n\n\n3\n1\n9.909773\n\n\n16\n1\n9.446345\n\n\n5\n2\n9.381039\n\n\n8\n2\n9.301780\n\n\n13\n2\n9.199057\n\n\n9\n2\n8.906846\n\n\n7\n2\n8.745944\n\n\n4\n2\n6.245260\n\n\n\n\n\n\n\nShow clients with a happiness score of less than 4\n\n\nfilter(happinessSample, happiness < 4)\n\n\n\n\nparticipant\nintervention\nhappiness\n\n\n\n\n\n\n\nShow Intervention group 2 with happiness scores above 7\n\n\nfilter(happinessSample, happiness > 7 & intervention == 2)\n\n\n\n\nparticipant\nintervention\nhappiness\n\n\n\n5\n2\n9.381039\n\n\n6\n2\n11.515421\n\n\n7\n2\n8.745944\n\n\n8\n2\n9.301780\n\n\n9\n2\n8.906846\n\n\n10\n2\n11.011479\n\n\n11\n2\n10.726459\n\n\n13\n2\n9.199057\n\n\n15\n2\n11.563120\n\n\n17\n2\n10.075152\n\n\n18\n2\n10.017880\n\n\n19\n2\n11.284192\n\n\n\n\n\n\n\nGroup by intervention and show the mean happiness score\n\n\nhappinessSample %>% group_by(intervention) %>% summarise(mean = mean(happiness))\n\n\n\n\nintervention\nmean\n\n\n\n1\n11.140025\n\n\n2\n9.844125"
+    "text": "2.8 Order, filter and group data\nIf you have the tidyverse package loaded, it is easy to organise and filter data.\n\narrange(happinessSample, happiness)\narrange(happinessSample, desc(happiness)) # Arrange in descending order\n\n\n\n\nparticipant\nintervention\nhappiness\n\n\n\n4\n2\n6.245260\n\n\n7\n2\n8.745944\n\n\n9\n2\n8.906846\n\n\n13\n2\n9.199057\n\n\n8\n2\n9.301780\n\n\n5\n2\n9.381039\n\n\n16\n1\n9.446345\n\n\n3\n1\n9.909773\n\n\n18\n2\n10.017880\n\n\n17\n2\n10.075152\n\n\n11\n2\n10.726459\n\n\n10\n2\n11.011479\n\n\n14\n1\n11.120169\n\n\n19\n2\n11.284192\n\n\n12\n1\n11.337853\n\n\n6\n2\n11.515421\n\n\n15\n2\n11.563120\n\n\n1\n1\n11.580517\n\n\n2\n1\n11.947034\n\n\n20\n1\n12.638480\n\n\n\n\n\n\n\nparticipant\nintervention\nhappiness\n\n\n\n20\n1\n12.638480\n\n\n2\n1\n11.947034\n\n\n1\n1\n11.580517\n\n\n15\n2\n11.563120\n\n\n6\n2\n11.515421\n\n\n12\n1\n11.337853\n\n\n19\n2\n11.284192\n\n\n14\n1\n11.120169\n\n\n10\n2\n11.011479\n\n\n11\n2\n10.726459\n\n\n17\n2\n10.075152\n\n\n18\n2\n10.017880\n\n\n3\n1\n9.909773\n\n\n16\n1\n9.446345\n\n\n5\n2\n9.381039\n\n\n8\n2\n9.301780\n\n\n13\n2\n9.199057\n\n\n9\n2\n8.906846\n\n\n7\n2\n8.745944\n\n\n4\n2\n6.245260\n\n\n\n\n\n\n\nShow clients with a happiness score of less than 4\n\n\nfilter(happinessSample, happiness &lt; 4)\n\n\n\n\nparticipant\nintervention\nhappiness\n\n\n\n\n\n\n\nShow Intervention group 2 with happiness scores above 7\n\n\nfilter(happinessSample, happiness &gt; 7 & intervention == 2)\n\n\n\n\nparticipant\nintervention\nhappiness\n\n\n\n5\n2\n9.381039\n\n\n6\n2\n11.515421\n\n\n7\n2\n8.745944\n\n\n8\n2\n9.301780\n\n\n9\n2\n8.906846\n\n\n10\n2\n11.011479\n\n\n11\n2\n10.726459\n\n\n13\n2\n9.199057\n\n\n15\n2\n11.563120\n\n\n17\n2\n10.075152\n\n\n18\n2\n10.017880\n\n\n19\n2\n11.284192\n\n\n\n\n\n\n\nGroup by intervention and show the mean happiness score\n\n\nhappinessSample %&gt;% group_by(intervention) %&gt;% summarise(mean = mean(happiness))\n\n\n\n\nintervention\nmean\n\n\n\n1\n11.140025\n\n\n2\n9.844125"
   },
   {
     "objectID": "workingWithData.html#create-new-variables-objects-from-data",
     "href": "workingWithData.html#create-new-variables-objects-from-data",
     "title": "\n2  Working with data in R\n",
     "section": "\n2.9 Create new variables / objects from data",
-    "text": "2.9 Create new variables / objects from data\nTo create new variables from data, we can use the mutate() function.\nFor example, let’s say we wanted to calculate the difference between each person’s happiness score and the mean happiness score.\nWe could do the following:\n\nhappinessSample %>% mutate(difference = happiness - mean(happiness))\n\n\n\n\nparticipant\nintervention\nhappiness\ndifference\n\n\n\n1\n1\n11.580517\n1.2828274\n\n\n2\n1\n11.947034\n1.6493438\n\n\n3\n1\n9.909773\n-0.3879166\n\n\n4\n2\n6.245260\n-4.0524304\n\n\n5\n2\n9.381039\n-0.9166514\n\n\n6\n2\n11.515421\n1.2177310\n\n\n7\n2\n8.745944\n-1.5517460\n\n\n8\n2\n9.301780\n-0.9959098\n\n\n9\n2\n8.906846\n-1.3908438\n\n\n10\n2\n11.011479\n0.7137887\n\n\n11\n2\n10.726459\n0.4287693\n\n\n12\n1\n11.337853\n1.0401634\n\n\n13\n2\n9.199057\n-1.0986329\n\n\n14\n1\n11.120169\n0.8224791\n\n\n15\n2\n11.563120\n1.2654296\n\n\n16\n1\n9.446345\n-0.8513449\n\n\n17\n2\n10.075152\n-0.2225381\n\n\n18\n2\n10.017880\n-0.2798103\n\n\n19\n2\n11.284192\n0.9865019\n\n\n20\n1\n12.638480\n2.3407900"
+    "text": "2.9 Create new variables / objects from data\nTo create new variables from data, we can use the mutate() function.\nFor example, let’s say we wanted to calculate the difference between each person’s happiness score and the mean happiness score.\nWe could do the following:\n\nhappinessSample %&gt;% mutate(difference = happiness - mean(happiness))\n\n\n\n\nparticipant\nintervention\nhappiness\ndifference\n\n\n\n1\n1\n11.580517\n1.2828274\n\n\n2\n1\n11.947034\n1.6493438\n\n\n3\n1\n9.909773\n-0.3879166\n\n\n4\n2\n6.245260\n-4.0524304\n\n\n5\n2\n9.381039\n-0.9166514\n\n\n6\n2\n11.515421\n1.2177310\n\n\n7\n2\n8.745944\n-1.5517460\n\n\n8\n2\n9.301780\n-0.9959098\n\n\n9\n2\n8.906846\n-1.3908438\n\n\n10\n2\n11.011479\n0.7137887\n\n\n11\n2\n10.726459\n0.4287693\n\n\n12\n1\n11.337853\n1.0401634\n\n\n13\n2\n9.199057\n-1.0986329\n\n\n14\n1\n11.120169\n0.8224791\n\n\n15\n2\n11.563120\n1.2654296\n\n\n16\n1\n9.446345\n-0.8513449\n\n\n17\n2\n10.075152\n-0.2225381\n\n\n18\n2\n10.017880\n-0.2798103\n\n\n19\n2\n11.284192\n0.9865019\n\n\n20\n1\n12.638480\n2.3407900"
   },
   {
     "objectID": "descriptives.html#working-example---record-sales-data",
     "href": "descriptives.html#working-example---record-sales-data",
     "title": "\n3  Exploratory and descriptive analysis with R\n",
     "section": "\n3.1 Working example - record sales data",
-    "text": "3.1 Working example - record sales data\nLet’s import the data\n\nAlbum_Sales <- read.csv(\"datasets/album_sales.csv\")\n\nLet’s look at the data\n\nhead(Album_Sales)\n\n\n\n\nAdverts\nSales\nAirplay\nAttract\nGenre\n\n\n\n10.256\n330\n43\n10\nCountry\n\n\n985.685\n120\n28\n7\nPop\n\n\n1445.563\n360\n35\n7\nHipHop\n\n\n1188.193\n270\n33\n7\nHipHop\n\n\n574.513\n220\n44\n5\nMetal\n\n\n568.954\n170\n19\n5\nCountry"
+    "text": "3.1 Working example - record sales data\nLet’s import the data\n\nAlbum_Sales &lt;- read.csv(\"datasets/album_sales.csv\")\n\nLet’s look at the data\n\nhead(Album_Sales)\n\n\n\n\nAdverts\nSales\nAirplay\nAttract\nGenre\n\n\n\n10.256\n330\n43\n10\nCountry\n\n\n985.685\n120\n28\n7\nPop\n\n\n1445.563\n360\n35\n7\nHipHop\n\n\n1188.193\n270\n33\n7\nHipHop\n\n\n574.513\n220\n44\n5\nMetal\n\n\n568.954\n170\n19\n5\nCountry"
   },
   {
     "objectID": "descriptives.html#lets-make-sure-our-data-types-are-correct-1",
     "href": "descriptives.html#lets-make-sure-our-data-types-are-correct-1",
     "title": "\n3  Exploratory and descriptive analysis with R\n",
     "section": "\n3.2 Let’s make sure our data types are correct #1",
-    "text": "3.2 Let’s make sure our data types are correct #1\n\nThis variable is currently stored as charcters, not as a factor / category variable\n\n\nstr(Album_Sales$Genre) \n\n chr [1:200] \"Country\" \"Pop\" \"HipHop\" \"HipHop\" \"Metal\" \"Country\" \"Pop\" ...\n\n\n\nWe can save it as a factor\n\n\nAlbum_Sales$Genre <- as.factor(Album_Sales$Genre)\n\nstr(Album_Sales$Genre) \n\n Factor w/ 4 levels \"Country\",\"HipHop\",..: 1 4 2 2 3 1 4 4 3 2 ..."
+    "text": "3.2 Let’s make sure our data types are correct #1\n\nThis variable is currently stored as charcters, not as a factor / category variable\n\n\nstr(Album_Sales$Genre) \n\n chr [1:200] \"Country\" \"Pop\" \"HipHop\" \"HipHop\" \"Metal\" \"Country\" \"Pop\" ...\n\n\n\nWe can save it as a factor\n\n\nAlbum_Sales$Genre &lt;- as.factor(Album_Sales$Genre)\n\nstr(Album_Sales$Genre) \n\n Factor w/ 4 levels \"Country\",\"HipHop\",..: 1 4 2 2 3 1 4 4 3 2 ..."
   },
   {
     "objectID": "descriptives.html#measures-of-central-tendency",
@@ -158,7 +158,7 @@
     "href": "descriptives.html#measures-of-dispresion-or-variance",
     "title": "\n3  Exploratory and descriptive analysis with R\n",
     "section": "\n3.4 Measures of dispresion or variance",
-    "text": "3.4 Measures of dispresion or variance\n\n3.4.1 Range\nThe range is the difference between the lowest and highest values\n\nYou can calculate it using these values\n\n\nmax(Album_Sales$Airplay) - min(Album_Sales$Airplay)\n\n[1] 63\n\n\n\nOr you can use the range command to get the min and max values in one go\n\n\nrange(Album_Sales$Airplay)\n\n[1]  0 63\n\n\n\n3.4.2 Interquartile range\n\nWe know that the median is the “middle” of the data = 50th percentile\nThe interquatile range is the difference between the values at the 25th and 75th percentiles\n\n\nquantile( x = Album_Sales$Airplay, probs = c(.25,.75) )\n\n  25%   75% \n19.75 36.00 \n\n\n\nInterquartile range = 36 - 19.75 = 16.25\n\nSum of squares\n\nThe difference between each value and the mean value, squared, and then summed together\n\n\nsum( (Album_Sales$Adverts - mean(Album_Sales$Adverts))^2 )\n\n[1] 46936335\n\n\n\n3.4.3 Variance\n\nVariance: Sum of sqaures divided by n-1\n\n\n# variance calculation\nvarianceAdverts <- sum( (Album_Sales$Adverts - mean(Album_Sales$Adverts))^2 ) / 199\n\n\n3.4.4 Standard deviation\n\nStandard deviation is square root of the variance\n\n\n# sd calculation\n\n\nsqrt(varianceAdverts)\n\n[1] 485.6552\n\n\n\nCan be calculated using the sd() command\n\n\nsd(Album_Sales$Adverts)\n\n[1] 485.6552"
+    "text": "3.4 Measures of dispresion or variance\n\n3.4.1 Range\nThe range is the difference between the lowest and highest values\n\nYou can calculate it using these values\n\n\nmax(Album_Sales$Airplay) - min(Album_Sales$Airplay)\n\n[1] 63\n\n\n\nOr you can use the range command to get the min and max values in one go\n\n\nrange(Album_Sales$Airplay)\n\n[1]  0 63\n\n\n\n3.4.2 Interquartile range\n\nWe know that the median is the “middle” of the data = 50th percentile\nThe interquatile range is the difference between the values at the 25th and 75th percentiles\n\n\nquantile( x = Album_Sales$Airplay, probs = c(.25,.75) )\n\n  25%   75% \n19.75 36.00 \n\n\n\nInterquartile range = 36 - 19.75 = 16.25\n\nSum of squares\n\nThe difference between each value and the mean value, squared, and then summed together\n\n\nsum( (Album_Sales$Adverts - mean(Album_Sales$Adverts))^2 )\n\n[1] 46936335\n\n\n\n3.4.3 Variance\n\nVariance: Sum of sqaures divided by n-1\n\n\n# variance calculation\nvarianceAdverts &lt;- sum( (Album_Sales$Adverts - mean(Album_Sales$Adverts))^2 ) / 199\n\n\n3.4.4 Standard deviation\n\nStandard deviation is square root of the variance\n\n\n# sd calculation\n\n\nsqrt(varianceAdverts)\n\n[1] 485.6552\n\n\n\nCan be calculated using the sd() command\n\n\nsd(Album_Sales$Adverts)\n\n[1] 485.6552"
   },
   {
     "objectID": "descriptives.html#skewness-and-kurtosis",
@@ -179,7 +179,7 @@
     "href": "descriptives.html#basic-statistical-tests-more-detail-in-later-sections",
     "title": "\n3  Exploratory and descriptive analysis with R\n",
     "section": "\n3.7 Basic statistical tests (more detail in later sections)",
-    "text": "3.7 Basic statistical tests (more detail in later sections)\n\n3.7.1 Corrleation\n“Is there a relationship between advert spend and sales?”\n\nWe would use an correlational analysis to answer this question\n\n\nplot(Album_Sales$Sales,Album_Sales$Adverts)\n\n\n\n\n\n\n\n“Is there a relationship between advert spend and sales?”\n\nWe would use an correlational analysis to answer this question\n\n\ncor.test(Album_Sales$Sales,Album_Sales$Adverts)\n\n\n    Pearson's product-moment correlation\n\ndata:  Album_Sales$Sales and Album_Sales$Adverts\nt = 9.9793, df = 198, p-value < 2.2e-16\nalternative hypothesis: true correlation is not equal to 0\n95 percent confidence interval:\n 0.4781207 0.6639409\nsample estimates:\n      cor \n0.5784877 \n\n\n\n3.7.2 Tests of difference - t-test\n“Is there a significant difference in sales between the Country and Hip-hop musical genres?”\n\nWe would use a t-test to answer this question\n\n\nmyTtestData <- Album_Sales %>% filter(Genre == c(\"Country\", \"HipHop\"))\n\nt.test(myTtestData$Sales ~ myTtestData$Genre)\n\n\n    Welch Two Sample t-test\n\ndata:  myTtestData$Sales by myTtestData$Genre\nt = 0.80489, df = 40.62, p-value = 0.4256\nalternative hypothesis: true difference in means between group Country and group HipHop is not equal to 0\n95 percent confidence interval:\n -27.80146  64.62904\nsample estimates:\nmean in group Country  mean in group HipHop \n             216.0000              197.5862 \n\n\n\n3.7.3 Tests of difference - ANOVA\n“Is there a significant difference in sales between all musical genres?”\n\nWe would use an ANOVA to answer this question\n\n\nmyAnova <- aov(Album_Sales$Sales ~ Album_Sales$Genre)\nsummary(myAnova)\n\n                   Df  Sum Sq Mean Sq F value Pr(>F)\nAlbum_Sales$Genre   3   23530    7843   1.208  0.308\nResiduals         196 1272422    6492"
+    "text": "3.7 Basic statistical tests (more detail in later sections)\n\n3.7.1 Corrleation\n“Is there a relationship between advert spend and sales?”\n\nWe would use an correlational analysis to answer this question\n\n\nplot(Album_Sales$Sales,Album_Sales$Adverts)\n\n\n\n\n\n\n\n“Is there a relationship between advert spend and sales?”\n\nWe would use an correlational analysis to answer this question\n\n\ncor.test(Album_Sales$Sales,Album_Sales$Adverts)\n\n\n    Pearson's product-moment correlation\n\ndata:  Album_Sales$Sales and Album_Sales$Adverts\nt = 9.9793, df = 198, p-value &lt; 2.2e-16\nalternative hypothesis: true correlation is not equal to 0\n95 percent confidence interval:\n 0.4781207 0.6639409\nsample estimates:\n      cor \n0.5784877 \n\n\n\n3.7.2 Tests of difference - t-test\n“Is there a significant difference in sales between the Country and Hip-hop musical genres?”\n\nWe would use a t-test to answer this question\n\n\nmyTtestData &lt;- Album_Sales %&gt;% filter(Genre == c(\"Country\", \"HipHop\"))\n\nt.test(myTtestData$Sales ~ myTtestData$Genre)\n\n\n    Welch Two Sample t-test\n\ndata:  myTtestData$Sales by myTtestData$Genre\nt = 0.80489, df = 40.62, p-value = 0.4256\nalternative hypothesis: true difference in means between group Country and group HipHop is not equal to 0\n95 percent confidence interval:\n -27.80146  64.62904\nsample estimates:\nmean in group Country  mean in group HipHop \n             216.0000              197.5862 \n\n\n\n3.7.3 Tests of difference - ANOVA\n“Is there a significant difference in sales between all musical genres?”\n\nWe would use an ANOVA to answer this question\n\n\nmyAnova &lt;- aov(Album_Sales$Sales ~ Album_Sales$Genre)\nsummary(myAnova)\n\n                   Df  Sum Sq Mean Sq F value Pr(&gt;F)\nAlbum_Sales$Genre   3   23530    7843   1.208  0.308\nResiduals         196 1272422    6492"
   },
   {
     "objectID": "graphing.html#presenting-data-visually",
@@ -697,6 +697,244 @@
     "href": "workingWithData.html#identify-different-data-structuresa-data-structure-that-aggregates-data-such-as-a-vector-list-matrix-or-data-frame-and-variable-types",
     "title": "\n2  Working with data in R\n",
     "section": "\n2.6 Identify different data structuresA data structure that aggregates data, such as a vector, list, matrix, or data frame and variable types",
-    "text": "2.6 Identify different data structuresA data structure that aggregates data, such as a vector, list, matrix, or data frame and variable types\n\n2.6.1 Data structures (sometimes referred to as “data containersA data structure that aggregates data, such as a vector, list, matrix, or data frame”)\nThere are many different types of data structures that R can work with. The most common type of data for most people tends to be a data frame. A data frame is what you might consider a “normal” 2-dimensional dataset, with rows of data and columns of variables:\n\n\nA dataframe example\n\n\nR can also use other data structures.\nA vector is a one-dimensional set of values:\n\n# a vector example\n\nscores <- c(1,4,6,8,3,4,6,7)\n\nA matrix is a multi-dimensional set of values. The below example is a 3-dimensional matrix, there are 2 groups of 2 rows and 3 columns:\n\n\n, , 1\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n, , 2\n\n     [,1] [,2] [,3]\n[1,]    7    9   11\n[2,]    8   10   12\n\n\n\nWe will primarily work with dataframes (and sometimes vectors), as this is how the data in psychology research is usually structured.\n\n\n2.6.2 Types of numerical data\nWith numerical data, there are 4 key data types:\n\n\nfactor (data type) or nominal (a category, group or factor)\n\nordinalDiscrete variables that have an inherent order, such as level of education or dislike/like. (a ranking)\n\ninterval (data type) (scale data that can include negative values)\n\nratio (data type) (scale data that cannot include negative values)\n\n R can use all of these variable types:\n\n\nNominal variables are called factors\n\n\nOrdinal variables are called ordered factors\n\n\nInterval and ratio variables are called numeric data and can sometimes be called integers (if they are only whole numbers) or doubles (if they all have decimal points)\n\nR can also use other data types that are not numerical such as text (characterA data type representing strings of text.) data.\n\n2.6.3 Convert variables from one data type to another\nWhen we first import data into R, it might not recognise the data types correctly. For example, in the below data, we can see the intervention variable :\n\n\n\n\n\nparticipant\nintervention\nhappiness\n\n\n\n4\n2\n6.245260\n\n\n7\n2\n8.745944\n\n\n9\n2\n8.906846\n\n\n13\n2\n9.199057\n\n\n8\n2\n9.301780\n\n\n5\n2\n9.381039\n\n\n16\n1\n9.446345\n\n\n3\n1\n9.909773\n\n\n18\n2\n10.017880\n\n\n17\n2\n10.075152\n\n\n\n\n\n\nIn the intervention variable, the numbers 1 and 2 refer to different intervention groups. Therefore, the variable is a factor (data type) variable. To ensure that R understands this, we can resave the intervention variable as a factor using the as.factor() function:\n\nhappinessSample$intervention <- as.factor(happinessSample$intervention)"
+    "text": "2.6 Identify different data structuresA data structure that aggregates data, such as a vector, list, matrix, or data frame and variable types\n\n2.6.1 Data structures (sometimes referred to as “data containersA data structure that aggregates data, such as a vector, list, matrix, or data frame”)\nThere are many different types of data structures that R can work with. The most common type of data for most people tends to be a data frame. A data frame is what you might consider a “normal” 2-dimensional dataset, with rows of data and columns of variables:\n\n\nA dataframe example\n\nR can also use other data structures.\nA vector is a one-dimensional set of values:\n\n# a vector example\n\nscores &lt;- c(1,4,6,8,3,4,6,7)\n\nA matrix is a multi-dimensional set of values. The below example is a 3-dimensional matrix, there are 2 groups of 2 rows and 3 columns:\n\n\n, , 1\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n, , 2\n\n     [,1] [,2] [,3]\n[1,]    7    9   11\n[2,]    8   10   12\n\n\n\nWe will primarily work with dataframes (and sometimes vectors), as this is how the data in psychology research is usually structured.\n\n\n2.6.2 Types of numerical data\nWith numerical data, there are 4 key data types:\n\n\nfactor (data type) or nominal (a category, group or factor)\n\nordinalDiscrete variables that have an inherent order, such as level of education or dislike/like. (a ranking)\n\ninterval (data type) (scale data that can include negative values)\n\nratio (data type) (scale data that cannot include negative values)\n\n R can use all of these variable types:\n\n\nNominal variables are called factors\n\n\nOrdinal variables are called ordered factors\n\n\nInterval and ratio variables are called numeric data and can sometimes be called integers (if they are only whole numbers) or doubles (if they all have decimal points)\n\nR can also use other data types that are not numerical such as text (characterA data type representing strings of text.) data.\n\n2.6.3 Convert variables from one data type to another\nWhen we first import data into R, it might not recognise the data types correctly. For example, in the below data, we can see the intervention variable :\n\n\n\n\n\nparticipant\nintervention\nhappiness\n\n\n\n4\n2\n6.245260\n\n\n7\n2\n8.745944\n\n\n9\n2\n8.906846\n\n\n13\n2\n9.199057\n\n\n8\n2\n9.301780\n\n\n5\n2\n9.381039\n\n\n16\n1\n9.446345\n\n\n3\n1\n9.909773\n\n\n18\n2\n10.017880\n\n\n17\n2\n10.075152\n\n\n\n\n\n\nIn the intervention variable, the numbers 1 and 2 refer to different intervention groups. Therefore, the variable is a factor (data type) variable. To ensure that R understands this, we can resave the intervention variable as a factor using the as.factor() function:\n\nhappinessSample$intervention &lt;- as.factor(happinessSample$intervention)"
+  },
+  {
+    "objectID": "practicals/practical1.html",
+    "href": "practicals/practical1.html",
+    "title": "Appendix B — Practical 1 Introduction to R and R Studio",
+    "section": "",
+    "text": "C Working with script files in R Studio\nTo work with R, it is possible to type commands directly into the console and see the results. However, this is not a good way to work with R, because:\nInstead, it is better to write scripts that contain the commands that you want to run amd save them, so they can be resused and shared with others."
+  },
+  {
+    "objectID": "practicals/practical1.html#create-a-folder-for-your-data-and-scripts",
+    "href": "practicals/practical1.html#create-a-folder-for-your-data-and-scripts",
+    "title": "Appendix B — Practical 1 Introduction to R and R Studio",
+    "section": "C.1 Create a folder for your data and scripts",
+    "text": "C.1 Create a folder for your data and scripts\nBefore you start, create a folder on your computer to store your data and scripts. This will make it easier to find your files later. You can call this folder anything you like, but it is a good idea to give it a name that is related to your project. For example, for this session, you might create a folder called Practical1.\n\nCreate a folder on your computer to store your data and scripts from this session."
+  },
+  {
+    "objectID": "practicals/practical1.html#set-the-working-directory",
+    "href": "practicals/practical1.html#set-the-working-directory",
+    "title": "Appendix B — Practical 1 Introduction to R and R Studio",
+    "section": "C.2 Set the working directory",
+    "text": "C.2 Set the working directory\nThe working directory is the folder that R will look in for files. To set the working directory, click on the Session -&gt; Set Working Directory -&gt; Choose Directory and select the folder you created for your data and script.\n\nSet the working directory to the folder you created for your data and scripts."
+  },
+  {
+    "objectID": "practicals/practical1.html#create-a-new-script-file",
+    "href": "practicals/practical1.html#create-a-new-script-file",
+    "title": "Appendix B — Practical 1 Introduction to R and R Studio",
+    "section": "C.3 Create a new script file",
+    "text": "C.3 Create a new script file\nTo create a new script file, click on the File -&gt; New File -&gt; R Script. This will open a new window, which is where you will write your script. It is important to save your script as you work. To do this, click on the File -&gt; Save As and give your script a name. It is a good idea to save your script in the same folder as your data.\n\nCreate a new script file called **Practical1* and save it in the folder you created for your data and scripts. It should have the extension .R - i.e.: Practical1.R."
+  },
+  {
+    "objectID": "practicals/practical1.html#writing-commands-in-a-script",
+    "href": "practicals/practical1.html#writing-commands-in-a-script",
+    "title": "Appendix B — Practical 1 Introduction to R and R Studio",
+    "section": "C.4 Writing commands in a script",
+    "text": "C.4 Writing commands in a script\nIn an R script, any text that is not a comment is a command. Commands are instructions that tell R to do something.\nFor example:\n23 + 52\nThe code above is a command that tells R to add 23 and 52. However, it will not do anything until you tell R to run it."
+  },
+  {
+    "objectID": "practicals/practical1.html#running-code-in-a-script",
+    "href": "practicals/practical1.html#running-code-in-a-script",
+    "title": "Appendix B — Practical 1 Introduction to R and R Studio",
+    "section": "C.5 Running code in a script",
+    "text": "C.5 Running code in a script\nTo run code in a script, you can either highlight the code and click on the Run button, or you can use the keyboard shortcut Ctrl + Enter. This will run the codeand print the results in the console."
+  },
+  {
+    "objectID": "practicals/practical1.html#adding-comments-to-a-script",
+    "href": "practicals/practical1.html#adding-comments-to-a-script",
+    "title": "Appendix B — Practical 1 Introduction to R and R Studio",
+    "section": "C.6 Adding comments to a script",
+    "text": "C.6 Adding comments to a script\nIt is possible to add information to a script that will not be run as a command. This is called a comment. Comments are useful for adding information about what you are doing in your script. To add a comment, you need to start the line with a hash symbol (#). Anything after the hash symbol will be ignored by R. For example:\n# This is a comment"
+  },
+  {
+    "objectID": "slides/Lecture1.html",
+    "href": "slides/Lecture1.html",
+    "title": "2  Introduction to clinical research designs",
+    "section": "",
+    "text": "3 We will return to this later…\n“any type of psychological research investigating processes that are involved in the development and/or maintenance of psychopathology across any level of explanation (e.g., biological, cognitive, behavioral)” (Ehring et al., 2022)"
+  },
+  {
+    "objectID": "slides/Lecture1.html#overview",
+    "href": "slides/Lecture1.html#overview",
+    "title": "2  Introduction to clinical research designs",
+    "section": "2.1 Overview",
+    "text": "2.1 Overview\nThere are many ongoing discussions in clinical psychology research. They will be picked up in other sessions this year. Today we will discuss:\n\nTranslating research into effective treatment\nCinical analogue studies\nOpen and reproducable research"
+  },
+  {
+    "objectID": "slides/Lecture1.html#research-designs-in-clinical-psychology",
+    "href": "slides/Lecture1.html#research-designs-in-clinical-psychology",
+    "title": "2  Introduction to clinical research designs",
+    "section": "2.2 Research designs in clinical psychology",
+    "text": "2.2 Research designs in clinical psychology\n\nA wide range of approaches are commonly used: Experimental and quasi-experimental, correlational, case study, and qualitative designs.\nTo investigate psychological disorders, assessment, treatment, prevention, professional training, ethics, and cultural diversity.\n\n\n\n(Blampied, 1998; Comer & Kendall, 2013; Kazdin, 2021; Roberts & Ilardi, 2005; Sanderson & Barlow, 1991)"
+  },
+  {
+    "objectID": "slides/Lecture1.html#types-of-psychopathology-research",
+    "href": "slides/Lecture1.html#types-of-psychopathology-research",
+    "title": "2  Introduction to clinical research designs",
+    "section": "2.3 Types of psychopathology research",
+    "text": "2.3 Types of psychopathology research\n\n(Comer & Kendall, 2013)"
+  },
+  {
+    "objectID": "slides/Lecture1.html#experimental-psychopathology-research-example",
+    "href": "slides/Lecture1.html#experimental-psychopathology-research-example",
+    "title": "2  Introduction to clinical research designs",
+    "section": "2.4 Experimental psychopathology research example",
+    "text": "2.4 Experimental psychopathology research example\nPeters et al. (2011) employed an experimental approach to test the hypothesis that attributional style may be one causative factor of depression vulnerability.\n\nUndergraduate students, without a history of depression, were randomly assigned to one of two experimental conditions: resilience condition or vulnerability condition\nThe resiliency condition involved exposing participants to 60 descriptions that promoted a selfworthy, stable attribution of a positive event and 60 descriptions that promoted an unstable attribution unrelated to self-worth for a negative event.\nThe vulnerability condition involved exposing participants to 60 descriptions that promoted a self-deﬁcient, stable attribution of a negative event and 60 descriptions that promoted an unstable attribution unrelated to self-worth for a positive event.\nFollowing exposure to the assigned descriptions, all participants subsequently completed a stressor task (i.e., Cognitive Ability Test).\nPeters and colleagues measured the change in mood state from before to after manipulation.\nResults indicated that individuals in the resilience condition reported less depressed mood (compared to the vulnerability condition) in response to the academic stressor"
+  },
+  {
+    "objectID": "slides/Lecture1.html#experimental-psychopathology-research",
+    "href": "slides/Lecture1.html#experimental-psychopathology-research",
+    "title": "2  Introduction to clinical research designs",
+    "section": "2.5 Experimental psychopathology research",
+    "text": "2.5 Experimental psychopathology research\nSometimes referred to as “Type 1” clinical research (Comer & Kendall, 2013)\n\nAble to identify putative causal variables that are directly manipulable (i.e., How or why might psychopathology develop?).\nMay serve as the “building blocks” of future intervention eﬀorts.\nRarely followed through to the point of application."
+  },
+  {
+    "objectID": "slides/Lecture1.html#quasi-experimental-research-example",
+    "href": "slides/Lecture1.html#quasi-experimental-research-example",
+    "title": "2  Introduction to clinical research designs",
+    "section": "2.6 Quasi experimental research example",
+    "text": "2.6 Quasi experimental research example\nFelmingham et al. (2010) recorded functional magnetic resonance imaging data in both male and female participants with a diagnosis of PTSD.\n\nTrauma-exposed controls, and non– trauma-exposed controls while they viewed masked facial expressions of fear.\nBy examining neural activation to threat, Felmingham and colleagues sought to elucidate one of the possible pathways through which women have a greater propensity than men to develop PTSD following trauma.\nFindings indicated that exposure to trauma was associated with enhanced brainstem activity to fear in women, regardless of the presence of PTSD; however, in men, brainstem activity was associated only with the development of PTSD.\nMoreover, men with PTSD (compared to women) displayed greater hippocampal activity to fear, possibly suggesting that men have an enhanced capacity for contextualizing fear-related stimuli"
+  },
+  {
+    "objectID": "slides/Lecture1.html#quasi-experimental-psychopathology-research",
+    "href": "slides/Lecture1.html#quasi-experimental-psychopathology-research",
+    "title": "2  Introduction to clinical research designs",
+    "section": "2.7 Quasi experimental psychopathology research",
+    "text": "2.7 Quasi experimental psychopathology research\nSometimes referred to as “Type II” clinical research (Comer & Kendall, 2013)\n\nType II research can help identify independent variables that exacerbate, or modify the expression of, existing forms of abnormal behavior\nCannot to answer causal questions about the development of psychopathology due to pre-existence in sample and interaction with so many other variables\n\nDiagnosis is a summary of cumulative history but said history cannot be used to infer what caused diagnosis\n\nIf the IV is a clinical intervention, then could examine variables that either prevent or ameliorate psychopathology"
+  },
+  {
+    "objectID": "slides/Lecture1.html#why-does-basic-research-matter",
+    "href": "slides/Lecture1.html#why-does-basic-research-matter",
+    "title": "2  Introduction to clinical research designs",
+    "section": "5.1 Why does basic research matter?",
+    "text": "5.1 Why does basic research matter?\nInformation about core psychological processes is essential to:\n\nclarify how particular psychological disorders develop, are maintained, and ultimately how they may be prevented\nguide treatment development if the psychopathology process of interest can be modeled with sufficient detail\n\n\n\n(Forsyth & Zvolensky, 2001)."
+  },
+  {
+    "objectID": "slides/Lecture1.html#how-much-are-treatments-informed-by-research",
+    "href": "slides/Lecture1.html#how-much-are-treatments-informed-by-research",
+    "title": "2  Introduction to clinical research designs",
+    "section": "5.2 How much are treatments informed by research?",
+    "text": "5.2 How much are treatments informed by research?\n\nOnly 23% of treatments showed a very strong link between basic research and the development of the intervention, and further 20% showed a strong link\n\n\n\n(Ehring et al., 2022)."
+  },
+  {
+    "objectID": "slides/Lecture1.html#some-of-the-issues-with-translating-cinical-psychology-research-into-treatmentintervention",
+    "href": "slides/Lecture1.html#some-of-the-issues-with-translating-cinical-psychology-research-into-treatmentintervention",
+    "title": "2  Introduction to clinical research designs",
+    "section": "5.3 Some of the issues with translating cinical psychology research into treatment/intervention",
+    "text": "5.3 Some of the issues with translating cinical psychology research into treatment/intervention\n\nLack of stability and replicability of basic research findings\nLack of basic studies establishing causality before moving to testing complex clinical intervention\nFat-handed interventions and easy-to-vary theories\nImbalance between research focused on efficacy compared to research on mediators, mechanisms of change, and moderators"
+  },
+  {
+    "objectID": "slides/Lecture1.html#lack-of-stability-and-replicability-of-basic-research-findings",
+    "href": "slides/Lecture1.html#lack-of-stability-and-replicability-of-basic-research-findings",
+    "title": "2  Introduction to clinical research designs",
+    "section": "5.4 Lack of stability and replicability of basic research findings",
+    "text": "5.4 Lack of stability and replicability of basic research findings\nResearch findings in clinical psychology are not as reliable as assumed, due to:\n\nUse of unreliable measures\nUnderpowered samples\nPublication bias\nLack of transparency in research practices"
+  },
+  {
+    "objectID": "slides/Lecture1.html#lack-of-basic-studies-establishing-causality-before-moving-to-testing-complex-clinical-intervention",
+    "href": "slides/Lecture1.html#lack-of-basic-studies-establishing-causality-before-moving-to-testing-complex-clinical-intervention",
+    "title": "2  Introduction to clinical research designs",
+    "section": "5.5 Lack of basic studies establishing causality before moving to testing complex clinical intervention",
+    "text": "5.5 Lack of basic studies establishing causality before moving to testing complex clinical intervention\n\nTargets for intervention are often identified via correlational studies\nOnce identified, they are often tested in applied studies using novel or modified interventions\nThis misses two important steps:\n\n\nIs the target a cause of psychopathology?\nHow do we modify interventions to change this target?\n\n\nThese questions need to be answered through basic research."
+  },
+  {
+    "objectID": "slides/Lecture1.html#overly-broad-interventions-and-easy-to-vary-theories",
+    "href": "slides/Lecture1.html#overly-broad-interventions-and-easy-to-vary-theories",
+    "title": "2  Introduction to clinical research designs",
+    "section": "5.6 Overly-broad interventions and easy-to-vary theories",
+    "text": "5.6 Overly-broad interventions and easy-to-vary theories\n\nEstablishing causality is difficult in psychological research\nInterventions often lack precision in terms of what they are targeting\nCan lack clear theoretical framework of the mechanisms of change and how psychological processes (e.g., attention, perception, memory, emotion) are involved\nTheories are often easy to vary, and can be used to explain almost any outcome"
+  },
+  {
+    "objectID": "slides/Lecture1.html#imbalance-between-research-focused-on-efficacy-compared-to-research-on-mediators-mechanisms-of-change-and-moderators",
+    "href": "slides/Lecture1.html#imbalance-between-research-focused-on-efficacy-compared-to-research-on-mediators-mechanisms-of-change-and-moderators",
+    "title": "2  Introduction to clinical research designs",
+    "section": "5.7 Imbalance between research focused on efficacy compared to research on mediators, mechanisms of change, and moderators",
+    "text": "5.7 Imbalance between research focused on efficacy compared to research on mediators, mechanisms of change, and moderators\n\nIn order to improve treatments, we need to understand how and why they work, not just if they work\nTo get a complete understanding of a treatment, we need to understand: Efficacy, Mediators, Mechanisms of change, Moderators\nThis requires whole programs of research, not just a single study"
+  },
+  {
+    "objectID": "slides/Lecture1.html#what-are-clinical-analogue-studies",
+    "href": "slides/Lecture1.html#what-are-clinical-analogue-studies",
+    "title": "2  Introduction to clinical research designs",
+    "section": "6.1 What are clinical analogue studies?",
+    "text": "6.1 What are clinical analogue studies?\n\nClinical analogue studies are studies that use non-clinical samples to study processes related to psychopathology.\n\nFor example: The role of attention in PTSD\nIs this a form of attentional bias towrds threat stimuli or an inability to disengage from threat stimuli?\n\nThey allow us to study processes related to psychopathology in a controlled environment.\nThey allow specific variables to be manipulated to identify mechanisms of change."
+  },
+  {
+    "objectID": "slides/Lecture1.html#why-use-clinical-analogue-studies-1",
+    "href": "slides/Lecture1.html#why-use-clinical-analogue-studies-1",
+    "title": "2  Introduction to clinical research designs",
+    "section": "6.2 Why use clinical analogue studies? #1",
+    "text": "6.2 Why use clinical analogue studies? #1\n\nResearch with clinical groups is often correlational which does not allow drawing conclusions about what causation.\nThe use of experimental designs with clinical population can be ethically problematic, as exposure to stimuli (e.g., stressors) to measure “in the moment” effects, could be traumatic.\nRetrospective reports lack objective information about external stumuli or order of events.\n\n\n\n(Ehring et al., 2011)"
+  },
+  {
+    "objectID": "slides/Lecture1.html#why-use-clinical-analogue-studies-2",
+    "href": "slides/Lecture1.html#why-use-clinical-analogue-studies-2",
+    "title": "2  Introduction to clinical research designs",
+    "section": "6.3 Why use clinical analogue studies? #2",
+    "text": "6.3 Why use clinical analogue studies? #2\n\nSubclinical measurements can allow accurate modelling of relevant processes (e.g. Depression: Hill et al. (1987)).\nAllows design of studies to better understand the relationship between:\n\ntreatment -&gt; process\n\nprocess -&gt; outcome\n\n\n(Ehring et al., 2022)\n\nAllows control and focus on specific variables to identify mechanisms of change (Ehring et al., 2022)"
+  },
+  {
+    "objectID": "slides/Lecture1.html#intervention---process---outcome",
+    "href": "slides/Lecture1.html#intervention---process---outcome",
+    "title": "2  Introduction to clinical research designs",
+    "section": "6.4 Intervention -> process -> outcome",
+    "text": "6.4 Intervention -&gt; process -&gt; outcome"
+  },
+  {
+    "objectID": "slides/Lecture1.html#clinical-relevance-of-analogue-studies",
+    "href": "slides/Lecture1.html#clinical-relevance-of-analogue-studies",
+    "title": "2  Introduction to clinical research designs",
+    "section": "6.5 Clinical relevance of analogue studies",
+    "text": "6.5 Clinical relevance of analogue studies\n\n“the nature and intensity of the target problem, not the clinical status of the subjects, are the critical variables in analogue research” (e.g., fear and phobias: Borkovec & Rachman (1979), p. 253).\nBasic research has helped identify etiological factors in the development of many disorders (e.g. OCD: Gibbs (1996))\nSymptoms can be prevalent in non-clinical populations, with similar qualitative expressions of experience and similar causal and maintenance factors Puckett et al. (n.d.)"
+  },
+  {
+    "objectID": "slides/Lecture1.html#limitations-of-clinical-analogue-studies-1",
+    "href": "slides/Lecture1.html#limitations-of-clinical-analogue-studies-1",
+    "title": "2  Introduction to clinical research designs",
+    "section": "6.6 Limitations of clinical analogue studies? #1",
+    "text": "6.6 Limitations of clinical analogue studies? #1\nPotential issues with clinical analogue studies include:\n\nEcological validity: the extent to which the findings of a research study are able to be generalized to real-life settings.\nExternal validity: the extent to which the findings of a research study are able to be generalized to other people, settings, and times.\nComorbidity: the presence of one or more additional disorders (or diseases) co-occurring with a primary disorder or disease."
+  },
+  {
+    "objectID": "slides/Lecture1.html#limitations-of-clinical-analogue-studies-2",
+    "href": "slides/Lecture1.html#limitations-of-clinical-analogue-studies-2",
+    "title": "2  Introduction to clinical research designs",
+    "section": "6.7 Limitations of clinical analogue studies? #2",
+    "text": "6.7 Limitations of clinical analogue studies? #2\nHowever, it has been argued that the limitations of clinical analogue studies are often overstated (Abramowitz et al., 2014) and that the weaknesses of clinical analogue studies are often shared with clinical studies (i.e. poor research is poor research, regardless of the sample):\n\nLack of sufficient power in studies\nReliance on findings from single studies that have yet to be replicated\nWeakness in research designs\nOver-reliance on or misunderstanding of NHST\nDiagnostic unreliability\nSelective reporting of results"
+  },
+  {
+    "objectID": "slides/Lecture1.html#what-is-reproducable-and-open-research",
+    "href": "slides/Lecture1.html#what-is-reproducable-and-open-research",
+    "title": "2  Introduction to clinical research designs",
+    "section": "7.1 What is reproducable and open research?",
+    "text": "7.1 What is reproducable and open research?\n\nReproducible research is the idea that research is published with their hypotheses, research plan, materials, data and software code so that others can try to replicate the results and verify the findings.\nStudies are pre-registered, so that researchers can see if the study was conducted as planned and the results support the researchers’ original hypotheses."
+  },
+  {
+    "objectID": "slides/Lecture1.html#why-reproducable-research",
+    "href": "slides/Lecture1.html#why-reproducable-research",
+    "title": "2  Introduction to clinical research designs",
+    "section": "7.2 Why Reproducable Research?",
+    "text": "7.2 Why Reproducable Research?\n\nOne of the major limitations of clinical research can be lack of transparency and reproducibility\nLinked to the “easy to vary” problem\nLinked to the “underpowered” problem\nLinked to the “publication bias” problem\nLinked to the “file drawer” problem"
+  },
+  {
+    "objectID": "slides/Lecture1.html#how-does-open-research-help-address-these-problems",
+    "href": "slides/Lecture1.html#how-does-open-research-help-address-these-problems",
+    "title": "2  Introduction to clinical research designs",
+    "section": "7.3 How does open research help address these problems?",
+    "text": "7.3 How does open research help address these problems?\n\nResearchers outline their goals and theories before they begin their research, so that they can be held accountable for their results.\nSample sizes are determined before the study begins, so that the study is adequately powered to detect the effect size of interest.\nResearchers are encouraged to make all of their results available, regardless of whether the results are statistically significant (where possible).\nMaterials, data and code are made available, so that others can try to replicate the results and verify the findings."
+  },
+  {
+    "objectID": "slides/Lecture1.html#how-to-make-your-research-reproducable",
+    "href": "slides/Lecture1.html#how-to-make-your-research-reproducable",
+    "title": "2  Introduction to clinical research designs",
+    "section": "7.4 How to make your research reproducable?",
+    "text": "7.4 How to make your research reproducable?\n\nPre-register your study\n\nAsPredicted\nOpen Science Framework\nProspero\n\nConduct a power anaysis before you begin your study\n\nG*Power\nWebpower\nR, SPSS etc.\n\nUpdate your registration with any changes to your study and explain why you made the changes\nAfter your study has been completed, upload your materials, data and code to a repository\n\nOpen Science Framework\nFigshare\nZenodo\nDryad\nDataverse\nHarvard Dataverse\nOpenICPSR\nOpenNeuro\nOpenfMRI"
+  },
+  {
+    "objectID": "slides/Lecture1.html#references",
+    "href": "slides/Lecture1.html#references",
+    "title": "2  Introduction to clinical research designs",
+    "section": "7.5 References",
+    "text": "7.5 References\n\n\n\n\nAbramowitz, J. S., Fabricant, L. E., Taylor, S., Deacon, B. J., McKay, D., & Storch, E. A. (2014). The relevance of analogue studies for understanding obsessions and compulsions. Clinical Psychology Review, 34(3), 206–217. https://doi.org/10.1016/j.cpr.2014.01.004\n\n\nAbramowitz, J. S., Tolin, D. F., & Street, G. P. (2001). Paradoxical effects of thought suppression: A meta-analysis of controlled studies. Clinical Psychology Review, 21(5), 683–703. https://doi.org/10.1016/S0272-7358(00)00057-X\n\n\nBlampied, N. M. (1998). Research Designs and Methods in Psychiatry Edited M Fava and J.F. Rosenbaum Series: Techniques in the Behavioral and Neural Sciences; Volume 9; Amsterdam: Elsevier; 1992; US98.50 (paperback). Behaviour Change, 15(2), 147–149.\n\n\nBorkovec, T., & Rachman, S. (1979). The utility of analogue research. Behaviour Research and Therapy, 17(3), 253–261. https://doi.org/10.1016/0005-7967(79)90040-8\n\n\nComer, J. S., & Kendall, P. C. (Eds.). (2013). The Oxford Handbook of Research Strategies for Clinical Psychology (1st ed.). Oxford University Press. https://doi.org/10.1093/oxfordhb/9780199793549.001.0001\n\n\nEhring, T., Kleim, B., & Ehlers, A. (2011). Combining Clinical Studies and Analogue Experiments to Investigate Cognitive Mechanisms in Posttraumatic Stress Disorder. International Journal of Cognitive Therapy, 4(2), 165–177. https://doi.org/10.1521/ijct.2011.4.2.165\n\n\nEhring, T., Limburg, K., Kunze, A. E., Wittekind, C. E., Werner, G. G., Wolkenstein, L., Guzey, M., & Cludius, B. (2022). (When and how) does basic research in clinical psychology lead to more effective psychological treatment for mental disorders? Clinical Psychology Review, 95, 102163. https://doi.org/10.1016/j.cpr.2022.102163\n\n\nFelmingham, K., Williams, L. M., Kemp, A. H., Liddell, B., Falconer, E., Peduto, A., & Bryant, R. (2010). Neural responses to masked fear faces: Sex differences and trauma exposure in posttraumatic stress disorder. Journal of Abnormal Psychology, 119(1), 241–247. https://doi.org/10.1037/a0017551\n\n\nForsyth, J. P., & Zvolensky, M. J. (2001). Experimental psychopathology, clinical science, and practice: An irrelevant or indispensable alliance? Applied & Preventive Psychology, 10(4), 243–264. https://doi.org/10.1016/s0962-1849(01)80002-0\n\n\nGibbs, N. A. (1996). Nonclinical populations in research on obsessive-compulsive disorder: A critical review. Clinical Psychology Review, 16(8), 729–773. https://doi.org/10.1016/S0272-7358(96)00043-8\n\n\nHill, A. B., Kemp-Wheeler, S. M., & Jones, S. A. (1987). Subclinical and clinical depression: Are analogue studies justifiable? Personality and Individual Differences, 8(1), 113–120. https://doi.org/10.1016/0191-8869(87)90017-1\n\n\nKazdin, A. E. (2021). Research Design in Clinical Psychology.\n\n\nPeters, K. D., Constans, J. I., & Mathews, A. (2011). Experimental modification of attribution processes. Journal of Abnormal Psychology, 120(1), 168–173. https://doi.org/10.1037/a0021899\n\n\nPuckett, J., Sood, M., & Newman-Taylor, K. (n.d.). Does disorganised attachment lead to auditory hallucinations via dissociation? An experimental study with an analogue sample. Psychology and Psychotherapy: Theory, Research and Practice, n/a(n/a). https://doi.org/10.1111/papt.12477\n\n\nRoberts, M. C., & Ilardi, S. S. (Eds.). (2005). Handbook of Research Methods in Clinical Psychology.\n\n\nSanderson, W. C., & Barlow, D. H. (1991). Research Strategies in Clinical Psychology. In Clinical Psychology (pp. 37–49). Springer US."
   }
 ]
