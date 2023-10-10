@@ -1,0 +1,397 @@
+---
+title: "Practical 2 - Confidence intervals, effect size and power"
+author: "Dr. Christopher Wilson"
+Subtitle: "PSY4179 Research Methods 1"
+Institution: "Teesside University"
+format:
+  html:
+    css: ["include/style.css","include/glossary.css","include/booktem.css", "include/webex.css", "include/rstudio_default_code.css"]
+    include-after-body: ["include/webex.js"]
+---
+
+```{r setup, include=FALSE}
+library(webexercises)
+```
+
+::: {.callout-important collapse="false"}
+# Download the data for this practical
+
+For this session you will need to download the following dataset: [practical1_data.csv](practical1_data.csv)
+
+Right click and select <if>Save link as...</if> to download the file. Save it in the same folder as your script.
+
+## Reminder: Importing data into R
+
+To import data into R, you can use the a command that relates to the type of data you are importing. For example, to import the data in the file **practical2_data.csv**, you would use the following command:
+
+```{r}
+practical2_data <- read.csv("practical2_data.csv")
+```
+
+You can also use the menu to import data. To do this, click on the <if>Import Dataset</if> button and select the type of data you want to import. For example, to import the data in the file **practical2_data.csv**, you would click on <if>From Text (readr)</if> and then select the file **practical2_data.csv**.
+
+
+:::
+
+# Calculate the confidence interval of the difference between means
+
+In our research we are often comparing the difference between 2 means. As such, we are often interested in the confidence interval of this difference.
+
+The first step is to calculate the difference between the means. This is simply mean of group 1 minus the mean of group 2.
+
+```{r eval=TRUE}
+meanDiff <- mean(practical2_data$Treatment) - mean(practical2_data$Control)
+
+
+```
+
+::: {.callout-tip collapse="false"}
+
+Note that we are using the dollar "$" sign to access the columns of the data frame.
+
+:::
+
+
+The second step is to calculate the standard error of the difference between the means. This is calculated as:
+
+$$SE_{\bar{x}_1 - \bar{x}_2} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$$
+
+where $s_1^2$ is the variance of group 1, $s_2^2$ is the variance of group 2, $n_1$ is the sample size of group 1, and $n_2$ is the sample size of group 2.
+
+So to calculate this in R, we would:
+
+- get the standard deviation of group 1, divided by the number of participants in group 1, 
+- do the same for group 2
+- add these results together
+
+The code below will start you off, you need to finish it:
+
+```{r eval=TRUE}
+se1 <- sd(practical2_data$Treatment) / length(practical2_data$Treatment)
+
+
+```
+
+
+::: {.callout-tip collapse="true"}
+
+# Explanation of the code
+
+In the above code:
+
+- sd() is the function to calculate the standard deviation.
+- length() is the function to calculate the number of elements in a vector.
+
+:::
+
+The next step is to calculate the confidence interval. This is calculated as:
+
+$$\bar{x}_1 - \bar{x}_2 \pm = 1.96 \times SE_{\bar{x}_1 - \bar{x}_2}$$
+
+where $\bar{x}_1 - \bar{x}_2$ is the difference between the means, 1.96 is the critical value of t for the given alpha level and degrees of freedom, and $SE_{\bar{x}_1 - \bar{x}_2}$ is the standard error of the difference between the means.
+
+::: {.callout-tip collapse="true"}
+
+# Where does 1.96 come from?
+
+The critical value for a 95% confidence interval is 1.96. This is because the area under the 95% of the curve of a normal distribution lies between -1.96 and 1.96. However, this is only true for a large sample size (aprox. >30). For smaller sample sizes, the critical value is larger. For example, for a sample size of 10, the critical value is 2.26. For a sample size of 5, the critical value of is 2.57. 
+
+These smaller distributions are called t-distributions. The t-distribution is similar to the normal distribution, but has fatter tails. This means that the critical values are larger for smaller sample sizes. This is where the t-test gets its name from.
+
+![The Normal Distribution - critical values for 95% AUC](Normal196.png)
+
+:::
+
+To calculate this in R, we would multiply the standard error by 1.96 and:
+
+- subtract this from the difference between the means (to get the lower confidence interval).
+- add this to the difference between the means (to get the upper confidence interval).
+
+::: {.callout-note}
+# Task
+
+Calculate the upper and lower confidence intervals for the difference between the means.
+
+:::
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+
+standardError <- sqrt((var(practical2_data$Treatment) / length(practical2_data$Treatment)) + (var(practical2_data$Control) / length(practical2_data$Control)))
+
+# calculate the confidence interval
+
+confidenceInterval <- meanDiff + c(-1, 1) * 1.96 * standardError
+
+
+```
+::: {.webex-check .webex-box}
+
+The lower confidence interval is: `r fitb(confidenceInterval[1])`
+The upper confidence interval is: `r fitb(confidenceInterval[2])`
+:::
+
+
+::: {.callout-tip}
+# What does the confidence interval tell us?
+
+The confidence interval tells us the range of values that we can be confident that the true value (difference between the means) lies within.
+
+If the confidence interval includes zero, then we cannot reject the null hypothesis. If the confidence interval does not include zero, then we can reject the null hypothesis. 
+:::
+
+::: {.callout-tip collapse="true"}
+
+# Includes zero? 
+
+Imagine a number line that goes from the lower to the upper confidence interval. If you would have to cross zero to get from the lower to the upper confidence interval value, then the confidence interval includes zero.
+
+```{r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+# plot the confidence interval
+
+library(ggplot2)
+
+data.frame(confidenceInterval = confidenceInterval) |>
+  ggplot(aes(x = confidenceInterval, y = 1)) +
+  geom_point() +
+  geom_line(aes(x = confidenceInterval, y = 1)) +
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  geom_text(aes(label = "0"), x = 0, y = 0.5, vjust = -1) +
+  theme_bw() +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.title.y=element_blank()
+        )
+
+
+```
+
+:::
+
+::: {.webex-check .webex-box}
+
+Based on the confidence interval, can we reject the null hypothesis?: `r torf(TRUE)`
+
+:::
+
+
+# Calculate the effect size
+
+The most common measure of effect size for a between groups design (2 groups) is Cohen's d. Cohen's d is calculated as the difference between the means of the two groups divided by the pooled standard deviation.
+
+$$d = \frac{\bar{x}_1 - \bar{x}_2}{s_p}$$
+
+where $\bar{x}_1$ is the mean of group 1, $\bar{x}_2$ is the mean of group 2, and $s_p$ is the pooled standard deviation.
+
+
+## Pooling standard deviation
+
+Pooled standard deviation is calculated as the square root of the average of the variance of the two groups. The formula is:
+
+$$s_p = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}$$
+
+where $n_1$ is the sample size of group 1, $n_2$ is the sample size of group 2, $s_1^2$ is the variance of group 1, and $s_2^2$ is the variance of group 2. 
+
+As an exercise, we will do this step by step:
+
+Step 1:
+
+- calculate sample size of group 1 - 1
+- calculate the variance of group 1
+- Multiply these two together
+
+::: {.callout-tip}
+Use the var() function to find the variance of a vector. Use the length() function to find the length of a vector.
+:::
+
+::: {.webex-check .webex-box}
+
+```{r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+step1 <- length(practical2_data$Treatment) - 1 * var(practical2_data$Treatment)
+```
+
+
+The result of this step is: `r fitb(step1)`
+
+:::
+
+Step 2:
+
+- calculate sample size of group 2 - 1
+- calculate the variance of group 2
+- Multiply these two together
+
+::: {.webex-check .webex-box}
+
+``` {r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+step2 <- length(practical2_data$Control) - 1 * var(practical2_data$Control)
+```
+
+The result of this step is: `r fitb(step2)`
+
+:::
+
+Step 3:
+
+- Add these two together
+
+```{r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+step3 <- step1 + step2
+
+```
+
+::: {.webex-check .webex-box}
+
+The result of this step is: `r fitb(step3)`
+
+:::
+
+Step 4:
+
+
+- calculate sample size of group 1 + sample size of group 2 - 2
+
+::: {.webex-check .webex-box}
+
+
+```{r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+step4 <- length(practical2_data$Treatment) + length(practical2_data$Control) - 2
+
+```
+
+The result of this step is: `r fitb(step4 )`
+
+:::
+
+Step 5:
+
+- Divide the result of step 3 by the result of step 4
+
+::: {.webex-check .webex-box}
+
+```{r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+step5 <- step3 / step4
+
+
+```
+
+The result of this step is: `r fitb(step5)`
+
+:::
+
+
+
+Step 6:
+- Take the square root of the result of step 5
+
+::: {.webex-check .webex-box}
+
+```{r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+step6 <- sqrt(step5)
+```
+
+The result of this step is: `r fitb(step6)`
+
+:::
+
+::: {.callout-note}
+# Task
+Calculate the pooled standard deviation.
+:::
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+#find sample standard deviation of each sample
+s1 <- sd(practical2_data$Treatment)
+s2 <- sd(practical2_data$Control)
+
+#find sample size of each sample
+n1 <- length(practical2_data$Treatment)
+n2 <- length(practical2_data$Control)
+
+pooled_sd <-sqrt(((n1-1)*s1^2 + (n2-1)*s2^2) / (n1+n1-2))
+
+
+
+```
+
+::: {.webex-check .webex-box}
+
+The pooled SD is: `r fitb(pooled_sd)`
+:::
+
+
+
+::: {.callout-note}
+# Task
+
+Calculate the effect size of is dataset
+:::
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+effectSize <- meanDiff / pooled_sd
+
+
+
+```
+::: {.webex-check .webex-box}
+
+The effect size is: `r fitb(effectSize)`
+:::
+
+# Calculate the sample size for conducting a new study, based on this effect
+
+::: {.callout-tip collapse="true"}
+# Conducting power analysis in R
+
+There are many ways to do power analysis and there are many tools for doing so. We will use the power.t.test() function to conduct a power analysis for a t-test.
+
+For other study designs, there are other functions. For example, for a one-way ANOVA, you can use the function power.anova.test(). For a correlation, you can use the function power.cor.test(). For a regression, you can use the function power.lm(). For a chi-square test, you can use the function power.prop.test(). For a paired t-test, you can use the function power.t.test() with the argument paired = TRUE.
+
+There are also different packages that allow more complicated power analysis. Some packages for power analysis in R include:
+
+- webpower
+- pwr
+
+
+:::
+
+Imagine that you want to conduct a new study, based on the effect size you have found in this study. You want to conduct a study with 80% power, and an alpha level of 0.05. What sample size would you need to conduct this study?
+
+To figure this out, we need to use a power analysis. We will use the power.t.test() function in R. This function requires the following inputs:
+
+- d = effect size
+- sig.level = alpha level
+- power = power
+- type = "two.sample" (because we have two groups)
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, eval=FALSE}
+
+power.t.test(d = effectSize, sig.level = 0.05, power = 0.8, type = "two.sample")
+
+```
+
+::: {.callout-tip}
+In the above code, replace the word "effectSize" with the effect size you calculated above.
+:::
+
+::: {.callout-tip collapse="true"}
+
+# What is power?
+
+Power is the probability of rejecting the null hypothesis when it is false. In other words, it is the probability of finding a significant effect (in your study) when there is a true effect. The higher this value is, the less likely you are to make a type II error (failing to reject the null hypothesis when it is false). 0.8 is a common value for power in power analysis calculations.
+:::
+
+
+::: {.callout-note}
+# Task
+
+Calculate the sample size required for conducting a new study, based on this effect
+
+:::
+
+
+
+

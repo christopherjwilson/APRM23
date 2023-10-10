@@ -1,0 +1,14 @@
+{
+  "hash": "13a2c94343201bc3af55973f51676c88",
+  "result": {
+    "markdown": "---\ntitle: \"Practical 2 - Power and effect size\"\nauthor: \"Dr. Christopher Wilson\"\nSubtitle: \"PSY4179 Research Methods 1\"\nInstitution: \"Teesside University\"\nformat:\n  html:\n    css: [\"../include/style.css\",\"../include/glossary.css\",\"../include/booktem.css\", \"../include/webex.css\"]\n    include-in-header: \"../include/webex.js\"\n---\n\n\n# Calculate power for a between groups t-test\n\n## Figure out the effect size we are looking for\n\nThe most common measure of effect size for a between groups t-test is Cohen's d. Cohen's d is calculated as the difference between the means of the two groups divided by the pooled standard deviation.\n\n$$d = \\frac{\\bar{x}_1 - \\bar{x}_2}{s_p}$$\n\nwhere $\\bar{x}_1$ is the mean of group 1, $\\bar{x}_2$ is the mean of group 2, and $s_p$ is the pooled standard deviation.\n\n::: {.callout-tip collapse=\"true\"}\n\n# Pooling standard deviation\n\nPooled standard deviation is calculated as:\n\n$$s_p = \\sqrt{\\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}$$\n\nwhere $n_1$ is the sample size of group 1, $n_2$ is the sample size of group 2, $s_1^2$ is the variance of group 1, and $s_2^2$ is the variance of group 2. \n\n:::\n\n\nFor this exercise, let's base the effect size on the results of a previous study. In the previous study, the mean score for the control group was 10.5 and the mean score for the experimental group was 12.5. The pooled standard deviation was 3.5.\n\n::: {.callout-note}\n# Task\n\nCalculate the effect size of the previous study\n:::\n\n\n::: {.cell layout-align=\"center\"}\n\n:::\n\n::: {.webex-check .webex-box}\n\nThe effect size of the previous study was: <input class='webex-solveme nospaces' size='18' data-answer='[\"-0.571428571428571\",\"-.571428571428571\"]'/>\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

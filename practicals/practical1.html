@@ -68,8 +68,218 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="practical1_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="practical1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="practical1_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
 
 
+<link rel="stylesheet" href="../include/style.css">
+<link rel="stylesheet" href="../include/glossary.css">
+<link rel="stylesheet" href="../include/booktem.css">
+<link rel="stylesheet" href="../include/webex.css">
 </head>
 
 <body class="fullcontent">
@@ -108,7 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>You would need to repeat this process to run the analysis again.</li>
 <li>Your analysis is not transparent - noone else can see what you did.</li>
 </ol>
-<p>Instead, it is better to write scripts that contain the commands that you want to run amd save them, so they can be resused and shared with others.</p>
+<p>Instead, it is better to write scripts that contain the commands that you want to run amd save them, so they can be reused and shared with others.</p>
 <section id="create-a-folder-for-your-data-and-scripts" class="level2">
 <h2 class="anchored" data-anchor-id="create-a-folder-for-your-data-and-scripts">Create a folder for your data and scripts</h2>
 <p>Before you start, create a folder on your computer to store your data and scripts. This will make it easier to find your files later. You can call this folder anything you like, but it is a good idea to give it a name that is related to your project. For example, for this session, you might create a folder called <strong>Practical1</strong>.</p>
@@ -128,7 +338,7 @@ Task
 </section>
 <section id="set-the-working-directory" class="level2">
 <h2 class="anchored" data-anchor-id="set-the-working-directory">Set the working directory</h2>
-<p>The working directory is the folder that R will look in for files. To set the working directory, click on the <inf>Session -&gt; Set Working Directory -&gt; Choose Directory</inf> and select the folder you created for your data and script.</p>
+<p>The working directory is the folder that R will look in for files. To set the working directory, click on the <if>Session -&gt; Set Working Directory -&gt; Choose Directory</if> and select the folder you created for your data and script.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -145,8 +355,20 @@ Task
 </section>
 <section id="create-a-new-script-file" class="level2">
 <h2 class="anchored" data-anchor-id="create-a-new-script-file">Create a new script file</h2>
-<p>To create a new script file, click on the <inf>File -&gt; New File -&gt; R Script</inf>. This will open a new window, which is where you will write your script. It is important to save your script as you work. To do this, click on the <inf>File -&gt; Save As</inf> and give your script a name. It is a good idea to save your script in the same folder as your data.</p>
-<p>::: {.callout-note} # Task Create a new script file called **Practical1* and save it in the folder you created for your data and scripts. It should have the extension .R - i.e.: <em>Practical1.R</em>. :::</p>
+<p>To create a new script file, click on the <if>File -&gt; New File -&gt; R Script</if>. This will open a new window, which is where you will write your script. It is important to save your script as you work. To do this, click on the <if>File -&gt; Save As</if> and give your script a name. It is a good idea to save your script in the same folder as your data.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create a new script file called <strong>Practical1</strong> and save it in the folder you created for your data and scripts. It should have the extension .R - i.e.: <strong>Practical1.R</strong>.</p>
+</div>
+</div>
 </section>
 <section id="adding-comments-to-a-script" class="level2">
 <h2 class="anchored" data-anchor-id="adding-comments-to-a-script">Adding comments to a script</h2>
@@ -166,9 +388,9 @@ Task
 </div>
 </div>
 </section>
-<section id="writing-commands-in-a-script" class="level2">
-<h2 class="anchored" data-anchor-id="writing-commands-in-a-script">Writing commands in a script</h2>
-<p>In an R script, any text that is not a comment is a command. Commands are instructions that tell R to do something.</p>
+<section id="writing-commands-code-in-a-script" class="level2">
+<h2 class="anchored" data-anchor-id="writing-commands-code-in-a-script">Writing commands / code in a script</h2>
+<p>In an R script, any text that is not a comment is assumed to be R code. R Code are instructions that tell R to do something.</p>
 <p>For example:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Add two numbers together</span></span>
@@ -185,13 +407,13 @@ Task
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Ask the ages of the people sitting next to you and add them together. Write the command in your script.</p>
+<p>Ask the ages of the people sitting next to you and add them together. Write the code in your script.</p>
 </div>
 </div>
 </section>
 <section id="running-code-in-a-script" class="level2">
 <h2 class="anchored" data-anchor-id="running-code-in-a-script">Running code in a script</h2>
-<p>To run code in a script, you can either highlight the code and click on the <inf>Run</inf> button, or you can use the keyboard shortcut <inf>Ctrl + Enter</inf>. This will run the code and print the results in the console.</p>
+<p>To run code in a script, you can either highlight the code and click on the <if>Run</if> button, or you can use the keyboard shortcut <if>Ctrl + Enter</if>. This will run the code and print the results in the console.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -213,6 +435,19 @@ Task
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="dv">23</span> <span class="sc">+</span> <span class="dv">52</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The code above is a command that tells R to add 23 and 52 and save the result to an object called <strong>result</strong>. You can save many things as objects including the results of analyses, data, and graphs.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The &lt;- assignment operator
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note how the code above uses &lt;- to assign the result to an object. This is called the assignment operator. It is created using the keys <pc> &lt; </pc> and <pc>-</pc> with no space in between them. It is important to use &lt;- to assign objects in R. If you use =, it will work, but it might cause problems later on.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -265,12 +500,77 @@ Tip
 </div>
 </div>
 </section>
-<section id="using-packages-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="using-packages-in-r">Using packages in R</h2>
-<p>To install a package, you can use the <inf>install.packages()</inf> function. For example, to install the package <strong>psych</strong>, you would use the following command:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"psych"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To load the package, you can use the <inf>library()</inf> function. For example, to load the package <strong>psych</strong>, you would use the following command:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="importing-data-into-r" class="level2">
+<h2 class="anchored" data-anchor-id="importing-data-into-r">Importing data into R</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Download the data for this section
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>For this section you will need to download the following dataset: <a href="practical1_data.csv">practical1_data.csv</a></p>
+<p>Right click and select <if>Save link as…</if> to download the file. Save it in the same folder as your script.</p>
+</div>
+</div>
+</div>
+<p>To import data into R, you can use the a command that relates to the type of data you are importing. For example, to import the data in the file <strong>practical1_data.csv</strong>, you would use the following command:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"practical1_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Import the data in the file <strong>practical1_data.csv</strong> and save it to an object called <strong>data</strong>. Print the object <strong>data</strong> in the console.</p>
+</div>
+</div>
+</section>
+<section id="viewing-data-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="viewing-data-in-r">Viewing data in R</h2>
+<p>To view the data in an object, you can use the <if>View()</if> function. For example, to view the data in the object <strong>data</strong>, you would use the following command:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>View the data in the object <strong>data</strong>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice that the data is displayed in rows and columns. Each row represents a participant and each column represents a variable. This type of data structure is called a data frame.</p>
+</div>
+</div>
+<p>To refer to a specific column in a data frame, you can use the dollar sign ($) followed by the name of the column. For example, to refer to the column <strong>age</strong> in the data frame <strong>data</strong>, you would use the following command:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can use data frame columns in functions. For example, to calculate the mean of the column <strong>age</strong> in the data frame <strong>data</strong>, you would use the following command:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -282,15 +582,18 @@ Task
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Install the package <strong>psych</strong>. We will use it in a later practical session.</li>
-<li>Load the package <strong>psych</strong>.</li>
+<li><p>Calculate the mean of the column <strong>age</strong> in the data frame <strong>data</strong> and save it to an object called <strong>mean_age</strong>.</p></li>
+<li><p>Calculate the standard deviation of the column <strong>age</strong> in the data frame <strong>data</strong> and save it to an object called <strong>sd_age</strong>.</p></li>
 </ol>
 </div>
+</div>
+<div class="webex-check webex-box">
+<p>The mean age is: <input class="webex-solveme nospaces" size="5" data-answer="[&quot;20.45&quot;]"> The sd of age is: <input class="webex-solveme nospaces" size="16" data-answer="[&quot;1.73129096949433&quot;]"></p>
 </div>
 </section>
 <section id="saving-your-script" class="level2">
 <h2 class="anchored" data-anchor-id="saving-your-script">Saving your script</h2>
-<p>Remember to save your script regularly as you work. To save your script, click on the <inf>File -&gt; Save</inf> or use the keyboard shortcut <inf>Ctrl + S</inf>.</p>
+<p>Remember to save your script regularly as you work. To save your script, click on the <if>File -&gt; Save</if> or use the keyboard shortcut <if>Ctrl + S</if>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

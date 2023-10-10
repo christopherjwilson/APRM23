@@ -1,0 +1,178 @@
+---
+format: revealjs
+bibliography: references.bib
+title: "Power and Effect Size"
+subtitle: DClin Research Methods 1
+author: Dr Christopher Wilson
+institute: Teesside University
+width: 1800
+height: 900
+logo: "logo.jpg"
+csl: apa.csl
+---
+
+## Learning outcomes
+
+-   Understand the concept of statistical power
+-   Understand the concept of effect size
+-   Understand the relationship between power and effect size
+-   Understand the relationship between power and sample size
+-   Understand the relationship between effect size and sample size
+
+# What is statistical significance?
+
+## The problem with statistical significance
+
+> "It's science's dirtiest secret: The 'scientific method' of testing hypotheses by statistical analysis stands on a flimsy foundation."
+
+In February 2014, George Cobb, Professor Emeritus of Mathematics and Statistics at Mount Holyoke College, posed these questions to an ASA discussion forum:
+
+Q: Why do so many colleges and grad schools teach p = 0.05?
+
+A: Because that's still what the scientific community and journal editors use.
+
+Q: Why do so many people still use p = 0.05?
+
+A: Because that's what they were taught in college or grad school.
+
+[@WassersteinLazar2016]
+
+## What is the problem with statistical significance?
+
+"Researchers commonly use p-values to answer the question: How strongly does the evidence favor the alternative hypothesis relative to the null hypothesis? p-Values themselves do not directly answer this question and are often misinterpreted" \[BenjaminBerger2019\]
+
+## The ASA statement on p-values [@WassersteinLazar2016]
+
+1.  P-values can indicate how incompatible the data are with a specified statistical model.
+2.  P-values do not measure the probability that the studied hypothesis is true, or the probability that the data were produced by random chance alone.
+3.  Scientific conclusions and business or policy decisions should not be based only on whether a p-value passes a specific threshold.
+4.  Proper inference requires full reporting and transparency.
+5.  A p-value, or statistical significance, does not measure the size of an effect or the importance of a result.
+6.  By itself, a p-value does not provide a good measure of evidence regarding a model or hypothesis.
+
+## The ASA statement on p-values [@WassersteinLazar2016]
+
+1.  P-values can indicate how incompatible the data are with a specified statistical model.
+
+> P-values test how compatible the data are with a specified statistical model. The smaller the p-value, the less compatible the data are with the null hypothesis.
+
+2.  P-values do not measure the probability that the studied hypothesis is true, or the probability that the data were produced by random chance alone.
+
+> P-values only tell us about the compatibility of the data with the possible explanation (the null hypothesis).
+
+They do not confirm or deny the truth of the explanation or the probability of the data having occurred by chance.
+
+3.  Scientific conclusions and business or policy decisions should not be based only on whether a p-value passes a specific threshold.
+
+> Reducing decisions to a dichotomous "significant--not significant" classification leads to poor decisions. This "all-or-nothing" dichotomy based on a threshold (usually 0.05) is a poor substitute for scientific reasoning.
+
+## The ASA statement on p-values [@WassersteinLazar2016]
+
+4.  Proper inference requires full reporting and transparency.
+
+> P-values and related analyses should not be reported selectively. This makes the data that is presented impossible to interpret, as it is missing necessary context. All hypotheses that were tested should be presented.
+
+5.  A p-value, or statistical significance, does not measure the size of an effect or the importance of a result.
+
+> The p-value is not a measure of the size of an effect or the importance of a result. Even tiny effects can be statistically significant if the sample size is large enough.
+
+6.  By itself, a p-value does not provide a good measure of evidence regarding a model or hypothesis.
+
+> Values near 0.05 offer only weak evidence against the null hypothesis. Values larger than 0.05 do not necessarily imply evidence in favor of the null hypothesis - there could be other hypotheses that are more compatible with the data.
+
+## Significance does not mean importance
+
+-   Over the last several decades, psychology research has become too focused on statistical significance.
+-   A statistically significant result does not mean that the result is meaningful or important.
+-   The focus on statistical significance has led to a number of problems:
+    -   P-hacking
+    -   Publication bias
+    -   Questionable research practices (small sample sizes, etc.)
+
+## P-values are not stable from one study to the next
+
+![p-values and confidence intervals for 25 samples](images/ci.jpg)
+
+## Using confidence intervals to interpret results
+
+-   Confidence intervals are a better way to interpret results than p-values.
+-   A confidence interval is a range of values that is likely to contain the true value of a parameter.
+-   For example, a 95% confidence interval for a mean says:
+  - If we were to collect the same sample 1000 times and calculate a 95% confidence interval of the mean for each sample, 950 of the intervals would contain the true population mean.
+
+## What can confidence intervals tell us?
+
+- Confidence intervals can a range of likely outcomes, as well as the direction of the effect.
+
+![](images/clinical_relevance.jpg){fig-align="center"}
+
+## When designing a study, we need to ensure it has sufficient power
+
+What does this mean?
+
+-   Power is ability to detect an effect if it exists
+-   If a study has low power, it is not possible for us to tell whether a statistically non-significant result is due to:
+    -   The absence of an effect
+    -   The absence of power to detect an effect
+
+## An analogy for statistical power
+
+Consider a study as a fishing trip.
+
+-   We want to catch a particular type of fish (detect an effect).
+-   We don't know how common it is in the lake (we don't know if the effect exists).
+-   We need to decide how many times to cast the net (how many participants to recruit).
+-   This depends on how big the school of fish is (the effect size).
+-   If the school of fish is big, we shouldn't need to cast the net many times before finding it (or concluding that it is not there).
+-   If it is small, we will need to cast the net many times before finding it (or concluding that it is not there).
+
+## An analogy for statistical power
+
+![](images/fish.jpg){fig-align="center" width="94%"}
+
+## What is effect size?
+
+-   When we conduct research, we are usually asking a question about a difference or a relationship.
+    -   For example, we might be interested in whether there is a difference in the mean score on a measure between clinical two groups.
+    -   Or we might be interested in whether there is a relationship between two variables.
+-   However, different studies use different samples and measures, and so the results of these studies are not directly comparable.
+
+> Effect size is a standardized measure of the magnitude of an effect
+
+## What is effect size? #2
+
+-   There are many measures of effect size, some of the most common are:
+    -   Cohen's d
+    -   Pearson's r
+    -   Odds ratio
+    -   Phi coefficient
+    -   Eta squared
+    -   R squared
+-   The choice of effect size measure depends on the type of study and the type of data collected.
+
+## What is effect size? #3
+
+-   Often people talk in terms of small, medium and large effect sizes. This is not very helpful, as it is not clear what these terms mean.
+
+-   It is better to understand the literature in your field, and to know what effect sizes are typically found in studies similar to yours.
+
+-   However, we need to be careful [@AlbersLakens2018]:
+
+    -   effect size estimates from small studies are inaccurate
+
+    -   publication bias inflates effect sizes.
+
+-   "Follow-up" bias, is an issue with people deciding whether or not to conduct studies based on the effects found in pilot data
+
+## Don't use pilot data to estimate effect size
+
+- This can lead to seriously underpowered study designs, especially when the sample size of the pilot and/or the true effect size is small to medium. 
+
+- Not only is this approach inaccurate, it is inefficient. 
+
+- Instead:
+  - Determine the smallest effect size of interest (SESOI), based on either utility or theoretical arguments, and use the SESOI in an a-priori power analysis. 
+  - Sequential analysis might be appropriate [@Lakens2014]    
+  - A "safeguard" power analysis can be used (underestimates the effect from published studies) [@PeruginiEtAl2014]
+  
+# References

@@ -1,5 +1,0 @@
----
-title: "Research Designs in Clinical Psychology 2"
-author: "Christopher Wilson"
-editor: visual
----

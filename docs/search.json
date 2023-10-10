@@ -702,51 +702,51 @@
   {
     "objectID": "practicals/practical1.html",
     "href": "practicals/practical1.html",
-    "title": "Appendix B — Practical 1 Introduction to R and R Studio",
+    "title": "Appendix A — Practical 1 Introduction to R and R Studio",
     "section": "",
-    "text": "C Working with script files in R Studio\nTo work with R, it is possible to type commands directly into the console and see the results. However, this is not a good way to work with R, because:\nInstead, it is better to write scripts that contain the commands that you want to run amd save them, so they can be resused and shared with others."
+    "text": "B Working with script files in R Studio\nTo work with R, it is possible to type commands directly into the console and see the results. However, this is not a good way to work with R, because:\nInstead, it is better to write scripts that contain the commands that you want to run amd save them, so they can be reused and shared with others."
   },
   {
     "objectID": "practicals/practical1.html#create-a-folder-for-your-data-and-scripts",
     "href": "practicals/practical1.html#create-a-folder-for-your-data-and-scripts",
-    "title": "Appendix B — Practical 1 Introduction to R and R Studio",
-    "section": "C.1 Create a folder for your data and scripts",
-    "text": "C.1 Create a folder for your data and scripts\nBefore you start, create a folder on your computer to store your data and scripts. This will make it easier to find your files later. You can call this folder anything you like, but it is a good idea to give it a name that is related to your project. For example, for this session, you might create a folder called Practical1.\n\nCreate a folder on your computer to store your data and scripts from this session."
+    "title": "Appendix A — Practical 1 Introduction to R and R Studio",
+    "section": "B.1 Create a folder for your data and scripts",
+    "text": "B.1 Create a folder for your data and scripts\nBefore you start, create a folder on your computer to store your data and scripts. This will make it easier to find your files later. You can call this folder anything you like, but it is a good idea to give it a name that is related to your project. For example, for this session, you might create a folder called Practical1.\n\n\n\n\n\n\nTask\n\n\n\nCreate a folder on your computer to store your data and scripts from this session."
   },
   {
     "objectID": "practicals/practical1.html#set-the-working-directory",
     "href": "practicals/practical1.html#set-the-working-directory",
-    "title": "Appendix B — Practical 1 Introduction to R and R Studio",
-    "section": "C.2 Set the working directory",
-    "text": "C.2 Set the working directory\nThe working directory is the folder that R will look in for files. To set the working directory, click on the Session -&gt; Set Working Directory -&gt; Choose Directory and select the folder you created for your data and script.\n\nSet the working directory to the folder you created for your data and scripts."
+    "title": "Appendix A — Practical 1 Introduction to R and R Studio",
+    "section": "B.2 Set the working directory",
+    "text": "B.2 Set the working directory\nThe working directory is the folder that R will look in for files. To set the working directory, click on the Session -&gt; Set Working Directory -&gt; Choose Directory and select the folder you created for your data and script.\n\n\n\n\n\n\nTask\n\n\n\nSet the working directory to the folder you created for your data and scripts."
   },
   {
     "objectID": "practicals/practical1.html#create-a-new-script-file",
     "href": "practicals/practical1.html#create-a-new-script-file",
-    "title": "Appendix B — Practical 1 Introduction to R and R Studio",
-    "section": "C.3 Create a new script file",
-    "text": "C.3 Create a new script file\nTo create a new script file, click on the File -&gt; New File -&gt; R Script. This will open a new window, which is where you will write your script. It is important to save your script as you work. To do this, click on the File -&gt; Save As and give your script a name. It is a good idea to save your script in the same folder as your data.\n\nCreate a new script file called **Practical1* and save it in the folder you created for your data and scripts. It should have the extension .R - i.e.: Practical1.R."
+    "title": "Appendix A — Practical 1 Introduction to R and R Studio",
+    "section": "B.3 Create a new script file",
+    "text": "B.3 Create a new script file\nTo create a new script file, click on the File -&gt; New File -&gt; R Script. This will open a new window, which is where you will write your script. It is important to save your script as you work. To do this, click on the File -&gt; Save As and give your script a name. It is a good idea to save your script in the same folder as your data.\n\n\n\n\n\n\nTask\n\n\n\nCreate a new script file called **Practical1* and save it in the folder you created for your data and scripts. It should have the extension .R - i.e.: Practical1.R."
   },
   {
     "objectID": "practicals/practical1.html#writing-commands-in-a-script",
     "href": "practicals/practical1.html#writing-commands-in-a-script",
-    "title": "Appendix B — Practical 1 Introduction to R and R Studio",
-    "section": "C.4 Writing commands in a script",
-    "text": "C.4 Writing commands in a script\nIn an R script, any text that is not a comment is a command. Commands are instructions that tell R to do something.\nFor example:\n23 + 52\nThe code above is a command that tells R to add 23 and 52. However, it will not do anything until you tell R to run it."
+    "title": "Appendix A — Practical 1 Introduction to R and R Studio",
+    "section": "B.5 Writing commands in a script",
+    "text": "B.5 Writing commands in a script\nIn an R script, any text that is not a comment is a command. Commands are instructions that tell R to do something.\nFor example:\n\n# Add two numbers together\n\n23 + 52\nThe code above is a command that tells R to add 23 and 52. However, it will not do anything until you tell R to run it.\n\n\n\n\n\n\nTask\n\n\n\nAsk the ages of the people sitting next to you and add them together. Write the command in your script."
   },
   {
     "objectID": "practicals/practical1.html#running-code-in-a-script",
     "href": "practicals/practical1.html#running-code-in-a-script",
-    "title": "Appendix B — Practical 1 Introduction to R and R Studio",
-    "section": "C.5 Running code in a script",
-    "text": "C.5 Running code in a script\nTo run code in a script, you can either highlight the code and click on the Run button, or you can use the keyboard shortcut Ctrl + Enter. This will run the codeand print the results in the console."
+    "title": "Appendix A — Practical 1 Introduction to R and R Studio",
+    "section": "B.6 Running code in a script",
+    "text": "B.6 Running code in a script\nTo run code in a script, you can either highlight the code and click on the Run button, or you can use the keyboard shortcut Ctrl + Enter. This will run the code and print the results in the console.\n\n\n\n\n\n\nTask\n\n\n\nIf you have not already done so, run the code you wrote in the previous step."
   },
   {
     "objectID": "practicals/practical1.html#adding-comments-to-a-script",
     "href": "practicals/practical1.html#adding-comments-to-a-script",
-    "title": "Appendix B — Practical 1 Introduction to R and R Studio",
-    "section": "C.6 Adding comments to a script",
-    "text": "C.6 Adding comments to a script\nIt is possible to add information to a script that will not be run as a command. This is called a comment. Comments are useful for adding information about what you are doing in your script. To add a comment, you need to start the line with a hash symbol (#). Anything after the hash symbol will be ignored by R. For example:\n# This is a comment"
+    "title": "Appendix A — Practical 1 Introduction to R and R Studio",
+    "section": "B.4 Adding comments to a script",
+    "text": "B.4 Adding comments to a script\nIt is possible to add information to a script that will not be run as a command. This is called a comment. Comments are useful for adding information about what you are doing in your script. To add a comment, you need to start the line with a hash symbol (#). Anything after the hash symbol will be ignored by R. For example:\n# This is a comment\n\n\n\n\n\n\nTask\n\n\n\nWrite a comment in your script that describes what you are doing in this session. For example: “This script contains the commands for the first practical session in PSY4179 Research Methods 1”."
   },
   {
     "objectID": "slides/Lecture1.html",
@@ -936,5 +936,47 @@
     "title": "2  Introduction to clinical research designs",
     "section": "7.5 References",
     "text": "7.5 References\n\n\n\n\nAbramowitz, J. S., Fabricant, L. E., Taylor, S., Deacon, B. J., McKay, D., & Storch, E. A. (2014). The relevance of analogue studies for understanding obsessions and compulsions. Clinical Psychology Review, 34(3), 206–217. https://doi.org/10.1016/j.cpr.2014.01.004\n\n\nAbramowitz, J. S., Tolin, D. F., & Street, G. P. (2001). Paradoxical effects of thought suppression: A meta-analysis of controlled studies. Clinical Psychology Review, 21(5), 683–703. https://doi.org/10.1016/S0272-7358(00)00057-X\n\n\nBlampied, N. M. (1998). Research Designs and Methods in Psychiatry Edited M Fava and J.F. Rosenbaum Series: Techniques in the Behavioral and Neural Sciences; Volume 9; Amsterdam: Elsevier; 1992; US98.50 (paperback). Behaviour Change, 15(2), 147–149.\n\n\nBorkovec, T., & Rachman, S. (1979). The utility of analogue research. Behaviour Research and Therapy, 17(3), 253–261. https://doi.org/10.1016/0005-7967(79)90040-8\n\n\nComer, J. S., & Kendall, P. C. (Eds.). (2013). The Oxford Handbook of Research Strategies for Clinical Psychology (1st ed.). Oxford University Press. https://doi.org/10.1093/oxfordhb/9780199793549.001.0001\n\n\nEhring, T., Kleim, B., & Ehlers, A. (2011). Combining Clinical Studies and Analogue Experiments to Investigate Cognitive Mechanisms in Posttraumatic Stress Disorder. International Journal of Cognitive Therapy, 4(2), 165–177. https://doi.org/10.1521/ijct.2011.4.2.165\n\n\nEhring, T., Limburg, K., Kunze, A. E., Wittekind, C. E., Werner, G. G., Wolkenstein, L., Guzey, M., & Cludius, B. (2022). (When and how) does basic research in clinical psychology lead to more effective psychological treatment for mental disorders? Clinical Psychology Review, 95, 102163. https://doi.org/10.1016/j.cpr.2022.102163\n\n\nFelmingham, K., Williams, L. M., Kemp, A. H., Liddell, B., Falconer, E., Peduto, A., & Bryant, R. (2010). Neural responses to masked fear faces: Sex differences and trauma exposure in posttraumatic stress disorder. Journal of Abnormal Psychology, 119(1), 241–247. https://doi.org/10.1037/a0017551\n\n\nForsyth, J. P., & Zvolensky, M. J. (2001). Experimental psychopathology, clinical science, and practice: An irrelevant or indispensable alliance? Applied & Preventive Psychology, 10(4), 243–264. https://doi.org/10.1016/s0962-1849(01)80002-0\n\n\nGibbs, N. A. (1996). Nonclinical populations in research on obsessive-compulsive disorder: A critical review. Clinical Psychology Review, 16(8), 729–773. https://doi.org/10.1016/S0272-7358(96)00043-8\n\n\nHill, A. B., Kemp-Wheeler, S. M., & Jones, S. A. (1987). Subclinical and clinical depression: Are analogue studies justifiable? Personality and Individual Differences, 8(1), 113–120. https://doi.org/10.1016/0191-8869(87)90017-1\n\n\nKazdin, A. E. (2021). Research Design in Clinical Psychology.\n\n\nPeters, K. D., Constans, J. I., & Mathews, A. (2011). Experimental modification of attribution processes. Journal of Abnormal Psychology, 120(1), 168–173. https://doi.org/10.1037/a0021899\n\n\nPuckett, J., Sood, M., & Newman-Taylor, K. (n.d.). Does disorganised attachment lead to auditory hallucinations via dissociation? An experimental study with an analogue sample. Psychology and Psychotherapy: Theory, Research and Practice, n/a(n/a). https://doi.org/10.1111/papt.12477\n\n\nRoberts, M. C., & Ilardi, S. S. (Eds.). (2005). Handbook of Research Methods in Clinical Psychology.\n\n\nSanderson, W. C., & Barlow, D. H. (1991). Research Strategies in Clinical Psychology. In Clinical Psychology (pp. 37–49). Springer US."
+  },
+  {
+    "objectID": "practicals/practical1.html#saving-objects-in-r",
+    "href": "practicals/practical1.html#saving-objects-in-r",
+    "title": "Appendix A — Practical 1 Introduction to R and R Studio",
+    "section": "B.7 Saving objects in R",
+    "text": "B.7 Saving objects in R\nWhen you run a command in R, you can save the results to an object. For example, when you run the command to add two numbers together, you can save this object by assigning it to a name. For example:\n# Add two numbers together\n\nresult &lt;- 23 + 52\nThe code above is a command that tells R to add 23 and 52 and save the result to an object called result. You can save many things as objects including the results of analyses, data, and graphs.\n\n\n\n\n\n\nTask\n\n\n\nRun the code you wrote in the previous step. Then, run the following command to print the object ages in the console."
+  },
+  {
+    "objectID": "practicals/practical1.html#using-functions-in-r",
+    "href": "practicals/practical1.html#using-functions-in-r",
+    "title": "Appendix A — Practical 1 Introduction to R and R Studio",
+    "section": "B.8 Using functions in R",
+    "text": "B.8 Using functions in R\nA function is a command that performs a specific task. For example, the function mean() calculates the mean of a set of numbers. To use a function, you need to provide it with some information. For example, to calculate the mean of a set of numbers, you need to tell the function which numbers to use. This is called an argument. For example:\n# Calculate the mean of my previous result\n\nmean(result)\nIn the code above, the function mean() is used to calculate the mean of the object result. The object result is the argument for the function mean().\n\n\n\n\n\n\nTask\n\n\n\n\nCalculate the mean of the object ages and save it to an object called mean_age. Print the object mean_age in the console.\nUse the sd() function to calculate the standard deviation of the object ages and save it to an object called sd_age. Print the object sd_age in the console.\nCreate a new object called ages_doubled that contains the object ages multiplied by 2. Print the object ages_doubled in the console.\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nNote how each of the values in the ages_doubled object is twice the value of the corresponding value in the ages object."
+  },
+  {
+    "objectID": "practicals/practical1.html#using-packages-in-r",
+    "href": "practicals/practical1.html#using-packages-in-r",
+    "title": "Appendix A — Practical 1 Introduction to R and R Studio",
+    "section": "B.9 Using packages in R",
+    "text": "B.9 Using packages in R\nTo install a package, you can use the install.packages() function. For example, to install the package psych, you would use the following command:\ninstall.packages(\"psych\")\nTo load the package, you can use the library() function. For example, to load the package psych, you would use the following command:\nlibrary(psych)\n\n\n\n\n\n\nTask\n\n\n\n\nInstall the package psych. We will use it in a later practical session.\nLoad the package psych."
+  },
+  {
+    "objectID": "practicals/practical1.html#saving-your-script",
+    "href": "practicals/practical1.html#saving-your-script",
+    "title": "Appendix A — Practical 1 Introduction to R and R Studio",
+    "section": "B.10 Saving your script",
+    "text": "B.10 Saving your script\nRemember to save your script regularly as you work. To save your script, click on the File -&gt; Save or use the keyboard shortcut Ctrl + S.\n\n\n\n\n\n\nTask\n\n\n\nSave your script."
+  },
+  {
+    "objectID": "practicals/practical2.html",
+    "href": "practicals/practical2.html",
+    "title": "Appendix B — Practical 2 - Power and effect size",
+    "section": "",
+    "text": "C Calculate power for a between groups t-test"
+  },
+  {
+    "objectID": "practicals/practical2.html#figure-out-the-effect-size-we-are-looking-for",
+    "href": "practicals/practical2.html#figure-out-the-effect-size-we-are-looking-for",
+    "title": "Appendix B — Practical 2 - Power and effect size",
+    "section": "\nC.1 Figure out the effect size we are looking for",
+    "text": "C.1 Figure out the effect size we are looking for\nThe most common measure of effect size for a between groups t-test is Cohen’s d. Cohen’s d is calculated as the difference between the means of the two groups divided by the pooled standard deviation.\n\\[d = \\frac{\\bar{x}_1 - \\bar{x}_2}{s_p}\\]\nwhere \\(\\bar{x}_1\\) is the mean of group 1, \\(\\bar{x}_2\\) is the mean of group 2, and \\(s_p\\) is the pooled standard deviation.\n\n\n\n\n\n\nPooling standard deviation\n\n\n\n\n\nPooled standard deviation is calculated as:\n\\[s_p = \\sqrt{\\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}\\]\nwhere \\(n_1\\) is the sample size of group 1, \\(n_2\\) is the sample size of group 2, \\(s_1^2\\) is the variance of group 1, and \\(s_2^2\\) is the variance of group 2.\n\n\n\nFor this exercise, let’s base the effect size on the results of a previous study. In the previous study, the mean score for the control group was 10.5 and the mean score for the experimental group was 12.5. The pooled standard deviation was 3.5.\n\n\n\n\n\n\nTask\n\n\n\nCalculate the effect size of the previous study\n\n\n\nThe effect size of the previous study was:"
   }
 ]

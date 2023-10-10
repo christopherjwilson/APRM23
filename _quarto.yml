@@ -65,7 +65,7 @@ format:
     - include/webex.css
     - include/glossary.css
     - include/style.css
-    - aprm23/include/webex.css
+    - include/webex.css
     df-print: kable
     code-link: true
     code-fold: false
