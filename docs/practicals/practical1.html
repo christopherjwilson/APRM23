@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Christopher Wilson">
-<meta name="description" content="PSY4179-N">
 
-<title>Research Methods 1 (DClin) R Sessions - Appendix A — Practical 1 Introduction to R and R Studio</title>
+<title>Practical 1 Introduction to R and R Studio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,46 +58,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../practicals/practical2.html" rel="next">
-<link href="../references.html" rel="prev">
-<link href="../images/logos/logo.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
-  "limit": 20,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
+<script src="practical1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="practical1_files/libs/quarto-html/quarto.js"></script>
+<script src="practical1_files/libs/quarto-html/popper.min.js"></script>
+<script src="practical1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="practical1_files/libs/quarto-html/anchor.min.js"></script>
+<link href="practical1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="practical1_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="practical1_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="practical1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="practical1_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script>
 
 /* update total correct if #webex-total_correct exists */
@@ -307,171 +276,21 @@ window.onload = function() {
 </script>
 
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<link rel="stylesheet" href="../include/style.css">
+<link rel="stylesheet" href="../include/glossary.css">
 <link rel="stylesheet" href="../include/booktem.css">
 <link rel="stylesheet" href="../include/webex.css">
-<link rel="stylesheet" href="../include/glossary.css">
-<link rel="stylesheet" href="../include/style.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="fullcontent">
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../references.html">Appendices</a></li><li class="breadcrumb-item"><a href="../practicals/practical1.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Practical 1 Introduction to R and R Studio</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Research Methods 1 (DClin) R Sessions</a> 
-        <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Welcome to the module</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../introductiontoR.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and R Studio</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../workingWithData.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Working with data in R</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../descriptives.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exploratory and descriptive analysis with R</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../graphing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Graphing and data visualisation with R</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Correlation</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../multipleRegression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Multiple Regression</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../moderation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Moderation analysis</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../mediation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mediation analysis</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../factorAnalysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Factor Analysis</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practicals/practical1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Practical 1 Introduction to R and R Studio</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practicals/practical2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Practical 2 - Power and effect size</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#working-with-script-files-in-r-studio" id="toc-working-with-script-files-in-r-studio" class="nav-link active" data-scroll-target="#working-with-script-files-in-r-studio"><span class="header-section-number">B</span> Working with script files in R Studio</a>
-  <ul class="collapse">
-  <li><a href="#create-a-folder-for-your-data-and-scripts" id="toc-create-a-folder-for-your-data-and-scripts" class="nav-link" data-scroll-target="#create-a-folder-for-your-data-and-scripts"><span class="header-section-number">B.1</span> Create a folder for your data and scripts</a></li>
-  <li><a href="#set-the-working-directory" id="toc-set-the-working-directory" class="nav-link" data-scroll-target="#set-the-working-directory"><span class="header-section-number">B.2</span> Set the working directory</a></li>
-  <li><a href="#create-a-new-script-file" id="toc-create-a-new-script-file" class="nav-link" data-scroll-target="#create-a-new-script-file"><span class="header-section-number">B.3</span> Create a new script file</a></li>
-  <li><a href="#adding-comments-to-a-script" id="toc-adding-comments-to-a-script" class="nav-link" data-scroll-target="#adding-comments-to-a-script"><span class="header-section-number">B.4</span> Adding comments to a script</a></li>
-  <li><a href="#writing-commands-in-a-script" id="toc-writing-commands-in-a-script" class="nav-link" data-scroll-target="#writing-commands-in-a-script"><span class="header-section-number">B.5</span> Writing commands in a script</a></li>
-  <li><a href="#running-code-in-a-script" id="toc-running-code-in-a-script" class="nav-link" data-scroll-target="#running-code-in-a-script"><span class="header-section-number">B.6</span> Running code in a script</a></li>
-  <li><a href="#saving-objects-in-r" id="toc-saving-objects-in-r" class="nav-link" data-scroll-target="#saving-objects-in-r"><span class="header-section-number">B.7</span> Saving objects in R</a></li>
-  <li><a href="#using-functions-in-r" id="toc-using-functions-in-r" class="nav-link" data-scroll-target="#using-functions-in-r"><span class="header-section-number">B.8</span> Using functions in R</a></li>
-  <li><a href="#using-packages-in-r" id="toc-using-packages-in-r" class="nav-link" data-scroll-target="#using-packages-in-r"><span class="header-section-number">B.9</span> Using packages in R</a></li>
-  <li><a href="#saving-your-script" id="toc-saving-your-script" class="nav-link" data-scroll-target="#saving-your-script"><span class="header-section-number">B.10</span> Saving your script</a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
-<!-- main -->
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Appendix A — Practical 1 Introduction to R and R Studio</h1>
+<h1 class="title">Practical 1 Introduction to R and R Studio</h1>
 </div>
 
 
@@ -492,16 +311,16 @@ window.onload = function() {
 
 </header>
 
-<section id="working-with-script-files-in-r-studio" class="level1" data-number="B">
-<h1 data-number="B"><span class="header-section-number">B</span> Working with script files in R Studio</h1>
+<section id="working-with-script-files-in-r-studio" class="level1">
+<h1>Working with script files in R Studio</h1>
 <p>To work with R, it is possible to type commands directly into the console and see the results. However, this is not a good way to work with R, because:</p>
 <ol type="1">
 <li>You would need to repeat this process to run the analysis again.</li>
 <li>Your analysis is not transparent - noone else can see what you did.</li>
 </ol>
 <p>Instead, it is better to write scripts that contain the commands that you want to run amd save them, so they can be reused and shared with others.</p>
-<section id="create-a-folder-for-your-data-and-scripts" class="level2" data-number="B.1">
-<h2 data-number="B.1" class="anchored" data-anchor-id="create-a-folder-for-your-data-and-scripts"><span class="header-section-number">B.1</span> Create a folder for your data and scripts</h2>
+<section id="create-a-folder-for-your-data-and-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-folder-for-your-data-and-scripts">Create a folder for your data and scripts</h2>
 <p>Before you start, create a folder on your computer to store your data and scripts. This will make it easier to find your files later. You can call this folder anything you like, but it is a good idea to give it a name that is related to your project. For example, for this session, you might create a folder called <strong>Practical1</strong>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -517,9 +336,9 @@ Task
 </div>
 </div>
 </section>
-<section id="set-the-working-directory" class="level2" data-number="B.2">
-<h2 data-number="B.2" class="anchored" data-anchor-id="set-the-working-directory"><span class="header-section-number">B.2</span> Set the working directory</h2>
-<p>The working directory is the folder that R will look in for files. To set the working directory, click on the <inf>Session -&gt; Set Working Directory -&gt; Choose Directory</inf> and select the folder you created for your data and script.</p>
+<section id="set-the-working-directory" class="level2">
+<h2 class="anchored" data-anchor-id="set-the-working-directory">Set the working directory</h2>
+<p>The working directory is the folder that R will look in for files. To set the working directory, click on the <if>Session -&gt; Set Working Directory -&gt; Choose Directory</if> and select the folder you created for your data and script.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -534,9 +353,9 @@ Task
 </div>
 </div>
 </section>
-<section id="create-a-new-script-file" class="level2" data-number="B.3">
-<h2 data-number="B.3" class="anchored" data-anchor-id="create-a-new-script-file"><span class="header-section-number">B.3</span> Create a new script file</h2>
-<p>To create a new script file, click on the <inf>File -&gt; New File -&gt; R Script</inf>. This will open a new window, which is where you will write your script. It is important to save your script as you work. To do this, click on the <inf>File -&gt; Save As</inf> and give your script a name. It is a good idea to save your script in the same folder as your data.</p>
+<section id="create-a-new-script-file" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-new-script-file">Create a new script file</h2>
+<p>To create a new script file, click on the <if>File -&gt; New File -&gt; R Script</if>. This will open a new window, which is where you will write your script. It is important to save your script as you work. To do this, click on the <if>File -&gt; Save As</if> and give your script a name. It is a good idea to save your script in the same folder as your data.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -547,14 +366,14 @@ Task
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Create a new script file called **Practical1* and save it in the folder you created for your data and scripts. It should have the extension .R - i.e.: <em>Practical1.R</em>.</p>
+<p>Create a new script file called <strong>Practical1</strong> and save it in the folder you created for your data and scripts. It should have the extension .R - i.e.: <strong>Practical1.R</strong>.</p>
 </div>
 </div>
 </section>
-<section id="adding-comments-to-a-script" class="level2" data-number="B.4">
-<h2 data-number="B.4" class="anchored" data-anchor-id="adding-comments-to-a-script"><span class="header-section-number">B.4</span> Adding comments to a script</h2>
+<section id="adding-comments-to-a-script" class="level2">
+<h2 class="anchored" data-anchor-id="adding-comments-to-a-script">Adding comments to a script</h2>
 <p>It is possible to add information to a script that will not be run as a command. This is called a comment. Comments are useful for adding information about what you are doing in your script. To add a comment, you need to start the line with a hash symbol (#). Anything after the hash symbol will be ignored by R. For example:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># This is a comment</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -569,14 +388,14 @@ Task
 </div>
 </div>
 </section>
-<section id="writing-commands-in-a-script" class="level2" data-number="B.5">
-<h2 data-number="B.5" class="anchored" data-anchor-id="writing-commands-in-a-script"><span class="header-section-number">B.5</span> Writing commands in a script</h2>
-<p>In an R script, any text that is not a comment is a command. Commands are instructions that tell R to do something.</p>
+<section id="writing-commands-code-in-a-script" class="level2">
+<h2 class="anchored" data-anchor-id="writing-commands-code-in-a-script">Writing commands / code in a script</h2>
+<p>In an R script, any text that is not a comment is assumed to be R code. R Code are instructions that tell R to do something.</p>
 <p>For example:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="co"># Add two numbers together</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="dv">23</span> <span class="sc">+</span> <span class="dv">52</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Add two numbers together</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dv">23</span> <span class="sc">+</span> <span class="dv">52</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The code above is a command that tells R to add 23 and 52. However, it will not do anything until you tell R to run it.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -588,13 +407,13 @@ Task
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Ask the ages of the people sitting next to you and add them together. Write the command in your script.</p>
+<p>Ask the ages of the people sitting next to you and add them together. Write the code in your script.</p>
 </div>
 </div>
 </section>
-<section id="running-code-in-a-script" class="level2" data-number="B.6">
-<h2 data-number="B.6" class="anchored" data-anchor-id="running-code-in-a-script"><span class="header-section-number">B.6</span> Running code in a script</h2>
-<p>To run code in a script, you can either highlight the code and click on the <inf>Run</inf> button, or you can use the keyboard shortcut <inf>Ctrl + Enter</inf>. This will run the code and print the results in the console.</p>
+<section id="running-code-in-a-script" class="level2">
+<h2 class="anchored" data-anchor-id="running-code-in-a-script">Running code in a script</h2>
+<p>To run code in a script, you can either highlight the code and click on the <if>Run</if> button, or you can use the keyboard shortcut <if>Ctrl + Enter</if>. This will run the code and print the results in the console.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -609,13 +428,26 @@ Task
 </div>
 </div>
 </section>
-<section id="saving-objects-in-r" class="level2" data-number="B.7">
-<h2 data-number="B.7" class="anchored" data-anchor-id="saving-objects-in-r"><span class="header-section-number">B.7</span> Saving objects in R</h2>
+<section id="saving-objects-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="saving-objects-in-r">Saving objects in R</h2>
 <p>When you run a command in R, you can save the results to an object. For example, when you run the command to add two numbers together, you can save this object by assigning it to a name. For example:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Add two numbers together</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a>result <span class="ot">&lt;-</span> <span class="dv">23</span> <span class="sc">+</span> <span class="dv">52</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add two numbers together</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="dv">23</span> <span class="sc">+</span> <span class="dv">52</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The code above is a command that tells R to add 23 and 52 and save the result to an object called <strong>result</strong>. You can save many things as objects including the results of analyses, data, and graphs.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The &lt;- assignment operator
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note how the code above uses &lt;- to assign the result to an object. This is called the assignment operator. It is created using the keys <pc> &lt; </pc> and <pc>-</pc> with no space in between them. It is important to use &lt;- to assign objects in R. If you use =, it will work, but it might cause problems later on.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -630,12 +462,12 @@ Task
 </div>
 </div>
 </section>
-<section id="using-functions-in-r" class="level2" data-number="B.8">
-<h2 data-number="B.8" class="anchored" data-anchor-id="using-functions-in-r"><span class="header-section-number">B.8</span> Using functions in R</h2>
+<section id="using-functions-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="using-functions-in-r">Using functions in R</h2>
 <p>A function is a command that performs a specific task. For example, the function <strong>mean()</strong> calculates the mean of a set of numbers. To use a function, you need to provide it with some information. For example, to calculate the mean of a set of numbers, you need to tell the function which numbers to use. This is called an argument. For example:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Calculate the mean of my previous result</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">mean</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean of my previous result</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In the code above, the function <strong>mean()</strong> is used to calculate the mean of the object <strong>result</strong>. The object <strong>result</strong> is the argument for the function <strong>mean()</strong>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -668,12 +500,77 @@ Tip
 </div>
 </div>
 </section>
-<section id="using-packages-in-r" class="level2" data-number="B.9">
-<h2 data-number="B.9" class="anchored" data-anchor-id="using-packages-in-r"><span class="header-section-number">B.9</span> Using packages in R</h2>
-<p>To install a package, you can use the <inf>install.packages()</inf> function. For example, to install the package <strong>psych</strong>, you would use the following command:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">install.packages</span>(<span class="st">"psych"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To load the package, you can use the <inf>library()</inf> function. For example, to load the package <strong>psych</strong>, you would use the following command:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(psych)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="importing-data-into-r" class="level2">
+<h2 class="anchored" data-anchor-id="importing-data-into-r">Importing data into R</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Download the data for this section
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>For this section you will need to download the following dataset: <a href="practical1_data.csv">practical1_data.csv</a></p>
+<p>Right click and select <if>Save link as…</if> to download the file. Save it in the same folder as your script.</p>
+</div>
+</div>
+</div>
+<p>To import data into R, you can use the a command that relates to the type of data you are importing. For example, to import the data in the file <strong>practical1_data.csv</strong>, you would use the following command:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"practical1_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Import the data in the file <strong>practical1_data.csv</strong> and save it to an object called <strong>data</strong>. Print the object <strong>data</strong> in the console.</p>
+</div>
+</div>
+</section>
+<section id="viewing-data-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="viewing-data-in-r">Viewing data in R</h2>
+<p>To view the data in an object, you can use the <if>View()</if> function. For example, to view the data in the object <strong>data</strong>, you would use the following command:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>View the data in the object <strong>data</strong>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice that the data is displayed in rows and columns. Each row represents a participant and each column represents a variable. This type of data structure is called a data frame.</p>
+</div>
+</div>
+<p>To refer to a specific column in a data frame, you can use the dollar sign ($) followed by the name of the column. For example, to refer to the column <strong>age</strong> in the data frame <strong>data</strong>, you would use the following command:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can use data frame columns in functions. For example, to calculate the mean of the column <strong>age</strong> in the data frame <strong>data</strong>, you would use the following command:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -685,15 +582,18 @@ Task
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Install the package <strong>psych</strong>. We will use it in a later practical session.</li>
-<li>Load the package <strong>psych</strong>.</li>
+<li><p>Calculate the mean of the column <strong>age</strong> in the data frame <strong>data</strong> and save it to an object called <strong>mean_age</strong>.</p></li>
+<li><p>Calculate the standard deviation of the column <strong>age</strong> in the data frame <strong>data</strong> and save it to an object called <strong>sd_age</strong>.</p></li>
 </ol>
 </div>
 </div>
+<div class="webex-check webex-box">
+<p>The mean age is: <input class="webex-solveme nospaces" size="5" data-answer="[&quot;20.45&quot;]"> The sd of age is: <input class="webex-solveme nospaces" size="16" data-answer="[&quot;1.73129096949433&quot;]"></p>
+</div>
 </section>
-<section id="saving-your-script" class="level2" data-number="B.10">
-<h2 data-number="B.10" class="anchored" data-anchor-id="saving-your-script"><span class="header-section-number">B.10</span> Saving your script</h2>
-<p>Remember to save your script regularly as you work. To save your script, click on the <inf>File -&gt; Save</inf> or use the keyboard shortcut <inf>Ctrl + S</inf>.</p>
+<section id="saving-your-script" class="level2">
+<h2 class="anchored" data-anchor-id="saving-your-script">Saving your script</h2>
+<p>Remember to save your script regularly as you work. To save your script, click on the <if>File -&gt; Save</if> or use the keyboard shortcut <if>Ctrl + S</if>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -707,452 +607,11 @@ Task
 <p>Save your script.</p>
 </div>
 </div>
-
-
 </section>
 </section>
 
-</main> <!-- /main -->
-<script>
-
-/* update total correct if #webex-total_correct exists */
-update_total_correct = function() {
-  console.log("webex: update total_correct");
-
-  var t = document.getElementsByClassName("webex-total_correct");
-  for (var i = 0; i < t.length; i++) {
-    p = t[i].parentElement;
-    var correct = p.getElementsByClassName("webex-correct").length;
-    var solvemes = p.getElementsByClassName("webex-solveme").length;
-    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
-    var selects = p.getElementsByClassName("webex-select").length;
-
-    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
-  }
-}
-
-/* webex-solution button toggling function */
-b_func = function() {
-  console.log("webex: toggle hide");
-
-  var cl = this.parentElement.classList;
-  if (cl.contains('open')) {
-    cl.remove("open");
-  } else {
-    cl.add("open");
-  }
-}
-
-/* check answers */
-check_func = function() {
-  console.log("webex: check answers");
-
-  var cl = this.parentElement.classList;
-  if (cl.contains('unchecked')) {
-    cl.remove("unchecked");
-    this.innerHTML = "Hide Answers";
-  } else {
-    cl.add("unchecked");
-    this.innerHTML = "Show Answers";
-  }
-}
-
-/* function for checking solveme answers */
-solveme_func = function(e) {
-  console.log("webex: check solveme");
-
-  var real_answers = JSON.parse(this.dataset.answer);
-  var my_answer = this.value;
-  var cl = this.classList;
-  if (cl.contains("ignorecase")) {
-    my_answer = my_answer.toLowerCase();
-  }
-  if (cl.contains("nospaces")) {
-    my_answer = my_answer.replace(/ /g, "")
-  }
-
-  if (my_answer == "") {
-    cl.remove("webex-correct");
-    cl.remove("webex-incorrect");
-  } else if (real_answers.includes(my_answer)) {
-    cl.add("webex-correct");
-    cl.remove("webex-incorrect");
-  } else {
-    cl.add("webex-incorrect");
-    cl.remove("webex-correct");
-  }
-
-  // match numeric answers within a specified tolerance
-  if(this.dataset.tol > 0){
-    var tol = JSON.parse(this.dataset.tol);
-    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
-    if (matches.reduce((a, b) => a + b, 0) > 0) {
-      cl.add("webex-correct");
-    } else {
-      cl.remove("webex-correct");
-    }
-  }
-
-  // added regex bit
-  if (cl.contains("regex")){
-    answer_regex = RegExp(real_answers.join("|"))
-    if (answer_regex.test(my_answer)) {
-      cl.add("webex-correct");
-    }
-  }
-
-  update_total_correct();
-}
-
-/* function for checking select answers */
-select_func = function(e) {
-  console.log("webex: check select");
-
-  var cl = this.classList
-
-  /* add style */
-  cl.remove("webex-incorrect");
-  cl.remove("webex-correct");
-  if (this.value == "answer") {
-    cl.add("webex-correct");
-  } else if (this.value != "blank") {
-    cl.add("webex-incorrect");
-  }
-
-  update_total_correct();
-}
-
-/* function for checking radiogroups answers */
-radiogroups_func = function(e) {
-  console.log("webex: check radiogroups");
-
-  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
-  var cl = checked_button.parentElement.classList;
-  var labels = checked_button.parentElement.parentElement.children;
-
-  /* get rid of styles */
-  for (i = 0; i < labels.length; i++) {
-    labels[i].classList.remove("webex-incorrect");
-    labels[i].classList.remove("webex-correct");
-  }
-
-  /* add style */
-  if (checked_button.value == "answer") {
-    cl.add("webex-correct");
-  } else {
-    cl.add("webex-incorrect");
-  }
-
-  update_total_correct();
-}
-
-window.onload = function() {
-  console.log("webex onload");
-  /* set up solution buttons */
-  var buttons = document.getElementsByTagName("button");
-
-  for (var i = 0; i < buttons.length; i++) {
-    if (buttons[i].parentElement.classList.contains('webex-solution')) {
-      buttons[i].onclick = b_func;
-    }
-  }
-
-  var check_sections = document.getElementsByClassName("webex-check");
-  console.log("check:", check_sections.length);
-  for (var i = 0; i < check_sections.length; i++) {
-    check_sections[i].classList.add("unchecked");
-
-    let btn = document.createElement("button");
-    btn.innerHTML = "Show Answers";
-    btn.classList.add("webex-check-button");
-    btn.onclick = check_func;
-    check_sections[i].appendChild(btn);
-
-    let spn = document.createElement("span");
-    spn.classList.add("webex-total_correct");
-    check_sections[i].appendChild(spn);
-  }
-
-  /* set up webex-solveme inputs */
-  var solveme = document.getElementsByClassName("webex-solveme");
-
-  for (var i = 0; i < solveme.length; i++) {
-    /* make sure input boxes don't auto-anything */
-    solveme[i].setAttribute("autocomplete","off");
-    solveme[i].setAttribute("autocorrect", "off");
-    solveme[i].setAttribute("autocapitalize", "off");
-    solveme[i].setAttribute("spellcheck", "false");
-    solveme[i].value = "";
-
-    /* adjust answer for ignorecase or nospaces */
-    var cl = solveme[i].classList;
-    var real_answer = solveme[i].dataset.answer;
-    if (cl.contains("ignorecase")) {
-      real_answer = real_answer.toLowerCase();
-    }
-    if (cl.contains("nospaces")) {
-      real_answer = real_answer.replace(/ /g, "");
-    }
-    solveme[i].dataset.answer = real_answer;
-
-    /* attach checking function */
-    solveme[i].onkeyup = solveme_func;
-    solveme[i].onchange = solveme_func;
-
-    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
-  }
-
-  /* set up radiogroups */
-  var radiogroups = document.getElementsByClassName("webex-radiogroup");
-  for (var i = 0; i < radiogroups.length; i++) {
-    radiogroups[i].onchange = radiogroups_func;
-  }
-
-  /* set up selects */
-  var selects = document.getElementsByClassName("webex-select");
-  for (var i = 0; i < selects.length; i++) {
-    selects[i].onchange = select_func;
-    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
-  }
-
-  update_total_correct();
-}
-
-</script>
-<script>
-// open rdrr links externally ----
-
-var exlinks = document.querySelectorAll("a[href^='https://rdrr.io']");
-var exlink_func = function(){
-  window.open(this.href);
-  return false;
-};
-for (var i = 0; i < exlinks.length; i++) {
-    exlinks[i].addEventListener('click', exlink_func, false);
-}
-
-// visible second sidebar in mobile ----
-
-function move_sidebar() {
-  var toc = document.getElementById("TOC");
-  var small_sidebar = document.querySelector("#quarto-sidebar .sidebar-menu-container");
-  var right_sidebar = document.getElementById("quarto-margin-sidebar");
-
-  if (window.innerWidth < 768) {
-    small_sidebar.append(toc);
-  } else {
-    right_sidebar.append(toc);
-  }
-}
-move_sidebar();
-window.onresize = move_sidebar;
-</script>
-<script>
-
-/* update total correct if #webex-total_correct exists */
-update_total_correct = function() {
-  console.log("webex: update total_correct");
-
-  var t = document.getElementsByClassName("webex-total_correct");
-  for (var i = 0; i < t.length; i++) {
-    p = t[i].parentElement;
-    var correct = p.getElementsByClassName("webex-correct").length;
-    var solvemes = p.getElementsByClassName("webex-solveme").length;
-    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
-    var selects = p.getElementsByClassName("webex-select").length;
-
-    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
-  }
-}
-
-/* webex-solution button toggling function */
-b_func = function() {
-  console.log("webex: toggle hide");
-
-  var cl = this.parentElement.classList;
-  if (cl.contains('open')) {
-    cl.remove("open");
-  } else {
-    cl.add("open");
-  }
-}
-
-/* check answers */
-check_func = function() {
-  console.log("webex: check answers");
-
-  var cl = this.parentElement.classList;
-  if (cl.contains('unchecked')) {
-    cl.remove("unchecked");
-    this.innerHTML = "Hide Answers";
-  } else {
-    cl.add("unchecked");
-    this.innerHTML = "Show Answers";
-  }
-}
-
-/* function for checking solveme answers */
-solveme_func = function(e) {
-  console.log("webex: check solveme");
-
-  var real_answers = JSON.parse(this.dataset.answer);
-  var my_answer = this.value;
-  var cl = this.classList;
-  if (cl.contains("ignorecase")) {
-    my_answer = my_answer.toLowerCase();
-  }
-  if (cl.contains("nospaces")) {
-    my_answer = my_answer.replace(/ /g, "")
-  }
-
-  if (my_answer == "") {
-    cl.remove("webex-correct");
-    cl.remove("webex-incorrect");
-  } else if (real_answers.includes(my_answer)) {
-    cl.add("webex-correct");
-    cl.remove("webex-incorrect");
-  } else {
-    cl.add("webex-incorrect");
-    cl.remove("webex-correct");
-  }
-
-  // match numeric answers within a specified tolerance
-  if(this.dataset.tol > 0){
-    var tol = JSON.parse(this.dataset.tol);
-    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
-    if (matches.reduce((a, b) => a + b, 0) > 0) {
-      cl.add("webex-correct");
-    } else {
-      cl.remove("webex-correct");
-    }
-  }
-
-  // added regex bit
-  if (cl.contains("regex")){
-    answer_regex = RegExp(real_answers.join("|"))
-    if (answer_regex.test(my_answer)) {
-      cl.add("webex-correct");
-    }
-  }
-
-  update_total_correct();
-}
-
-/* function for checking select answers */
-select_func = function(e) {
-  console.log("webex: check select");
-
-  var cl = this.classList
-
-  /* add style */
-  cl.remove("webex-incorrect");
-  cl.remove("webex-correct");
-  if (this.value == "answer") {
-    cl.add("webex-correct");
-  } else if (this.value != "blank") {
-    cl.add("webex-incorrect");
-  }
-
-  update_total_correct();
-}
-
-/* function for checking radiogroups answers */
-radiogroups_func = function(e) {
-  console.log("webex: check radiogroups");
-
-  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
-  var cl = checked_button.parentElement.classList;
-  var labels = checked_button.parentElement.parentElement.children;
-
-  /* get rid of styles */
-  for (i = 0; i < labels.length; i++) {
-    labels[i].classList.remove("webex-incorrect");
-    labels[i].classList.remove("webex-correct");
-  }
-
-  /* add style */
-  if (checked_button.value == "answer") {
-    cl.add("webex-correct");
-  } else {
-    cl.add("webex-incorrect");
-  }
-
-  update_total_correct();
-}
-
-window.onload = function() {
-  console.log("webex onload");
-  /* set up solution buttons */
-  var buttons = document.getElementsByTagName("button");
-
-  for (var i = 0; i < buttons.length; i++) {
-    if (buttons[i].parentElement.classList.contains('webex-solution')) {
-      buttons[i].onclick = b_func;
-    }
-  }
-
-  var check_sections = document.getElementsByClassName("webex-check");
-  console.log("check:", check_sections.length);
-  for (var i = 0; i < check_sections.length; i++) {
-    check_sections[i].classList.add("unchecked");
-
-    let btn = document.createElement("button");
-    btn.innerHTML = "Show Answers";
-    btn.classList.add("webex-check-button");
-    btn.onclick = check_func;
-    check_sections[i].appendChild(btn);
-
-    let spn = document.createElement("span");
-    spn.classList.add("webex-total_correct");
-    check_sections[i].appendChild(spn);
-  }
-
-  /* set up webex-solveme inputs */
-  var solveme = document.getElementsByClassName("webex-solveme");
-
-  for (var i = 0; i < solveme.length; i++) {
-    /* make sure input boxes don't auto-anything */
-    solveme[i].setAttribute("autocomplete","off");
-    solveme[i].setAttribute("autocorrect", "off");
-    solveme[i].setAttribute("autocapitalize", "off");
-    solveme[i].setAttribute("spellcheck", "false");
-    solveme[i].value = "";
-
-    /* adjust answer for ignorecase or nospaces */
-    var cl = solveme[i].classList;
-    var real_answer = solveme[i].dataset.answer;
-    if (cl.contains("ignorecase")) {
-      real_answer = real_answer.toLowerCase();
-    }
-    if (cl.contains("nospaces")) {
-      real_answer = real_answer.replace(/ /g, "");
-    }
-    solveme[i].dataset.answer = real_answer;
-
-    /* attach checking function */
-    solveme[i].onkeyup = solveme_func;
-    solveme[i].onchange = solveme_func;
-
-    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
-  }
-
-  /* set up radiogroups */
-  var radiogroups = document.getElementsByClassName("webex-radiogroup");
-  for (var i = 0; i < radiogroups.length; i++) {
-    radiogroups[i].onchange = radiogroups_func;
-  }
-
-  /* set up selects */
-  var selects = document.getElementsByClassName("webex-select");
-  for (var i = 0; i < selects.length; i++) {
-    selects[i].onchange = select_func;
-    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
-  }
-
-  update_total_correct();
-}
-
-</script>
+</main>
+<!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1173,121 +632,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1501,30 +845,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../references.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">References</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../practicals/practical2.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Practical 2 - Power and effect size</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">CC-BY (2023) Christopher Wilson. With grateful thanks to the <a href="https://debruine.github.io/booktem/">psyTeachR</a> team and packages</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
-  </div>
-</footer>
 
 
 
