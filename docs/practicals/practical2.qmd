@@ -37,6 +37,10 @@ You can also use the menu to import data. To do this, click on the <if>Import Da
 
 In our research we are often comparing the difference between 2 means. As such, we are often interested in the confidence interval of this difference.
 
+For example, in our current dataset, we are interested in the difference between the mean of the control group and the mean of the treatment group on an outcome measure. Let's say that this is a measure of distress, so that lower scores are preferable to higher scores. 
+
+However, we want to know more than just the difference between the means. We want to know how confident we can be that the difference between the means is not zero (null hypothesis), given the data we have. We can do this by calculating the confidence interval of the difference between the means. 
+
 The first step is to calculate the difference between the means. This is simply mean of group 1 minus the mean of group 2.
 
 ```{r eval=TRUE}
@@ -52,6 +56,21 @@ Note that we are using the dollar "$" sign to access the columns of the data fra
 :::
 
 
+::: {.callout-tip collapse="true"}
+# Visualse the difference beetween the means?
+
+We can visualise the difference between the means by plotting the data. We can do this using a histogram. To do this, we can use the following code:
+
+```{r eval=TRUE}
+hist(practical2_data$Treatment - practical2_data$Control)
+
+
+
+```
+
+Notice how most of the data seems to be lower than zero. That would mean that the Treatment group has lower scores than the Control group. This is what we would expect, as the Treatment group is supposed to be better than the Control group.
+:::
+
 The second step is to calculate the standard error of the difference between the means. This is calculated as:
 
 $$SE_{\bar{x}_1 - \bar{x}_2} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$$
@@ -60,15 +79,19 @@ where $s_1^2$ is the variance of group 1, $s_2^2$ is the variance of group 2, $n
 
 So to calculate this in R, we would:
 
-- get the standard deviation of group 1, divided by the number of participants in group 1, 
-- do the same for group 2
-- add these results together
+1. get the standard deviation of group 1, divided by the number of participants in group 1, 
+1. do the same for group 2
+1. add these results together
 
 The code below will start you off, you need to finish it:
 
 ```{r eval=TRUE}
+#  Standard Error of Treatment group
 se1 <- sd(practical2_data$Treatment) / length(practical2_data$Treatment)
 
+# Standard Error of Control group
+
+# Add the two together
 
 ```
 
@@ -392,6 +415,15 @@ Calculate the sample size required for conducting a new study, based on this eff
 
 :::
 
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 
+sampleSize <- power.t.test(d = effectSize, sig.level = 0.05, power = 0.8, type = "two.sample")$n
+
+```
+
+::: {.webex-check .webex-box}
+
+The required sample size is: `r fitb(sampleSize)`
+:::
 
 

@@ -136,6 +136,8 @@ Download the data for this practical
 <section id="calculate-the-confidence-interval-of-the-difference-between-means" class="level1">
 <h1>Calculate the confidence interval of the difference between means</h1>
 <p>In our research we are often comparing the difference between 2 means. As such, we are often interested in the confidence interval of this difference.</p>
+<p>For example, in our current dataset, we are interested in the difference between the mean of the control group and the mean of the treatment group on an outcome measure. Let’s say that this is a measure of distress, so that lower scores are preferable to higher scores.</p>
+<p>However, we want to know more than just the difference between the means. We want to know how confident we can be that the difference between the means is not zero (null hypothesis), given the data we have. We can do this by calculating the confidence interval of the difference between the means.</p>
 <p>The first step is to calculate the difference between the means. This is simply mean of group 1 minus the mean of group 2.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>meanDiff <span class="ot">&lt;-</span> <span class="fu">mean</span>(practical2_data<span class="sc">$</span>Treatment) <span class="sc">-</span> <span class="fu">mean</span>(practical2_data<span class="sc">$</span>Control)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -156,21 +158,49 @@ Tip
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Visualse the difference beetween the means?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We can visualise the difference between the means by plotting the data. We can do this using a histogram. To do this, we can use the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(practical2_data<span class="sc">$</span>Treatment <span class="sc">-</span> practical2_data<span class="sc">$</span>Control)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="practical2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Notice how most of the data seems to be lower than zero. That would mean that the Treatment group has lower scores than the Control group. This is what we would expect, as the Treatment group is supposed to be better than the Control group.</p>
+</div>
+</div>
+</div>
 <p>The second step is to calculate the standard error of the difference between the means. This is calculated as:</p>
 <p><span class="math display">\[SE_{\bar{x}_1 - \bar{x}_2} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}\]</span></p>
 <p>where <span class="math inline">\(s_1^2\)</span> is the variance of group 1, <span class="math inline">\(s_2^2\)</span> is the variance of group 2, <span class="math inline">\(n_1\)</span> is the sample size of group 1, and <span class="math inline">\(n_2\)</span> is the sample size of group 2.</p>
 <p>So to calculate this in R, we would:</p>
-<ul>
+<ol type="1">
 <li>get the standard deviation of group 1, divided by the number of participants in group 1,</li>
 <li>do the same for group 2</li>
 <li>add these results together</li>
-</ul>
+</ol>
 <p>The code below will start you off, you need to finish it:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>se1 <span class="ot">&lt;-</span> <span class="fu">sd</span>(practical2_data<span class="sc">$</span>Treatment) <span class="sc">/</span> <span class="fu">length</span>(practical2_data<span class="sc">$</span>Treatment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  Standard Error of Treatment group</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>se1 <span class="ot">&lt;-</span> <span class="fu">sd</span>(practical2_data<span class="sc">$</span>Treatment) <span class="sc">/</span> <span class="fu">length</span>(practical2_data<span class="sc">$</span>Treatment)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard Error of Control group</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the two together</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -179,7 +209,7 @@ Explanation of the code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In the above code:</p>
 <ul>
@@ -193,7 +223,7 @@ Explanation of the code
 <p><span class="math display">\[\bar{x}_1 - \bar{x}_2 \pm = 1.96 \times SE_{\bar{x}_1 - \bar{x}_2}\]</span></p>
 <p>where <span class="math inline">\(\bar{x}_1 - \bar{x}_2\)</span> is the difference between the means, 1.96 is the critical value of t for the given alpha level and degrees of freedom, and <span class="math inline">\(SE_{\bar{x}_1 - \bar{x}_2}\)</span> is the standard error of the difference between the means.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -202,7 +232,7 @@ Where does 1.96 come from?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The critical value for a 95% confidence interval is 1.96. This is because the area under the 95% of the curve of a normal distribution lies between -1.96 and 1.96. However, this is only true for a large sample size (aprox. &gt;30). For smaller sample sizes, the critical value is larger. For example, for a sample size of 10, the critical value is 2.26. For a sample size of 5, the critical value of is 2.57.</p>
 <p>These smaller distributions are called t-distributions. The t-distribution is similar to the normal distribution, but has fatter tails. This means that the critical values are larger for smaller sample sizes. This is where the t-test gets its name from.</p>
@@ -251,7 +281,7 @@ What does the confidence interval tell us?
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -260,12 +290,12 @@ Includes zero?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Imagine a number line that goes from the lower to the upper confidence interval. If you would have to cross zero to get from the lower to the upper confidence interval value, then the confidence interval includes zero.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="practical2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<p><img src="practical2_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
@@ -379,7 +409,7 @@ Task
 <section id="calculate-the-sample-size-for-conducting-a-new-study-based-on-this-effect" class="level1">
 <h1>Calculate the sample size for conducting a new study, based on this effect</h1>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -388,7 +418,7 @@ Conducting power analysis in R
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>There are many ways to do power analysis and there are many tools for doing so. We will use the power.t.test() function to conduct a power analysis for a t-test.</p>
 <p>For other study designs, there are other functions. For example, for a one-way ANOVA, you can use the function power.anova.test(). For a correlation, you can use the function power.cor.test(). For a regression, you can use the function power.lm(). For a chi-square test, you can use the function power.prop.test(). For a paired t-test, you can use the function power.t.test() with the argument paired = TRUE.</p>
@@ -409,7 +439,7 @@ Conducting power analysis in R
 <li>type = “two.sample” (because we have two groups)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(<span class="at">d =</span> effectSize, <span class="at">sig.level =</span> <span class="fl">0.05</span>, <span class="at">power =</span> <span class="fl">0.8</span>, <span class="at">type =</span> <span class="st">"two.sample"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(<span class="at">d =</span> effectSize, <span class="at">sig.level =</span> <span class="fl">0.05</span>, <span class="at">power =</span> <span class="fl">0.8</span>, <span class="at">type =</span> <span class="st">"two.sample"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -425,7 +455,7 @@ Tip
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -434,7 +464,7 @@ What is power?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Power is the probability of rejecting the null hypothesis when it is false. In other words, it is the probability of finding a significant effect (in your study) when there is a true effect. The higher this value is, the less likely you are to make a type II error (failing to reject the null hypothesis when it is false). 0.8 is a common value for power in power analysis calculations.</p>
 </div>
@@ -452,6 +482,9 @@ Task
 <div class="callout-body-container callout-body">
 <p>Calculate the sample size required for conducting a new study, based on this effect</p>
 </div>
+</div>
+<div class="webex-check webex-box">
+<p>The required sample size is: <input class="webex-solveme nospaces" size="16" data-answer="[&quot;27.5704439373071&quot;]"></p>
 </div>
 </section>
 
