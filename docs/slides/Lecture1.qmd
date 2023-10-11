@@ -5,8 +5,7 @@ title: "Introduction to clinical research designs"
 subtitle: DClin Research Methods 1
 author: Dr Christopher Wilson
 institute: Teesside University
-width: 1800
-height: 900
+
 logo: "logo.jpg"
 csl: apa.csl
 ---
@@ -67,7 +66,7 @@ Sometimes referred to as "Type 1" clinical research [@ComerKendall2013]
 
 -   Rarely followed through to the point of application.
 
-## Quasi experimental research example 
+## Quasi experimental research example {.smaller}
 
 @FelminghamEtAl2010 recorded functional magnetic resonance imaging data in both male and female participants with a diagnosis of PTSD.
 
@@ -79,7 +78,7 @@ Sometimes referred to as "Type 1" clinical research [@ComerKendall2013]
 
 -   Moreover, men with PTSD (compared to women) displayed greater hippocampal activity to fear, possibly suggesting that men have an enhanced capacity for contextualizing fear-related stimuli
 
-## Quasi experimental psychopathology research
+## Quasi experimental psychopathology research {.smaller}
 
 Sometimes referred to as "Type II" clinical research [@ComerKendall2013]
 

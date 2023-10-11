@@ -5,8 +5,6 @@ title: "Power and Effect Size"
 subtitle: DClin Research Methods 1
 author: Dr Christopher Wilson
 institute: Teesside University
-width: 1800
-height: 900
 logo: "logo.jpg"
 csl: apa.csl
 ---
@@ -19,11 +17,17 @@ csl: apa.csl
 -   Understand the relationship between power and sample size
 -   Understand the relationship between effect size and sample size
 
-# Statistical significance, sample power and effect size are 3 inter-related concepts 
+## Recall from last week:
+
+- One of the common issues with clinical research is that studies are underpowered.
+
+- Today we are going to look at Power and Effect Size, and how these relate to sample size.
+
+- Statistical significance, sample power and effect size are 3 inter-related concepts that are important to understand when designing a study.
 
 # What is statistical significance?
 
-## The problem with statistical significance
+## The problem with statistical significance {.smaller}
 
 > "It's science's dirtiest secret: The 'scientific method' of testing hypotheses by statistical analysis stands on a flimsy foundation."
 
@@ -43,7 +47,7 @@ A: Because that's what they were taught in college or grad school.
 
 "Researchers commonly use p-values to answer the question: How strongly does the evidence favor the alternative hypothesis relative to the null hypothesis? p-Values themselves do not directly answer this question and are often misinterpreted"  [@BenjaminBerger2019]
 
-## The ASA statement on p-values [@WassersteinLazar2016]
+## The ASA statement on p-values {.smaller}
 
 1.  P-values can indicate how incompatible the data are with a specified statistical model.
 2.  P-values do not measure the probability that the studied hypothesis is true, or the probability that the data were produced by random chance alone.
@@ -51,8 +55,9 @@ A: Because that's what they were taught in college or grad school.
 4.  Proper inference requires full reporting and transparency.
 5.  A p-value, or statistical significance, does not measure the size of an effect or the importance of a result.
 6.  By itself, a p-value does not provide a good measure of evidence regarding a model or hypothesis.
+ [@WassersteinLazar2016]
 
-## The ASA statement on p-values [@WassersteinLazar2016] {.smaller}
+## The ASA statement on p-values {.smaller .scrollable}
 
 1.  P-values can indicate how incompatible the data are with a specified statistical model.
 
@@ -60,15 +65,13 @@ A: Because that's what they were taught in college or grad school.
 
 2.  P-values do not measure the probability that the studied hypothesis is true, or the probability that the data were produced by random chance alone.
 
-> P-values only tell us about the compatibility of the data with the possible explanation (the null hypothesis).
-
-They do not confirm or deny the truth of the explanation or the probability of the data having occurred by chance.
+> P-values only tell us about the compatibility of the data with the possible explanation (the null hypothesis).They do not confirm or deny the truth of the explanation or the probability of the data having occurred by chance.
 
 3.  Scientific conclusions and business or policy decisions should not be based only on whether a p-value passes a specific threshold.
 
 > Reducing decisions to a dichotomous "significant--not significant" classification leads to poor decisions. This "all-or-nothing" dichotomy based on a threshold (usually 0.05) is a poor substitute for scientific reasoning.
 
-## The ASA statement on p-values [@WassersteinLazar2016] {.smaller}
+## The ASA statement on p-values {.smaller .scrollable}
 
 4.  Proper inference requires full reporting and transparency.
 
@@ -106,11 +109,19 @@ They do not confirm or deny the truth of the explanation or the probability of t
 
 - Confidence intervals can a range of likely outcomes, as well as the direction of the effect.
 
-![](images/clinical_relevance.jpg){fig-align="center"}
+![In a later class, Dr Alan Bowman will discuss clinically meaningful results](images/clinical_relevance.jpg){fig-align="center"}
 
-## How do we report Confidence Intervals?
+## How do we report Confidence Intervals? {.smaller}
 
-## An example of how sample size changes confidence intervals {background-iframe="https://example.com"}
+To report confidence intervals in APA style, we need to report the lower and upper bounds of the interval, and the confidence level.
+
+For example:
+
+>The results of the t-test showed a significant difference between the two groups, t(18) = 2.43, p = .03, 95% CI [0.02, 0.45].
+
+This tells us that the true mean difference between the two groups is likely to be between 0.02 and 0.45, and that if we were to repeat the study 100 times, 95 of the confidence intervals would contain the true mean difference.
+
+## {background-iframe="https://christopherjwilson.shinyapps.io/app1/"}
 
 # Designing studies with sufficient power
 
@@ -134,13 +145,25 @@ Consider a study as a fishing trip.
 -   If the school of fish is big, we shouldn't need to cast the net many times before finding it (or concluding that it is not there).
 -   If it is small, we will need to cast the net many times before finding it (or concluding that it is not there).
 
+ 
+
 ## An analogy for statistical power
 
 ![](images/fish.jpg){fig-align="center" width="94%"}
 
+## Thinking about statistical power
+
+- We first need to decide what effect size we are interested in detecting. This can be called the smallest effect size of interest (SESOI).
+
+- We then need to decide how much power we want to have to detect this effect size. 
+
+- A common choice is 80% power, but this is arbitrary. This means:
+
+> With the given effect size and the calculated sample size, we will be able to detect the effect (if it exists) 80% of the time.
+
 # Effect Size
 
-## What is effect size?
+## What is effect size? {.smaller}
 
 -   When we conduct research, we are usually asking a question about a difference or a relationship.
     -   For example, we might be interested in whether there is a difference in the mean score on a measure between clinical two groups.
@@ -149,7 +172,7 @@ Consider a study as a fishing trip.
 
 > Effect size is a standardized measure of the magnitude of an effect
 
-## What is effect size? #2
+## Which measure of effect size should I use? {.smaller}
 
 -   There are many measures of effect size, some of the most common are:
     -   Cohen's d
@@ -160,7 +183,7 @@ Consider a study as a fishing trip.
     -   R squared
 -   The choice of effect size measure depends on the type of study and the type of data collected.
 
-## What is effect size? #3
+## Small, medium and large effect sizes? {.smaller}
 
 -   Often people talk in terms of small, medium and large effect sizes. This is not very helpful, as it is not clear what these terms mean.
 
@@ -174,7 +197,7 @@ Consider a study as a fishing trip.
 
 -   "Follow-up" bias, is an issue with people deciding whether or not to conduct studies based on the effects found in pilot data
 
-## Don't use pilot data to estimate effect size
+## Don't use pilot data to estimate effect size {.smaller}
 
 - This can lead to seriously underpowered study designs, especially when the sample size of the pilot and/or the true effect size is small to medium. 
 
@@ -185,4 +208,7 @@ Consider a study as a fishing trip.
   - Sequential analysis might be appropriate [@Lakens2014]    
   - A "safeguard" power analysis can be used (underestimates the effect from published studies) [@PeruginiEtAl2014]
   
+
+# We will learn how to calculate effect size, confidence intervals and power in R
+
 # References

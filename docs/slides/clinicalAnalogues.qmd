@@ -61,7 +61,7 @@ Potential issues with clinical analogue studies include:
 
 - Comorbidity: the presence of one or more additional disorders (or diseases) co-occurring with a primary disorder or disease.
 
-## Limitations of clinical analogue studies? #2
+## Limitations of clinical analogue studies? #2 {.smaller}
 
 However, it has been argued that the limitations of clinical analogue studies are often overstated [@AbramowitzEtAl2014] and that the weaknesses of clinical analogue studies are often shared with clinical studies (i.e. poor research is poor research, regardless of the sample):
 
