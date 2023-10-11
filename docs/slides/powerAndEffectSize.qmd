@@ -52,7 +52,7 @@ A: Because that's what they were taught in college or grad school.
 5.  A p-value, or statistical significance, does not measure the size of an effect or the importance of a result.
 6.  By itself, a p-value does not provide a good measure of evidence regarding a model or hypothesis.
 
-## The ASA statement on p-values [@WassersteinLazar2016]
+## The ASA statement on p-values [@WassersteinLazar2016] {.smaller}
 
 1.  P-values can indicate how incompatible the data are with a specified statistical model.
 
@@ -68,7 +68,7 @@ They do not confirm or deny the truth of the explanation or the probability of t
 
 > Reducing decisions to a dichotomous "significant--not significant" classification leads to poor decisions. This "all-or-nothing" dichotomy based on a threshold (usually 0.05) is a poor substitute for scientific reasoning.
 
-## The ASA statement on p-values [@WassersteinLazar2016]
+## The ASA statement on p-values [@WassersteinLazar2016] {.smaller}
 
 4.  Proper inference requires full reporting and transparency.
 
