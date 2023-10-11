@@ -19,6 +19,8 @@ csl: apa.csl
 -   Understand the relationship between power and sample size
 -   Understand the relationship between effect size and sample size
 
+# Statistical significance, sample power and effect size are 3 inter-related concepts 
+
 # What is statistical significance?
 
 ## The problem with statistical significance
@@ -39,7 +41,7 @@ A: Because that's what they were taught in college or grad school.
 
 ## What is the problem with statistical significance?
 
-"Researchers commonly use p-values to answer the question: How strongly does the evidence favor the alternative hypothesis relative to the null hypothesis? p-Values themselves do not directly answer this question and are often misinterpreted" \[BenjaminBerger2019\]
+"Researchers commonly use p-values to answer the question: How strongly does the evidence favor the alternative hypothesis relative to the null hypothesis? p-Values themselves do not directly answer this question and are often misinterpreted"  [@BenjaminBerger2019]
 
 ## The ASA statement on p-values [@WassersteinLazar2016]
 
@@ -106,6 +108,12 @@ They do not confirm or deny the truth of the explanation or the probability of t
 
 ![](images/clinical_relevance.jpg){fig-align="center"}
 
+## How do we report Confidence Intervals?
+
+## An example of how sample size changes confidence intervals {background-iframe="https://example.com"}
+
+# Designing studies with sufficient power
+
 ## When designing a study, we need to ensure it has sufficient power
 
 What does this mean?
@@ -129,6 +137,8 @@ Consider a study as a fishing trip.
 ## An analogy for statistical power
 
 ![](images/fish.jpg){fig-align="center" width="94%"}
+
+# Effect Size
 
 ## What is effect size?
 
