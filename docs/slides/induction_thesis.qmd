@@ -110,6 +110,5 @@ They are more than just reference managers:
 - They can help you develop your ideas
 - They can help you speed up the writing process
 
-## {background-iframe="https://zotero.org"}
 
 # Questions?
