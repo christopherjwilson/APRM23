@@ -1,0 +1,95 @@
+---
+format: revealjs
+bibliography: references.bib
+title: "Hypothesis testing with linear models"
+subtitle: DClin Research Methods 1
+author: Dr Christopher Wilson
+institute: Teesside University
+logo: "logo.jpg"
+csl: apa.csl
+---
+
+## Overview
+
+- Hypothesis testing
+-  Linear models
+-  Linear models in R
+
+## Different types of research hypothesis 
+
+- Hypothesis testing is a method for making inferences about a population based on a sample
+
+- In clinical psychology research, for example, we might be interested in the role of attentional bias in anxiety
+
+## Different types of research hypothesis 
+
+- However, we need to phrase this in terms of a hypothesis that we can test:
+    
+    - There is a difference in attentional bias between anxious and non-anxious individuals
+    - There is a difference in attentional bias between anxious and non-anxious individuals, but only for threat-related stimuli
+    - Level of anxiety predicts level of attentional bias to threat-related stimuli
+    - Level of anxiety moderates the relationship between attentional bias and depression
+
+## Hypothesis influences research design 
+
+- The nature of these hypotheses will determine the design of the study, the variables that are measured, and the statistical analysis that is used
+
+- In many cases people come to analyse their data and find it difficult to know which statistical test to use
+
+- This is not necessarily because of a lack of statistical knowledge
+
+## Different analyses for different designs? {.smaller}
+
+- Psych students are often taught to use different statistical tests for different types of designs. For example:
+
+    - t-test for comparing two groups
+    - ANOVA for comparing more than two groups
+    - Correlation for testing the relationship between two continuous variables
+    - Regression for testing the relationship between a continuous and a categorical variable
+    - ANCOVA for testing the relationship between a continuous and a categorical variable, controlling for a third continuous variable
+
+## Using linear models to test hypotheses 
+
+- However, all of these designs can be analysed using linear models (i.e., regression models)
+
+- This is because all of the above tests can be thought of as special cases of linear models
+
+## Example: t-test
+
+- A t-test is a special case of a linear model where there is one predictor variable (group) and one outcome variable (DV)
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+# Generate some data
+set.seed(123)
+group <- rep(c("A", "B"), each = 10)
+dv <- c(rnorm(10, 10, 2), rnorm(10, 12, 2))
+df <- data.frame(group, dv)
+
+```
+
+```{r echo = T}
+# run a t-test
+
+t.test(dv ~ group, data = df)
+
+
+```
+
+## Example: t-test as a linear model {.smaller} 
+
+```{r echo = T}
+
+# run a linear model
+
+lm(dv ~ group, data = df) |> summary()
+
+```
+
+In the above example, the t-test and linear model give the same results. The intercept for the linear model is the mean of group A, and the slope is the difference between the means of group A and group B.
+
+## The model {.smaller}
+
+- The model is:
+$$y=\beta_0+\beta_1x+\epsilon$$
+where $y$ is the outcome variable, $x$ is the predictor variable, $\beta_0$ is the intercept, $\beta_1$ is the slope, and $\epsilon$ is the error
