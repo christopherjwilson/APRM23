@@ -28,7 +28,7 @@ gantt
     Teaching Session :milestone, 2023-11, 0d
     Trainees Select Project :milestone, 2024-01, 0d
     Proposal Development : 2024-01,2024-05
-    Proposal Submission :milestone, 2024-05-16, 0d
+    Proposal Submission :milestone, 2024-05, 0d
 
 ```
 
