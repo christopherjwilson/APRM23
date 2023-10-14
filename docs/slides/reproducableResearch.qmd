@@ -24,7 +24,7 @@ bibliography: references.bib
 
 - Linked to the "file drawer" problem
 
-## How does open research help address these problems?
+## How does open research help address these problems? {.smaller}
 
 - Researchers outline their goals and theories before they begin their research, so that they can be held accountable for their results.
 
@@ -34,7 +34,7 @@ bibliography: references.bib
 
 - Materials, data and code are made available, so that others can try to replicate the results and verify the findings.
 
-## How to make your research reproducable?
+## How to make your research reproducable?  {.smaller}
 
 - Pre-register your study
     - [AsPredicted](https://aspredicted.org/)
