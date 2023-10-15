@@ -21,7 +21,7 @@ practical1_data <- read.csv("practical1_data.csv")
 1. Be sure to read the contextual information and instructions carefully. This information is necessary to complete the tasks.
 1. Complete the tasks as you go along - they are labelled "Task".
 1. Some of the code you need will be completed, some will be partially completed. You can copy and paste code examples into your script using the copy icon {{< fa clipboard >}} which appears when you hover over the code.
-1. Buttons to press in your keyboard are shown in a box like this: <pc>Ctrl + S</pc> or <mac>Cmd + S</mac>.
+1. Buttons to press in your keyboard are shown like this: <pc>Ctrl + S</pc> or <mac>Cmd + S</mac>.
 1. Menu items to click in R Studio are shown like this: <if>File -> Save</if>.
 1. Boxes with a drop down arrow like this can be collapsed to hide the information inside them. You can also click on the arrow to expand them.
 :::
@@ -32,7 +32,7 @@ practical1_data <- read.csv("practical1_data.csv")
 To work with R, it is possible to type commands directly into the console and see the results. However, this is not a good way to work with R, because:
 
 1. You would need to repeat this process to run the analysis again.
-1. Your analysis is not transparent - noone else can see what you did.
+1. Your analysis is not transparent - no one else can see what you did.
 
 Instead, it is better to write scripts that contain the commands that you want to run and save them, so they can be reused and shared with others.
 
@@ -45,18 +45,6 @@ Before you start, create a folder on your computer to store your data and script
 Create a folder on your computer to store your data and scripts from this session.
 :::
 
-## Set the working directory
-
-The working directory is the folder that R will look in for files. To set the working directory, click on the <if>Session -> Set Working Directory -> Choose Directory</if> and select the folder you created for your data and script.
-
-
-::: {.callout-note} 
-# Task 
-Set the working directory to the folder you created for your data and scripts.
-:::
-
-
-
 ## Create a new script file
 
 To create a new script file, click on the <if>File -> New File -> R Script</if>. This will open a new window, which is where you will write your script. It is important to save your script as you work. To do this, click on the <if>File -> Save As</if> and give your script a name. It is a good idea to save your script in the same folder as your data.
@@ -66,6 +54,30 @@ To create a new script file, click on the <if>File -> New File -> R Script</if>.
 # Task 
 Create a new script file called **Practical1** and save it in the folder you created for your data and scripts. It should have the extension .R - i.e.: **Practical1.R**.
 :::
+
+
+## Set the working directory
+
+The working directory is the folder that R will look in for files. To set the working directory, click on the <if>Session -> Set Working Directory -> Choose Directory</if> and select the folder you created for your data.
+
+
+If you already have a script open and saved, you can also set the working directory by clicking on the <if>Session -> Set Working Directory -> To Source File Location</if>. This will set the working directory to the folder where your open script is saved.
+
+
+
+::: {.callout-note} 
+# Task 
+Set the working directory to the folder you created for your data and scripts.
+:::
+
+::: {.callout-important collapse="true"}
+
+# Why do we need to set the working directory?
+
+When you run a command in R (such as importing a dataset), it will look for files in whichever folder is set as the working directory. If you do not set the working directory, R will look in the default location, which is not usually where your files are. Therefore, it is important to set the working directory to the folder you are using for your data and scripts. This will make it easier to work with R, importing and exporting data.
+
+:::
+
 
 ## Adding comments to a script
 
@@ -78,7 +90,7 @@ It is possible to add information to a script that will not be run as a command.
 ::: {.callout-note} 
 # Task 
 
-Write a comment in your script that describes what you are doing in this session. For example: "This script contains the commands for the first practical session in PSY4179 Research Methods 1".
+Write a comment in your script that describes what you are doing in this session. For example: *Practical Session 1*.
 
 :::
 
@@ -104,7 +116,7 @@ Ask the ages of the people sitting next to you and add them together. Write the 
 
 ## Running code in a script
 
-To run code in a script, you can either highlight the code and click on the <if>Run</if> button, or you can use the keyboard shortcut <if>Ctrl + Enter</if>. This will run the code and print the results in the console.
+To run code in a script, you can either highlight the code and click on the <if>Run</if> button, or you can use the keyboard shortcut <pc>Ctrl + Enter</pc>/<mac>Cmd + Enter</mac>. This will run the code and print the results in the console.
 
 ::: {.callout-note} 
 # Task 
@@ -123,14 +135,16 @@ When you run a command in R, you can save the results to an object. For example,
 result <- 23 + 52 #<1>
 ```
 
-1. This code tells R to add 23 and 52 and save the result to an object called **result**. 
+1. This code tells R to add 23 and 52 and save the result to an object called **result**. The result of the code on the right side of the <- is assigned to the object on the left side of the <-.
 
 You can save many things as objects including the results of analyses, data, and graphs.
 
-::: {.callout-tip}
+::: {.callout-tip collapse="false"}
 # The <- assignment operator
 
-Note how the code above uses <- to assign the result to an object. This is called the assignment operator. It is created using the keys <pc> < </pc> and <pc>-</pc> with no space in between them. It is important to use <- to assign objects in R. If you use =, it will work, but it might cause problems later on.
+Note how the code above uses <- to assign the result to an object. This is called the assignment operator. It is created using the keys <pc> < </pc> and <pc>-</pc> with no space in between them. 
+
+It is important to use <- to assign objects in R. If you use =, it will work, but it might cause problems later on.
 
 :::
 
@@ -172,7 +186,7 @@ The object **result** (which was created earlier) is the argument for the functi
 
 :::
 
-::: {.callout-tip}
+::: {.callout-warning}
 Note how each of the values in the ages_doubled object is twice the value of the corresponding value in the ages object.
 :::
 

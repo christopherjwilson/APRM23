@@ -330,7 +330,7 @@ How to approach this practical session
 <li>Be sure to read the contextual information and instructions carefully. This information is necessary to complete the tasks.</li>
 <li>Complete the tasks as you go along - they are labelled “Task”.</li>
 <li>Some of the code you need will be completed, some will be partially completed. You can copy and paste code examples into your script using the copy icon <i class="fa-solid fa-clipboard" aria-label="clipboard"></i> which appears when you hover over the code.</li>
-<li>Buttons to press in your keyboard are shown in a box like this: <pc>Ctrl + S</pc> or <mac>Cmd + S</mac>.</li>
+<li>Buttons to press in your keyboard are shown like this: <pc>Ctrl + S</pc> or <mac>Cmd + S</mac>.</li>
 <li>Menu items to click in R Studio are shown like this: <if>File -&gt; Save</if>.</li>
 <li>Boxes with a drop down arrow like this can be collapsed to hide the information inside them. You can also click on the arrow to expand them.</li>
 </ol>
@@ -342,7 +342,7 @@ How to approach this practical session
 <p>To work with R, it is possible to type commands directly into the console and see the results. However, this is not a good way to work with R, because:</p>
 <ol type="1">
 <li>You would need to repeat this process to run the analysis again.</li>
-<li>Your analysis is not transparent - noone else can see what you did.</li>
+<li>Your analysis is not transparent - no one else can see what you did.</li>
 </ol>
 <p>Instead, it is better to write scripts that contain the commands that you want to run and save them, so they can be reused and shared with others.</p>
 <section id="create-a-folder-for-your-data-and-scripts" class="level2">
@@ -359,23 +359,6 @@ Task
 </div>
 <div class="callout-body-container callout-body">
 <p>Create a folder on your computer to store your data and scripts from this session.</p>
-</div>
-</div>
-</section>
-<section id="set-the-working-directory" class="level2">
-<h2 class="anchored" data-anchor-id="set-the-working-directory">Set the working directory</h2>
-<p>The working directory is the folder that R will look in for files. To set the working directory, click on the <if>Session -&gt; Set Working Directory -&gt; Choose Directory</if> and select the folder you created for your data and script.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Task
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Set the working directory to the folder you created for your data and scripts.</p>
 </div>
 </div>
 </section>
@@ -396,6 +379,40 @@ Task
 </div>
 </div>
 </section>
+<section id="set-the-working-directory" class="level2">
+<h2 class="anchored" data-anchor-id="set-the-working-directory">Set the working directory</h2>
+<p>The working directory is the folder that R will look in for files. To set the working directory, click on the <if>Session -&gt; Set Working Directory -&gt; Choose Directory</if> and select the folder you created for your data.</p>
+<p>If you already have a script open and saved, you can also set the working directory by clicking on the <if>Session -&gt; Set Working Directory -&gt; To Source File Location</if>. This will set the working directory to the folder where your open script is saved.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Set the working directory to the folder you created for your data and scripts.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why do we need to set the working directory?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>When you run a command in R (such as importing a dataset), it will look for files in whichever folder is set as the working directory. If you do not set the working directory, R will look in the default location, which is not usually where your files are. Therefore, it is important to set the working directory to the folder you are using for your data and scripts. This will make it easier to work with R, importing and exporting data.</p>
+</div>
+</div>
+</div>
+</section>
 <section id="adding-comments-to-a-script" class="level2">
 <h2 class="anchored" data-anchor-id="adding-comments-to-a-script">Adding comments to a script</h2>
 <p>It is possible to add information to a script that will not be run as a command. This is called a comment. Comments are useful for adding information about what you are doing in your script. To add a comment, you need to start the line with a hash symbol (#). Anything after the hash symbol will be ignored by R. For example:</p>
@@ -410,7 +427,7 @@ Task
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Write a comment in your script that describes what you are doing in this session. For example: “This script contains the commands for the first practical session in PSY4179 Research Methods 1”.</p>
+<p>Write a comment in your script that describes what you are doing in this session. For example: <em>Practical Session 1</em>.</p>
 </div>
 </div>
 </section>
@@ -425,11 +442,11 @@ Task
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-annotation="1" data-code-lines="2">This is comment that will be ignored by R. It is used to describe what the code does.</span>
+<span data-code-lines="2" data-code-cell="annotated-cell-2" data-code-annotation="1">This is comment that will be ignored by R. It is used to describe what the code does.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-annotation="2" data-code-lines="4">This code is a command that tells R to add 23 and 52. However, it will not do anything until you tell R to run it.</span>
+<span data-code-lines="4" data-code-cell="annotated-cell-2" data-code-annotation="2">This code is a command that tells R to add 23 and 52. However, it will not do anything until you tell R to run it.</span>
 </dd>
 </dl>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -448,7 +465,7 @@ Task
 </section>
 <section id="running-code-in-a-script" class="level2">
 <h2 class="anchored" data-anchor-id="running-code-in-a-script">Running code in a script</h2>
-<p>To run code in a script, you can either highlight the code and click on the <if>Run</if> button, or you can use the keyboard shortcut <if>Ctrl + Enter</if>. This will run the code and print the results in the console.</p>
+<p>To run code in a script, you can either highlight the code and click on the <if>Run</if> button, or you can use the keyboard shortcut <pc>Ctrl + Enter</pc>/<mac>Cmd + Enter</mac>. This will run the code and print the results in the console.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -472,21 +489,25 @@ Task
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-annotation="1" data-code-lines="3">This code tells R to add 23 and 52 and save the result to an object called <strong>result</strong>.</span>
+<span data-code-lines="3" data-code-cell="annotated-cell-3" data-code-annotation="1">This code tells R to add 23 and 52 and save the result to an object called <strong>result</strong>. The result of the code on the right side of the &lt;- is assigned to the object on the left side of the &lt;-.</span>
 </dd>
 </dl>
 <p>You can save many things as objects including the results of analyses, data, and graphs.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 The &lt;- assignment operator
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>Note how the code above uses &lt;- to assign the result to an object. This is called the assignment operator. It is created using the keys <pc> &lt; </pc> and <pc>-</pc> with no space in between them. It is important to use &lt;- to assign objects in R. If you use =, it will work, but it might cause problems later on.</p>
+<p>Note how the code above uses &lt;- to assign the result to an object. This is called the assignment operator. It is created using the keys <pc> &lt; </pc> and <pc>-</pc> with no space in between them.</p>
+<p>It is important to use &lt;- to assign objects in R. If you use =, it will work, but it might cause problems later on.</p>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -515,7 +536,7 @@ Task
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="1" data-code-lines="3">In the code above, the function <strong>mean()</strong> is used to calculate the mean of the object <strong>result</strong>.</span>
+<span data-code-lines="3" data-code-cell="annotated-cell-4" data-code-annotation="1">In the code above, the function <strong>mean()</strong> is used to calculate the mean of the object <strong>result</strong>.</span>
 </dd>
 </dl>
 <p>The object <strong>result</strong> (which was created earlier) is the argument for the function <strong>mean()</strong>.</p>
@@ -536,13 +557,13 @@ Task
 </ol>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -553,7 +574,7 @@ Tip
 <section id="importing-data-into-r" class="level2">
 <h2 class="anchored" data-anchor-id="importing-data-into-r">Importing data into R</h2>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -562,7 +583,7 @@ Download the data for this section
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>For this section you will need to download the following dataset: <a href="practical1_data.csv">practical1_data.csv</a></p>
 <p>Right click and select <if>Save link as…</if> to download the file. Save it in the same folder as your script.</p>
@@ -574,12 +595,12 @@ Download the data for this section
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-annotation="1" data-code-lines="1">This code tells R to import the data in the file <strong>practical1_data.csv</strong> and save it to an object called <strong>data</strong>. The object <strong>data</strong> could be named anything you like, but it is a good idea to give it a name that is related to the data you are importing.</span>
+<span data-code-lines="1" data-code-cell="annotated-cell-5" data-code-annotation="1">This code tells R to import the data in the file <strong>practical1_data.csv</strong> and save it to an object called <strong>data</strong>. The object <strong>data</strong> could be named anything you like, but it is a good idea to give it a name that is related to the data you are importing.</span>
 </dd>
 </dl>
 <p>You can also use the menu to import data. To do this, click on the <if>Import Dataset</if> button and select the type of data you want to import. For example, to import the data in the file <strong>practical1_data.csv</strong>, you would click on <if>From Text (readr)</if> and then select the file <strong>practical1_data.csv</strong>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -588,7 +609,7 @@ Importing other types of data?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>It is also possible to import data from other types of files such as Excel files, SPSS files, and Stata files. However, you will need to install additional packages to do this. We will cover this in a later session.</p>
 </div>
@@ -615,7 +636,7 @@ Task
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-annotation="1" data-code-lines="1">When you run this code, you should see the dataset in a new window of R Studio.</span>
+<span data-code-lines="1" data-code-cell="annotated-cell-6" data-code-annotation="1">When you run this code, you should see the dataset in a new window of R Studio.</span>
 </dd>
 </dl>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -649,7 +670,7 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-annotation="1" data-code-lines="1">When you run this code, you should see the column <strong>age</strong> from the data frame <strong>data</strong> printed in the console.</span>
+<span data-code-lines="1" data-code-cell="annotated-cell-7" data-code-annotation="1">When you run this code, you should see the column <strong>age</strong> from the data frame <strong>data</strong> printed in the console.</span>
 </dd>
 </dl>
 <p>You can use data frame columns in functions. For example, to calculate the mean of the column <strong>age</strong> in the data frame <strong>data</strong>, you would use the following command:</p>
@@ -657,11 +678,11 @@ Tip
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-8" data-code-annotation="1" data-code-lines="1">When you run this code, you should see the mean of the column <strong>age</strong> from the data frame <strong>data</strong> printed in the console.</span>
+<span data-code-lines="1" data-code-cell="annotated-cell-8" data-code-annotation="1">When you run this code, you should see the mean of the column <strong>age</strong> from the data frame <strong>data</strong> printed in the console.</span>
 </dd>
 </dl>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -670,7 +691,7 @@ Don’t overwrite objects accidentally
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>When you save objects in R, you assign them a name and use the &lt;- operator. However, if you use the same name more than once, this will overwrite the existing object. For example, this code contains an error. Can you see what it is?:</p>
 <div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a></span>
@@ -679,11 +700,11 @@ Don’t overwrite objects accidentally
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-annotation="1" data-code-lines="2">The object <strong>mean_age</strong> is assigned the mean of the column <strong>age</strong> in the data frame <strong>data</strong>.</span>
+<span data-code-lines="2" data-code-cell="annotated-cell-1" data-code-annotation="1">The object <strong>mean_age</strong> is assigned the mean of the column <strong>age</strong> in the data frame <strong>data</strong>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-annotation="2" data-code-lines="3">However, the next line of code assigns the mean of the column <strong>id</strong> in the data frame <strong>data</strong> to the object <strong>mean_age</strong>. This overwrites the existing object <strong>mean_age</strong>.</span>
+<span data-code-lines="3" data-code-cell="annotated-cell-1" data-code-annotation="2">However, the next line of code assigns the mean of the column <strong>id</strong> in the data frame <strong>data</strong> to the object <strong>mean_age</strong>. This overwrites the existing object <strong>mean_age</strong>.</span>
 </dd>
 </dl>
 </div>
@@ -730,7 +751,7 @@ Task
 <section id="you-are-done-for-today-fa-hands-clapping" class="level1">
 <h1>You are done for today <i class="fa-solid fa-hands-clapping" aria-label="hands-clapping"></i></h1>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -739,7 +760,7 @@ Further resources for the topics covered in this practical
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You can find more examples and videos about the topics covered in this practical here:</p>
 <ul>
