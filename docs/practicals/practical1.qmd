@@ -303,3 +303,14 @@ Remember to save your script regularly as you work. To save your script, click o
 # Task
 Save your script.
 :::
+
+# You are done for today {{< fa hands-clapping >}}
+
+::: {.callout-tip collapse="true"}
+# Further resources for the topics covered in this practical
+
+You can find more examples and videos about the topics covered in this practical here:
+
+- [Working with data in R and R Studio](https://christopherjwilson.github.io/APRM23/workingWithData.html)
+
+:::
