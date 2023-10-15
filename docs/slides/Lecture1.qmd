@@ -40,15 +40,23 @@ There are many ongoing discussions in clinical psychology research. They will be
 
 [@ComerKendall2013]
 
-## Experimental psychopathology research example {.smaller}
+## Experimental psychopathology research example {.smaller} 
 
 @PetersEtAl2011 employed an experimental approach to test the hypothesis that attributional style may be one causative factor of depression vulnerability.
 
 -   Undergraduate students, without a history of depression, were randomly assigned to one of two experimental conditions: resilience condition or vulnerability condition
 
--   The resiliency condition involved exposing participants to 60 descriptions that promoted a selfworthy, stable attribution of a positive event and 60 descriptions that promoted an unstable attribution unrelated to self-worth for a negative event.
+-   The resiliency condition: 
+    - descriptions that promoted a selfworthy, stable attribution of a positive event 
+    - descriptions that promoted an unstable attribution unrelated to self-worth for a negative event
 
--   The vulnerability condition involved exposing participants to 60 descriptions that promoted a self-deﬁcient, stable attribution of a negative event and 60 descriptions that promoted an unstable attribution unrelated to self-worth for a positive event.
+-   The vulnerability condition:  
+    - descriptions that promoted a self-deﬁcient, stable attribution of a negative event 
+    - descriptions that promoted an unstable attribution unrelated to self-worth for a positive event.
+
+
+
+## Experimental psychopathology research example  
 
 -   Following exposure to the assigned descriptions, all participants subsequently completed a stressor task (i.e., Cognitive Ability Test).
 
@@ -66,17 +74,17 @@ Sometimes referred to as "Type 1" clinical research [@ComerKendall2013]
 
 -   Rarely followed through to the point of application.
 
-## Quasi experimental research example {.smaller}
+## Quasi experimental research example 
 
-@FelminghamEtAl2010 recorded functional magnetic resonance imaging data in both male and female participants with a diagnosis of PTSD.
+@FelminghamEtAl2010 recorded fMRI data in both male and female participants with a diagnosis of PTSD.
 
 -   Trauma-exposed controls, and non-- trauma-exposed controls while they viewed masked facial expressions of fear.
 
--   By examining neural activation to threat, Felmingham and colleagues sought to elucidate one of the possible pathways through which women have a greater propensity than men to develop PTSD following trauma.
+-   Findings indicated that exposure to trauma was associated with enhanced brainstem activity to fear in women, regardless of the presence of PTSD
 
--   Findings indicated that exposure to trauma was associated with enhanced brainstem activity to fear in women, regardless of the presence of PTSD; however, in men, brainstem activity was associated only with the development of PTSD.
+- However, in men, brainstem activity was associated only with the development of PTSD.
 
--   Moreover, men with PTSD (compared to women) displayed greater hippocampal activity to fear, possibly suggesting that men have an enhanced capacity for contextualizing fear-related stimuli
+
 
 ## Quasi experimental psychopathology research {.smaller}
 
@@ -90,7 +98,18 @@ Sometimes referred to as "Type II" clinical research [@ComerKendall2013]
 
 -   If the IV is a clinical intervention, then could examine variables that either prevent or ameliorate psychopathology
 
-# We will return to this later...
+## What were the differences between the two example studies?
+
+-   The first example study had identified a putative causal variable that was directly manipulable (i.e., attributional style).
+
+-   This could tell us something about how or why psychopathology might develop.
+
+-   The second example study tried to gain a deeper understanding of the neural mechanisms that might be related to PTSD.
+
+- The study did not attempt to explain a causal relationship between the variables.
+
+# Takeaway: 
+It is important to understand what you are trying to achieve with your research and what is possible with the research design you choose.
 
 {{< include basicAppliedLink.qmd >}}
 

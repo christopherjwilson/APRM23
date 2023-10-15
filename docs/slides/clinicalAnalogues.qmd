@@ -9,7 +9,7 @@ bibliography: references.bib
 - Clinical analogue studies are studies that use non-clinical samples to study processes related to psychopathology.
 
     - For example: The role of attention in PTSD
-    - Is this a form of attentional bias towrds threat stimuli or an inability to disengage from threat stimuli?
+    - Is this a form of attentional bias towards threat stimuli or an inability to disengage from threat stimuli?
 
 - They allow us to study processes related to psychopathology in a controlled environment.
 
@@ -71,4 +71,13 @@ However, it has been argued that the limitations of clinical analogue studies ar
 - Over-reliance on or misunderstanding of NHST
 - Diagnostic unreliability
 - Selective reporting of results
+
+
+# Takeaways:
+
+- Clinical analogue studies are studies are an improtant part of studying processes related to psychopathology.
+
+- They can help us break down the intervention -> process -> outcome relationship.
+
+- They need to be well designed and well conducted to be useful.
 

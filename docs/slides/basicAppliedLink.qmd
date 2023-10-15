@@ -8,6 +8,8 @@ bibliography: references.bib
 
 "any type of psychological research investigating processes that are involved in the development and/or maintenance of psychopathology across any level of explanation (e.g., biological, cognitive, behavioral)" [@EhringEtAl2022]
 
+- Could also be called fundamental or core research
+
 ## Why does basic research matter?
 
 Information about core psychological processes is essential to:
@@ -70,10 +72,17 @@ Research findings in clinical psychology are not as reliable as assumed, due to:
 
 - Theories are often easy to vary, and can be used to explain almost any outcome
 
-## Imbalance between research focused on efficacy compared to research on mediators, mechanisms of change, and moderators
+## Imbalance between research focused on efficacy compared to research on mechanisms of change
 
 - In order to improve treatments, we need to understand *how* and *why* they work, not just *if* they work
 
 - To get a complete understanding of a treatment, we need to understand: Efficacy, Mediators, Mechanisms of change, Moderators
 
 - This requires whole programs of research, not just a single study
+
+# Takeaways:
+
+- Too many clinical studies are focused on efficacy, and not enough on mediators, mechanisms of change.
+
+- Too many efficacy studies are focused on complex interventions, and theories are often "elastic" to explain any outcome. 
+

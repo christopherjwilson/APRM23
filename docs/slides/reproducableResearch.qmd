@@ -2,11 +2,11 @@
 bibliography: references.bib
 ---
 
-# Reproducable and Open Research {background-image="https://images.unsplash.com/photo-1457369804613-52c61a468e7d" background-color="black"}
+# Open Science {background-image="https://images.unsplash.com/photo-1457369804613-52c61a468e7d" background-color="black"}
 
 
 
-## What is reproducable and open research?
+## What is open and reproducable research?
 
 - Reproducible research is the idea that research is published with their hypotheses, research plan, materials, data and software code so that others can try to replicate the results and verify the findings.
 
@@ -37,10 +37,9 @@ bibliography: references.bib
 ## How to make your research reproducable?  {.smaller}
 
 - Pre-register your study
-    - [AsPredicted](https://aspredicted.org/)
     - [Open Science Framework](https://osf.io/)
     - [Prospero](https://www.crd.york.ac.uk/prospero/)
-
+    - [AsPredicted](https://aspredicted.org/)
 - Conduct a power anaysis before you begin your study
     - [G*Power](http://www.gpower.hhu.de/en.html)
     - [Webpower](https://webpower.psychstat.org/wiki/Main_Page)
@@ -58,3 +57,9 @@ bibliography: references.bib
     - [OpenICPSR](https://www.openicpsr.org/openicpsr/)
     - [OpenNeuro](https://openneuro.org/)
     - [OpenfMRI](https://openfmri.org/)
+
+# Takeaways:
+
+- Open research increases the transparency of research  
+
+- In doing so, it also helps to address some of the problems in clinical research
