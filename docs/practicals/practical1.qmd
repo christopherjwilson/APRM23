@@ -33,7 +33,7 @@ To work with R, it is possible to type commands directly into the console and se
 1. You would need to repeat this process to run the analysis again.
 1. Your analysis is not transparent - noone else can see what you did.
 
-Instead, it is better to write scripts that contain the commands that you want to run amd save them, so they can be reused and shared with others.
+Instead, it is better to write scripts that contain the commands that you want to run and save them, so they can be reused and shared with others.
 
 ## Create a folder for your data and scripts
 
@@ -53,6 +53,8 @@ The working directory is the folder that R will look in for files. To set the wo
 # Task 
 Set the working directory to the folder you created for your data and scripts.
 :::
+
+
 
 ## Create a new script file
 
