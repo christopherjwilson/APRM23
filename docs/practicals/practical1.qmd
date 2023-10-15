@@ -17,6 +17,7 @@ practical1_data <- read.csv("practical1_data.csv")
 ::: {.callout-tip collapse="false"} 
 # How to approach this practical session
 
+1. Have RStudio open and ready to use.
 1. Be sure to read the contextual information and instructions carefully. This information is necessary to complete the tasks.
 1. Complete the tasks as you go along - they are labelled "Task".
 1. Some of the code you need will be completed, some will be partially completed. You can copy and paste code examples into your script using the copy icon {{< fa clipboard >}} which appears when you hover over the code.
