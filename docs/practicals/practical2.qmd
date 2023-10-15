@@ -381,7 +381,7 @@ The effect size is: `r fitb(effectSize)`
 
 There are many ways to do power analysis and there are many tools for doing so. We will use the power.t.test() function to conduct a power analysis for a t-test.
 
-For other study designs, there are other functions. For example, for a one-way ANOVA, you can use the function power.anova.test(). For a correlation, you can use the function power.cor.test(). For a regression, you can use the function power.lm(). For a chi-square test, you can use the function power.prop.test(). For a paired t-test, you can use the function power.t.test() with the argument paired = TRUE.
+For other study designs, there are other functions. For example, for a one-way ANOVA, you can use the function power.anova.test(). For a chi-square test, you can use the function power.prop.test(). For a paired t-test, you can use the function power.t.test() with the argument paired = TRUE.
 
 There are also different packages that allow more complicated power analysis. Some packages for power analysis in R include:
 
