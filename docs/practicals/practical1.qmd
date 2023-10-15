@@ -21,9 +21,9 @@ practical1_data <- read.csv("practical1_data.csv")
 1. Be sure to read the contextual information and instructions carefully. This information is necessary to complete the tasks.
 1. Complete the tasks as you go along - they are labelled "Task".
 1. Some of the code you need will be completed, some will be partially completed. You can copy and paste code examples into your script using the copy icon {{< fa clipboard >}} which appears when you hover over the code.
-1. Buttons to press in your keyboard are shown like this: <pc>Ctrl + S</pc> or <mac>Cmd + S</mac>.
-1. Menu items to click in R Studio are shown like this: <if>File -> Save</if>.
-1. Boxes with a drop down arrow like this can be collapsed to hide the information inside them. You can also click on the arrow to expand them.
+1. Buttons to press in your keyboard are shown like this: <pc>Ctrl + S</pc> or <mac>Cmd + S</mac>. 
+1. Menu items to click in R Studio are shown like this: <if>File -> Save</if>. Panes or Tabs in R Studio are also shown like this: <if>Environment</if>.
+1. Boxes with a drop down arrow {{< fa square-caret-down >}} can be collapsed to hide the information inside them. You can also click on the arrow to expand them.
 :::
 
 
@@ -137,7 +137,7 @@ result <- 23 + 52 #<1>
 
 1. This code tells R to add 23 and 52 and save the result to an object called **result**. The result of the code on the right side of the <- is assigned to the object on the left side of the <-.
 
-You can save many things as objects including the results of analyses, data, and graphs.
+You can save many things as objects including the results of analyses, data, and graphs. You will see stored objects in the <if>environment<if> pane in R Studio.
 
 ::: {.callout-tip collapse="false"}
 # The <- assignment operator
