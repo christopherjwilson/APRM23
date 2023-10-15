@@ -6,13 +6,25 @@ Institution: "Teesside University"
 format:
   html:
     css: ["../include/style.css","../include/glossary.css","../include/booktem.css", "../include/webex.css"]
-    include-in-header: "../include/webex.js"
+    include-in-header: ["../include/webex.js"]
 ---
 
 ```{r setup, include=FALSE}
 library(webexercises)
 practical1_data <- read.csv("practical1_data.csv")
 ```
+
+::: {.callout-tip collapse="false"} 
+# How to approach this practical session
+
+1. Be sure to read the contextual information and instructions carefully. This information is necessary to complete the tasks.
+1. Complete the tasks as you go along - they are labelled "Task".
+1. Some of the code you need will be completed, some will be partially completed. You can copy and paste code examples into your script using the copy icon {{< fa clipboard >}} which appears when you hover over the code.
+1. Buttons to press in your keyboard are shown in a box like this: <pc>Ctrl + S</pc> or <mac>Cmd + S</mac>.
+1. Menu items to click in R Studio are shown like this: <if>File -> Save</if>.
+1. Boxes with a drop down arrow like this can be collapsed to hide the information inside them. You can also click on the arrow to expand them.
+:::
+
 
 # Working with script files in R Studio
 
@@ -75,12 +87,12 @@ For example:
 
 ```r
 
-# Add two numbers together
+# Add two numbers together #<1>
 
-23 + 52
+23 + 52 #<2>
 ```
-
-The code above is a command that tells R to add 23 and 52. However, it will not do anything until you tell R to run it. 
+1. This is comment that will be ignored by R. It is used to describe what the code does.
+2. This code is a command that tells R to add 23 and 52. However, it will not do anything until you tell R to run it. 
 
 ::: {.callout-note} 
 # Task 
@@ -105,10 +117,12 @@ When you run a command in R, you can save the results to an object. For example,
 ```r
 # Add two numbers together
 
-result <- 23 + 52
+result <- 23 + 52 #<1>
 ```
 
-The code above is a command that tells R to add 23 and 52 and save the result to an object called **result**. You can save many things as objects including the results of analyses, data, and graphs.
+1. This code tells R to add 23 and 52 and save the result to an object called **result**. 
+
+You can save many things as objects including the results of analyses, data, and graphs.
 
 ::: {.callout-tip}
 # The <- assignment operator
@@ -126,16 +140,23 @@ Run the code you wrote in the previous step. Then, run the following command to 
 
 ## Using functions in R
 
-A function is a command that performs a specific task. For example, the function **mean()** calculates the mean of a set of numbers. To use a function, you need to provide it with some information. For example, to calculate the mean of a set of numbers, you need to tell the function which numbers to use. This is called an argument. For example:
+A function is a command that performs a specific task by providing it with certain information (called "arguments").
+
+For example, the function **mean()** calculates the mean of a set of numbers. 
+
+To use a function, you need to provide it with some information. For example, to calculate the mean of a set of numbers, you need to tell the function which numbers to use. For example:
 
 ```r
 # Calculate the mean of my previous result
 
-mean(result)
+mean(result) #<1>
+
 
 ```
 
-In the code above, the function **mean()** is used to calculate the mean of the object **result**. The object **result** is the argument for the function **mean()**.
+1. In the code above, the function **mean()** is used to calculate the mean of the object **result**. 
+
+The object **result** (which was created earlier) is the argument for the function **mean()**.
 
 ::: {.callout-note} 
 # Task 
@@ -171,8 +192,11 @@ Right click and select <if>Save link as...</if> to download the file. Save it in
 To import data into R, you can use the a command that relates to the type of data you are importing. For example, to import the data in the file **practical1_data.csv**, you would use the following command:
 
 ```r
-data <- read.csv("practical1_data.csv")
+data <- read.csv("practical1_data.csv") #<1>
+
 ```
+
+1. This code tells R to import the data in the file **practical1_data.csv** and save it to an object called **data**. The object **data** could be named anything you like, but it is a good idea to give it a name that is related to the data you are importing.
 
 You can also use the menu to import data. To do this, click on the <if>Import Dataset</if> button and select the type of data you want to import. For example, to import the data in the file **practical1_data.csv**, you would click on <if>From Text (readr)</if> and then select the file **practical1_data.csv**.
 
@@ -197,8 +221,11 @@ Import the data in the file **practical1_data.csv** and save it to an object cal
 To view the data in an object, you can use the <if>View()</if> function. For example, to view the data in the object **data**, you would use the following command:
 
 ```r
-view(data)
+view(data) #<1>
 ```
+1. When you run this code, you should see the dataset in a new window of R Studio.
+
+
 
 ::: {.callout-note}
 
@@ -218,16 +245,35 @@ Notice that the data is displayed in rows and columns. Each row represents a par
 To refer to a specific column in a data frame, you can use the dollar sign ($) followed by the name of the column. For example, to refer to the column **age** in the data frame **data**, you would use the following command:
 
 ```r
-
-data$age
+data$age #<1>
 ```
+1. When you run this code, you should see the column **age** from the data frame **data** printed in the console.
+
 
 You can use data frame columns in functions. For example, to calculate the mean of the column **age** in the data frame **data**, you would use the following command:
 
 ```r
-
-mean(data$age)
+mean(data$age) #<1>
 ```
+1. When you run this code, you should see the mean of the column **age** from the data frame **data** printed in the console.
+
+
+::: {.callout-tip collapse="true"}
+# Don't overwrite objects accidentally
+
+When you save objects in R, you assign them a name and use the <- operator. However, if you use the same name more than once, this will overwrite the existing object. For example, this code contains an error. Can you see what it is?:
+
+```r
+
+mean_age <- mean(data$age) #<1>
+mean_age <- mean(data$id) #<2>
+
+```
+1. The object **mean_age** is assigned the mean of the column **age** in the data frame **data**. 
+
+2. However, the next line of code assigns the mean of the column **id** in the data frame **data** to the object **mean_age**. This overwrites the existing object **mean_age**.
+
+:::
 
 ::: {.callout-note}
 
