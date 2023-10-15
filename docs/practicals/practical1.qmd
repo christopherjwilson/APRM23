@@ -186,7 +186,7 @@ The object **result** (which was created earlier) is the argument for the functi
 
 :::
 
-::: {.callout-warning}
+::: {.callout-important}
 Note how each of the values in the ages_doubled object is twice the value of the corresponding value in the ages object.
 :::
 
