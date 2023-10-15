@@ -126,10 +126,10 @@ How to approach this practical session
 <li>Have RStudio open and ready to use.</li>
 <li>Be sure to read the contextual information and instructions carefully. This information is necessary to complete the tasks.</li>
 <li>Complete the tasks as you go along - they are labelled “Task”.</li>
-<li>Some of the code you need will be completed, some will be partially completed. You can copy and paste code examples into your script using the copy icon <i class="fa-solid fa-clipboard" aria-label="clipboard"></i> which appears when you hover over the code.</li>
+<li>Some of the code you need will be completed, some will be partially completed, some you will need to do yourself. You can copy code examples from this page by clicking on the clipboard icon <i class="fa-solid fa-clipboard" aria-label="clipboard"></i> which appears when you hover over the code examples.</li>
 <li>Buttons to press in your keyboard are shown like this: <pc>Ctrl + S</pc> or <mac>Cmd + S</mac>.</li>
 <li>Menu items to click in R Studio are shown like this: <if>File -&gt; Save</if>. Panes or Tabs in R Studio are also shown like this: <if>Environment</if>.</li>
-<li>Boxes with a drop down arrow <i class="fa-solid fa-square-caret-down" aria-label="square-caret-down"></i> can be collapsed to hide the information inside them. You can also click on the arrow to expand them.</li>
+<li>On this page, boxes with a drop down arrow <i class="fa-solid fa-square-caret-down" aria-label="square-caret-down"></i> can be collapsed to hide the information inside them. You can also click on the <i class="fa-solid fa-square-caret-right" aria-label="square-caret-right"></i> arrow to expand the section.</li>
 </ol>
 </div>
 </div>
@@ -171,7 +171,7 @@ Download the data for this practical
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-annotation="1" data-code-cell="annotated-cell-1">Note that we are using the dollar “$” sign to access the columns of the data frame.</span>
+<span data-code-lines="1" data-code-cell="annotated-cell-1" data-code-annotation="1">Note that we are using the dollar “$” sign to access the columns of the data frame.</span>
 </dd>
 </dl>
 </div>
@@ -182,15 +182,15 @@ Download the data for this practical
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Visualse the difference beetween the means?
+Visualse the difference between the means?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We can visualise the difference between the means by plotting the data. We can do this using a histogram. To do this, we can use the following code:</p>
+<p>We can visualise the difference between the means by plotting the data. We will learn how to do this in a later session. For now (if you want to), you can just run the code below to see the difference between the means.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(practical2_data<span class="sc">$</span>Treatment <span class="sc">-</span> practical2_data<span class="sc">$</span>Control)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(practical2_data<span class="sc">$</span>Treatment <span class="sc">-</span> practical2_data<span class="sc">$</span>Control, <span class="at">main =</span> <span class="st">"Difference between means"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -224,15 +224,15 @@ Visualse the difference beetween the means?
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-annotation="1" data-code-cell="annotated-cell-2">This code calculates the standard error of the Treatment group. sd() is the function to calculate the standard deviation. length() is the function to calculate the number of elements in a vector.</span>
+<span data-code-lines="2" data-code-cell="annotated-cell-2" data-code-annotation="1">This code calculates the standard error of the Treatment group. sd() is the function to calculate the standard deviation. length() is the function to calculate the number of elements in a vector.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="4" data-code-annotation="2" data-code-cell="annotated-cell-2">You need to do the same for the Control group.</span>
+<span data-code-lines="4" data-code-cell="annotated-cell-2" data-code-annotation="2">You need to do the same for the Control group.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="6" data-code-annotation="3" data-code-cell="annotated-cell-2">Then you need to add them together.</span>
+<span data-code-lines="6" data-code-cell="annotated-cell-2" data-code-annotation="3">Then you need to add them together.</span>
 </dd>
 </dl>
 </div>
@@ -295,7 +295,8 @@ What does the confidence interval tell us?
 </div>
 <div class="callout-body-container callout-body">
 <p>The confidence interval tells us the range of values that we can be confident that the true value (difference between the means) lies within.</p>
-<p>A common misunderstanding about CIs is that for say a 95% CI, there is a 95% probability that the true population mean lies between the values. A correct interpretation is that if we were to repeat the study many times and made confidence intervals for each of the result, then the true population mean would be present in 95% of those confidence intervals.</p>
+<p>A common misunderstanding about CIs is to say that for a 95% CI, there is a 95% probability that the true population mean lies between the values - this is incorrect.</p>
+<p>A correct interpretation is that if we were to repeat the study many times and made confidence intervals for each of the result, then the true population mean would be present in 95% of those confidence intervals.</p>
 <p><strong>Importantly</strong>: If the confidence interval includes zero, then we cannot reject the null hypothesis. If the confidence interval does not include zero, then we can reject the null hypothesis (at <span class="math inline">\(\alpha\)</span> = 0.05).</p>
 </div>
 </div>
@@ -342,8 +343,8 @@ Includes zero?
 <p>As an exercise, we will do this step by step:</p>
 <p>Step 1:</p>
 <ul>
-<li>calculate sample size of group 1 - 1</li>
-<li>calculate the variance of group 1</li>
+<li>calculate sample size of group1 - 1 (i.e., minus 1)</li>
+<li>calculate the variance of group1</li>
 <li>Multiply these two together</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -364,8 +365,8 @@ Tip
 </div>
 <p>Step 2:</p>
 <ul>
-<li>calculate sample size of group 2 - 1</li>
-<li>calculate the variance of group 2</li>
+<li>calculate sample size of group2 - 1 (i.e., minus 1)</li>
+<li>calculate the variance of group2</li>
 <li>Multiply these two together</li>
 </ul>
 <div class="webex-check webex-box">
@@ -373,14 +374,14 @@ Tip
 </div>
 <p>Step 3:</p>
 <ul>
-<li>Add these two together</li>
+<li>Add the results of step 1 and step 2 together</li>
 </ul>
 <div class="webex-check webex-box">
 <p>The result of this step is: <input class="webex-solveme nospaces" size="16" data-answer="[&quot;1984.27432977808&quot;]"></p>
 </div>
 <p>Step 4:</p>
 <ul>
-<li>calculate sample size of group 1 + sample size of group 2 - 2</li>
+<li>calculate sample size of group 1 + sample size of group 2 - 2 (i.e., add the two sample sizes together and then minus 2)</li>
 </ul>
 <div class="webex-check webex-box">
 <p>The result of this step is: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;1998&quot;]"></p>
@@ -393,6 +394,19 @@ Tip
 <p>The result of this step is: <input class="webex-solveme nospaces" size="17" data-answer="[&quot;0.993130295184222&quot;,&quot;.993130295184222&quot;]"></p>
 </div>
 <p>Step 6: - Take the square root of the result of step 5</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use the sqrt() function to find the square root of a number.</p>
+</div>
+</div>
 <div class="webex-check webex-box">
 <p>The result of this step is: <input class="webex-solveme nospaces" size="17" data-answer="[&quot;0.996559228136603&quot;,&quot;.996559228136603&quot;]"></p>
 </div>
@@ -422,7 +436,7 @@ Task
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Calculate the effect size of is dataset</p>
+<p>Calculate the effect size of the difference between the means.</p>
 </div>
 </div>
 <div class="webex-check webex-box">
@@ -433,7 +447,7 @@ Task
 <section id="calculate-the-sample-size-for-conducting-a-new-study-based-on-this-effect" class="level1">
 <h1>Calculate the sample size for conducting a new study, based on this effect</h1>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -442,7 +456,7 @@ Conducting power analysis in R
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>There are many ways to do power analysis and there are many tools for doing so. We will use the power.t.test() function to conduct a power analysis for a t-test.</p>
 <p>For other study designs, there are other functions. For example, for a one-way ANOVA, you can use the function power.anova.test(). For a correlation, you can use the function power.cor.test(). For a regression, you can use the function power.lm(). For a chi-square test, you can use the function power.prop.test(). For a paired t-test, you can use the function power.t.test() with the argument paired = TRUE.</p>
@@ -468,13 +482,13 @@ Conducting power analysis in R
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-annotation="1" data-code-cell="annotated-cell-3">In the above code, replace the word “effectSize” with the effect size you calculated above.</span>
+<span data-code-lines="1" data-code-cell="annotated-cell-3" data-code-annotation="1">In the above code, replace the word “effectSize” with the effect size you calculated above.</span>
 </dd>
 </dl>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -483,7 +497,7 @@ What is power?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Power is the probability of rejecting the null hypothesis when it is false. In other words, it is the probability of finding a significant effect (in your study) when there is a true effect. The higher this value is, the less likely you are to make a type II error (failing to reject the null hypothesis when it is false). 0.8 is a common value for power in power analysis calculations.</p>
 </div>
@@ -504,6 +518,42 @@ Task
 </div>
 <div class="webex-check webex-box">
 <p>The required sample size is: <input class="webex-solveme nospaces" size="16" data-answer="[&quot;27.5704439373071&quot;]"></p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Save your script.</p>
+</div>
+</div>
+</section>
+<section id="you-are-done-for-today-fa-hands-clapping" class="level1">
+<h1>You are done for today <i class="fa-solid fa-hands-clapping" aria-label="hands-clapping"></i></h1>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Further resources for conducting analysis in R
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><a href="https://christopherjwilson.github.io/APRM23/descriptives.html">Exploratory and descriptive analysis</a></p></li>
+<li><p><a href="https://www.statmethods.net/stats/descriptives.html">Basic statistics in R</a></p></li>
+<li><p><a href="https://www.statmethods.net/stats/power.html">Power analysis in R</a></p></li>
+</ul>
+</div>
+</div>
 </div>
 </section>
 

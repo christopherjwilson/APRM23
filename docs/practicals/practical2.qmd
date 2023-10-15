@@ -19,12 +19,11 @@ library(webexercises)
 1. Have RStudio open and ready to use.
 1. Be sure to read the contextual information and instructions carefully. This information is necessary to complete the tasks.
 1. Complete the tasks as you go along - they are labelled "Task".
-1. Some of the code you need will be completed, some will be partially completed. You can copy and paste code examples into your script using the copy icon {{< fa clipboard >}} which appears when you hover over the code.
+1. Some of the code you need will be completed, some will be partially completed, some you will need to do yourself. You can copy code examples from this page by clicking on the clipboard icon {{< fa clipboard >}} which appears when you hover over the code examples.
 1. Buttons to press in your keyboard are shown like this: <pc>Ctrl + S</pc> or <mac>Cmd + S</mac>. 
 1. Menu items to click in R Studio are shown like this: <if>File -> Save</if>. Panes or Tabs in R Studio are also shown like this: <if>Environment</if>.
-1. Boxes with a drop down arrow {{< fa square-caret-down >}} can be collapsed to hide the information inside them. You can also click on the arrow to expand them.
+1. On this page, boxes with a drop down arrow {{< fa square-caret-down >}} can be collapsed to hide the information inside them. You can also click on the {{< fa square-caret-right >}} arrow to expand the section.
 :::
-
 
 
 ::: {.callout-important collapse="false"}
@@ -66,16 +65,16 @@ meanDiff <- mean(practical2_data$Treatment) - mean(practical2_data$Control) #<1>
 
 
 ::: {.callout-tip collapse="true"}
-# Visualse the difference beetween the means?
+# Visualse the difference between the means?
 
-We can visualise the difference between the means by plotting the data. We can do this using a histogram. To do this, we can use the following code:
+We can visualise the difference between the means by plotting the data. We will learn how to do this in a later session. For now (if you want to), you can just run the code below to see the difference between the means.
 
 ```{r eval=TRUE}
-hist(practical2_data$Treatment - practical2_data$Control)
 
-
-
+hist(practical2_data$Treatment - practical2_data$Control, main = "Difference between means") 
 ```
+
+
 
 Notice how most of the data seems to be lower than zero. That would mean that the Treatment group has lower scores than the Control group. This is what we would expect, as the Treatment group is supposed to be better than the Control group.
 :::
@@ -161,7 +160,9 @@ The upper confidence interval is: `r fitb(confidenceInterval[2])`
 
 The confidence interval tells us the range of values that we can be confident that the true value (difference between the means) lies within.
 
-A common misunderstanding about CIs is that for say a 95% CI, there is a 95% probability that the true population mean lies between the values. A correct interpretation is that if we were to repeat the study many times and made confidence intervals for each of the result, then the true population mean would be present in 95% of those confidence intervals.
+A common misunderstanding about CIs is to say that for a 95% CI, there is a 95% probability that the true population mean lies between the values - this is incorrect. 
+
+A correct interpretation is that if we were to repeat the study many times and made confidence intervals for each of the result, then the true population mean would be present in 95% of those confidence intervals.
 
 **Importantly**: If the confidence interval includes zero, then we cannot reject the null hypothesis. If the confidence interval does not include zero, then we can reject the null hypothesis (at $\alpha$ = 0.05). 
 :::
@@ -224,8 +225,8 @@ As an exercise, we will do this step by step:
 
 Step 1:
 
-- calculate sample size of group 1 - 1
-- calculate the variance of group 1
+- calculate sample size of group1 - 1 (i.e., minus 1)
+- calculate the variance of group1
 - Multiply these two together
 
 ::: {.callout-tip}
@@ -245,8 +246,8 @@ The result of this step is: `r fitb(step1)`
 
 Step 2:
 
-- calculate sample size of group 2 - 1
-- calculate the variance of group 2
+- calculate sample size of group2 - 1 (i.e., minus 1)
+- calculate the variance of group2
 - Multiply these two together
 
 ::: {.webex-check .webex-box}
@@ -261,7 +262,7 @@ The result of this step is: `r fitb(step2)`
 
 Step 3:
 
-- Add these two together
+- Add the results of step 1 and step 2 together
 
 ```{r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
 step3 <- step1 + step2
@@ -277,7 +278,7 @@ The result of this step is: `r fitb(step3)`
 Step 4:
 
 
-- calculate sample size of group 1 + sample size of group 2 - 2
+- calculate sample size of group 1 + sample size of group 2 - 2 (i.e., add the two sample sizes together and then minus 2)
 
 ::: {.webex-check .webex-box}
 
@@ -311,6 +312,12 @@ The result of this step is: `r fitb(step5)`
 
 Step 6:
 - Take the square root of the result of step 5
+
+::: {.callout-tip}
+
+Use the sqrt() function to find the square root of a number.
+
+:::
 
 ::: {.webex-check .webex-box}
 
@@ -352,7 +359,7 @@ The pooled SD is: `r fitb(pooled_sd)`
 ::: {.callout-note}
 # Task
 
-Calculate the effect size of is dataset
+Calculate the effect size of the difference between the means.
 :::
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -429,3 +436,22 @@ The required sample size is: `r fitb(sampleSize)`
 :::
 
 
+
+::: {.callout-note}
+# Task
+Save your script.
+:::
+
+# You are done for today {{< fa hands-clapping >}}
+
+::: {.callout-tip collapse="true"}
+# Further resources for conducting analysis in R
+
+
+- [Exploratory and descriptive analysis](https://christopherjwilson.github.io/APRM23/descriptives.html)
+
+- [Basic statistics in R](https://www.statmethods.net/stats/descriptives.html)
+
+- [Power analysis in R](https://www.statmethods.net/stats/power.html)
+
+:::
