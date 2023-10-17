@@ -171,7 +171,7 @@ Download the data for this practical
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-cell="annotated-cell-1" data-code-lines="1">Note that we are using the dollar “$” sign to access the columns of the data frame.</span>
+<span data-code-lines="1" data-code-cell="annotated-cell-1" data-code-annotation="1">Note that we are using the dollar “$” sign to access the columns of the data frame.</span>
 </dd>
 </dl>
 </div>
@@ -224,15 +224,15 @@ Visualse the difference between the means?
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-cell="annotated-cell-2" data-code-lines="2">This code calculates the standard error of the Treatment group. sd() is the function to calculate the standard deviation. length() is the function to calculate the number of elements in a vector.</span>
+<span data-code-lines="2" data-code-cell="annotated-cell-2" data-code-annotation="1">This code calculates the standard error of the Treatment group. sd() is the function to calculate the standard deviation. length() is the function to calculate the number of elements in a vector.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-cell="annotated-cell-2" data-code-lines="4">You need to do the same for the Control group.</span>
+<span data-code-lines="4" data-code-cell="annotated-cell-2" data-code-annotation="2">You need to do the same for the Control group.</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-cell="annotated-cell-2" data-code-lines="6">Then you need to add them together.</span>
+<span data-code-lines="6" data-code-cell="annotated-cell-2" data-code-annotation="3">Then you need to add them together.</span>
 </dd>
 </dl>
 </div>
@@ -253,7 +253,7 @@ Where does 1.96 come from?
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The critical value for a 95% confidence interval is 1.96. This is because the area under the 95% of the curve of a normal distribution lies between -1.96 and 1.96 standard deviations from the mean. However, this is only true for a large sample size (aprox. &gt;30). For smaller sample sizes, the critical value is larger. For example, for a sample size of 10, the critical value is 2.26. For a sample size of 5, the critical value of is 2.57.</p>
-<p>These smaller distributions are called t-distributions. The t-distribution is similar to the normal distribution, but has fatter tails. This means that the critical values are larger for smaller sample sizes. This is where the t-test gets its name from.</p>
+<p>These smaller distributions are called t-distributions. The t-distribution is similar to the normal distribution but it is wider. This means that the critical values are larger for smaller sample sizes. This is where the t-test gets its name from.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Normal196.png" class="img-fluid figure-img"></p>
@@ -282,7 +282,9 @@ Task
 </div>
 </div>
 <div class="webex-check webex-box">
-<p>The lower confidence interval is: <input class="webex-solveme nospaces" size="17" data-answer="[&quot;-2.40085508604882&quot;]"> The upper confidence interval is: <input class="webex-solveme nospaces" size="17" data-answer="[&quot;-1.90927911135297&quot;]"></p>
+<p>The lower confidence interval is:</p>
+<p><input class="webex-solveme nospaces" size="4" data-answer="[&quot;-2.4&quot;]"></p>
+<p>The upper confidence interval is: <input class="webex-solveme nospaces" size="5" data-answer="[&quot;-1.91&quot;]"></p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -361,7 +363,7 @@ Tip
 </div>
 </div>
 <div class="webex-check webex-box">
-<p>The result of this step is: <input class="webex-solveme nospaces" size="16" data-answer="[&quot;986.490468947992&quot;]"></p>
+<p>The result of this step is: <input class="webex-solveme nospaces" size="6" data-answer="[&quot;986.49&quot;]"> (round to 2 decimal places)</p>
 </div>
 <p>Step 2:</p>
 <ul>
@@ -370,28 +372,28 @@ Tip
 <li>Multiply these two together</li>
 </ul>
 <div class="webex-check webex-box">
-<p>The result of this step is: <input class="webex-solveme nospaces" size="16" data-answer="[&quot;997.783860830083&quot;]"></p>
+<p>The result of this step is: <input class="webex-solveme nospaces" size="6" data-answer="[&quot;997.78&quot;]"> (round to 2 decimal places)</p>
 </div>
 <p>Step 3:</p>
 <ul>
 <li>Add the results of step 1 and step 2 together</li>
 </ul>
 <div class="webex-check webex-box">
-<p>The result of this step is: <input class="webex-solveme nospaces" size="16" data-answer="[&quot;1984.27432977808&quot;]"></p>
+<p>The result of this step is: <input class="webex-solveme nospaces" size="7" data-answer="[&quot;1984.27&quot;]"> (round to 2 decimal places)</p>
 </div>
 <p>Step 4:</p>
 <ul>
 <li>calculate sample size of group 1 + sample size of group 2 - 2 (i.e., add the two sample sizes together and then minus 2)</li>
 </ul>
 <div class="webex-check webex-box">
-<p>The result of this step is: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;1998&quot;]"></p>
+<p>The result of this step is: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;1998&quot;]"> (round to 2 decimal places)</p>
 </div>
 <p>Step 5:</p>
 <ul>
 <li>Divide the result of step 3 by the result of step 4</li>
 </ul>
 <div class="webex-check webex-box">
-<p>The result of this step is: <input class="webex-solveme nospaces" size="17" data-answer="[&quot;0.993130295184222&quot;,&quot;.993130295184222&quot;]"></p>
+<p>The result of this step is: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;0.99&quot;,&quot;.99&quot;]"> (round to 2 decimal places)</p>
 </div>
 <p>Step 6: - Take the square root of the result of step 5</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -408,7 +410,7 @@ Tip
 </div>
 </div>
 <div class="webex-check webex-box">
-<p>The result of this step is: <input class="webex-solveme nospaces" size="17" data-answer="[&quot;0.996559228136603&quot;,&quot;.996559228136603&quot;]"></p>
+<p>The result of this step is: <input class="webex-solveme nospaces" size="1" data-answer="[&quot;1&quot;]"> (round to 2 decimal places)</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -424,7 +426,7 @@ Task
 </div>
 </div>
 <div class="webex-check webex-box">
-<p>The pooled SD is: <input class="webex-solveme nospaces" size="16" data-answer="[&quot;2.80407473348377&quot;]"></p>
+<p>The pooled SD is: <input class="webex-solveme nospaces" size="3" data-answer="[&quot;2.8&quot;]"></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -440,7 +442,7 @@ Task
 </div>
 </div>
 <div class="webex-check webex-box">
-<p>The effect size is: <input class="webex-solveme nospaces" size="18" data-answer="[&quot;-0.768548381741398&quot;,&quot;-.768548381741398&quot;]"></p>
+<p>The effect size is: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;0.77&quot;,&quot;.77&quot;]"> (note: effect size is always positive)</p>
 </div>
 </section>
 </section>
@@ -482,7 +484,7 @@ Conducting power analysis in R
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-cell="annotated-cell-3" data-code-lines="1">In the above code, replace the word “effectSize” with the effect size you calculated above.</span>
+<span data-code-lines="1" data-code-cell="annotated-cell-3" data-code-annotation="1">In the above code, replace the word “effectSize” with the effect size you calculated above.</span>
 </dd>
 </dl>
 </div>
@@ -517,7 +519,7 @@ Task
 </div>
 </div>
 <div class="webex-check webex-box">
-<p>The required sample size is: <input class="webex-solveme nospaces" size="16" data-answer="[&quot;27.5704439373071&quot;]"></p>
+<p>The required sample size is: <input class="webex-solveme nospaces" size="2" data-answer="[&quot;28&quot;]"> (no decimal places)</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">

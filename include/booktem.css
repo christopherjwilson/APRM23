@@ -77,6 +77,14 @@ if {
   border-radius: 0.25rem;
 }
 
+func {
+
+  font-weight: 900;
+  color: brown;
+
+
+}
+
 pkg {
   font-weight: 600;
   color: inherit;

@@ -118,7 +118,7 @@ where $\bar{x}_1 - \bar{x}_2$ is the difference between the means, 1.96 is the c
 
 The critical value for a 95% confidence interval is 1.96. This is because the area under the 95% of the curve of a normal distribution lies between -1.96 and 1.96 standard deviations from the mean. However, this is only true for a large sample size (aprox. >30). For smaller sample sizes, the critical value is larger. For example, for a sample size of 10, the critical value is 2.26. For a sample size of 5, the critical value of is 2.57. 
 
-These smaller distributions are called t-distributions. The t-distribution is similar to the normal distribution, but has fatter tails. This means that the critical values are larger for smaller sample sizes. This is where the t-test gets its name from.
+These smaller distributions are called t-distributions. The t-distribution is similar to the normal distribution but it is wider. This means that the critical values are larger for smaller sample sizes. This is where the t-test gets its name from.
 
 ![The Normal Distribution - critical values for 95% AUC](Normal196.png)
 
@@ -150,8 +150,11 @@ confidenceInterval <- meanDiff + c(-1, 1) * 1.96 * standardError
 ```
 ::: {.webex-check .webex-box}
 
-The lower confidence interval is: `r fitb(confidenceInterval[1])`
-The upper confidence interval is: `r fitb(confidenceInterval[2])`
+The lower confidence interval is: 
+
+`r fitb(confidenceInterval[1] |> round(2))`
+
+The upper confidence interval is: `r fitb(confidenceInterval[2] |> round(2))`
 :::
 
 
@@ -240,7 +243,7 @@ step1 <- length(practical2_data$Treatment) - 1 * var(practical2_data$Treatment)
 ```
 
 
-The result of this step is: `r fitb(step1)`
+The result of this step is: `r fitb(step1 |> round(2))` (round to 2 decimal places)
 
 :::
 
@@ -256,7 +259,7 @@ Step 2:
 step2 <- length(practical2_data$Control) - 1 * var(practical2_data$Control)
 ```
 
-The result of this step is: `r fitb(step2)`
+The result of this step is: `r fitb(step2 |> round(2))` (round to 2 decimal places)
 
 :::
 
@@ -271,7 +274,7 @@ step3 <- step1 + step2
 
 ::: {.webex-check .webex-box}
 
-The result of this step is: `r fitb(step3)`
+The result of this step is: `r fitb(step3 |> round(2))` (round to 2 decimal places)
 
 :::
 
@@ -288,7 +291,7 @@ step4 <- length(practical2_data$Treatment) + length(practical2_data$Control) - 2
 
 ```
 
-The result of this step is: `r fitb(step4 )`
+The result of this step is: `r fitb(step4 |> round(2) )` (round to 2 decimal places)
 
 :::
 
@@ -304,7 +307,7 @@ step5 <- step3 / step4
 
 ```
 
-The result of this step is: `r fitb(step5)`
+The result of this step is: `r fitb(step5 |> round(2))` (round to 2 decimal places)
 
 :::
 
@@ -325,7 +328,7 @@ Use the sqrt() function to find the square root of a number.
 step6 <- sqrt(step5)
 ```
 
-The result of this step is: `r fitb(step6)`
+The result of this step is: `r fitb(step6  |> round(2))` (round to 2 decimal places)
 
 :::
 
@@ -351,7 +354,7 @@ pooled_sd <-sqrt(((n1-1)*s1^2 + (n2-1)*s2^2) / (n1+n1-2))
 
 ::: {.webex-check .webex-box}
 
-The pooled SD is: `r fitb(pooled_sd)`
+The pooled SD is: `r fitb(pooled_sd |> round(2))`
 :::
 
 
@@ -364,14 +367,14 @@ Calculate the effect size of the difference between the means.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 
-effectSize <- meanDiff / pooled_sd
-
+effectSize <- meanDiff / pooled_sd 
 
 
 ```
+
 ::: {.webex-check .webex-box}
 
-The effect size is: `r fitb(effectSize)`
+The effect size is: `r fitb(abs(effectSize) |> round(2))` (note: effect size is always positive)
 :::
 
 # Calculate the sample size for conducting a new study, based on this effect
@@ -426,13 +429,13 @@ Calculate the sample size required for conducting a new study, based on this eff
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 
-sampleSize <- power.t.test(d = effectSize, sig.level = 0.05, power = 0.8, type = "two.sample")$n
+sampleSize <- power.t.test(d = effectSize, sig.level = 0.05, power = 0.8, type = "two.sample")$n |> round(0)
 
 ```
 
 ::: {.webex-check .webex-box}
 
-The required sample size is: `r fitb(sampleSize)`
+The required sample size is: `r fitb(sampleSize)` (no decimal places)
 :::
 
 
