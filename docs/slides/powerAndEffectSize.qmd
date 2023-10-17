@@ -1,7 +1,7 @@
 ---
 format: revealjs
 bibliography: references.bib
-title: "Power and Effect Size"
+title: "Power and Effect Sizes in Clinical Psychology Research"
 subtitle: DClin Research Methods 1
 author: Dr Christopher Wilson
 institute: Teesside University
