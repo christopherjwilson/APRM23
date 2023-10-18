@@ -380,7 +380,40 @@ Dr Christopher Wilson
 <section>
 <section id="what-is-statistical-significance" class="title-slide slide level1 center">
 <h1>What is statistical significance?</h1>
+<p>Does anyone remember what statistical significance is?</p>
+</section>
+<section id="what-is-the-null-hypothesis" class="slide level2">
+<h2>What is the null hypothesis?</h2>
+<ul>
+<li><p>The null hypothesis is the hypothesis that there is no difference between groups, or no relationship between variables.</p></li>
+<li><p>For example, if we are comparing the mean score on a measure between two groups, the null hypothesis is that, in the population, the mean score on the measure is the same for both groups.</p></li>
+<li><p>When we test hypotheses, we are trying to see if our data are compatible with the null hypothesis or not.</p></li>
+</ul>
+</section>
+<section id="what-is-statistical-significance-1" class="slide level2">
+<h2>What is statistical significance?</h2>
+<ul>
+<li>The term “statistical significance” is a shorthand term, used to describe the probability of obtaining a result as extreme as, or more extreme than, the result we obtained, if the null hypothesis were true.</li>
+</ul>
+<blockquote>
+<p>In short: Statistical significance is a test of how compatible the data are with the null hypothesis. It does not tell us what our data proves, only that it is unlikely that the null hypothesis is true.</p>
+</blockquote>
+</section>
+<section id="what-is-statistical-significance-2" class="slide level2">
+<h2>What is statistical significance?</h2>
+<ul>
+<li><p>In psychological research, we usually use a p-value of 0.05 as the threshold for statistical significance.</p></li>
+<li><p>This means that, even if the null hypothesis were true, if we were to repeat the study 100 times, we could still find a “extreme” difference, 5 times (5% of the time).</p></li>
+<li><p>This is 5% threshold is an arbitrary choice, and is not used for any theoretical reason.</p></li>
+</ul>
+</section>
+<section id="section" class="slide level2 smaller">
+<h2></h2>
 
+<img data-src="powerAndEffectSize_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><ul>
+<li><p>For example: for a difference between 2 means, we could still obtain a difference of up to 1.96 standard deviations, 95% of the time, even if the null hypothesis were true.</p></li>
+<li><p>There’s still a 5% chance (2.5% + 2.5%) of obtaining a difference higher than 1.96 standard deviations, even if the null hypothesis were true.</p></li>
+</ul>
 </section>
 <section id="the-problem-with-statistical-significance" class="slide level2 smaller">
 <h2>The problem with statistical significance</h2>
@@ -467,7 +500,12 @@ Dr Christopher Wilson
 <section id="p-values-are-not-stable-from-one-study-to-the-next" class="slide level2">
 <h2>P-values are not stable from one study to the next</h2>
 
-<img data-src="images/ci.jpg" class="r-stretch quarto-figure-center"><p class="caption">p-values and confidence intervals for 25 samples</p></section>
+<img data-src="images/ci.jpg" class="r-stretch quarto-figure-center"><p class="caption">p-values and confidence intervals for 25 samples</p></section></section>
+<section>
+<section id="confidence-intervals" class="title-slide slide level1 center">
+<h1>Confidence Intervals</h1>
+
+</section>
 <section id="using-confidence-intervals-to-interpret-results" class="slide level2">
 <h2>Using confidence intervals to interpret results</h2>
 <ul>
@@ -493,7 +531,7 @@ Dr Christopher Wilson
 </blockquote>
 <p>This tells us that the true mean difference between the two groups is likely to be between 0.02 and 0.45, and that if we were to repeat the study 100 times, 95 of the confidence intervals would contain the true mean difference.</p>
 </section>
-<section id="section" class="slide level2" data-background-iframe="https://christopherjwilson.shinyapps.io/app1/">
+<section id="section-1" class="slide level2" data-background-iframe="https://christopherjwilson.shinyapps.io/app1/">
 <h2></h2>
 </section></section>
 <section>
@@ -841,6 +879,44 @@ Wasserstein, R. L., &amp; Lazar, N. A. (2016). The <span>ASA Statement</span> on
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

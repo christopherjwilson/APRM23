@@ -151,7 +151,7 @@ Download the data for this practical
 <section id="reminder-importing-data-into-r" class="level2">
 <h2 class="anchored" data-anchor-id="reminder-importing-data-into-r">Reminder: Importing data into R</h2>
 <p>To import data into R, you can use the a command that relates to the type of data you are importing. For example, to import the data in the file <strong>practical2_data.csv</strong>, you would use the following command:</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>practical2_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"practical2_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can also use the menu to import data. To do this, click on the <if>Import Dataset</if> button and select the type of data you want to import. For example, to import the data in the file <strong>practical2_data.csv</strong>, you would click on <if>From Text (readr)</if> and then select the file <strong>practical2_data.csv</strong>.</p>
@@ -162,25 +162,25 @@ Download the data for this practical
 <section id="using-packages-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="using-packages-in-r">Using packages in R</h2>
 <p>R has many built-in functions, but you can also add extra functions by installing packages. To install a package, you can use the <func>install.packages()</func> function. For example, to install the package <pkg>dplyr</pkg>, you would use the following command:</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-annotation="1" data-code-lines="1">you only need to install a package once.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="1" data-code-annotation="1">you only need to install a package once.</span>
 </dd>
 </dl>
 </div>
 </div>
 <p>Once a package is installed, you can load it into your R session using the <func>library()</func> function. For example, to load the package <pkg>dplyr</pkg>, you would use the following command:</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-annotation="1" data-code-lines="1">you need to load a package every time you start a new R session. It is good practice to load all the packages you need at the start of your script.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="1">you need to load a package every time you start a new R session. It is good practice to load all the packages you need at the start of your script.</span>
 </dd>
 </dl>
 </div>
@@ -207,25 +207,25 @@ Task 1
 <p>Often in our analysis, we want to perform a series of operations on our data. For example, we might want to filter the data, then summarise it, then plot it. In R, we can do this by chaining commands together using the pipe operator <strong>|&gt;</strong>.</p>
 <p>This is made using the <pc>|</pc> and <pc>&gt;</pc> keys on your keyboard.</p>
 <p>The purpose of the pipe operator is to make your code easier to read. For example, consider the following code:</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(practical2_data, age <span class="sc">&gt;</span> <span class="dv">25</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-annotation="1" data-code-lines="1">The above code uses the <func>filter()</func> function to select only the rows of the dataset where the age is greater than 25.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="1" data-code-annotation="1">The above code uses the <func>filter()</func> function to select only the rows of the dataset where the age is greater than 25.</span>
 </dd>
 </dl>
 </div>
 </div>
 <p>However, for more complicated analysis, code can be difficult to read. Now consider the following code:</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a>practical2_data <span class="sc">|&gt;</span> <span class="fu">filter</span>(age <span class="sc">&gt;</span> <span class="dv">25</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="1" data-code-lines="1">The above code starts with the data and then uses the pipe operator to “pass” that information to the next function. Because of this,we don’t need to specify the dataset in the <func>filter()</func> function. The code also goes from left to right, which makes it easier to read.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="1" data-code-annotation="1">The above code starts with the data and then uses the pipe operator to “pass” that information to the next function. Because of this,we don’t need to specify the dataset in the <func>filter()</func> function. The code also goes from left to right, which makes it easier to read.</span>
 </dd>
 </dl>
 </div>
@@ -236,14 +236,14 @@ Task 1
 <section id="filtering-data" class="level2">
 <h2 class="anchored" data-anchor-id="filtering-data">Filtering data</h2>
 <p>One of the things that the <pkg>dplyr</pkg> package allows you to do is to filter data. This is useful if you want to select only certain rows of data. For example, if you wanted to select only the data for the participants who were over the age of 21, you would use the following command:</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-5-2" class="code-annotation-target"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a>practical2_data <span class="sc">|&gt;</span> <span class="fu">filter</span>(age <span class="sc">&gt;</span> <span class="dv">21</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-annotation="1" data-code-lines="2">The first argument is the name of the dataset you want to filter. The second argument is the condition you want to filter by. In this case, we are filtering the data so that only rows where the age is greater than 21 are selected.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="2" data-code-annotation="1">The first argument is the name of the dataset you want to filter. The second argument is the condition you want to filter by. In this case, we are filtering the data so that only rows where the age is greater than 21 are selected.</span>
 </dd>
 </dl>
 </div>
@@ -270,13 +270,13 @@ Task
 <section id="summarising-data" class="level2">
 <h2 class="anchored" data-anchor-id="summarising-data">Summarising data</h2>
 <p>Another feature of the <pkg>dplyr</pkg> package is the ability to summarise data. This is useful if you want to calculate descriptive statistics for your data. For example, if you wanted to calculate the mean age of the Treatment and Control groups (over 18), you would use the following code:</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-6-1" class="code-annotation-target"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a>data_over18 <span class="sc">|&gt;</span> <span class="fu">group_by</span>(treatment_group) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(age))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-annotation="1" data-code-lines="1">The code above uses the <func>group_by()</func> function to group the data by the variable <strong>treatment_group</strong>. It then uses the <func>summarise()</func> function to calculate the mean age for each group.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="1" data-code-annotation="1">The code above uses the <func>group_by()</func> function to group the data by the variable <strong>treatment_group</strong>. It then uses the <func>summarise()</func> function to calculate the mean age for each group.</span>
 </dd>
 </dl>
 </div>
@@ -324,7 +324,7 @@ Task
 <li>take the square root of the result.</li>
 <li>multiply the result by 1.96.</li>
 </ol>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The code below will start you off, you need to fill in the missing information</span></span>
 <span id="annotated-cell-7-2"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-7-3"><a href="#annotated-cell-7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># get the treatment group data</span></span>
@@ -346,15 +346,15 @@ Task
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-annotation="1" data-code-lines="4">This code uses the <func>filter()</func> function to select only the rows of the dataset where the <strong>treatment_group</strong> variable is equal to “Treatment”.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="4" data-code-annotation="1">This code uses the <func>filter()</func> function to select only the rows of the dataset where the <strong>treatment_group</strong> variable is equal to “Treatment”.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-annotation="2" data-code-lines="7">This code uses the <func>var()</func> function to calculate the variance of the <strong>outcome</strong> variable. The <func>pull()</func> function is used to extract the <strong>outcome</strong> variable from the dataset, so we can calculate the variance.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="7" data-code-annotation="2">This code uses the <func>var()</func> function to calculate the variance of the <strong>outcome</strong> variable. The <func>pull()</func> function is used to extract the <strong>outcome</strong> variable from the dataset, so we can calculate the variance.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-annotation="3" data-code-lines="11">This code uses the <func>nrow()</func> function to calculate the number of rows in the dataset.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="11" data-code-annotation="3">This code uses the <func>nrow()</func> function to calculate the number of rows in the dataset.</span>
 </dd>
 </dl>
 </div>
@@ -412,11 +412,14 @@ Where does 1.96 come from?
 <div class="callout-body-container callout-body">
 <p>The critical value for a 95% confidence interval is 1.96. This is because the area under the 95% of the curve of a normal distribution lies between -1.96 and 1.96 standard deviations from the mean. However, this is only true for a large sample size (aprox. &gt;30). For smaller sample sizes, the critical value is larger. For example, for a sample size of 10, the critical value is 2.26. For a sample size of 5, the critical value of is 2.57.</p>
 <p>These smaller distributions are called t-distributions. The t-distribution is similar to the normal distribution but it is wider. This means that the critical values are larger for smaller sample sizes. This is where the t-test gets its name from.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Normal196.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The Normal Distribution - critical values for 95% AUC</figcaption>
+<p><img src="confInt_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -450,9 +453,13 @@ Includes zero?
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Imagine a number line that goes from the lower to the upper confidence interval. If you would have to cross zero to get from the lower to the upper confidence interval value, then the confidence interval includes zero.</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="confInt_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="confInt_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Does the confidence interval include zero?</p>
@@ -471,7 +478,7 @@ Includes zero?
 <p><span class="math display">\[d = \frac{\bar{x}_1 - \bar{x}_2}{s_p}\]</span></p>
 <p>where <span class="math inline">\(\bar{x}_1\)</span> is the mean of group 1, <span class="math inline">\(\bar{x}_2\)</span> is the mean of group 2, and <span class="math inline">\(s_p\)</span> is the pooled standard deviation.</p>
 <p>We can use packages in R to help us calculate Cohen’s d.&nbsp;The <func>cohen.d()</func> function from the <pkg>effsize</pkg> package calculates Cohen’s d.&nbsp;</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-8-1"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install the effsize package</span></span>
 <span id="annotated-cell-8-2"><a href="#annotated-cell-8-2" aria-hidden="true" tabindex="-1"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-8-3" class="code-annotation-target"><a href="#annotated-cell-8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"effsize"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -479,13 +486,13 @@ Includes zero?
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-8" data-code-annotation="1" data-code-lines="3">Remember, you only need to install a package once. If you have already installed the package, you do not need to run this code.</span>
+<span data-code-cell="annotated-cell-8" data-code-lines="3" data-code-annotation="1">Remember, you only need to install a package once. If you have already installed the package, you do not need to run this code.</span>
 </dd>
 </dl>
 </div>
 </div>
 <p>Now we can load the package and calculate the effect size.</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the effsize package</span></span>
 <span id="annotated-cell-9-2"><a href="#annotated-cell-9-2" aria-hidden="true" tabindex="-1"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-9-3" class="code-annotation-target"><a href="#annotated-cell-9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(effsize)</span>
@@ -495,11 +502,11 @@ Includes zero?
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-9" data-code-annotation="1" data-code-lines="3">This code loads the effsize package. Remember, you only need to load a package once when you open RStudio.</span>
+<span data-code-cell="annotated-cell-9" data-code-lines="3" data-code-annotation="1">This code loads the effsize package. Remember, you only need to load a package once when you open RStudio.</span>
 </dd>
 <dt data-target-cell="annotated-cell-9" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-9" data-code-annotation="2" data-code-lines="5">This code calculates the effect size using the <func>cohen.d()</func> function. The first argument is the outcome variable and the second argument is the treatment group variable.</span>
+<span data-code-cell="annotated-cell-9" data-code-lines="5" data-code-annotation="2">This code calculates the effect size using the <func>cohen.d()</func> function. The first argument is the outcome variable and the second argument is the treatment group variable.</span>
 </dd>
 </dl>
 </div>
@@ -554,13 +561,13 @@ Conducting power analysis in R
 <li>power = power</li>
 <li>type = “two.sample” (because we have two groups)</li>
 </ul>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-10-1" class="code-annotation-target"><a href="#annotated-cell-10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(<span class="at">d =</span> effectSize, <span class="at">sig.level =</span> <span class="fl">0.05</span>, <span class="at">power =</span> <span class="fl">0.8</span>, <span class="at">type =</span> <span class="st">"two.sample"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-10" data-code-annotation="1" data-code-lines="1">In the above code, replace the word “effectSize” with the effect size you calculated above.</span>
+<span data-code-cell="annotated-cell-10" data-code-lines="1" data-code-annotation="1">In the above code, replace the word “effectSize” with the effect size you calculated above.</span>
 </dd>
 </dl>
 </div>

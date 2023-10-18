@@ -27,6 +27,65 @@ csl: apa.csl
 
 # What is statistical significance?
 
+Does anyone remember what statistical significance is?
+
+## What is the null hypothesis? 
+
+- The null hypothesis is the hypothesis that there is no difference between groups, or no relationship between variables.
+
+- For example, if we are comparing the mean score on a measure between two groups, the null hypothesis is that, in the population, the mean score on the measure is the same for both groups.
+
+- When we test hypotheses, we are trying to see if our data are compatible with the null hypothesis or not.
+
+## What is statistical significance?
+
+- The term "statistical significance" is a shorthand term, used to describe the probability of obtaining a result as extreme as, or more extreme than, the result we obtained, if the null hypothesis were true.
+
+> In short: Statistical significance is a test of how compatible the data are with the null hypothesis.
+> It does not tell us what our data proves, only that it is unlikely that the null hypothesis is true.
+
+## What is statistical significance? 
+
+- In psychological research, we usually use a p-value of 0.05 as the threshold for statistical significance.
+
+- This means that, even if the null hypothesis were true, if we were to repeat the study 100 times, we could still find a "extreme" difference, 5 times (5% of the time). 
+
+- This is 5% threshold is an arbitrary choice, and is not used for any theoretical reason.
+
+## {.smaller}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=6, fig.height=4}
+
+# plot of notmal distribution with 2.5% shaded on each side
+
+x <- seq(-4, 4, length=100)
+
+y <- dnorm(x, mean=0, sd=1)
+
+plot(x, y, type="l", lwd=2, xlab="Standard Deviations", ylab="")
+
+abline(v=c(-1.96, 1.96), lty=2)
+
+abline(h=0, lty=2)
+
+
+## add labels to represent the percentages of the distribution in the shaded and non-shaded areas
+
+text(-2.5, 0.05, "2.5%", cex=0.8)
+
+text(2.5, 0.05, "2.5%", cex=0.8)
+
+text(0, 0.01, "95%", cex=0.8)
+
+```
+
+
+
+- For example: for a difference between 2 means, we could still obtain a difference of up to 1.96 standard deviations, 95% of the time, even if the null hypothesis were true.
+
+- There's still a 5% chance (2.5% + 2.5%) of obtaining a difference higher than 1.96 standard deviations, even if the null hypothesis were true.
+
+
+
 ## The problem with statistical significance {.smaller}
 
 > "It's science's dirtiest secret: The 'scientific method' of testing hypotheses by statistical analysis stands on a flimsy foundation."
@@ -97,6 +156,8 @@ A: Because that's what they were taught in college or grad school.
 ## P-values are not stable from one study to the next
 
 ![p-values and confidence intervals for 25 samples](images/ci.jpg)
+
+# Confidence Intervals
 
 ## Using confidence intervals to interpret results
 
