@@ -182,7 +182,9 @@ For example:
 
 This tells us that the true mean difference between the two groups is likely to be between 0.02 and 0.45, and that if we were to repeat the study 100 times, 95 of the confidence intervals would contain the true mean difference.
 
-## {background-iframe="https://christopherjwilson.shinyapps.io/app1/"}
+## {background-iframe="https://christopherjwilson.shinyapps.io/app1/" background-interactive="true"}
+
+
 
 # Designing studies with sufficient power
 
