@@ -53,6 +53,8 @@
   <link href="powerAndEffectSize_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="powerAndEffectSize_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="powerAndEffectSize_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="powerAndEffectSize_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="powerAndEffectSize_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="powerAndEffectSize_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
@@ -406,11 +408,49 @@ Dr Christopher Wilson
 <li><p>This means that, even if the null hypothesis were true, if we were to repeat the study 100 times, we could still find a “extreme” difference, 5 times (5% of the time).</p></li>
 <li><p>This is 5% threshold is an arbitrary choice, and is not used for any theoretical reason.</p></li>
 </ul>
+</section></section>
+<section>
+<section id="imagine-there-is-a-population-of-2000-people-with-a-particular-condition." class="title-slide slide level1 center">
+<h1>Imagine there is a population of 2000 people with a particular condition.</h1>
+
 </section>
-<section id="section" class="slide level2 smaller">
+<section id="section" class="slide level2">
 <h2></h2>
 
-<img data-src="powerAndEffectSize_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:100.0%" class="r-stretch quarto-figure-center"><ul>
+<img data-src="powerAndEffectSize_files/figure-revealjs/unnamed-chunk-1-1.png" width="576" class="r-stretch"><p>Imagine we could see them all, and knew that there was no difference between those who received treatment and those who did not.</p>
+</section></section>
+<section>
+<section id="now-imagine-that-100-studies-were-done-across-the-country-each-with-a-sample-size-of-20-per-group." class="title-slide slide level1 center">
+<h1>Now, imagine that 100 studies were done across the country, each with a sample size of 20 per group.</h1>
+<blockquote>
+<p>What would the results say?</p>
+</blockquote>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+
+<img data-src="powerAndEffectSize_files/figure-revealjs/unnamed-chunk-2-1.png" width="576" class="r-stretch"></section></section>
+<section>
+<section id="if-a-t-test-was-done-on-each-of-these-samples-what-would-the-results-say" class="title-slide slide level1 center">
+<h1>If a t-test was done on each of these samples, what would the results say?</h1>
+
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+
+<img data-src="powerAndEffectSize_files/figure-revealjs/unnamed-chunk-3-1.png" width="576" class="r-stretch"></section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+
+<img data-src="powerAndEffectSize_files/figure-revealjs/unnamed-chunk-4-1.gif" class="r-stretch"></section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+
+<img data-src="powerAndEffectSize_files/figure-revealjs/unnamed-chunk-5-1.png" width="576" class="r-stretch"></section>
+<section id="section-5" class="slide level2 smaller">
+<h2></h2>
+
+<img data-src="powerAndEffectSize_files/figure-revealjs/unnamed-chunk-6-1.png" width="576" class="r-stretch"><ul>
 <li><p>For example: for a difference between 2 means, we could still obtain a difference of up to 1.96 standard deviations, 95% of the time, even if the null hypothesis were true.</p></li>
 <li><p>There’s still a 5% chance (2.5% + 2.5%) of obtaining a difference higher than 1.96 standard deviations, even if the null hypothesis were true.</p></li>
 </ul>
@@ -483,6 +523,15 @@ Dr Christopher Wilson
 <blockquote>
 <p>Values near 0.05 offer only weak evidence against the null hypothesis. Values larger than 0.05 do not necessarily imply evidence in favor of the null hypothesis - there could be other hypotheses that are more compatible with the data.</p>
 </blockquote>
+</section></section>
+<section>
+<section id="takeaways" class="title-slide slide level1 center">
+<h1>Takeaways</h1>
+<ul>
+<li><p>p-values are not stable from one study to the next, so be careful about interpreting them.</p></li>
+<li><p>p-values are not a good measure of evidence for or against a hypothesis, only how likely the data are to have occurred if the null hypothesis were true.</p></li>
+<li><p>There is no such thing as a “near-significant” result.</p></li>
+</ul>
 </section>
 <section id="significance-does-not-mean-importance" class="slide level2">
 <h2>Significance does not mean importance</h2>
@@ -531,12 +580,21 @@ Dr Christopher Wilson
 </blockquote>
 <p>This tells us that the true mean difference between the two groups is likely to be between 0.02 and 0.45, and that if we were to repeat the study 100 times, 95 of the confidence intervals would contain the true mean difference.</p>
 </section>
-<section id="section-1" class="slide level2" data-background-iframe="https://christopherjwilson.shinyapps.io/app1/" data-background-interactive="true">
+<section id="section-6" class="slide level2" data-background-iframe="https://christopherjwilson.shinyapps.io/app1/" data-background-interactive="true">
 <h2></h2>
 </section></section>
+<section id="takeaways-1" class="title-slide slide level1 center">
+<h1>Takeaways</h1>
+<ul>
+<li><p>p-values are not a good measure of the size of an effect or the importance of a result.</p></li>
+<li><p>Confidence intervals are a better way to interpret results than p-values.</p></li>
+<li><p>Confidence intervals can tell us the likely range of outcomes, as well as the direction of the effect.</p></li>
+</ul>
+</section>
+
 <section>
-<section id="designing-studies-with-sufficient-power" class="title-slide slide level1 center">
-<h1>Designing studies with sufficient power</h1>
+<section id="effect-sizes-and-designing-studies-with-sufficient-power" class="title-slide slide level1 center">
+<h1>Effect sizes and designing studies with sufficient power</h1>
 
 </section>
 <section id="when-designing-a-study-we-need-to-ensure-it-has-sufficient-power" class="slide level2">
@@ -639,6 +697,15 @@ Dr Christopher Wilson
 </ul></li>
 </ul>
 </section></section>
+<section id="takeaways-2" class="title-slide slide level1 center">
+<h1>Takeaways</h1>
+<ul>
+<li><p>Power is ability to detect an effect if it exists</p></li>
+<li><p>Before conducting a study, we need to know what effect size we are interested in detecting</p></li>
+<li><p>We need to ensure that our study has sufficient power to detect this effect size</p></li>
+</ul>
+</section>
+
 <section id="we-will-learn-how-to-calculate-effect-size-confidence-intervals-and-power-in-r" class="title-slide slide level1 center">
 <h1>We will learn how to calculate effect size, confidence intervals and power in R</h1>
 
@@ -678,6 +745,7 @@ Wasserstein, R. L., &amp; Lazar, N. A. (2016). The <span>ASA Statement</span> on
   <script src="powerAndEffectSize_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="powerAndEffectSize_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="powerAndEffectSize_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="powerAndEffectSize_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="powerAndEffectSize_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -699,7 +767,8 @@ Wasserstein, R. L., &amp; Lazar, N. A. (2016). The <span>ASA Statement</span> on
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true,"boardmarkerWidth":2},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -870,7 +939,7 @@ Wasserstein, R. L., &amp; Lazar, N. A. (2016). The <span>ASA Statement</span> on
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,
