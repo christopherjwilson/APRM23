@@ -169,7 +169,7 @@ where:
 - $\bar{X}$ is the mean of the difference between the two groups
 - SE is the standard error of the difference between the two groups
 
-We should already know the difference between the means (of participants over 18), from the code you ran earlier.
+We should already know how to calculate the difference between the means (of participants over 18), from the code you ran earlier. This time you need the difference in the **outcome** variable.
 
 ```{r echo=FALSE}
 
@@ -179,7 +179,7 @@ mean_diff <- data_over18 |> group_by(treatment_group) |> summarise(mean_outcome 
 
 :::{.webex-check .webex-box}
 
-The difference between the means of the two groups (over 18s) is `r fitb(mean_diff)`
+The difference between the means of the two groups (over 18s) is `r fitb(round(mean_diff, 2))`
 
 :::
 
