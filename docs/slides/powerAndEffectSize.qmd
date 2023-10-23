@@ -48,13 +48,6 @@ Does anyone remember what statistical significance is?
 > In short: Statistical significance is a test of how compatible the data are with the null hypothesis.
 > It does not tell us what our data proves, only that it is unlikely that the null hypothesis is true.
 
-## What is statistical significance? 
-
-- In psychological research, we usually use a p-value of 0.05 as the threshold for statistical significance.
-
-- This means that, even if the null hypothesis were true, if we were to repeat the study 100 times, we could still find a "extreme" difference, 5 times (5% of the time). 
-
-- This is 5% threshold is an arbitrary choice, and is not used for any theoretical reason.
 
 # Imagine there is a population of 2000 people with a particular condition.
 
@@ -201,6 +194,16 @@ animate(p1, fps = 5, duration = 20, end_pause = 10)
 p
 
 ```
+
+
+## What is statistical significance? 
+
+- In psychological research, we usually use a p-value of 0.05 as the threshold for statistical significance.
+
+- This means that, even if the null hypothesis were true, if we were to repeat the study 100 times, we could still find a "extreme" difference, 5 times (5% of the time). 
+
+- This is 5% threshold is an arbitrary choice, and is not used for any theoretical reason.
+
 
 ## {.smaller}
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8, fig.height=5, fig.align='center'}
