@@ -124,6 +124,7 @@ p_values <- c()
 conf_int <- c()
 cohens_d <- c()
 
+set.seed(1232)
 
 for (i in 1:100) {
   sample1 <- sample(data$treatment, size = 20)
@@ -133,7 +134,6 @@ for (i in 1:100) {
   conf_int[i] <- t.test(sample1, sample2)$conf.int[2] - t.test(sample1, sample2)$conf.int[1]
   cohens_d[i] <- (mean(sample1) - mean(sample2)) / sqrt(((length(sample1) - 1) * var(sample1) + (length(sample2) - 1) * var(sample2)) / (length(sample1) + length(sample2) - 2))
 }
-
 
 
 # Plot a histogram of the sample means using ggplot2
@@ -202,7 +202,7 @@ p
 ```
 
 ## {.smaller}
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=6, fig.height=4}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8, fig.height=5, fig.align='center'}
 
 # plot of notmal distribution with 2.5% shaded on each side
 
@@ -233,6 +233,13 @@ text(0, 0.01, "95%", cex=0.8)
 
 - There's still a 5% chance (2.5% + 2.5%) of obtaining a difference higher than 1.96 standard deviations, even if the null hypothesis were true.
 
+## Takeaways
+
+- Even when the null hypothesis is true, we can still obtain a range of differences when we sample from the population. 
+
+- Some of these differences will even result in p-values below 0.05. 
+
+- This is why we can't say that a p-value of 0.05 means that the null hypothesis is false.
 
 
 ## The problem with statistical significance {.smaller}
@@ -263,9 +270,10 @@ A: Because that's what they were taught in college or grad school.
 4.  Proper inference requires full reporting and transparency.
 5.  A p-value, or statistical significance, does not measure the size of an effect or the importance of a result.
 6.  By itself, a p-value does not provide a good measure of evidence regarding a model or hypothesis.
+ 
  [@WassersteinLazar2016]
 
-## The ASA statement on p-values {.smaller .scrollable}
+## The ASA statement on p-values {.smaller .scrollable visibility="hidden"}
 
 1.  P-values can indicate how incompatible the data are with a specified statistical model.
 
@@ -279,7 +287,7 @@ A: Because that's what they were taught in college or grad school.
 
 > Reducing decisions to a dichotomous "significant--not significant" classification leads to poor decisions. This "all-or-nothing" dichotomy based on a threshold (usually 0.05) is a poor substitute for scientific reasoning.
 
-## The ASA statement on p-values {.smaller .scrollable}
+## The ASA statement on p-values {.smaller .scrollable visibility="hidden"}
 
 4.  Proper inference requires full reporting and transparency.
 
@@ -299,24 +307,16 @@ A: Because that's what they were taught in college or grad school.
 
 - p-values are not a good measure of evidence for or against a hypothesis, only how likely the data are to have occurred if the null hypothesis were true.
 
-- There is no such thing as a "near-significant" result.
+- There is no such thing as a "near-significant" result. A p-value of 0.048 is not more "important" than a p-value of 0.05.
 
 
 
-## Significance does not mean importance
-
--   Over the last several decades, psychology research has become too focused on statistical significance.
--   A statistically significant result does not mean that the result is meaningful or important.
--   The focus on statistical significance has led to a number of problems:
-    -   P-hacking
-    -   Publication bias
-    -   Questionable research practices (small sample sizes, etc.)
+# Confidence Intervals
 
 ## P-values are not stable from one study to the next
 
 ![p-values and confidence intervals for 25 samples](images/ci.jpg)
 
-# Confidence Intervals
 
 ## Using confidence intervals to interpret results
 
@@ -325,9 +325,11 @@ A: Because that's what they were taught in college or grad school.
 -   For example, a 95% confidence interval for a mean says:
   - If we were to collect the same sample 1000 times and calculate a 95% confidence interval of the mean for each sample, 950 of the intervals would contain the true population mean.
 
+
+
 ## What can confidence intervals tell us?
 
-- Confidence intervals can a range of likely outcomes, as well as the direction of the effect.
+- Confidence intervals can a range of likely outcomes (if we were to conduct the study repeatedly). The wider they are, the less precise our estimate is.
 
 ![In a later class, Dr Alan Bowman will discuss clinically meaningful results](images/clinical_relevance.jpg){fig-align="center"}
 
@@ -341,7 +343,7 @@ For example:
 
 This tells us that the true mean difference between the two groups is likely to be between 0.02 and 0.45, and that if we were to repeat the study 100 times, 95 of the confidence intervals would contain the true mean difference.
 
-## {background-iframe="https://christopherjwilson.shinyapps.io/app1/" background-interactive="true"}
+
 
 # Takeaways
 
@@ -349,48 +351,20 @@ This tells us that the true mean difference between the two groups is likely to 
 
 - Confidence intervals are a better way to interpret results than p-values.
 
-- Confidence intervals can tell us the likely range of outcomes, as well as the direction of the effect.
+- Confidence intervals can tell us the likely range of outcomes, and a better sense of how precise our estimate of the true value is.
 
 
 # Effect sizes and designing studies with sufficient power
 
-## When designing a study, we need to ensure it has sufficient power
+## Significance does not mean importance
 
-What does this mean?
-
--   Power is ability to detect an effect if it exists
--   If a study has low power, it is not possible for us to tell whether a statistically non-significant result is due to:
-    -   The absence of an effect
-    -   The absence of power to detect an effect
-
-## An analogy for statistical power
-
-Consider a study as a fishing trip.
-
--   We want to catch a particular type of fish (detect an effect).
--   We don't know how common it is in the lake (we don't know if the effect exists).
--   We need to decide how many times to cast the net (how many participants to recruit).
--   This depends on how big the school of fish is (the effect size).
--   If the school of fish is big, we shouldn't need to cast the net many times before finding it (or concluding that it is not there).
--   If it is small, we will need to cast the net many times before finding it (or concluding that it is not there).
-
- 
-
-## An analogy for statistical power
-
-![](images/fish.jpg){fig-align="center" width="94%"}
-
-## Thinking about statistical power
-
-- We first need to decide what effect size we are interested in detecting. This can be called the smallest effect size of interest (SESOI).
-
-- We then need to decide how much power we want to have to detect this effect size. 
-
-- A common choice is 80% power, but this is arbitrary. This means:
-
-> With the given effect size and the calculated sample size, we will be able to detect the effect (if it exists) 80% of the time.
-
-# Effect Size
+-   Over the last several decades, psychology research has become too focused on statistical significance.
+-   A statistically significant result does not mean that the result is meaningful or important.
+-   The focus on statistical significance has led to a number of problems:
+    -   P-hacking
+    -   Publication bias
+    -   Questionable research practices (small sample sizes, etc.)
+    
 
 ## What is effect size? {.smaller}
 
@@ -437,6 +411,46 @@ Consider a study as a fishing trip.
   - Sequential analysis might be appropriate [@Lakens2014]    
   - A "safeguard" power analysis can be used (underestimates the effect from published studies) [@PeruginiEtAl2014]
 
+
+## When designing a study, we need to ensure it has sufficient power
+
+What does this mean?
+
+-   Power is ability to detect an effect if it exists
+-   If a study has low power, it is not possible for us to tell whether a statistically non-significant result is due to:
+    -   The absence of an effect
+    -   The absence of power to detect an effect
+
+## An analogy for statistical power
+
+Consider a study as a fishing trip.
+
+-   We want to catch a particular type of fish (detect an effect).
+-   We don't know how common it is in the lake (we don't know if the effect exists).
+-   We need to decide how many times to cast the net (how many participants to recruit).
+-   This depends on how big the school of fish is (the effect size).
+-   If the school of fish is big, we shouldn't need to cast the net many times before finding it (or concluding that it is not there).
+-   If it is small, we will need to cast the net many times before finding it (or concluding that it is not there).
+
+
+## An analogy for statistical power
+
+![](images/fish.jpg){fig-align="center" width="94%"}
+
+## Thinking about statistical power
+
+- We first need to decide what effect size we are interested in detecting. This can be called the smallest effect size of interest (SESOI).
+
+- We then need to decide how much power we want to have to detect this effect size. 
+
+- A common choice is 80% power, but this is arbitrary. This means:
+
+> With the given effect size and the calculated sample size, we will be able to detect the effect (if it exists) 80% of the time.
+
+# Putting it all together...
+
+## {background-iframe="https://christopherjwilson.shinyapps.io/app1/" background-interactive="true"}
+
 # Takeaways
 
 -   Power is ability to detect an effect if it exists
@@ -444,6 +458,8 @@ Consider a study as a fishing trip.
 - Before conducting a study, we need to know what effect size we are interested in detecting
 
 - We need to ensure that our study has sufficient power to detect this effect size
+
+- Very large samples will show very small effects as statistically significant (but these may not be important)
   
 
 # We will learn how to calculate effect size, confidence intervals and power in R

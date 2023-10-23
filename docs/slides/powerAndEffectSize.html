@@ -450,9 +450,17 @@ Dr Christopher Wilson
 <section id="section-5" class="slide level2 smaller">
 <h2></h2>
 
-<img data-src="powerAndEffectSize_files/figure-revealjs/unnamed-chunk-6-1.png" width="576" class="r-stretch"><ul>
+<img data-src="powerAndEffectSize_files/figure-revealjs/unnamed-chunk-6-1.png" width="768" class="r-stretch quarto-figure-center"><ul>
 <li><p>For example: for a difference between 2 means, we could still obtain a difference of up to 1.96 standard deviations, 95% of the time, even if the null hypothesis were true.</p></li>
 <li><p>There’s still a 5% chance (2.5% + 2.5%) of obtaining a difference higher than 1.96 standard deviations, even if the null hypothesis were true.</p></li>
+</ul>
+</section>
+<section id="takeaways" class="slide level2">
+<h2>Takeaways</h2>
+<ul>
+<li><p>Even when the null hypothesis is true, we can still obtain a range of differences when we sample from the population.</p></li>
+<li><p>Some of these differences will even result in p-values below 0.05.</p></li>
+<li><p>This is why we can’t say that a p-value of 0.05 means that the null hypothesis is false.</p></li>
 </ul>
 </section>
 <section id="the-problem-with-statistical-significance" class="slide level2 smaller">
@@ -479,59 +487,68 @@ Dr Christopher Wilson
 <li>Scientific conclusions and business or policy decisions should not be based only on whether a p-value passes a specific threshold.</li>
 <li>Proper inference requires full reporting and transparency.</li>
 <li>A p-value, or statistical significance, does not measure the size of an effect or the importance of a result.</li>
-<li>By itself, a p-value does not provide a good measure of evidence regarding a model or hypothesis. <span class="citation" data-cites="WassersteinLazar2016">(<a href="#/references" role="doc-biblioref" onclick="">Wasserstein &amp; Lazar, 2016</a>)</span></li>
-</ol>
-</section>
-<section id="the-asa-statement-on-p-values-1" class="slide level2 smaller scrollable">
-<h2>The ASA statement on p-values</h2>
-<ol type="1">
-<li>P-values can indicate how incompatible the data are with a specified statistical model.</li>
-</ol>
-<blockquote>
-<p>P-values test how compatible the data are with a specified statistical model. The smaller the p-value, the less compatible the data are with the null hypothesis.</p>
-</blockquote>
-<ol start="2" type="1">
-<li>P-values do not measure the probability that the studied hypothesis is true, or the probability that the data were produced by random chance alone.</li>
-</ol>
-<blockquote>
-<p>P-values only tell us about the compatibility of the data with the possible explanation (the null hypothesis).They do not confirm or deny the truth of the explanation or the probability of the data having occurred by chance.</p>
-</blockquote>
-<ol start="3" type="1">
-<li>Scientific conclusions and business or policy decisions should not be based only on whether a p-value passes a specific threshold.</li>
-</ol>
-<blockquote>
-<p>Reducing decisions to a dichotomous “significant–not significant” classification leads to poor decisions. This “all-or-nothing” dichotomy based on a threshold (usually 0.05) is a poor substitute for scientific reasoning.</p>
-</blockquote>
-</section>
-<section id="the-asa-statement-on-p-values-2" class="slide level2 smaller scrollable">
-<h2>The ASA statement on p-values</h2>
-<ol start="4" type="1">
-<li>Proper inference requires full reporting and transparency.</li>
-</ol>
-<blockquote>
-<p>P-values and related analyses should not be reported selectively. This makes the data that is presented impossible to interpret, as it is missing necessary context. All hypotheses that were tested should be presented.</p>
-</blockquote>
-<ol start="5" type="1">
-<li>A p-value, or statistical significance, does not measure the size of an effect or the importance of a result.</li>
-</ol>
-<blockquote>
-<p>The p-value is not a measure of the size of an effect or the importance of a result. Even tiny effects can be statistically significant if the sample size is large enough.</p>
-</blockquote>
-<ol start="6" type="1">
 <li>By itself, a p-value does not provide a good measure of evidence regarding a model or hypothesis.</li>
 </ol>
-<blockquote>
-<p>Values near 0.05 offer only weak evidence against the null hypothesis. Values larger than 0.05 do not necessarily imply evidence in favor of the null hypothesis - there could be other hypotheses that are more compatible with the data.</p>
-</blockquote>
-</section></section>
-<section>
-<section id="takeaways" class="title-slide slide level1 center">
+<p><span class="citation" data-cites="WassersteinLazar2016">(<a href="#/references" role="doc-biblioref" onclick="">Wasserstein &amp; Lazar, 2016</a>)</span></p>
+</section>
+
+</section>
+<section id="takeaways-1" class="title-slide slide level1 center">
 <h1>Takeaways</h1>
 <ul>
 <li><p>p-values are not stable from one study to the next, so be careful about interpreting them.</p></li>
 <li><p>p-values are not a good measure of evidence for or against a hypothesis, only how likely the data are to have occurred if the null hypothesis were true.</p></li>
-<li><p>There is no such thing as a “near-significant” result.</p></li>
+<li><p>There is no such thing as a “near-significant” result. A p-value of 0.048 is not more “important” than a p-value of 0.05.</p></li>
 </ul>
+</section>
+
+<section>
+<section id="confidence-intervals" class="title-slide slide level1 center">
+<h1>Confidence Intervals</h1>
+
+</section>
+<section id="p-values-are-not-stable-from-one-study-to-the-next" class="slide level2">
+<h2>P-values are not stable from one study to the next</h2>
+
+<img data-src="images/ci.jpg" class="r-stretch quarto-figure-center"><p class="caption">p-values and confidence intervals for 25 samples</p></section>
+<section id="using-confidence-intervals-to-interpret-results" class="slide level2">
+<h2>Using confidence intervals to interpret results</h2>
+<ul>
+<li>Confidence intervals are a better way to interpret results than p-values.</li>
+<li>A confidence interval is a range of values that is likely to contain the true value of a parameter.</li>
+<li>For example, a 95% confidence interval for a mean says:</li>
+<li>If we were to collect the same sample 1000 times and calculate a 95% confidence interval of the mean for each sample, 950 of the intervals would contain the true population mean.</li>
+</ul>
+</section>
+<section id="what-can-confidence-intervals-tell-us" class="slide level2">
+<h2>What can confidence intervals tell us?</h2>
+<ul>
+<li>Confidence intervals can a range of likely outcomes (if we were to conduct the study repeatedly). The wider they are, the less precise our estimate is.</li>
+</ul>
+
+<img data-src="images/clinical_relevance.jpg" class="r-stretch quarto-figure-center"><p class="caption">In a later class, Dr Alan Bowman will discuss clinically meaningful results</p></section>
+<section id="how-do-we-report-confidence-intervals" class="slide level2 smaller">
+<h2>How do we report Confidence Intervals?</h2>
+<p>To report confidence intervals in APA style, we need to report the lower and upper bounds of the interval, and the confidence level.</p>
+<p>For example:</p>
+<blockquote>
+<p>The results of the t-test showed a significant difference between the two groups, t(18) = 2.43, p = .03, 95% CI [0.02, 0.45].</p>
+</blockquote>
+<p>This tells us that the true mean difference between the two groups is likely to be between 0.02 and 0.45, and that if we were to repeat the study 100 times, 95 of the confidence intervals would contain the true mean difference.</p>
+</section></section>
+<section id="takeaways-2" class="title-slide slide level1 center">
+<h1>Takeaways</h1>
+<ul>
+<li><p>p-values are not a good measure of the size of an effect or the importance of a result.</p></li>
+<li><p>Confidence intervals are a better way to interpret results than p-values.</p></li>
+<li><p>Confidence intervals can tell us the likely range of outcomes, and a better sense of how precise our estimate of the true value is.</p></li>
+</ul>
+</section>
+
+<section>
+<section id="effect-sizes-and-designing-studies-with-sufficient-power" class="title-slide slide level1 center">
+<h1>Effect sizes and designing studies with sufficient power</h1>
+
 </section>
 <section id="significance-does-not-mean-importance" class="slide level2">
 <h2>Significance does not mean importance</h2>
@@ -545,101 +562,6 @@ Dr Christopher Wilson
 <li>Questionable research practices (small sample sizes, etc.)</li>
 </ul></li>
 </ul>
-</section>
-<section id="p-values-are-not-stable-from-one-study-to-the-next" class="slide level2">
-<h2>P-values are not stable from one study to the next</h2>
-
-<img data-src="images/ci.jpg" class="r-stretch quarto-figure-center"><p class="caption">p-values and confidence intervals for 25 samples</p></section></section>
-<section>
-<section id="confidence-intervals" class="title-slide slide level1 center">
-<h1>Confidence Intervals</h1>
-
-</section>
-<section id="using-confidence-intervals-to-interpret-results" class="slide level2">
-<h2>Using confidence intervals to interpret results</h2>
-<ul>
-<li>Confidence intervals are a better way to interpret results than p-values.</li>
-<li>A confidence interval is a range of values that is likely to contain the true value of a parameter.</li>
-<li>For example, a 95% confidence interval for a mean says:</li>
-<li>If we were to collect the same sample 1000 times and calculate a 95% confidence interval of the mean for each sample, 950 of the intervals would contain the true population mean.</li>
-</ul>
-</section>
-<section id="what-can-confidence-intervals-tell-us" class="slide level2">
-<h2>What can confidence intervals tell us?</h2>
-<ul>
-<li>Confidence intervals can a range of likely outcomes, as well as the direction of the effect.</li>
-</ul>
-
-<img data-src="images/clinical_relevance.jpg" class="r-stretch quarto-figure-center"><p class="caption">In a later class, Dr Alan Bowman will discuss clinically meaningful results</p></section>
-<section id="how-do-we-report-confidence-intervals" class="slide level2 smaller">
-<h2>How do we report Confidence Intervals?</h2>
-<p>To report confidence intervals in APA style, we need to report the lower and upper bounds of the interval, and the confidence level.</p>
-<p>For example:</p>
-<blockquote>
-<p>The results of the t-test showed a significant difference between the two groups, t(18) = 2.43, p = .03, 95% CI [0.02, 0.45].</p>
-</blockquote>
-<p>This tells us that the true mean difference between the two groups is likely to be between 0.02 and 0.45, and that if we were to repeat the study 100 times, 95 of the confidence intervals would contain the true mean difference.</p>
-</section>
-<section id="section-6" class="slide level2" data-background-iframe="https://christopherjwilson.shinyapps.io/app1/" data-background-interactive="true">
-<h2></h2>
-</section></section>
-<section id="takeaways-1" class="title-slide slide level1 center">
-<h1>Takeaways</h1>
-<ul>
-<li><p>p-values are not a good measure of the size of an effect or the importance of a result.</p></li>
-<li><p>Confidence intervals are a better way to interpret results than p-values.</p></li>
-<li><p>Confidence intervals can tell us the likely range of outcomes, as well as the direction of the effect.</p></li>
-</ul>
-</section>
-
-<section>
-<section id="effect-sizes-and-designing-studies-with-sufficient-power" class="title-slide slide level1 center">
-<h1>Effect sizes and designing studies with sufficient power</h1>
-
-</section>
-<section id="when-designing-a-study-we-need-to-ensure-it-has-sufficient-power" class="slide level2">
-<h2>When designing a study, we need to ensure it has sufficient power</h2>
-<p>What does this mean?</p>
-<ul>
-<li>Power is ability to detect an effect if it exists</li>
-<li>If a study has low power, it is not possible for us to tell whether a statistically non-significant result is due to:
-<ul>
-<li>The absence of an effect</li>
-<li>The absence of power to detect an effect</li>
-</ul></li>
-</ul>
-</section>
-<section id="an-analogy-for-statistical-power" class="slide level2">
-<h2>An analogy for statistical power</h2>
-<p>Consider a study as a fishing trip.</p>
-<ul>
-<li>We want to catch a particular type of fish (detect an effect).</li>
-<li>We don’t know how common it is in the lake (we don’t know if the effect exists).</li>
-<li>We need to decide how many times to cast the net (how many participants to recruit).</li>
-<li>This depends on how big the school of fish is (the effect size).</li>
-<li>If the school of fish is big, we shouldn’t need to cast the net many times before finding it (or concluding that it is not there).</li>
-<li>If it is small, we will need to cast the net many times before finding it (or concluding that it is not there).</li>
-</ul>
-</section>
-<section id="an-analogy-for-statistical-power-1" class="slide level2">
-<h2>An analogy for statistical power</h2>
-
-<img data-src="images/fish.jpg" style="width:94.0%" class="r-stretch quarto-figure-center"></section>
-<section id="thinking-about-statistical-power" class="slide level2">
-<h2>Thinking about statistical power</h2>
-<ul>
-<li><p>We first need to decide what effect size we are interested in detecting. This can be called the smallest effect size of interest (SESOI).</p></li>
-<li><p>We then need to decide how much power we want to have to detect this effect size.</p></li>
-<li><p>A common choice is 80% power, but this is arbitrary. This means:</p></li>
-</ul>
-<blockquote>
-<p>With the given effect size and the calculated sample size, we will be able to detect the effect (if it exists) 80% of the time.</p>
-</blockquote>
-</section></section>
-<section>
-<section id="effect-size" class="title-slide slide level1 center">
-<h1>Effect Size</h1>
-
 </section>
 <section id="what-is-effect-size" class="slide level2 smaller">
 <h2>What is effect size?</h2>
@@ -696,13 +618,61 @@ Dr Christopher Wilson
 <li>A “safeguard” power analysis can be used (underestimates the effect from published studies) <span class="citation" data-cites="PeruginiEtAl2014">(<a href="#/references" role="doc-biblioref" onclick="">Perugini et al., 2014</a>)</span></li>
 </ul></li>
 </ul>
+</section>
+<section id="when-designing-a-study-we-need-to-ensure-it-has-sufficient-power" class="slide level2">
+<h2>When designing a study, we need to ensure it has sufficient power</h2>
+<p>What does this mean?</p>
+<ul>
+<li>Power is ability to detect an effect if it exists</li>
+<li>If a study has low power, it is not possible for us to tell whether a statistically non-significant result is due to:
+<ul>
+<li>The absence of an effect</li>
+<li>The absence of power to detect an effect</li>
+</ul></li>
+</ul>
+</section>
+<section id="an-analogy-for-statistical-power" class="slide level2">
+<h2>An analogy for statistical power</h2>
+<p>Consider a study as a fishing trip.</p>
+<ul>
+<li>We want to catch a particular type of fish (detect an effect).</li>
+<li>We don’t know how common it is in the lake (we don’t know if the effect exists).</li>
+<li>We need to decide how many times to cast the net (how many participants to recruit).</li>
+<li>This depends on how big the school of fish is (the effect size).</li>
+<li>If the school of fish is big, we shouldn’t need to cast the net many times before finding it (or concluding that it is not there).</li>
+<li>If it is small, we will need to cast the net many times before finding it (or concluding that it is not there).</li>
+</ul>
+</section>
+<section id="an-analogy-for-statistical-power-1" class="slide level2">
+<h2>An analogy for statistical power</h2>
+
+<img data-src="images/fish.jpg" style="width:94.0%" class="r-stretch quarto-figure-center"></section>
+<section id="thinking-about-statistical-power" class="slide level2">
+<h2>Thinking about statistical power</h2>
+<ul>
+<li><p>We first need to decide what effect size we are interested in detecting. This can be called the smallest effect size of interest (SESOI).</p></li>
+<li><p>We then need to decide how much power we want to have to detect this effect size.</p></li>
+<li><p>A common choice is 80% power, but this is arbitrary. This means:</p></li>
+</ul>
+<blockquote>
+<p>With the given effect size and the calculated sample size, we will be able to detect the effect (if it exists) 80% of the time.</p>
+</blockquote>
 </section></section>
-<section id="takeaways-2" class="title-slide slide level1 center">
+<section>
+<section id="putting-it-all-together" class="title-slide slide level1 center">
+<h1>Putting it all together…</h1>
+
+</section>
+<section id="section-6" class="slide level2" data-background-iframe="https://christopherjwilson.shinyapps.io/app1/" data-background-interactive="true">
+<h2></h2>
+</section></section>
+<section id="takeaways-3" class="title-slide slide level1 center">
 <h1>Takeaways</h1>
 <ul>
 <li><p>Power is ability to detect an effect if it exists</p></li>
 <li><p>Before conducting a study, we need to know what effect size we are interested in detecting</p></li>
 <li><p>We need to ensure that our study has sufficient power to detect this effect size</p></li>
+<li><p>Very large samples will show very small effects as statistically significant (but these may not be important)</p></li>
 </ul>
 </section>
 
