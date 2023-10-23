@@ -1,6 +1,7 @@
 ---
 format: 
   revealjs:
+    multiplex: true
     chalkboard:
       boardmarker-width: 2
 bibliography: references.bib
