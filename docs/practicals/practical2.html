@@ -159,115 +159,95 @@ Download the data for this practical
 </div>
 </div>
 </div>
-<section id="calculate-the-confidence-interval-of-the-difference-between-means" class="level1">
-<h1>Calculate the confidence interval of the difference between means</h1>
-<p>In our research we are often comparing the difference between 2 means. As such, we are often interested in the confidence interval of this difference.</p>
-<p>For example, in our current dataset, we are interested in the difference between the mean of the control group and the mean of the treatment group on an outcome measure. Let’s say that this is a measure of distress, so that lower scores are preferable to higher scores.</p>
-<p>However, we want to know more than just the difference between the means. We want to know how confident we can be that the difference between the means is not zero (null hypothesis), given the data we have. We can do this by calculating the confidence interval of the difference between the means.</p>
-<p>The first step is to calculate the difference between the means. This is simply mean of group 1 minus the mean of group 2.</p>
+<section id="using-packages-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="using-packages-in-r">Using packages in R</h2>
+<p>R has many built-in functions, but you can also add extra functions by installing packages. To install a package, you can use the <func>install.packages()</func> function. For example, to install the package <pkg>dplyr</pkg>, you would use the following command:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a>meanDiff <span class="ot">&lt;-</span> <span class="fu">mean</span>(practical2_data<span class="sc">$</span>Treatment) <span class="sc">-</span> <span class="fu">mean</span>(practical2_data<span class="sc">$</span>Control)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-cell="annotated-cell-1" data-code-annotation="1">Note that we are using the dollar “$” sign to access the columns of the data frame.</span>
+<span data-code-cell="annotated-cell-1" data-code-annotation="1" data-code-lines="1">you only need to install a package once.</span>
 </dd>
 </dl>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Visualse the difference between the means?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>We can visualise the difference between the means by plotting the data. We will learn how to do this in a later session. For now (if you want to), you can just run the code below to see the difference between the means.</p>
+<p>Once a package is installed, you can load it into your R session using the <func>library()</func> function. For example, to load the package <pkg>dplyr</pkg>, you would use the following command:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(practical2_data<span class="sc">$</span>Treatment <span class="sc">-</span> practical2_data<span class="sc">$</span>Control, <span class="at">main =</span> <span class="st">"Difference between means"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="practical2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Notice how most of the data seems to be lower than zero. That would mean that the Treatment group has lower scores than the Control group. This is what we would expect, as the Treatment group is supposed to be better than the Control group.</p>
-</div>
-</div>
-</div>
-<p>The second step is to calculate the standard error of the difference between the means. This is calculated as:</p>
-<p><span class="math display">\[SE_{\bar{x}_1 - \bar{x}_2} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}\]</span></p>
-<p>where <span class="math inline">\(s_1^2\)</span> is the variance of group 1, <span class="math inline">\(s_2^2\)</span> is the variance of group 2, <span class="math inline">\(n_1\)</span> is the sample size of group 1, and <span class="math inline">\(n_2\)</span> is the sample size of group 2.</p>
-<p>So to calculate this in R, we would:</p>
-<ol type="1">
-<li>get the standard deviation of group 1, divided by the number of participants in group 1,</li>
-<li>do the same for group 2</li>
-<li>add these results together</li>
-</ol>
-<p>The code below will start you off, you need to finish it:</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  Standard Error of Treatment group</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a>se1 <span class="ot">&lt;-</span> <span class="fu">sd</span>(practical2_data<span class="sc">$</span>Treatment) <span class="sc">/</span> <span class="fu">length</span>(practical2_data<span class="sc">$</span>Treatment)</span>
-<span id="annotated-cell-2-3"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard Error of Control group</span></span>
-<span id="annotated-cell-2-5"><a href="#annotated-cell-2-5" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-2-6" class="code-annotation-target"><a href="#annotated-cell-2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the two together</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-2" data-code-annotation="1">This code calculates the standard error of the Treatment group. sd() is the function to calculate the standard deviation. length() is the function to calculate the number of elements in a vector.</span>
-</dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-2" data-code-annotation="2">You need to do the same for the Control group.</span>
-</dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
-<dd>
-<span data-code-lines="6" data-code-cell="annotated-cell-2" data-code-annotation="3">Then you need to add them together.</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="1" data-code-lines="1">you need to load a package every time you start a new R session. It is good practice to load all the packages you need at the start of your script.</span>
 </dd>
 </dl>
 </div>
 </div>
-<p>The next step is to calculate the confidence interval. This is calculated as:</p>
-<p><span class="math display">\[\bar{x}_1 - \bar{x}_2 \pm = 1.96 \times SE_{\bar{x}_1 - \bar{x}_2}\]</span></p>
-<p>where <span class="math inline">\(\bar{x}_1 - \bar{x}_2\)</span> is the difference between the means, 1.96 is the critical value of t for the given alpha level and degrees of freedom, and <span class="math inline">\(SE_{\bar{x}_1 - \bar{x}_2}\)</span> is the standard error of the difference between the means.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Where does 1.96 come from?
+Task 1
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The critical value for a 95% confidence interval is 1.96. This is because the area under the 95% of the curve of a normal distribution lies between -1.96 and 1.96 standard deviations from the mean. However, this is only true for a large sample size (aprox. &gt;30). For smaller sample sizes, the critical value is larger. For example, for a sample size of 10, the critical value is 2.26. For a sample size of 5, the critical value of is 2.57.</p>
-<p>These smaller distributions are called t-distributions. The t-distribution is similar to the normal distribution but it is wider. This means that the critical values are larger for smaller sample sizes. This is where the t-test gets its name from.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Normal196.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The Normal Distribution - critical values for 95% AUC</figcaption>
-</figure>
+<ol type="1">
+<li>Install the package <pkg>dplyr</pkg>.</li>
+<li>Load the package <pkg>dplyr</pkg>.</li>
+</ol>
 </div>
 </div>
+</section>
+<section id="using-the-pipe-operator-to-chain-commands" class="level2">
+<h2 class="anchored" data-anchor-id="using-the-pipe-operator-to-chain-commands">Using the pipe operator to chain commands</h2>
+<p>Often in our analysis, we want to perform a series of operations on our data. For example, we might want to filter the data, then summarise it, then plot it. In R, we can do this by chaining commands together using the pipe operator <strong>|&gt;</strong>.</p>
+<p>This is made using the <pc>|</pc> and <pc>&gt;</pc> keys on your keyboard.</p>
+<p>The purpose of the pipe operator is to make your code easier to read. For example, consider the following code:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(practical2_data, age <span class="sc">&gt;</span> <span class="dv">25</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-annotation="1" data-code-lines="1">The above code uses the <func>filter()</func> function to select only the rows of the dataset where the age is greater than 25.</span>
+</dd>
+</dl>
 </div>
 </div>
-<p>To calculate this in R, we would multiply the standard error by 1.96 and:</p>
-<ul>
-<li>subtract this from the difference between the means (to get the lower confidence interval).</li>
-<li>add this to the difference between the means (to get the upper confidence interval).</li>
-</ul>
+<p>However, for more complicated analysis, code can be difficult to read. Now consider the following code:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a>practical2_data <span class="sc">|&gt;</span> <span class="fu">filter</span>(age <span class="sc">&gt;</span> <span class="dv">25</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-annotation="1" data-code-lines="1">The above code starts with the data and then uses the pipe operator to “pass” that information to the next function. Because of this,we don’t need to specify the dataset in the <func>filter()</func> function. The code also goes from left to right, which makes it easier to read.</span>
+</dd>
+</dl>
+</div>
+</div>
+</section>
+<section id="lets-do-some-descriptive-statistics" class="level1">
+<h1>Let’s do some descriptive statistics</h1>
+<section id="filtering-data" class="level2">
+<h2 class="anchored" data-anchor-id="filtering-data">Filtering data</h2>
+<p>One of the things that the <pkg>dplyr</pkg> package allows you to do is to filter data. This is useful if you want to select only certain rows of data. For example, if you wanted to select only the data for the participants who were over the age of 21, you would use the following command:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-5-2" class="code-annotation-target"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a>practical2_data <span class="sc">|&gt;</span> <span class="fu">filter</span>(age <span class="sc">&gt;</span> <span class="dv">21</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-annotation="1" data-code-lines="2">The first argument is the name of the dataset you want to filter. The second argument is the condition you want to filter by. In this case, we are filtering the data so that only rows where the age is greater than 21 are selected.</span>
+</dd>
+</dl>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -278,13 +258,171 @@ Task
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Calculate the upper and lower confidence intervals for the difference between the means.</p>
+<p>We can only include participants who are over the age of 18 in our analysis.</p>
+<p>Filter the data so that only rows where the age is greater than 18 are selected.</p>
+<p>Save the result to an object called <strong>data_over18</strong>.</p>
 </div>
 </div>
 <div class="webex-check webex-box">
-<p>The lower confidence interval is:</p>
-<p><input class="webex-solveme nospaces" size="4" data-answer="[&quot;-2.4&quot;]"></p>
-<p>The upper confidence interval is: <input class="webex-solveme nospaces" size="5" data-answer="[&quot;-1.91&quot;]"></p>
+<p>The number of participants over the age of 18 is <input class="webex-solveme nospaces" size="2" data-answer="[&quot;78&quot;]">.</p>
+</div>
+</section>
+<section id="summarising-data" class="level2">
+<h2 class="anchored" data-anchor-id="summarising-data">Summarising data</h2>
+<p>Another feature of the <pkg>dplyr</pkg> package is the ability to summarise data. This is useful if you want to calculate descriptive statistics for your data. For example, if you wanted to calculate the mean age of the Treatment and Control groups (over 18), you would use the following code:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-6-1" class="code-annotation-target"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a>data_over18 <span class="sc">|&gt;</span> <span class="fu">group_by</span>(treatment_group) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(age))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-annotation="1" data-code-lines="1">The code above uses the <func>group_by()</func> function to group the data by the variable <strong>treatment_group</strong>. It then uses the <func>summarise()</func> function to calculate the mean age for each group.</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Adapt the above code to calculate the standard deviation of the age for each group.</p>
+<p>Save the result to an object called <strong>age_sd</strong>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="lets-do-some-inferential-statistics" class="level1">
+<h1>Let’s do some inferential statistics</h1>
+<section id="confidence-intervals" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-intervals">Confidence intervals</h2>
+<p>Let’s say that we want to know if there is a difference in the outcomes between the Treatment and Control groups (only for the participants over 18).</p>
+<p>We can use a confidence interval to estimate the difference between the means of the two groups.</p>
+<p>The formula for calculating a confidence interval is:</p>
+<p><span class="math display">\[CI = \bar{X} \pm 1.96 \times SE\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(\bar{X}\)</span> is the mean of the difference between the two groups</li>
+<li>SE is the standard error of the difference between the two groups</li>
+</ul>
+<p>We should already know how to calculate the difference between the means (of participants over 18), from the code you ran earlier. This time you need the difference in the <strong>outcome</strong> variable.</p>
+<div class="webex-check webex-box">
+<p>The difference between the means of the two groups (over 18s) is <input class="webex-solveme nospaces" size="4" data-answer="[&quot;4.48&quot;]"></p>
+</div>
+<p>The second step is to calculate the standard error of the difference between the means. This is calculated as:</p>
+<p><span class="math display">\[SE_{\bar{x}_1 - \bar{x}_2} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}\]</span></p>
+<p>where <span class="math inline">\(s_1^2\)</span> is the variance of group 1, <span class="math inline">\(s_2^2\)</span> is the variance of group 2, <span class="math inline">\(n_1\)</span> is the sample size of group 1, and <span class="math inline">\(n_2\)</span> is the sample size of group 2.</p>
+<p>So, to calculate the standard error of the difference between the means, we need to:</p>
+<ol type="1">
+<li>calculate the variance of each group and the sample size of each group.</li>
+<li>get the sum of the two variances divided by the sum of the two sample sizes.</li>
+<li>take the square root of the result.</li>
+<li>multiply the result by 1.96.</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The code below will start you off, you need to fill in the missing information</span></span>
+<span id="annotated-cell-7-2"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-7-3"><a href="#annotated-cell-7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># get the treatment group data</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-7-4" class="code-annotation-target"><a href="#annotated-cell-7-4" aria-hidden="true" tabindex="-1"></a>treatmentGroup <span class="ot">&lt;-</span> data_over18 <span class="sc">|&gt;</span> <span class="fu">filter</span>(treatment_group <span class="sc">==</span> <span class="st">"Treatment"</span>)</span>
+<span id="annotated-cell-7-5"><a href="#annotated-cell-7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-7-6"><a href="#annotated-cell-7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># get the variance of the treatment group</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-7-7" class="code-annotation-target"><a href="#annotated-cell-7-7" aria-hidden="true" tabindex="-1"></a>var_tg <span class="ot">&lt;-</span> treatmentGroup  <span class="sc">|&gt;</span> <span class="fu">pull</span>(outcome) <span class="sc">|&gt;</span> <span class="fu">var</span>()</span>
+<span id="annotated-cell-7-8"><a href="#annotated-cell-7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-7-9"><a href="#annotated-cell-7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># get the sample size of the treatment group</span></span>
+<span id="annotated-cell-7-10"><a href="#annotated-cell-7-10" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="3" onclick="event.preventDefault();" href="">3</a><span id="annotated-cell-7-11" class="code-annotation-target"><a href="#annotated-cell-7-11" aria-hidden="true" tabindex="-1"></a>n_tg <span class="ot">&lt;-</span> treatmentGroup <span class="sc">|&gt;</span> <span class="fu">nrow</span>()</span>
+<span id="annotated-cell-7-12"><a href="#annotated-cell-7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-7-13"><a href="#annotated-cell-7-13" aria-hidden="true" tabindex="-1"></a><span class="do">## You need to do the same for the control group</span></span>
+<span id="annotated-cell-7-14"><a href="#annotated-cell-7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-7-15"><a href="#annotated-cell-7-15" aria-hidden="true" tabindex="-1"></a><span class="do">## You need to add the two variances together and divide by the sum of the two sample sizes</span></span>
+<span id="annotated-cell-7-16"><a href="#annotated-cell-7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-7-17"><a href="#annotated-cell-7-17" aria-hidden="true" tabindex="-1"></a><span class="do">## You need to take the square root of the result</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-annotation="1" data-code-lines="4">This code uses the <func>filter()</func> function to select only the rows of the dataset where the <strong>treatment_group</strong> variable is equal to “Treatment”.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-annotation="2" data-code-lines="7">This code uses the <func>var()</func> function to calculate the variance of the <strong>outcome</strong> variable. The <func>pull()</func> function is used to extract the <strong>outcome</strong> variable from the dataset, so we can calculate the variance.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-annotation="3" data-code-lines="11">This code uses the <func>nrow()</func> function to calculate the number of rows in the dataset.</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Calculate the variance of the control group, the sample size of the control group, and the standard error of the difference between the means.</p>
+<p>Save the results to objects called <strong>var_cg</strong>, <strong>n_cg</strong>, and <strong>se_diff</strong>.</p>
+</div>
+</div>
+<div class="webex-check webex-box">
+<p>The standard error of the difference between the means is <input class="webex-solveme nospaces" size="4" data-answer="[&quot;0.45&quot;,&quot;.45&quot;]">.</p>
+</div>
+<p>Now we have the difference between the means and the standard error of the difference between the means, we can calculate the confidence interval.</p>
+<ol type="1">
+<li>This code calculates the lower confidence interval by subtracting 1.96 times the standard error of the difference between the means from the difference between the means.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Calculate the upper and lower confidence intervals.</p>
+<p>Save the results to objects called <strong>ci_lower</strong> and <strong>ci_upper</strong>.</p>
+</div>
+</div>
+<div class="webex-check webex-box">
+<p>The lower confidence interval is <input class="webex-solveme nospaces" size="4" data-answer="[&quot;3.58&quot;]">.</p>
+<p>The upper confidence interval is <input class="webex-solveme nospaces" size="16" data-answer="[&quot;5.36553639097346&quot;]">.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Where does 1.96 come from?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The critical value for a 95% confidence interval is 1.96. This is because the area under the 95% of the curve of a normal distribution lies between -1.96 and 1.96 standard deviations from the mean. However, this is only true for a large sample size (aprox. &gt;30). For smaller sample sizes, the critical value is larger. For example, for a sample size of 10, the critical value is 2.26. For a sample size of 5, the critical value of is 2.57.</p>
+<p>These smaller distributions are called t-distributions. The t-distribution is similar to the normal distribution but it is wider. This means that the critical values are larger for smaller sample sizes. This is where the t-test gets its name from.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="practical2_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -303,7 +441,7 @@ What does the confidence interval tell us?
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -312,14 +450,14 @@ Includes zero?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Imagine a number line that goes from the lower to the upper confidence interval. If you would have to cross zero to get from the lower to the upper confidence interval value, then the confidence interval includes zero.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="practical2_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="practical2_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -332,85 +470,46 @@ Includes zero?
 <p>Based on the confidence interval you calculated, can we reject the null hypothesis?: <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></p>
 </div>
 </section>
-<section id="calculate-the-effect-size" class="level1">
-<h1>Calculate the effect size</h1>
+</section>
+<section id="calculating-effect-size" class="level1">
+<h1>Calculating effect size</h1>
+<p>There are many ways to calculate effect size. This depends on the type of data you have and the type of analysis you are doing.</p>
 <p>The most common measure of effect size for a between groups design (2 groups) is Cohen’s d.&nbsp;Cohen’s d is calculated as the difference between the means of the two groups divided by the pooled standard deviation.</p>
 <p><span class="math display">\[d = \frac{\bar{x}_1 - \bar{x}_2}{s_p}\]</span></p>
 <p>where <span class="math inline">\(\bar{x}_1\)</span> is the mean of group 1, <span class="math inline">\(\bar{x}_2\)</span> is the mean of group 2, and <span class="math inline">\(s_p\)</span> is the pooled standard deviation.</p>
-<section id="pooling-standard-deviation" class="level2">
-<h2 class="anchored" data-anchor-id="pooling-standard-deviation">Pooling standard deviation</h2>
-<p>Pooled standard deviation is calculated as the square root of the average of the variance of the two groups. The formula is:</p>
-<p><span class="math display">\[s_p = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}\]</span></p>
-<p>where <span class="math inline">\(n_1\)</span> is the sample size of group 1, <span class="math inline">\(n_2\)</span> is the sample size of group 2, <span class="math inline">\(s_1^2\)</span> is the variance of group 1, and <span class="math inline">\(s_2^2\)</span> is the variance of group 2.</p>
-<p>As an exercise, we will do this step by step:</p>
-<p>Step 1:</p>
-<ul>
-<li>calculate sample size of group1 - 1 (i.e., minus 1)</li>
-<li>calculate the variance of group1</li>
-<li>Multiply these two together</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
+<p>We can use packages in R to help us calculate Cohen’s d.&nbsp;The <func>cohen.d()</func> function from the <pkg>effsize</pkg> package calculates Cohen’s d.&nbsp;</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-8-1"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install the effsize package</span></span>
+<span id="annotated-cell-8-2"><a href="#annotated-cell-8-2" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-8-3" class="code-annotation-target"><a href="#annotated-cell-8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"effsize"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-annotation="1" data-code-lines="3">Remember, you only need to install a package once. If you have already installed the package, you do not need to run this code.</span>
+</dd>
+</dl>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Use the var() function to find the variance of a vector. Use the length() function to find the length of a vector.</p>
+<p>Now we can load the package and calculate the effect size.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the effsize package</span></span>
+<span id="annotated-cell-9-2"><a href="#annotated-cell-9-2" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-9-3" class="code-annotation-target"><a href="#annotated-cell-9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(effsize)</span>
+<span id="annotated-cell-9-4"><a href="#annotated-cell-9-4" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-9-5" class="code-annotation-target"><a href="#annotated-cell-9-5" aria-hidden="true" tabindex="-1"></a>effect_size <span class="ot">&lt;-</span> <span class="fu">cohen.d</span>(data_over18<span class="sc">$</span>outcome, data_over18<span class="sc">$</span>treatment_group)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-annotation="1" data-code-lines="3">This code loads the effsize package. Remember, you only need to load a package once when you open RStudio.</span>
+</dd>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-annotation="2" data-code-lines="5">This code calculates the effect size using the <func>cohen.d()</func> function. The first argument is the outcome variable and the second argument is the treatment group variable.</span>
+</dd>
+</dl>
 </div>
-</div>
-<div class="webex-check webex-box">
-<p>The result of this step is: <input class="webex-solveme nospaces" size="6" data-answer="[&quot;986.49&quot;]"> (round to 2 decimal places)</p>
-</div>
-<p>Step 2:</p>
-<ul>
-<li>calculate sample size of group2 - 1 (i.e., minus 1)</li>
-<li>calculate the variance of group2</li>
-<li>Multiply these two together</li>
-</ul>
-<div class="webex-check webex-box">
-<p>The result of this step is: <input class="webex-solveme nospaces" size="6" data-answer="[&quot;997.78&quot;]"> (round to 2 decimal places)</p>
-</div>
-<p>Step 3:</p>
-<ul>
-<li>Add the results of step 1 and step 2 together</li>
-</ul>
-<div class="webex-check webex-box">
-<p>The result of this step is: <input class="webex-solveme nospaces" size="7" data-answer="[&quot;1984.27&quot;]"> (round to 2 decimal places)</p>
-</div>
-<p>Step 4:</p>
-<ul>
-<li>calculate sample size of group 1 + sample size of group 2 - 2 (i.e., add the two sample sizes together and then minus 2)</li>
-</ul>
-<div class="webex-check webex-box">
-<p>The result of this step is: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;1998&quot;]"> (round to 2 decimal places)</p>
-</div>
-<p>Step 5:</p>
-<ul>
-<li>Divide the result of step 3 by the result of step 4</li>
-</ul>
-<div class="webex-check webex-box">
-<p>The result of this step is: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;0.99&quot;,&quot;.99&quot;]"> (round to 2 decimal places)</p>
-</div>
-<p>Step 6: - Take the square root of the result of step 5</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Use the sqrt() function to find the square root of a number.</p>
-</div>
-</div>
-<div class="webex-check webex-box">
-<p>The result of this step is: <input class="webex-solveme nospaces" size="1" data-answer="[&quot;1&quot;]"> (round to 2 decimal places)</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -422,29 +521,13 @@ Task
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Calculate the pooled standard deviation.</p>
+<p>Calculate the effect size for the difference between the means.</p>
+<p>Save the result to an object called <strong>effect_size</strong>.</p>
 </div>
 </div>
 <div class="webex-check webex-box">
-<p>The pooled SD is: <input class="webex-solveme nospaces" size="3" data-answer="[&quot;2.8&quot;]"></p>
+<p>The effect size is <input class="webex-solveme nospaces" size="5" data-answer="[&quot;-2.23&quot;]">.</p>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Task
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Calculate the effect size of the difference between the means.</p>
-</div>
-</div>
-<div class="webex-check webex-box">
-<p>The effect size is: <input class="webex-solveme nospaces" size="4" data-answer="[&quot;0.77&quot;,&quot;.77&quot;]"> (note: effect size is always positive)</p>
-</div>
-</section>
 </section>
 <section id="calculate-the-sample-size-for-conducting-a-new-study-based-on-this-effect" class="level1">
 <h1>Calculate the sample size for conducting a new study, based on this effect</h1>
@@ -479,12 +562,12 @@ Conducting power analysis in R
 <li>type = “two.sample” (because we have two groups)</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(<span class="at">d =</span> effectSize, <span class="at">sig.level =</span> <span class="fl">0.05</span>, <span class="at">power =</span> <span class="fl">0.8</span>, <span class="at">type =</span> <span class="st">"two.sample"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-10-1" class="code-annotation-target"><a href="#annotated-cell-10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>(<span class="at">d =</span> effectSize, <span class="at">sig.level =</span> <span class="fl">0.05</span>, <span class="at">power =</span> <span class="fl">0.8</span>, <span class="at">type =</span> <span class="st">"two.sample"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-cell="annotated-cell-3" data-code-annotation="1">In the above code, replace the word “effectSize” with the effect size you calculated above.</span>
+<span data-code-cell="annotated-cell-10" data-code-annotation="1" data-code-lines="1">In the above code, replace the word “effectSize” with the effect size you calculated above.</span>
 </dd>
 </dl>
 </div>
@@ -519,7 +602,7 @@ Task
 </div>
 </div>
 <div class="webex-check webex-box">
-<p>The required sample size is: <input class="webex-solveme nospaces" size="2" data-answer="[&quot;28&quot;]"> (no decimal places)</p>
+<p>The required sample size is: <input class="webex-solveme nospaces" size="1" data-answer="[&quot;4&quot;]"> (no decimal places)</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">

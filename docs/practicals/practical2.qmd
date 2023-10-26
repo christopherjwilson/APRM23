@@ -9,6 +9,7 @@ format:
     include-after-body: ["include/webex.js"]
 ---
 
+
 ```{r setup, include=FALSE}
 library(webexercises)
 ```
@@ -27,6 +28,7 @@ library(webexercises)
 
 
 ::: {.callout-important collapse="false"}
+
 # Download the data for this practical
 
 For this session you will need to download the following dataset: [practical2_data.csv](practical2_data.csv)
@@ -46,37 +48,139 @@ You can also use the menu to import data. To do this, click on the <if>Import Da
 
 :::
 
-# Calculate the confidence interval of the difference between means
+## Using packages in R
 
-In our research we are often comparing the difference between 2 means. As such, we are often interested in the confidence interval of this difference.
+R has many built-in functions, but you can also add extra functions by installing packages. To install a package, you can use the <func>install.packages()</func> function. For example, to install the package <pkg>dplyr</pkg>, you would use the following command:
 
-For example, in our current dataset, we are interested in the difference between the mean of the control group and the mean of the treatment group on an outcome measure. Let's say that this is a measure of distress, so that lower scores are preferable to higher scores. 
+```{r eval=FALSE}
+install.packages("dplyr") #<1>
+```
+1. you only need to install a package once. 
 
-However, we want to know more than just the difference between the means. We want to know how confident we can be that the difference between the means is not zero (null hypothesis), given the data we have. We can do this by calculating the confidence interval of the difference between the means. 
+Once a package is installed, you can load it into your R session using the <func>library()</func> function. For example, to load the package <pkg>dplyr</pkg>, you would use the following command:
 
-The first step is to calculate the difference between the means. This is simply mean of group 1 minus the mean of group 2.
+```{r warning=FALSE, message=FALSE}
+library(dplyr) #<1>
+```
+1. you need to load a package every time you start a new R session. It is good practice to load all the packages you need at the start of your script.
 
-```{r eval=TRUE}
-meanDiff <- mean(practical2_data$Treatment) - mean(practical2_data$Control) #<1>
+::: {.callout-note}
+# Task 1
+
+1. Install the package <pkg>dplyr</pkg>.
+1. Load the package <pkg>dplyr</pkg>.
+:::
+
+
+## Using the pipe operator to chain commands
+
+Often in our analysis, we want to perform a series of operations on our data. For example, we might want to filter the data, then summarise it, then plot it. In R, we can do this by chaining commands together using the pipe operator **|>**. 
+
+This is made using the <pc>|</pc> and <pc>></pc> keys on your keyboard. 
+
+The purpose of the pipe operator is to make your code easier to read. For example, consider the following code:
+
+```{r eval = FALSE, warning=FALSE, message=FALSE}
+
+filter(practical2_data, age > 25)   #<1>
+```
+1. The above code uses the <func>filter()</func> function to select only the rows of the dataset where the age is greater than 25.
+
+However, for more complicated analysis, code can be difficult to read. Now consider the following code:
+
+```{r eval = FALSE, warning=FALSE, message=FALSE}
+practical2_data |> filter(age > 25) #<1>
+```
+1. The above code starts with the data and then  uses the pipe operator to "pass" that information to the next function. Because of this,we don't need to specify the dataset in the <func>filter()</func> function. The code also goes from left to right, which makes it easier to read.
+
+
+# Let's do some descriptive statistics
+
+## Filtering data
+
+
+One of the things that the <pkg>dplyr</pkg> package allows you to do is to filter data. This is useful if you want to select only certain rows of data. For example, if you wanted to select only the data for the participants who were over the age of 21, you would use the following command:
+
+```{r eval = FALSE, warning=FALSE, message=FALSE}
+library(dplyr)
+practical2_data |> filter(age > 21) #<1>
+``` 
+1. The first argument is the name of the dataset you want to filter. The second argument is the condition you want to filter by. In this case, we are filtering the data so that only rows where the age is greater than 21 are selected.
+
+::: {.callout-note}
+
+# Task
+
+We can only include participants who are over the age of 18 in our analysis.
+
+Filter the data so that only rows where the age is greater than 18 are selected.
+
+Save the result to an object called **data_over18**.
+:::
+
+```{r echo=FALSE}
+
+data_over18 <- practical2_data |> filter( age > 18)
+n_over18 <- practical2_data |> filter( age > 18) |> count()
 
 ```
 
-1. Note that we are using the dollar "$" sign to access the columns of the data frame.
 
+::: {.webex-check .webex-box}
+The number of participants over the age of 18 is `r fitb(n_over18$n)`.
 
-::: {.callout-tip collapse="true"}
-# Visualse the difference between the means?
+:::
 
-We can visualise the difference between the means by plotting the data. We will learn how to do this in a later session. For now (if you want to), you can just run the code below to see the difference between the means.
+## Summarising data
 
-```{r eval=TRUE}
+Another feature of the <pkg>dplyr</pkg> package is the ability to summarise data. This is useful if you want to calculate descriptive statistics for your data. For example, if you wanted to calculate the mean age of the Treatment and Control groups (over 18), you would use the following code:
 
-hist(practical2_data$Treatment - practical2_data$Control, main = "Difference between means") 
+```{r eval = FALSE, warning=FALSE, message=FALSE}
+
+data_over18 |> group_by(treatment_group) |> summarise(mean_age = mean(age)) #<1>
 ```
 
+1. The code above uses the <func>group_by()</func> function to group the data by the variable **treatment_group**. It then uses the <func>summarise()</func> function to calculate the mean age for each group. 
 
+::: {.callout-note}
 
-Notice how most of the data seems to be lower than zero. That would mean that the Treatment group has lower scores than the Control group. This is what we would expect, as the Treatment group is supposed to be better than the Control group.
+# Task
+
+Adapt the above code to calculate the standard deviation of the age for each group.
+
+Save the result to an object called **age_sd**.
+
+:::
+
+# Let's do some inferential statistics
+
+## Confidence intervals
+
+Let's say that we want to know if there is a difference in the outcomes between the Treatment and Control groups (only for the participants over 18).
+
+We can use a confidence interval to estimate the difference between the means of the two groups.
+
+The formula for calculating a confidence interval is:
+
+$$CI = \bar{X} \pm 1.96 \times SE$$
+
+where:
+
+- $\bar{X}$ is the mean of the difference between the two groups
+- SE is the standard error of the difference between the two groups
+
+We should already know how to calculate the difference between the means (of participants over 18), from the code you ran earlier. This time you need the difference in the **outcome** variable.
+
+```{r echo=FALSE}
+
+mean_diff <- data_over18 |> group_by(treatment_group) |> summarise(mean_outcome = mean(outcome)) |> pull(mean_outcome) |> diff()
+
+``` 
+
+:::{.webex-check .webex-box}
+
+The difference between the means of the two groups (over 18s) is `r fitb(round(mean_diff, 2))`
+
 :::
 
 The second step is to calculate the standard error of the difference between the means. This is calculated as:
@@ -85,32 +189,104 @@ $$SE_{\bar{x}_1 - \bar{x}_2} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$$
 
 where $s_1^2$ is the variance of group 1, $s_2^2$ is the variance of group 2, $n_1$ is the sample size of group 1, and $n_2$ is the sample size of group 2.
 
-So to calculate this in R, we would:
+So, to calculate the standard error of the difference between the means, we need to:
 
-1. get the standard deviation of group 1, divided by the number of participants in group 1, 
-1. do the same for group 2
-1. add these results together
+1.  calculate the variance of each group and the sample size of each group.
+2. get the sum of the two variances divided by the sum of the two sample sizes.
+3. take the square root of the result.
+4. multiply the result by 1.96.
 
-The code below will start you off, you need to finish it:
 
-```{r eval=TRUE}
-#  Standard Error of Treatment group
-se1 <- sd(practical2_data$Treatment) / length(practical2_data$Treatment) #<1>
+```{r echo=FALSE, warning=FALSE, message=FALSE}
 
-# Standard Error of Control group #<2>
+# calculate the variance of the each group
+var_tg <- data_over18 |> filter(treatment_group == "Treatment") |> pull(outcome) |> var()
+var_cg <- data_over18 |> filter(treatment_group == "Control")  |> pull(outcome) |> var()
 
-# Add the two together #<3>
+# calculate the sample size of each group
+n_tg <- data_over18 |> filter(treatment_group == "Treatment") |> nrow()
+n_cg <- data_over18 |> filter(treatment_group == "Control") |> nrow()
+
+# calculate the standard error of the difference between the means
+se_diff <- sqrt((var_tg/n_tg) + (var_cg/n_cg))
+
 
 ```
-1. This code calculates the standard error of the Treatment group. sd() is the function to calculate the standard deviation. length() is the function to calculate the number of elements in a vector.
-2. You need to do the same for the Control group.
-3. Then you need to add them together.
 
-The next step is to calculate the confidence interval. This is calculated as:
+```{r echo=TRUE}
 
-$$\bar{x}_1 - \bar{x}_2 \pm = 1.96 \times SE_{\bar{x}_1 - \bar{x}_2}$$
+#The code below will start you off, you need to fill in the missing information
 
-where $\bar{x}_1 - \bar{x}_2$ is the difference between the means, 1.96 is the critical value of t for the given alpha level and degrees of freedom, and $SE_{\bar{x}_1 - \bar{x}_2}$ is the standard error of the difference between the means.
+# get the treatment group data
+treatmentGroup <- data_over18 |> filter(treatment_group == "Treatment") #<1>
+
+# get the variance of the treatment group
+var_tg <- treatmentGroup  |> pull(outcome) |> var() #<2>
+
+# get the sample size of the treatment group
+
+n_tg <- treatmentGroup |> nrow() #<3>
+
+## You need to do the same for the control group
+
+## You need to add the two variances together and divide by the sum of the two sample sizes
+
+## You need to take the square root of the result
+
+```
+
+1. This code uses the <func>filter()</func> function to select only the rows of the dataset where the **treatment_group** variable is equal to "Treatment".
+2. This code uses the <func>var()</func> function to calculate the variance of the **outcome** variable. The <func>pull()</func> function is used to extract the **outcome** variable from the dataset, so we can calculate the variance.
+3. This code uses the <func>nrow()</func> function to calculate the number of rows in the dataset.
+
+::: {.callout-note}
+
+# Task
+
+Calculate the variance of the control group, the sample size of the control group, and the standard error of the difference between the means.
+
+Save the results to objects called **var_cg**, **n_cg**, and **se_diff**.
+
+:::
+
+
+::: {.webex-check .webex-box}
+
+The standard error of the difference between the means is `r fitb(se_diff |> round(2))`.
+:::
+
+Now we have the difference between the means and the standard error of the difference between the means, we can calculate the confidence interval.
+
+```{r echo=FALSE}
+
+# the lower confidence interval
+ci_lower <- mean_diff - (1.96 * se_diff) #<1>
+
+# you need to calculate the upper confidence interval
+
+```
+1. This code calculates the lower confidence interval by subtracting 1.96 times the standard error of the difference between the means from the difference between the means.
+
+
+:::{.callout-note}
+
+# Task
+
+Calculate the upper and lower confidence intervals.
+
+Save the results to objects called **ci_lower** and **ci_upper**.
+
+:::
+
+::: {.webex-check .webex-box}
+
+The lower confidence interval is `r fitb(ci_lower |> round(2))`.
+
+The upper confidence interval is `r fitb(mean_diff + (1.96 * se_diff) |> round(2))`.
+
+:::
+
+
 
 ::: {.callout-tip collapse="true"}
 
@@ -120,42 +296,34 @@ The critical value for a 95% confidence interval is 1.96. This is because the ar
 
 These smaller distributions are called t-distributions. The t-distribution is similar to the normal distribution but it is wider. This means that the critical values are larger for smaller sample sizes. This is where the t-test gets its name from.
 
-![The Normal Distribution - critical values for 95% AUC](Normal196.png)
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=6, fig.height=4}
 
-:::
+# plot of notmal distribution with 2.5% shaded on each side
 
-To calculate this in R, we would multiply the standard error by 1.96 and:
+x <- seq(-4, 4, length=100)
 
-- subtract this from the difference between the means (to get the lower confidence interval).
-- add this to the difference between the means (to get the upper confidence interval).
+y <- dnorm(x, mean=0, sd=1)
 
-::: {.callout-note}
-# Task
+plot(x, y, type="l", lwd=2, xlab="Standard Deviations", ylab="")
 
-Calculate the upper and lower confidence intervals for the difference between the means.
+abline(v=c(-1.96, 1.96), lty=2)
 
-:::
+abline(h=0, lty=2)
 
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+## add labels to represent the percentages of the distribution in the shaded and non-shaded areas
 
+text(-2.5, 0.05, "2.5%", cex=0.8)
 
-standardError <- sqrt((var(practical2_data$Treatment) / length(practical2_data$Treatment)) + (var(practical2_data$Control) / length(practical2_data$Control)))
+text(2.5, 0.05, "2.5%", cex=0.8)
 
-# calculate the confidence interval
-
-confidenceInterval <- meanDiff + c(-1, 1) * 1.96 * standardError
-
+text(0, 0.01, "95%", cex=0.8)
 
 ```
-::: {.webex-check .webex-box}
 
-The lower confidence interval is: 
 
-`r fitb(confidenceInterval[1] |> round(2))`
-
-The upper confidence interval is: `r fitb(confidenceInterval[2] |> round(2))`
 :::
+
 
 
 ::: {.callout-tip}
@@ -178,6 +346,9 @@ Imagine a number line that goes from the lower to the upper confidence interval.
 
 ```{r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
 # plot the confidence interval
+
+ci_upper <- mean_diff + (1.96 * se_diff)
+confidenceInterval <- c(ci_lower, ci_upper)
 
 library(ggplot2)
 
@@ -207,7 +378,9 @@ Based on the confidence interval you calculated, can we reject the null hypothes
 :::
 
 
-# Calculate the effect size
+# Calculating effect size
+
+There are many ways to calculate effect size. This depends on the type of data you have and the type of analysis you are doing. 
 
 The most common measure of effect size for a between groups design (2 groups) is Cohen's d. Cohen's d is calculated as the difference between the means of the two groups divided by the pooled standard deviation.
 
@@ -215,167 +388,56 @@ $$d = \frac{\bar{x}_1 - \bar{x}_2}{s_p}$$
 
 where $\bar{x}_1$ is the mean of group 1, $\bar{x}_2$ is the mean of group 2, and $s_p$ is the pooled standard deviation.
 
-
-## Pooling standard deviation
-
-Pooled standard deviation is calculated as the square root of the average of the variance of the two groups. The formula is:
-
-$$s_p = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}$$
-
-where $n_1$ is the sample size of group 1, $n_2$ is the sample size of group 2, $s_1^2$ is the variance of group 1, and $s_2^2$ is the variance of group 2. 
-
-As an exercise, we will do this step by step:
-
-Step 1:
-
-- calculate sample size of group1 - 1 (i.e., minus 1)
-- calculate the variance of group1
-- Multiply these two together
-
-::: {.callout-tip}
-Use the var() function to find the variance of a vector. Use the length() function to find the length of a vector.
-:::
-
-::: {.webex-check .webex-box}
-
-```{r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
-step1 <- length(practical2_data$Treatment) - 1 * var(practical2_data$Treatment)
-```
+We can use packages in R to help us calculate Cohen's d. The <func>cohen.d()</func> function from the <pkg>effsize</pkg> package calculates Cohen's d. 
 
 
-The result of this step is: `r fitb(step1 |> round(2))` (round to 2 decimal places)
-
-:::
-
-Step 2:
-
-- calculate sample size of group2 - 1 (i.e., minus 1)
-- calculate the variance of group2
-- Multiply these two together
-
-::: {.webex-check .webex-box}
-
-``` {r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
-step2 <- length(practical2_data$Control) - 1 * var(practical2_data$Control)
-```
-
-The result of this step is: `r fitb(step2 |> round(2))` (round to 2 decimal places)
-
-:::
-
-Step 3:
-
-- Add the results of step 1 and step 2 together
-
-```{r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
-step3 <- step1 + step2
-
-```
-
-::: {.webex-check .webex-box}
-
-The result of this step is: `r fitb(step3 |> round(2))` (round to 2 decimal places)
-
-:::
-
-Step 4:
 
 
-- calculate sample size of group 1 + sample size of group 2 - 2 (i.e., add the two sample sizes together and then minus 2)
+```{r eval=FALSE}
 
-::: {.webex-check .webex-box}
+# install the effsize package
 
-
-```{r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
-step4 <- length(practical2_data$Treatment) + length(practical2_data$Control) - 2
-
-```
-
-The result of this step is: `r fitb(step4 |> round(2) )` (round to 2 decimal places)
-
-:::
-
-Step 5:
-
-- Divide the result of step 3 by the result of step 4
-
-::: {.webex-check .webex-box}
-
-```{r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
-step5 <- step3 / step4
+install.packages("effsize") #<1>
 
 
 ```
+1. Remember, you only need to install a package once. If you have already installed the package, you do not need to run this code.
 
-The result of this step is: `r fitb(step5 |> round(2))` (round to 2 decimal places)
+Now we can load the package and calculate the effect size.
 
-:::
+```{r}
 
+# load the effsize package
 
+library(effsize) #<1>
 
-Step 6:
-- Take the square root of the result of step 5
-
-::: {.callout-tip}
-
-Use the sqrt() function to find the square root of a number.
-
-:::
-
-::: {.webex-check .webex-box}
-
-```{r eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
-step6 <- sqrt(step5)
-```
-
-The result of this step is: `r fitb(step6  |> round(2))` (round to 2 decimal places)
-
-:::
-
-::: {.callout-note}
-# Task
-Calculate the pooled standard deviation.
-:::
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-#find sample standard deviation of each sample
-s1 <- sd(practical2_data$Treatment)
-s2 <- sd(practical2_data$Control)
-
-#find sample size of each sample
-n1 <- length(practical2_data$Treatment)
-n2 <- length(practical2_data$Control)
-
-pooled_sd <-sqrt(((n1-1)*s1^2 + (n2-1)*s2^2) / (n1+n1-2))
-
-
+effect_size <- cohen.d(data_over18$outcome, data_over18$treatment_group) #<2>
+                        
 
 ```
 
-::: {.webex-check .webex-box}
-
-The pooled SD is: `r fitb(pooled_sd |> round(2))`
-:::
+1. This code loads the effsize package. Remember, you only need to load a package once when you open RStudio.
+2. This code calculates the effect size using the <func>cohen.d()</func> function. The first argument is the outcome variable and the second argument is the treatment group variable.
 
 
 
-::: {.callout-note}
+:::{.callout-note}
+
 # Task
 
-Calculate the effect size of the difference between the means.
+Calculate the effect size for the difference between the means.
+
+Save the result to an object called **effect_size**.
+
 :::
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-
-effectSize <- meanDiff / pooled_sd 
-
-
-```
 
 ::: {.webex-check .webex-box}
 
-The effect size is: `r fitb(abs(effectSize) |> round(2))` (note: effect size is always positive)
+The effect size is `r fitb(effect_size$estimate |> round(2))`.
+
 :::
+
+
 
 # Calculate the sample size for conducting a new study, based on this effect
 
@@ -429,7 +491,7 @@ Calculate the sample size required for conducting a new study, based on this eff
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 
-sampleSize <- power.t.test(d = effectSize, sig.level = 0.05, power = 0.8, type = "two.sample")$n |> round(0)
+sampleSize <- power.t.test(d = effect_size$estimate, sig.level = 0.05, power = 0.8, type = "two.sample")$n |> round(0)
 
 ```
 
