@@ -354,7 +354,7 @@ Download the data for this practical
 <section id="reminder-importing-data-into-r" class="level3">
 <h3 class="anchored" data-anchor-id="reminder-importing-data-into-r">Reminder: Importing data into R</h3>
 <p>To import data into R, you can use the a command that relates to the type of data you are importing. For example, to import the data in the file <strong>practical3_data.csv</strong>, you would use the following command:</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>practical3_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"practical3_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can also use the menu to import data. To do this, click on the <if>Import Dataset</if> button and select the type of data you want to import. For example, to import the data in the file <strong>practical3_data.csv</strong>, you would click on <if>From Text (readr)</if> and then select the file <strong>practical3_data.csv</strong>.</p>
@@ -382,7 +382,7 @@ Task
 </section>
 <section id="plot-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="plot-the-data">Plot the data</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the data</span></span>
 <span id="annotated-cell-1-2"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-1-3" class="code-annotation-target"><a href="#annotated-cell-1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(avoidance <span class="sc">~</span> depression, <span class="at">data =</span> practical3_data)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -390,7 +390,7 @@ Task
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="3" data-code-annotation="1">The <strong>plot()</strong> function is used to create a scatterplot. The first argument is the formula for the plot. The formula is written as <strong>y ~ x</strong>. The <strong>~</strong> symbol is read as “is predicted by”. So, in this case, we are saying that <strong>avoidance</strong> is predicted by <strong>depression</strong>.</span>
+<span data-code-lines="3" data-code-annotation="1" data-code-cell="annotated-cell-1">The <strong>plot()</strong> function is used to create a scatterplot. The first argument is the formula for the plot. The formula is written as <strong>y ~ x</strong>. The <strong>~</strong> symbol is read as “is predicted by”. So, in this case, we are saying that <strong>avoidance</strong> is predicted by <strong>depression</strong>.</span>
 </dd>
 </dl>
 </div>
@@ -435,7 +435,7 @@ Testing assumptions
 <section id="run-the-regression-model" class="level2">
 <h2 class="anchored" data-anchor-id="run-the-regression-model">Run the regression model</h2>
 <p>We can run regression using the <func>lm()</func> function.</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run the regression model</span></span>
 <span id="annotated-cell-2-2"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(avoidance <span class="sc">~</span> depression, <span class="at">data =</span> practical3_data)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -443,7 +443,7 @@ Testing assumptions
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="1">The <strong>lm()</strong> function is used to run a linear regression model. The first argument is the formula for the model. The formula is written as <strong>y ~ x</strong>. The <strong>~</strong> symbol is read as “is predicted by”. So, in this case, we are saying that <strong>avoidance</strong> is predicted by <strong>depression</strong>. The second argument is the name of the data frame that contains the data.</span>
+<span data-code-lines="3" data-code-annotation="1" data-code-cell="annotated-cell-2">The <strong>lm()</strong> function is used to run a linear regression model. The first argument is the formula for the model. The formula is written as <strong>y ~ x</strong>. The <strong>~</strong> symbol is read as “is predicted by”. So, in this case, we are saying that <strong>avoidance</strong> is predicted by <strong>depression</strong>. The second argument is the name of the data frame that contains the data.</span>
 </dd>
 </dl>
 </div>
@@ -472,7 +472,7 @@ What is the model?
 <section id="check-the-assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="check-the-assumptions">Check the assumptions</h2>
 <p>We can check the assumptions of linear regression using the <func>plot()</func> function.</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check the assumptions</span></span>
 <span id="annotated-cell-3-2"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -480,7 +480,7 @@ What is the model?
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="1">The <strong>plot()</strong> function is used to create a plot of the model. It actually shows several plots in sequence.</span>
+<span data-code-lines="3" data-code-annotation="1" data-code-cell="annotated-cell-3">The <strong>plot()</strong> function is used to create a plot of the model. It actually shows several plots in sequence.</span>
 </dd>
 </dl>
 </div>
@@ -608,22 +608,10 @@ Task
 <section id="interpret-the-regression-model-results" class="level2">
 <h2 class="anchored" data-anchor-id="interpret-the-regression-model-results">Interpret the regression model results</h2>
 <p>To view the results of the regression model, we use the <func>summary()</func> function.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(avoidance <span class="sc">~</span> depression, <span class="at">data =</span> data)</span>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode r code-annotation-code code-with-copy"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(avoidance <span class="sc">~</span> depression, <span class="at">data =</span> practical3_data)</span>
 <span id="annotated-cell-4-2"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="1" data-code-annotation="1">Create the model.</span>
-</dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="2">View the results of the model.</span>
-</dd>
-</dl>
-</div>
+<span id="annotated-cell-4-3"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="call-the-regression-formula" class="level3">
 <h3 class="anchored" data-anchor-id="call-the-regression-formula"><strong>Call:</strong> The regression formula</h3>
@@ -663,26 +651,29 @@ Task
 </div>
 </section>
 </section>
-<section id="bonus-round-multiple-regression" class="level2">
-<h2 class="anchored" data-anchor-id="bonus-round-multiple-regression">Bonus round: Multiple regression</h2>
-<p>Next week we will learn about multiple regression. However, if you are interested, you can try it out now.</p>
-<p>We can add more than one predictor variable to the model. This is called multiple regression. Imagine we had a hypothesis that <strong>Treatment type</strong> and <strong>Depression</strong> both predict <strong>Avoidance</strong>. We could test this hypothesis by adding both variables to the model.</p>
-<p>The code would look like this:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-5-1" class="code-annotation-target"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(avoidance <span class="sc">~</span> treatment <span class="sc">+</span> depression, <span class="at">data =</span> practical3_data)</span>
-<span id="annotated-cell-5-2"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-5-3" class="code-annotation-target"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model2)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="1" data-code-annotation="1">Create the model.</span>
-</dd>
-<dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="3" data-code-annotation="2">View the results of the model.</span>
-</dd>
-</dl>
+<section id="results-of-the-regression-model" class="level1 webex-check webex-box">
+<h1>Results of the regression model</h1>
+<ol type="1">
+<li><p>Is the overall model significant? <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></p></li>
+<li><p>Is the relationship between depression and avoidance significant? <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></p></li>
+<li><p>What is the beta value for depression? <input class="webex-solveme nospaces" size="4" data-answer="[&quot;0.74&quot;,&quot;.74&quot;]"></p></li>
+<li><p>Is the beta value for depression significant? <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></p></li>
+</ol>
+</section>
+<section id="regression-with-a-categorical-predictor-variable" class="level2">
+<h2 class="anchored" data-anchor-id="regression-with-a-categorical-predictor-variable">Regression with a categorical predictor variable</h2>
+<p>Our next hypothesis is that the level of depression is different for each treatment group. We can test this hypothesis using a regression model with a categorical predictor variable.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Testing assumptions with a categorical predictor variable
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When we have a categorical predictor variable, we need to be careful about how we interpret the assumptions of linear regression. The assumptions of linearity, normality and homoscedasticity are still relevant. However, because we have a categorical predictor, the plots will look different. We need to check the assumptions for each level of the categorical predictor variable. Some of the plots will change to reflect this.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -691,12 +682,15 @@ Task
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Bonus Task
+Task
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Create a multiple regression model with <strong>Treatment type</strong> and <strong>Depression</strong> as predictors of <strong>Avoidance</strong>.</p>
-<p>See if you can interpret the results.</p>
+<ol type="1">
+<li><p>Run the linear regression model with <strong>treatment</strong> as the predictor variable and <strong>depression</strong> as the outcome variable. Save the model in a variable called <strong>model2</strong>.</p></li>
+<li><p>Check the assumptions of linear regression for the model above. Note any violations of the assumptions and explain your thinking.</p></li>
+<li><p>Interpret the regression model results.</p></li>
+</ol>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -716,7 +710,7 @@ Task
 <section id="you-are-done-for-today-fa-hands-clapping" class="level1">
 <h1>You are done for today <i class="fa-solid fa-hands-clapping" aria-label="hands-clapping"></i></h1>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -725,7 +719,7 @@ Further resources for regression analysis
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><p><a href="https://peerj.com/articles/3323/">Regression assumptions in clinical psychology research practice—a systematic review of common misconceptions</a></p></li>

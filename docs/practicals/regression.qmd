@@ -286,15 +286,21 @@ To view the results of the regression model, we use the <func>summary()</func> f
 
 ```{r eval=FALSE}
 
-model <- lm(avoidance ~ depression, data = data) #<1>
+model <- lm(avoidance ~ depression, data = practical3_data) #<1>
 
 summary(model) #<2>
 
 
 ```
 
-1. Create the model.
-2. View the results of the model.
+```{r echo=FALSE}
+
+model <- lm(avoidance ~ depression, data = practical3_data) 
+
+
+
+
+```
 
 
 ### **Call:** The regression formula
@@ -333,37 +339,48 @@ Interpret the regression model results.
 
 :::
 
+::: {.webex-check .webex-box}
 
-## Bonus round: Multiple regression
+# Results of the regression model
 
-Next week we will learn about multiple regression. However, if you are interested, you can try it out now.
+1. Is the overall model significant? `r torf(TRUE)`
 
-We can add more than one predictor variable to the model. This is called multiple regression. Imagine we had a hypothesis that **Treatment type** and **Depression** both predict **Avoidance**. We could test this hypothesis by adding both variables to the model.
+2. Is the relationship between depression and avoidance significant? `r torf(TRUE)`
 
-The code would look like this:
+3. What is the beta value for depression? `r fitb(model$coefficients[2] |> round(2))`
 
-```{r eval=FALSE}
+4. Is the beta value for depression significant? `r torf(TRUE)`
 
-model2 <- lm(avoidance ~ treatment + depression, data = practical3_data) #<1>
+:::
 
-summary(model2) #<2>
 
-```
+## Regression with a categorical predictor variable
 
-1. Create the model.
+Our next hypothesis is that the level of depression is different for each treatment group. We can test this hypothesis using a regression model with a categorical predictor variable. 
 
-2. View the results of the model.
+::: {.callout-warning}
 
+# Testing assumptions with a categorical predictor variable
+
+When we have a categorical predictor variable, we need to be careful about how we interpret the assumptions of linear regression. The assumptions of linearity, normality and homoscedasticity are still relevant. However, because we have a categorical predictor, the plots will look different. We need to check the assumptions for each level of the categorical predictor variable. Some of the plots will change to reflect this.
+
+:::
 
 ::: {.callout-note}
 
-# Bonus Task
+# Task
 
-Create a multiple regression model with **Treatment type** and **Depression** as predictors of **Avoidance**. 
+1. Run the linear regression model with **treatment** as the predictor variable and **depression** as the outcome variable. Save the model in a variable called **model2**.
 
-See if you can interpret the results.
+2. Check the assumptions of linear regression for the model above. Note any violations of the assumptions and explain your thinking.
+
+3. Interpret the regression model results.
 
 :::
+
+
+
+
 
 
 ::: {.callout-note}
