@@ -230,7 +230,7 @@ n_cg <- data_over18 |> filter(treatment_group == "Control") |> nrow()
 
 # calculate the standard error of the difference between the means
 se_diff <- sqrt((var_tg/n_tg) + (var_cg/n_cg)) #<3>
-se_diff <- sqrt((var_cg+var_tg)/(n_cg+n_tg))
+
 
 ```
 
@@ -314,7 +314,7 @@ ci_upper
 
 The lower confidence interval is `r fitb(ci_lower |> round(2))`.
 
-The upper confidence interval is `r fitb(mean_diff + (1.96 * se_diff) |> round(2))`.
+The upper confidence interval is `r fitb(ci_upper |> round(2))`.
 
 :::
 

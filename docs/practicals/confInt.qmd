@@ -257,12 +257,14 @@ The standard error of the difference between the means is `r fitb(se_diff |> rou
 
 Now we have the difference between the means and the standard error of the difference between the means, we can calculate the confidence interval.
 
-```{r echo=FALSE}
+```{r echo=TRUE}
 
 # the lower confidence interval
 ci_lower <- mean_diff - (1.96 * se_diff) #<1>
 
 # you need to calculate the upper confidence interval
+
+ci_upper <- mean_diff + (1.96 * se_diff)
 
 ```
 1. This code calculates the lower confidence interval by subtracting 1.96 times the standard error of the difference between the means from the difference between the means.
@@ -282,7 +284,7 @@ Save the results to objects called **ci_lower** and **ci_upper**.
 
 The lower confidence interval is `r fitb(ci_lower |> round(2))`.
 
-The upper confidence interval is `r fitb(mean_diff + (1.96 * se_diff) |> round(2))`.
+The upper confidence interval is `r fitb(ci_upper |> round(2))`.
 
 :::
 
