@@ -92,15 +92,17 @@ y <- x + rnorm(100, 2, 3)
 
 df <- data.frame(x, y)
 
-p = ggplot(df, aes(x = x, y = y)) + geom_point() 
+
+lm <- lm(y ~ x, data = df)
+
+p = ggplot(lm, aes(x = x, y = y)) + geom_point()
 
 # now fit a linear model to the data and add the intercept value to the plot
 
-lm <- lm(y ~ x, data = df)
 intercept <- lm$coefficients[1]
 # add the regression line to the plot with a confidence interval
 
-p <- p + geom_abline(intercept = intercept, slope = lm$coefficients[2])
+p <- p +   geom_smooth(method = "lm", se = FALSE, color = "lightgrey")
 
 p <- p + labs(x = "Attentional bias", y = "Anxiety")
 
@@ -111,23 +113,41 @@ p
 
 - The regression line is the line of best fit through the data (smallest amount of overall error between the line and the data points)
 
-# But what is the null hypothesis in regression?
-
-## The null hypothesis in regression
-
-- In regression, the null hypothesis is that the line of best fit is no better at predicting the y variable than the mean of the y variable when the x variable = 0
-
-- In other words, the null hypothesis is that the slope of the line of best fit is 0
+## Residuals
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 
+# draw a line between the data points and the regression line
 
+p + geom_segment(aes(xend = x, yend = .fitted, color = "red"), alpha = 0.5) + guides(color = FALSE)
+
+
+
+```
+
+- The distances between the data points and the regression line are the residuals
+
+
+# But what is the null hypothesis in regression?
+
+## The null hypothesis in regression {.smaller}
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+#| out-width: 100%
+#| out-height: 100%
 
 # add a horizontal line to the plot at the intercept value
 
 p + geom_hline(yintercept = intercept, linetype = "dashed", color = "red")
 
 ```
+
+- The null hypothesis is that the line of best fit is no better at predicting the y variable than the mean of the y variable when the x variable = 0
+
+- In other words, the null hypothesis is that the slope of the line of best fit is 0
+
+
 
 ## Looking at regression output
 
@@ -231,7 +251,7 @@ lm(dv ~ group, data = df) |> summary()
 
 ```
 
-In the above example, the t-test and linear model give the same results. The intercept for the linear model is the mean of the Control Group, and the slope is the difference between the means of group Control and Treatment.
+- In the above example, the t-test and linear model give the same results. The intercept for the linear model is the mean of the Control Group, and the slope is the difference between the means of group Control and Treatment.
 
 ## We can check the confidence intervals from the regression model
 
@@ -243,10 +263,10 @@ lm(dv ~ group, data = df) |> confint()
 
 ```
 
-We can see that the confidence interval of the regression coefficient is the same as the confidence interval of the difference between means in the t-test
+- We can see that the confidence interval of the regression coefficient is the same as the confidence interval of the difference between means in the t-test
 
 
-# What's the value of this approach?
+# What's the value of using this approach?
 
 ## Advantages of using linear models
 
