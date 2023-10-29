@@ -413,13 +413,17 @@ Now we can load the package and calculate the effect size.
 
 library(effsize) #<1>
 
-effect_size <- cohen.d(data_over18$outcome, data_over18$treatment_group) #<2>
-                        
+effect_size <- cohen.d(outcome ~ treatment_group, data = data_over18, within = F) #<2>
+
+effect_size #<3>
+
 
 ```
 
 1. This code loads the effsize package. Remember, you only need to load a package once when you open RStudio.
 2. This code calculates the effect size using the <func>cohen.d()</func> function. The first argument is the outcome variable and the second argument is the treatment group variable.
+3. This code prints the effect size to the console.
+
 
 
 
@@ -469,7 +473,7 @@ To figure this out, we need to use a power analysis. We will use the power.t.tes
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, eval=FALSE}
 
-power.t.test(d = effectSize, sig.level = 0.05, power = 0.8, type = "two.sample") #<1>
+power.t.test(d = 0.6, sig.level = 0.05, power = 0.8, type = "two.sample") #<1>
 
 ```
 

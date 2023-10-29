@@ -14,6 +14,14 @@ logo: "logo.jpg"
 csl: apa.csl
 ---
 
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(
+fig.align = "center"
+)
+
+```
+
 ## Overview
 
 - Hypothesis testing
@@ -68,6 +76,11 @@ csl: apa.csl
 ## Linear regression
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+#| out-width: 100%
+#| out-height: 100%
+#| fig-align: center
+
 
 # generate two continuous variables and plot them using ggplot Label the x variable AttentionalBias and the y variable Anxiety
 

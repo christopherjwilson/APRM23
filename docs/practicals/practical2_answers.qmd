@@ -444,7 +444,8 @@ Now we can load the package and calculate the effect size.
 library(effsize) #<1>
 
 effect_size <- cohen.d(data_over18$outcome, data_over18$treatment_group) #<2>
-                        
+
+effect_size$estimate                         
 
 ```
 
@@ -466,6 +467,8 @@ Save the result to an object called **effect_size**.
 ::: {.webex-check .webex-box}
 
 The effect size is `r fitb(effect_size$estimate |> round(2))`.
+
+
 
 :::
 

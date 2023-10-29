@@ -474,7 +474,7 @@ Dr Christopher Wilson
 <section id="linear-regression" class="slide level2">
 <h2>Linear regression</h2>
 
-<img data-src="linearModels_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"><ul>
+<img data-src="linearModels_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch quarto-figure-center"><ul>
 <li>The regression line is the line of best fit through the data (smallest amount of overall error between the line and the data points)</li>
 </ul>
 </section></section>
@@ -490,10 +490,10 @@ Dr Christopher Wilson
 <li><p>In other words, the null hypothesis is that the slope of the line of best fit is 0</p></li>
 </ul>
 
-<img data-src="linearModels_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<img data-src="linearModels_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="looking-at-regression-output" class="slide level2">
 <h2>Looking at regression output</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();" href="">1</a><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data =</span> df)</span>
 <span id="annotated-cell-1-2"><a href="#annotated-cell-1-2"></a></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();" href="">2</a><span id="annotated-cell-1-3" class="code-annotation-target"><a href="#annotated-cell-1-3"></a><span class="fu">summary</span>(model1)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -513,7 +513,7 @@ Dr Christopher Wilson
 </section>
 <section id="looking-at-regression-output-1" class="slide level2">
 <h2>Looking at regression output</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy"><code class="sourceCode r"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data =</span> df)</span>
 <span id="annotated-cell-2-2"><a href="#annotated-cell-2-2"></a></span>
 <span id="annotated-cell-2-3"><a href="#annotated-cell-2-3"></a><span class="fu">summary</span>(model1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -549,7 +549,7 @@ F-statistic: 33.02 on 1 and 98 DF,  p-value: 1.029e-07</code></pre>
 <ul>
 <li>A t-test is a special case of a linear model where there is one predictor variable (group) and one outcome variable (DV)</li>
 </ul>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># run a t-test</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="fu">t.test</span>(dv <span class="sc">~</span> group, <span class="at">data =</span> df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -571,21 +571,21 @@ sample estimates:
 <section id="plotting-the-data-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Plotting the data #1</h2>
 
-<img data-src="linearModels_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"><p>Here we can see the data for each group</p>
+<img data-src="linearModels_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch quarto-figure-center"><p>Here we can see the data for each group</p>
 </section>
 <section id="plotting-the-data-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Plotting the data #2</h2>
 
-<img data-src="linearModels_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"><p>Here we can see the mean for each group, represented by the dashed lines</p>
+<img data-src="linearModels_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch quarto-figure-center"><p>Here we can see the mean for each group, represented by the dashed lines</p>
 </section>
 <section id="plotting-the-data-3" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Plotting the data #3</h2>
 
-<img data-src="linearModels_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"><p>In a regression model, the intercept is the mean of one of the groups, and the slope is the difference between the means of the two groups</p>
+<img data-src="linearModels_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch quarto-figure-center"><p>In a regression model, the intercept is the mean of one of the groups, and the slope is the difference between the means of the two groups</p>
 </section>
 <section id="example-t-test-as-a-linear-model" class="slide level2 smaller">
 <h2>Example: t-test as a linear model</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># run a linear model</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="fu">lm</span>(dv <span class="sc">~</span> group, <span class="at">data =</span> df) <span class="sc">|&gt;</span> <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -614,7 +614,7 @@ F-statistic: 6.471 on 1 and 18 DF,  p-value: 0.02036</code></pre>
 </section>
 <section id="we-can-check-the-confidence-intervals-from-the-regression-model" class="slide level2">
 <h2>We can check the confidence intervals from the regression model</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># show the confidence confidence intervals of the coefficients</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="fu">lm</span>(dv <span class="sc">~</span> group, <span class="at">data =</span> df) <span class="sc">|&gt;</span> <span class="fu">confint</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -651,7 +651,7 @@ groupTreatment -4.141139 -0.3948464</code></pre>
 </section>
 <section id="one-way-anova" class="slide level2">
 <h2>One-way ANOVA</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># running an ANOVA</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a></span>
 <span id="cb8-3"><a href="#cb8-3"></a><span class="fu">aov</span>(dv <span class="sc">~</span> group, <span class="at">data =</span> df) <span class="sc">|&gt;</span> <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -667,7 +667,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </section>
 <section id="anova-as-regression-1" class="slide level2 smaller">
 <h2>ANOVA as regression</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">lm</span>(dv <span class="sc">~</span> group, <span class="at">data =</span> df) <span class="sc">|&gt;</span> <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
