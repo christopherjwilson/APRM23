@@ -35,6 +35,8 @@ fig.align = "center"
 
 - In clinical psychology research, for example, we might be interested in the role of attentional bias in anxiety
 
+
+
 ## Different types of research hypothesis 
 
 - However, we need to phrase this in terms of a hypothesis that we can test:
@@ -43,6 +45,17 @@ fig.align = "center"
     - There is a difference in attentional bias between anxious and non-anxious individuals, but only for threat-related stimuli
     - Level of anxiety predicts level of attentional bias to threat-related stimuli
     - Level of anxiety moderates the relationship between attentional bias and depression
+  
+
+  
+  
+
+
+
+
+
+    
+## {background-image="images/anxious.jpg" background-size="contain"}
 
 ## Hypothesis influences research design 
 
