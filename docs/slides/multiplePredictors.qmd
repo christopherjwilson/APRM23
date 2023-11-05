@@ -7,6 +7,7 @@ format:
         slide-number: c/t
         mermaid:
           theme: neutral
+        width: 100%
 bibliography: references.bib
 title: "Multiple regression models"
 subtitle: DClin Research Methods 1
@@ -133,6 +134,8 @@ library(mctest)
 mctest(model1, type= "b") #<1>
 
 ```
+
+Higher variance inflation factors (VIFs) indicate higher multicollinearity. A VIF of 5 or more is considered problematic.
 
 ## Interpreting the output of mctest()
 
