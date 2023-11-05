@@ -513,7 +513,7 @@ age --&gt; depression
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-annotation="1" data-code-lines="3">The <func>mctest()</func> function takes a model as an argument. The <arg>type</arg> argument specifies the type of tests to run. The <arg>b</arg> argument specifies that we want to test both overall and individual predictor multicollinearity.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="1">The <func>mctest()</func> function takes a model as an argument. The <arg>type</arg> argument specifies the type of tests to run. The <arg>b</arg> argument specifies that we want to test both overall and individual predictor multicollinearity.</span>
 </dd>
 </dl>
 </div>
@@ -604,7 +604,7 @@ R-square of y on all x: 0.8583
 <span id="cb3-3"><a href="#cb3-3"></a><span class="fu">gvlma</span>(model1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="viewing-the-output-of-gvlma" class="slide level2">
+<section id="viewing-the-output-of-gvlma" class="slide level2 smaller">
 <h2>Viewing the output of gvlma()</h2>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(gvlma)</span>
@@ -636,6 +636,13 @@ Link Function      0.4887 0.48450    Assumptions acceptable.
 Heteroscedasticity 4.2079 0.04024 Assumptions NOT satisfied!</code></pre>
 </div>
 </div>
+<ul>
+<li>Global Statistic: Test of the overall model.</li>
+<li>Link function test: Is this relationship linear?</li>
+</ul>
+<blockquote>
+<p>significant = violation of assumption</p>
+</blockquote>
 </section></section>
 <section>
 <section id="looking-at-the-output-of-multiple-regression" class="title-slide slide level1 center">
@@ -783,19 +790,19 @@ end
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-annotation="1" data-code-lines="1">Model 0 is the null model. It is a model with no predictors. It is used as a baseline for comparison.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="1" data-code-annotation="1">Model 0 is the null model. It is a model with no predictors. It is used as a baseline for comparison.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-annotation="2" data-code-lines="3">Model 1 is the first model. It includes the demographic variables.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="3" data-code-annotation="2">Model 1 is the first model. It includes the demographic variables.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-annotation="3" data-code-lines="5">Model 2 is the second model. It includes the demographic variables, stress and loneliness.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="5" data-code-annotation="3">Model 2 is the second model. It includes the demographic variables, stress and loneliness.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-annotation="4" data-code-lines="7">Model 3 is the third model. It includes the demographic variables, stress, loneliness and self-esteem.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="7" data-code-annotation="4">Model 3 is the third model. It includes the demographic variables, stress, loneliness and self-esteem.</span>
 </dd>
 </dl>
 </div>

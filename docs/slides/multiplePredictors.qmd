@@ -166,7 +166,9 @@ gvlma(model1)
 
 ```
 
-## Viewing the output of gvlma()
+## Viewing the output of gvlma() {.smaller}
+
+
 
 ``` {r echo=T, message=FALSE, warning=FALSE}
 
@@ -175,6 +177,10 @@ library(gvlma)
 gvlma(model1)
 
 ```
+
+- Global Statistic: Test of the overall model. 
+- Link function test: Is this relationship linear? 
+
 
 # Looking at the output of multiple regression
 
