@@ -194,7 +194,7 @@ summary(model1)
 
 ## Interpreting the output of multiple regression
 
-- First we look at the overall model significance and R^2 values. These tell us whether the model is significant and how much variance is explained by the model.
+- First we look at the overall model significance and $R^2$ values. These tell us whether the model is significant and how much variance is explained by the model.
 
 - If the overall model is significant,  we look at the individual predictors. We look at the significance of the predictors and the coefficient values (Estimate).
 
@@ -317,9 +317,9 @@ anova(model0, model1, model2, model3)
 
 ## Comparing the models
 
-- The <func>anova()</func> function compares the change in R^2 between the models
+- The <func>anova()</func> function compares the change in $R^2$ between the models
 
-- If the change in R^2 is significant, then the model is significantly better than the previous model
+- If the change in $R^2$ is significant, then the model is significantly better than the previous model
 
 - This way, we can see the value of each set of predictors
 
@@ -367,7 +367,7 @@ Lower values indicate better model fit (i.e., the model explains more variance),
 
 - This gives us a clear indication that self-esteem is an important predictor of depression
 
-- The final model is the best model in terms of R^2 and model fit, suggesting that all of the predictors are important
+- The final model is the best model in terms of $R^2$ and model fit, suggesting that all of the predictors are important
 
 ## Final points
 

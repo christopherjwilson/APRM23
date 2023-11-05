@@ -513,7 +513,7 @@ age --&gt; depression
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="1">The <func>mctest()</func> function takes a model as an argument. The <arg>type</arg> argument specifies the type of tests to run. The <arg>b</arg> argument specifies that we want to test both overall and individual predictor multicollinearity.</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="1" data-code-lines="3">The <func>mctest()</func> function takes a model as an argument. The <arg>type</arg> argument specifies the type of tests to run. The <arg>b</arg> argument specifies that we want to test both overall and individual predictor multicollinearity.</span>
 </dd>
 </dl>
 </div>
@@ -640,9 +640,6 @@ Heteroscedasticity 4.2079 0.04024 Assumptions NOT satisfied!</code></pre>
 <li>Global Statistic: Test of the overall model.</li>
 <li>Link function test: Is this relationship linear?</li>
 </ul>
-<blockquote>
-<p>significant = violation of assumption</p>
-</blockquote>
 </section></section>
 <section>
 <section id="looking-at-the-output-of-multiple-regression" class="title-slide slide level1 center">
@@ -683,7 +680,7 @@ F-statistic:   235 on 5 and 194 DF,  p-value: &lt; 2.2e-16</code></pre>
 <section id="interpreting-the-output-of-multiple-regression" class="slide level2">
 <h2>Interpreting the output of multiple regression</h2>
 <ul>
-<li><p>First we look at the overall model significance and R^2 values. These tell us whether the model is significant and how much variance is explained by the model.</p></li>
+<li><p>First we look at the overall model significance and <span class="math inline">\(R^2\)</span> values. These tell us whether the model is significant and how much variance is explained by the model.</p></li>
 <li><p>If the overall model is significant, we look at the individual predictors. We look at the significance of the predictors and the coefficient values (Estimate).</p></li>
 </ul>
 </section></section>
@@ -790,19 +787,19 @@ end
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="1" data-code-annotation="1">Model 0 is the null model. It is a model with no predictors. It is used as a baseline for comparison.</span>
+<span data-code-cell="annotated-cell-7" data-code-annotation="1" data-code-lines="1">Model 0 is the null model. It is a model with no predictors. It is used as a baseline for comparison.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="3" data-code-annotation="2">Model 1 is the first model. It includes the demographic variables.</span>
+<span data-code-cell="annotated-cell-7" data-code-annotation="2" data-code-lines="3">Model 1 is the first model. It includes the demographic variables.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="5" data-code-annotation="3">Model 2 is the second model. It includes the demographic variables, stress and loneliness.</span>
+<span data-code-cell="annotated-cell-7" data-code-annotation="3" data-code-lines="5">Model 2 is the second model. It includes the demographic variables, stress and loneliness.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="7" data-code-annotation="4">Model 3 is the third model. It includes the demographic variables, stress, loneliness and self-esteem.</span>
+<span data-code-cell="annotated-cell-7" data-code-annotation="4" data-code-lines="7">Model 3 is the third model. It includes the demographic variables, stress, loneliness and self-esteem.</span>
 </dd>
 </dl>
 </div>
@@ -835,8 +832,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <section id="comparing-the-models-1" class="slide level2">
 <h2>Comparing the models</h2>
 <ul>
-<li><p>The <func>anova()</func> function compares the change in R^2 between the models</p></li>
-<li><p>If the change in R^2 is significant, then the model is significantly better than the previous model</p></li>
+<li><p>The <func>anova()</func> function compares the change in <span class="math inline">\(R^2\)</span> between the models</p></li>
+<li><p>If the change in <span class="math inline">\(R^2\)</span> is significant, then the model is significantly better than the previous model</p></li>
 <li><p>This way, we can see the value of each set of predictors</p></li>
 </ul>
 </section>
@@ -896,7 +893,7 @@ model3  7 499.0346</code></pre>
 <li>stress + loneliness (identified in previous research)</li>
 </ul></li>
 <li><p>This gives us a clear indication that self-esteem is an important predictor of depression</p></li>
-<li><p>The final model is the best model in terms of R^2 and model fit, suggesting that all of the predictors are important</p></li>
+<li><p>The final model is the best model in terms of <span class="math inline">\(R^2\)</span> and model fit, suggesting that all of the predictors are important</p></li>
 </ul>
 </section>
 <section id="final-points" class="slide level2">
