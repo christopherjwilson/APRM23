@@ -387,6 +387,10 @@
       margin-right: 0; 
     }
   </style>
+  <meta name="mermaid-theme" content="neutral">
+  <script src="multiplePredictors_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="multiplePredictors_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="multiplePredictors_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -472,6 +476,30 @@ Dr Christopher Wilson
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">data =</span> data, <span class="fu">lm</span>(depression <span class="sc">~</span> age <span class="sc">+</span> gender <span class="sc">+</span> stress <span class="sc">+</span> loneliness <span class="sc">+</span> selfesteem))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="visualising-this-model" class="slide level2">
+<h2>Visualising this model</h2>
+<div class="cell" data-reveal="true">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+
+selfesteem --&gt; depression
+
+lonliness --&gt; depression
+
+stress --&gt; depression
+
+gender --&gt; depression
+
+age --&gt; depression
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="testing-multicollinearity" class="slide level2">
 <h2>Testing multicollinearity</h2>
 <ul>
@@ -485,7 +513,7 @@ Dr Christopher Wilson
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="3" data-code-cell="annotated-cell-2">The <func>mctest()</func> function takes a model as an argument. The <arg>type</arg> argument specifies the type of tests to run. The <arg>b</arg> argument specifies that we want to test both overall and individual predictor multicollinearity.</span>
+<span data-code-cell="annotated-cell-2" data-code-annotation="1" data-code-lines="3">The <func>mctest()</func> function takes a model as an argument. The <arg>type</arg> argument specifies the type of tests to run. The <arg>b</arg> argument specifies that we want to test both overall and individual predictor multicollinearity.</span>
 </dd>
 </dl>
 </div>
@@ -685,6 +713,61 @@ F-statistic:   235 on 5 and 194 DF,  p-value: &lt; 2.2e-16</code></pre>
 </ul></li>
 </ul>
 </section>
+<section id="visualising-the-models" class="slide level2 scrollable">
+<h2>Visualising the models</h2>
+<div class="cell" data-reveal="true">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+
+depression1[depression]
+depression2[depression]
+depression3[depression]
+
+gender1[gender] 
+gender2[gender] 
+gender3[gender] 
+
+age1[age]
+age2[age]
+age3[age]
+
+stress2[stress]
+stress3[stress]
+
+loneliness2[loneliness]
+loneliness3[loneliness]
+
+selfesteem[self-esteem]
+
+subgraph Model 3
+gender3 --&gt; depression3
+age3 --&gt; depression3
+loneliness3 --&gt; depression3
+stress3 --&gt; depression3
+selfesteem --&gt; depression3
+end 
+
+subgraph Model 2
+gender2 --&gt; depression2
+age2 --&gt; depression2
+loneliness2 --&gt; depression2
+stress2 --&gt; depression2
+end 
+
+subgraph Model 1
+  direction LR
+gender1 --&gt; depression1
+age1 --&gt; depression1
+end 
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="running-the-analysis-1" class="slide level2">
 <h2>Running the analysis</h2>
 <div class="cell" data-layout-align="center">
@@ -699,19 +782,19 @@ F-statistic:   235 on 5 and 194 DF,  p-value: &lt; 2.2e-16</code></pre>
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="1" data-code-cell="annotated-cell-7">Model 0 is the null model. It is a model with no predictors. It is used as a baseline for comparison.</span>
+<span data-code-cell="annotated-cell-7" data-code-annotation="1" data-code-lines="1">Model 0 is the null model. It is a model with no predictors. It is used as a baseline for comparison.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="3" data-code-cell="annotated-cell-7">Model 1 is the first model. It includes the demographic variables.</span>
+<span data-code-cell="annotated-cell-7" data-code-annotation="2" data-code-lines="3">Model 1 is the first model. It includes the demographic variables.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="5" data-code-cell="annotated-cell-7">Model 2 is the second model. It includes the demographic variables, stress and loneliness.</span>
+<span data-code-cell="annotated-cell-7" data-code-annotation="3" data-code-lines="5">Model 2 is the second model. It includes the demographic variables, stress and loneliness.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="7" data-code-cell="annotated-cell-7">Model 3 is the third model. It includes the demographic variables, stress, loneliness and self-esteem.</span>
+<span data-code-cell="annotated-cell-7" data-code-annotation="4" data-code-lines="7">Model 3 is the third model. It includes the demographic variables, stress, loneliness and self-esteem.</span>
 </dd>
 </dl>
 </div>
@@ -806,6 +889,14 @@ model3  7 499.0346</code></pre>
 </ul></li>
 <li><p>This gives us a clear indication that self-esteem is an important predictor of depression</p></li>
 <li><p>The final model is the best model in terms of R^2 and model fit, suggesting that all of the predictors are important</p></li>
+</ul>
+</section>
+<section id="final-points" class="slide level2">
+<h2>Final points</h2>
+<ul>
+<li><p>Model building should be theory driven</p></li>
+<li><p>We should have a clear rationale for the predictors we include</p></li>
+<li><p>We should have a clear rationale for the order in which we enter the predictors, based on previous research</p></li>
 </ul>
 
 <img src="logo.jpg" class="slide-logo r-stretch"><div class="footer footer-default">
