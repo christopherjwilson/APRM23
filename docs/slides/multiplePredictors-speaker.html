@@ -412,11 +412,62 @@ Dr Christopher Wilson
 </div>
 
 </section>
+<section id="recap" class="slide level2 smaller">
+<h2>Recap</h2>
+<div class="fragment fade-in-then-semi-out smaller">
+<ul>
+<li>Thinking about more than outcomes. Designing studies to answer more <strong>specific research questions / think about process</strong>.
+<ul>
+<li>“Why is this happening?”</li>
+<li>“What is the mechanism?”</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment fade-in-then-semi-out">
+<ul>
+<li>Thinking beyond significance testing. Using <strong>confidence intervals and effect sizes</strong> to interpret results.
+<ul>
+<li>“How big is the effect?”</li>
+<li>“What is the range of plausible values?”</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment fade-in-then-semi-out">
+<ul>
+<li>Thinking about the relationship between variables. Modelling relationships between variables using regression.
+<ul>
+<li>“Does <strong>Predictor Variable</strong> (e.g.&nbsp;Treatment Group, Avoidance, Trait) predict <strong>Outcome Variable</strong> (e.g.&nbsp;Wellbeing, Depression, Behaviour)?”</li>
+<li>“How much variance is explained by the model?”</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="in-the-coming-weeks" class="slide level2">
+<h2>In the coming weeks</h2>
+<div class="callout callout-none no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<ul>
+<li>Thinking about more than outcomes. Designing studies to answer more <strong>specific research questions / think about process</strong>.
+<ul>
+<li>“Why is this happening?”</li>
+<li>“What is the mechanism?”</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">We will learn more about modelling our data to address these questions.</li>
+</ul>
+<ul>
+<li class="fragment">Remember that analysis alone cannot answer these questions. We need to design our studies to address these questions based on theory.</li>
+</ul>
+</section>
 <section id="overview" class="slide level2">
 <h2>Overview</h2>
 <ul>
 <li>Multiple regression</li>
-<li>Interactions</li>
 <li>Hierarchical regression</li>
 </ul>
 </section>
@@ -513,7 +564,7 @@ age --&gt; depression
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-annotation="1" data-code-lines="3">The <func>mctest()</func> function takes a model as an argument. The <arg>type</arg> argument specifies the type of tests to run. The <arg>b</arg> argument specifies that we want to test both overall and individual predictor multicollinearity.</span>
+<span data-code-lines="3" data-code-cell="annotated-cell-2" data-code-annotation="1">The <func>mctest()</func> function takes a model as an argument. The <arg>type</arg> argument specifies the type of tests to run. The <arg>b</arg> argument specifies that we want to test both overall and individual predictor multicollinearity.</span>
 </dd>
 </dl>
 </div>
@@ -787,19 +838,19 @@ end
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-annotation="1" data-code-lines="1">Model 0 is the null model. It is a model with no predictors. It is used as a baseline for comparison.</span>
+<span data-code-lines="1" data-code-cell="annotated-cell-7" data-code-annotation="1">Model 0 is the null model. It is a model with no predictors. It is used as a baseline for comparison.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-annotation="2" data-code-lines="3">Model 1 is the first model. It includes the demographic variables.</span>
+<span data-code-lines="3" data-code-cell="annotated-cell-7" data-code-annotation="2">Model 1 is the first model. It includes the demographic variables.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-annotation="3" data-code-lines="5">Model 2 is the second model. It includes the demographic variables, stress and loneliness.</span>
+<span data-code-lines="5" data-code-cell="annotated-cell-7" data-code-annotation="3">Model 2 is the second model. It includes the demographic variables, stress and loneliness.</span>
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-annotation="4" data-code-lines="7">Model 3 is the third model. It includes the demographic variables, stress, loneliness and self-esteem.</span>
+<span data-code-lines="7" data-code-cell="annotated-cell-7" data-code-annotation="4">Model 3 is the third model. It includes the demographic variables, stress, loneliness and self-esteem.</span>
 </dd>
 </dl>
 </div>

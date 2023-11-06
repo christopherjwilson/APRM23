@@ -17,10 +17,41 @@ logo: "logo.jpg"
 csl: apa.csl
 ---
 
+## Recap {.smaller}
+
+::: {.fragment .fade-in-then-semi-out .smaller}
+- Thinking about more than outcomes. Designing studies to answer more **specific research questions / think about process**.
+  - "Why is this happening?"
+  - "What is the mechanism?"
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+- Thinking beyond significance testing. Using **confidence intervals and effect sizes** to interpret results.
+  - "How big is the effect?"
+  - "What is the range of plausible values?"
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+- Thinking about the relationship between variables. Modelling relationships between variables using regression.
+  - "Does **Predictor Variable** (e.g. Treatment Group, Avoidance, Trait) predict **Outcome Variable** (e.g. Wellbeing, Depression, Behaviour)?"
+  - "How much variance is explained by the model?"
+:::
+
+## In the coming weeks
+
+::: {.callout icon=false}
+- Thinking about more than outcomes. Designing studies to answer more **specific research questions / think about process**.
+  - "Why is this happening?"
+  - "What is the mechanism?"
+:::
+
+>- We will learn more about modelling our data to address these questions.
+
+>- Remember that analysis alone cannot answer these questions. We need to design our studies to address these questions based on theory.
+
 ## Overview
 
 -   Multiple regression
--   Interactions
 -   Hierarchical regression
 
 # What type of research question?
