@@ -1,5 +1,5 @@
 ---
-title: Practical 3 Linear Regression in R
+title: Practical 4 Multiple Regression
 author: "Dr. Christopher Wilson"
 Subtitle: "PSY4179 Research Methods 1"
 Institution: "Teesside University"
