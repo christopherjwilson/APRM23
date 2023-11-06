@@ -42,6 +42,12 @@ To import data into R, you can use the a command that relates to the type of dat
 
 ```{r}
 practical4_data <- read.csv("practical4_data.csv")
+
+# change the gender variable to a factor
+
+practical4_data$gender <- as.factor(practical4_data$gender)
+
+
 ```
 
 You can also use the menu to import data. To do this, click on the <if>Import Dataset</if> button and select the type of data you want to import. For example, to import the data in the file **practical4_data.csv**, you would click on <if>From Text (readr)</if> and then select the file **practical4_data.csv**.

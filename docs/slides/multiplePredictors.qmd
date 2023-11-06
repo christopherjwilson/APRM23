@@ -81,7 +81,11 @@ stress <- rnorm(200, 50, 2.5) + (depression + runif(200, 0, 10) * 0.1)
 loneliness <- rnorm(200, 10, 1.5) + (depression + runif(200, 0, 5) * 0.1)
 selfesteem <- rnorm(200, 18, 1) + (depression + runif(200, 0, 1) * 0.1)
 
+
+
 data <- data.frame(depression, age, gender, stress, loneliness, selfesteem) |> round(0)
+  
+data$gender <- as.factor(data$gender)
 
 ```
 

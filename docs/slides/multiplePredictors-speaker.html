@@ -609,7 +609,7 @@ All Individual Multicollinearity Diagnostics Result
 
               VIF    TOL      Wi      Fi Leamer    CVIF Klein   IND1   IND2
 age        1.0263 0.9744  1.2811  1.7169 0.9871 -0.1753     0 0.0200 0.0893
-gender     1.0242 0.9764  1.1791  1.5802 0.9881 -0.1750     0 0.0200 0.0824
+gender1    1.0242 0.9764  1.1791  1.5802 0.9881 -0.1750     0 0.0200 0.0824
 stress     1.6061 0.6226 29.5495 39.6014 0.7891 -0.2744     0 0.0128 1.3164
 loneliness 1.9477 0.5134 46.2012 61.9175 0.7165 -0.3328     0 0.0105 1.6972
 selfesteem 2.0844 0.4797 52.8658 70.8492 0.6926 -0.3561     0 0.0098 1.8147
@@ -617,7 +617,7 @@ selfesteem 2.0844 0.4797 52.8658 70.8492 0.6926 -0.3561     0 0.0098 1.8147
 1 --&gt; COLLINEARITY is detected by the test 
 0 --&gt; COLLINEARITY is not detected by the test
 
-age , gender , coefficient(s) are non-significant may be due to multicollinearity
+age , gender1 , coefficient(s) are non-significant may be due to multicollinearity
 
 R-square of y on all x: 0.8583 
 
@@ -668,7 +668,7 @@ lm(formula = lm(depression ~ age + gender + stress + loneliness +
     selfesteem), data = data)
 
 Coefficients:
-(Intercept)          age       gender       stress   loneliness   selfesteem  
+(Intercept)          age      gender1       stress   loneliness   selfesteem  
   -15.00538     -0.03025     -0.03374      0.10901      0.25165      0.54264  
 
 
@@ -715,7 +715,7 @@ Coefficients:
              Estimate Std. Error t value Pr(&gt;|t|)    
 (Intercept) -15.00538    1.94985  -7.696 6.97e-13 ***
 age          -0.03025    0.05233  -0.578    0.564    
-gender       -0.03374    0.11160  -0.302    0.763    
+gender1      -0.03374    0.11160  -0.302    0.763    
 stress        0.10901    0.02179   5.002 1.27e-06 ***
 loneliness    0.25165    0.03354   7.502 2.20e-12 ***
 selfesteem    0.54264    0.03553  15.273  &lt; 2e-16 ***
