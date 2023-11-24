@@ -197,7 +197,7 @@ From a theory perspective, we are stating that we believe that the relationship 
 library(DiagrammeR)
 
 code <- "
-	digraph mediation_model { 
+	digraph moderation_model { 
 	  # Nodes  
 	  node [shape = rectangle, fontname = Arial, fontsize=9]
 	  iv    [pos = '-1,1!', label = 'Time in\ncounselling']

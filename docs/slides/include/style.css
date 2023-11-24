@@ -20,3 +20,13 @@
   font-size: smaller;
 
 }
+
+
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 60%;
+  word-wrap: normal;
+}
