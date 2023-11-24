@@ -269,6 +269,8 @@ fitY <- lm(Y ~ X + M, data=Meddata) #IV and M on DV;
 
 
 ```{r}
+#| echo: true
+
 gvlma(fitM) 
 
 
@@ -280,6 +282,8 @@ gvlma(fitY)
 ## Step 3.1: Run the mediation analysis on the models
 
 ```{r}
+#| echo: true
+
 fitMed <- mediate(fitM, fitY, treat="X", mediator="M")
 summary(fitMed)
 ```
