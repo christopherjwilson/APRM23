@@ -148,7 +148,7 @@ That is, from a theoretical perspective:
 
 - The Sobel test is used to test the significance of the indirect effect.
 
-# Visualising mediation
+## Visualising mediation
 
 ```{r fig.height = 5, fig.width = 10, fig.align='center', echo=F}
 
