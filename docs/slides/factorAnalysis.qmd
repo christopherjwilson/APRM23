@@ -532,4 +532,15 @@ The researcher should report:
 
 ## Summary
 
--
+
+- What is factor analysis?
+
+- Which research questions can factor analysis answer?
+
+- What are the assumptions of factor analysis?
+
+- How do we conduct factor analysis?
+
+- How do we interpret factor analysis?
+
+- How do we report factor analysis?
