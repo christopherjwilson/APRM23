@@ -48,6 +48,8 @@ To load the data file, use the following code:
 
 ```
 
+The data will be loaded into the environment tab as a temporary file. You need to click on it to make use of it in your code.
+
 :::
 
 ::: {.callout-note}
