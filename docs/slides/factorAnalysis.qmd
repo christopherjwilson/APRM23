@@ -134,13 +134,7 @@ raq <- read_table2("Datasets/raq.csv")
 
 > Altering the indicators of an index changes the definition of the variable being indexed (because the index is a calculation of the indicators). This is not the case with a latent variable.  
 
-## Latent versus index variables
 
-
-```{r  out.width = "200%", echo=F}
-
-knitr::include_graphics("img/pcafa1.png") 
-```
 
 
 ## Types of exploratory factor analysis
@@ -169,6 +163,14 @@ knitr::include_graphics("img/cfavariance.png")
 ```{r  out.width = "100%", echo=F}
 
 knitr::include_graphics("img/pcavariance.png") 
+```
+
+## Variance in exploratory factor analysis
+
+
+```{r  out.width = "200%", echo=F}
+
+knitr::include_graphics("img/pcafa1.png") 
 ```
 
 ## Which type of exploratory factor analysis?
