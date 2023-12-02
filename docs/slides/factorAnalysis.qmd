@@ -139,7 +139,7 @@ raq <- read_table2("Datasets/raq.csv")
 
 ```{r  out.width = "200%", echo=F}
 
-knitr::include_graphics("img/pcafa.png") 
+knitr::include_graphics("img/pcafa1.png") 
 ```
 
 
